@@ -1,0 +1,8 @@
+---
+title: "Latex plots"
+author : "Emre Anakok"
+sort : "date"
+listing:
+  contents: latex
+---
+

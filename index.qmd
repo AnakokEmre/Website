@@ -1,0 +1,20 @@
+---
+title: "Emre Anakok"
+image: image/Emre.png
+toc: false
+about: 
+  template: jolla
+  image-shape: round
+  image-width: 17em
+  links:
+    - text: GitHub
+      href: https://github.com/AnakokEmre
+      icon: github
+      target: _blank
+    - text: Email
+      href: mailto:emre.anakok@agroparistech.fr
+      icon: envelope
+---
+
+Troisième année de thèse, je devrais soutenir le 16 décembre 2024.
+

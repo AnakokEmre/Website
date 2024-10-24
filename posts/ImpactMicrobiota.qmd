@@ -1,0 +1,28 @@
+---
+title: "Impact of the Ileal Microbiota on Surgical Site Infections in Crohn’s Disease: A Nationwide Prospective Cohort"
+description: The objective of this study was to assess the impact of the gut microbiota on surgical site infection in Crohn’s disease.
+image: image/CD.jpeg
+date: 2/26/2022
+author:
+  - name: Emre Anakok 
+    
+  - name: Clément Julien
+categories: [Random forest, Gut microbiota, Crohn’s disease, Prediction] 
+citation:
+  container-title: Journal of Crohn's and Colitis
+  url: https://academic.oup.com/ecco-jcc/article/16/8/1211/6537605
+  doi: 10.1093/ecco-jcc/jjac026
+
+#bibliography: biblio.bib
+---
+
+##Abstract
+
+**Background and aims:** Surgery is performed in 50-70% of Crohn's disease [CD] patients, and its main risk is surgical site infection [SSI]. The microbiota has been extensively assessed in CD but not as a potential risk factor for septic morbidity. The objective of this study was to assess the impact of the gut microbiota on SSI in CD.
+
+**Methods:** We used the multicentric REMIND prospective cohort to identify all patients who experienced SSI after ileocolonic resection for CD, defined as any postoperative local septic complication within 90 days after surgery: wound abscess, intra-abdominal collection, anastomotic leakage or enterocutaneous fistula. The mucosa-associated microbiota of the ileal resection specimen was analysed by 16S gene sequencing in 149 patients. The variable selection and prediction were performed with random forests [R package VSURF] on clinical and microbiotal data. The criterion of performance that we considered was the area under the Receiver Operating Characteristic [ROC] curve [AUC].
+
+**Results:** SSI occurred in 24 patients [16.1%], including 15 patients [10.1%] with major morbidity. There were no significant differences between patients with or without SSI regarding alpha and beta diversity. The top selected variables for the prediction of SSI were all microbiota-related. The maximum AUC [0.796] was obtained with a model including 14 genera, but an AUC of 0.78 had already been obtained with a model including only six genera [Hungatella, Epulopiscium, Fusobacterium, Ruminococcaceae_ucg_009, Actinomyces and Ralstonia].
+
+**Conclusion:** The gut microbiota has the potential to predict SSI after ileocolonic resection for CD. It might play a role in this frequent postoperative complication.
+

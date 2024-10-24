@@ -1,0 +1,10 @@
+---
+title: "Publications"
+author : "Emre Anakok"
+sort : "date"
+
+listing:
+  contents: posts
+  categories: true
+---
+

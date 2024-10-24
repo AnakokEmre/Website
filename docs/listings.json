@@ -1,0 +1,17 @@
+[
+  {
+    "listing": "/bibliographie.html",
+    "items": [
+      "/posts/BFVGAE.html",
+      "/posts/CoOPLBM.html",
+      "/posts/ImpactMicrobiota.html"
+    ]
+  },
+  {
+    "listing": "/latex.html",
+    "items": [
+      "/latex/Back_propagation.html",
+      "/latex/Message_passing.html"
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Emre Anakok"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: À propos de moi
+      - href: bibliographie.qmd
+        text: Publications
+      - href: latex.qmd
+        text: Latex
+format:
+  html:
+    theme:
+      light: celurean
+      dark: vapor
+    css: styles.css
+    toc: true
+
+editor: visual
+

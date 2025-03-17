@@ -9,7 +9,7 @@ Actuellement en post-doc, je souhaite devenir enseignant-chercheur en statistiqu
 :::: {.columns}
 
 ::: {.column width="25%"}
-## 2021 - 2024<br><br>
+## 2021 - 2024
 
 🏢 [ MIA Paris-Saclay, Palaiseau ]{style="color:gray;"}
 
@@ -24,7 +24,7 @@ Actuellement en post-doc, je souhaite devenir enseignant-chercheur en statistiqu
 ::: {.column width="70%"}
 ## Thèse : Prise en compte des effets d'échantillonnage pour la détection de structure des réseaux écologiques
 
-Thèse soutenue au campus Agro Paris-Saclay le 16 décembre 2024.<br><br>
+Thèse soutenue au campus Agro Paris-Saclay le 16 décembre 2024.
 
 
 **Mots-clés:** Statistiques appliquées à l'écologie, Théorie des graphes, réseaux plantes-pollinisateurs, modèle à blocs stochastiques, algorithme EM, échantillonnage, réseaux de neurones convolutifs.
@@ -38,7 +38,7 @@ Thèse soutenue au campus Agro Paris-Saclay le 16 décembre 2024.<br><br>
 
 
 ::: {.column width="25%"}
-## 2020 - 2021<br>
+## 2020 - 2021
 
 🏢 [ Sorbonne Université, Paris ]{style="color:gray;"}
 :::
@@ -59,7 +59,7 @@ Thèse soutenue au campus Agro Paris-Saclay le 16 décembre 2024.<br><br>
 
 
 ::: {.column width="25%"}
-## 2019 - 2020<br>
+## 2019 - 2020
 
 🏢 [ Sorbonne Université, Paris ]{style="color:gray;"}
 :::
@@ -99,7 +99,7 @@ Thèse soutenue au campus Agro Paris-Saclay le 16 décembre 2024.<br><br>
 
 
 ::: {.column width="25%"}
-## 2016 - 2018<br>
+## 2016 - 2018
 
 🏢 [ Lycée Fénelon, Paris ]{style="color:gray;"}
 :::
@@ -120,41 +120,82 @@ Thèse soutenue au campus Agro Paris-Saclay le 16 décembre 2024.<br><br>
 
 # Expériences
 
+
+:::: {.columns}
+
+
+::: {.column width="25%"}
 ## Depuis 2025
 
-**Post-Doctorat : Développement de méthodes statistiques pour la reconstruction de routes d'invasion biologique, inférence de scénarios évolutionnaires complexes à partir de données génomiques en utilisant des graphes admixtures.**
-
 🏢 [ Centre Biologique de Gestion des Populations, Montpellier ]{style="color:gray;"}
+:::
 
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="70%"}
+## Post-Doctorat : Développement de méthodes statistiques pour la reconstruction de routes d'invasion biologique, inférence de scénarios évolutionnaires complexes à partir de données génomiques en utilisant des graphes admixtures.
 **Mots-clés:** Génétique des populations, Graphes admixtures
 
 -   Exploration de l'espace des graphes admixtures et problèmes d'identifiabilités.
 -   Utilisation de modèles génératifs de graphes.
 -   Applications à des données génétiques d'espèces invasives.
+:::
 
-## Mai-Sep 2021
+:::: 
 
-**Stage de M2 : Participation à la conception du design magnétique d'une machine IRM à 14 T en utilisant différentes techniques d'intelligence artificielle**
+:::: {.columns}
+
+
+::: {.column width="25%"}
+## Mai-Sep 2021 
 
 🏢 [ CEA, Saclay ]{style="color:gray;"}
 
-**Mots-clés:** Opera-2d 2020, algorithme génétique, optimisation sous contrainte, magnétisme
-
 **Encadrants** : Valerio Calvelli (CEA)
+
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="70%"}
+## Stage de M2 : Participation à la conception du design magnétique d'une machine IRM à 14 T en utilisant différentes techniques d'intelligence artificielle.
+**Mots-clés:** Opera-2d 2020, algorithme génétique, optimisation sous contrainte, magnétisme
 
 -   Mettre en place un code Python capable d'interagir avec le logiciel Opera-2d 2020.
 -   Trouver une configuration optimale respectant des contraintes à l'aide d'un algorithme génétique.
+:::
 
-## Jul-Sep 2020
+:::: 
 
-**Stage de M1 : Apprentissage statistique pour tester l'influence du microbiote intestinal sur la réponse au traitement de la maladie de Crohn**
+:::: {.columns}
 
+
+::: {.column width="25%"}
+## Mai-Sep 2021 
 🏢 [ Laboratoire de Probabilité, Statistiques et Modélisation, Paris ]{style="color:gray;"}
 
+**Encadrants** : Anna Bonnet (LPSM), Sylvain Le Corff (LPSM), Harry Sokol (AP-HP)
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="70%"}
+## Stage de M1 : Apprentissage statistique pour tester l'influence du microbiote intestinal sur la réponse au traitement de la maladie de Crohn.
 **Mots-clés:** Machine learning, forêts aléatoires, sélection de variables en grande dimension, MCMC
 
-**Encadrants** : Anna Bonnet (LPSM), Sylvain Le Corff (LPSM), Harry Sokol (AP-HP)
 
 -   Sélectionner des variables pertinentes à l'aide de forêts aléatoires et comparer les résultats avec d'autres études.
 -   Implémenter un algorithme MCMC de sélection de variables dans un modèle de régression logistique.
 -   Le stage a abouti à l'écriture d'un article publié : Impact of the Ileal Microbiota on Surgical Site Infections in Crohn's Disease : A Nationwide Prospective Cohort, Journal of Crohn's and Colitis, Volume 16, Issue 8, August 2022, Pages 1211--1221, <https://doi.org/10.1093/ecco-jcc/jjac026>
+:::
+
+:::: 
+
+
+

@@ -25,3 +25,5 @@ citation:
 **Results:** SSI occurred in 24 patients \[16.1%\], including 15 patients \[10.1%\] with major morbidity. There were no significant differences between patients with or without SSI regarding alpha and beta diversity. The top selected variables for the prediction of SSI were all microbiota-related. The maximum AUC \[0.796\] was obtained with a model including 14 genera, but an AUC of 0.78 had already been obtained with a model including only six genera \[Hungatella, Epulopiscium, Fusobacterium, Ruminococcaceae_ucg_009, Actinomyces and Ralstonia\].
 
 **Conclusion:** The gut microbiota has the potential to predict SSI after ileocolonic resection for CD. It might play a role in this frequent postoperative complication.
+
+[Link to paper](https://academic.oup.com/ecco-jcc/article/16/8/1211/6537605)

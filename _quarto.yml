@@ -17,7 +17,7 @@ website:
 format:
   html:
     theme:
-      light: celurean
+      light: Yeti
       dark: vapor
     css: styles.css
     toc: true

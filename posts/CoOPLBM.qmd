@@ -1,7 +1,7 @@
 ---
 title: "Disentangling the structure of ecological bipartite networks from observation processes"
 description: | 
-  A new model to for network analysis.
+  A new model for network analysis.
 image: image/CoOPLBM.png
 
 date: 3/1/2024
@@ -18,5 +18,11 @@ categories: [Latent Block Model, Sampling Effect, Stochastic Expectation Maximiz
 citation:
   url: https://arxiv.org/abs/2211.16364v2
 ---
+
 ## Abstract
-The structure of a bipartite interaction network can be described by providing a clustering for each of the two types of nodes. Such clusterings are outputted by fitting a Latent Block Model (LBM) on an observed network that comes from a sampling of species interactions in the field. However, the sampling is limited and possibly uneven. This may jeopardize the fit of the LBM and then the description of the structure of the network by detecting structures which result from the sampling and not from actual underlying ecological phenomena. If the observed interaction network consists of a weighted bipartite network where the number of observed interactions between two species is available, the sampling efforts for all species can be estimated and used to correct the LBM fit. We propose to combine an observation model that accounts for sampling and an LBM for describing the structure of underlying possible ecological interactions. We develop an original inference procedure for this model, the efficiency of which is demonstrated on simulation studies. The pratical interest in ecology of our model is highlighted on a large dataset of plant-pollinator network. 
+
+The structure of a bipartite interaction network can be described by providing a clustering for each of the two types of nodes. Such clusterings are outputted by fitting a Latent Block Model (LBM) on an observed network that comes from a sampling of species interactions in the field. However, the sampling is limited and possibly uneven. This may jeopardize the fit of the LBM and then the description of the structure of the network by detecting structures which result from the sampling and not from actual underlying ecological phenomena. If the observed interaction network consists of a weighted bipartite network where the number of observed interactions between two species is available, the sampling efforts for all species can be estimated and used to correct the LBM fit. We propose to combine an observation model that accounts for sampling and an LBM for describing the structure of underlying possible ecological interactions. We develop an original inference procedure for this model, the efficiency of which is demonstrated on simulation studies. The pratical interest in ecology of our model is highlighted on a large dataset of plant-pollinator network.
+
+[Link to paper](https://www.e-publications.org/ims/submission/AOAS/user/submissionFile/63762?confirm=faf9a606)
+
+[GitHub repository](https://github.com/AnakokEmre/CoOP-LBM)

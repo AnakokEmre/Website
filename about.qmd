@@ -2,4 +2,93 @@
 title: "Qui suis-je ?"
 ---
 
-Actuellement en post-doc, je souhaite devenir enseignant-chercheur.
+Actuellement en post-doc, je souhaite devenir enseignant-chercheur en statistiques appliquées.
+
+
+# Études
+
+## 2021 - 2024  
+**Thèse : Prise en compte des effets d’échantillonnage pour la détection
+de structure des réseaux écologiques
+et .**  
+🏢 <span style="color:gray;"> MIA Paris-Saclay, Palaiseau </span>
+
+**Encadrant:** Pierre Barbillon (MIA Paris-Saclay), Colin Fontaine (MNHM), Elisa Thebault (iEES).
+
+Thèse soutenue au campus Agro Paris-Saclay le 16 décembre 2024.
+
+**Mots-clés:** Statistiques appliquées à l’écologie, Théorie des graphes, réseaux plantes-pollinisateurs, modèle à blocs
+stochastiques, algorithme EM, échantillonnage, réseaux de neurones convolutifs.
+
+
+
+## 2020 - 2021  
+**Master 2 de Mathématiques et Application, parcours Statistiques.**  
+
+🏢 <span style="color:gray;"> Sorbonne Université, Paris </span>
+
+**Mots-clés:** Modèles linéaires en grande dimension, apprentissage statistique, apprentissage automatique,
+optimisation stochastique, analyse statistique de graphe, acquisition compressée.
+
+
+## 2019 – 2020  
+**Master 1 de Mathématiques et Application.**
+
+🏢 <span style="color:gray;"> Sorbonne Université, Paris </span>
+
+**Mots-clés:** Statistiques avancées, statistiques computationnelles, géométrie différentielle
+
+## 2018 - 2019
+**Licence 3 de Mathématiques**
+
+🏢 <span style="color:gray;"> Sorbonne Université, Paris </span>
+
+**Mots-clés:** Statistiques numériques, approximation numérique de fonction, théorie de la mesure.
+
+## 2016 - 2018 
+**Classe Préparatoire aux Grandes Écoles Math-Physique**
+
+🏢 <span style="color:gray;"> Lycée Fénelon, Paris </span>
+
+
+# Expériences 
+## Depuis 2025
+**Post-Doctorat : Développement de méthodes statistiques pour la reconstruction de routes d’invasion biologique, inférence de scénarios évolutionnaires complexes à partir de données génomiques en utilisant des graphes admixtures.**
+
+🏢 <span style="color:gray;"> Centre Biologique de Gestion des Populations, Montpellier </span>
+
+**Mots-clés:** Génétique des populations, Graphes admixtures
+
+- Exploration de l’espace des graphes admixtures et problèmes d’identifiabilités.
+- Utilisation de modèles génératifs de graphes.
+- Applications à des données génétiques d’espèces invasives.
+
+
+## Mai-Sep 2021
+**Stage de M2 : Participation à la conception du design magnétique d’une machine IRM à 14 T en utilisant différentes techniques d’intelligence artificielle**
+
+🏢 <span style="color:gray;"> CEA, Saclay </span>
+
+**Mots-clés:** Opera-2d 2020, algorithme génétique, optimisation sous contrainte, magnétisme
+
+**Encadrants** : Valerio Calvelli (CEA)
+
+- Mettre en place un code Python capable d’interagir avec le logiciel Opera-2d 2020.
+- Trouver une configuration optimale respectant des contraintes à l’aide d’un algorithme génétique.
+
+## Jul-Sep 2020
+**Stage de M1 : Apprentissage statistique pour tester l’influence du microbiote intestinal sur la réponse au traitement de la maladie de Crohn**
+
+🏢 <span style="color:gray;"> Laboratoire de Probabilité, Statistiques et Modélisation, Paris </span>
+
+**Mots-clés:** Machine learning, forêts aléatoires, sélection de variables en grande dimension, MCMC
+
+**Encadrants** : Anna Bonnet (LPSM), Sylvain Le Corff (LPSM), Harry Sokol (AP-HP)
+
+- Sélectionner des variables pertinentes à l’aide de forêts aléatoires et comparer les résultats avec d’autres études.
+- Implémenter un algorithme MCMC de sélection de variables dans un modèle de régression logistique.
+- Le stage a abouti à l’écriture d’un article publié : Impact of the Ileal Microbiota on Surgical Site Infections in Crohn’s
+Disease : A Nationwide Prospective Cohort, Journal of Crohn’s and Colitis, Volume 16, Issue 8, August 2022,
+Pages 1211–1221, [https://doi.org/10.1093/ecco-jcc/jjac026](https://doi.org/10.1093/ecco-jcc/jjac026)
+
+

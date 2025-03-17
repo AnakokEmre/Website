@@ -4,14 +4,14 @@
     "href": "about.html",
     "title": "Qui suis-je ?",
     "section": "",
-    "text": "Doctorant en troisième année, je fais une thèse sur la Prise en compte des effets d’échantillonnage pour la détection de structure des réseaux écologiques. Je souhaite devenir enseignant-chercheur."
+    "text": "Actuellement en post-doc, je souhaite devenir enseignant-chercheur en statistiques appliquées."
   },
   {
     "objectID": "bibliographie.html",
     "href": "bibliographie.html",
     "title": "Publications",
     "section": "",
-    "text": "Bipartite Graph Variational Auto-Encoder with Fair Latent Representation to Account for Sampling Bias in Ecological Networks\n\n\n\n\n\n\nCitizen Science\n\n\nEcological network\n\n\nGraph Neural Network\n\n\nHilbert-Schmidt Independence Criterion\n\n\nSampling Effect\n\n\n\nTranslating the fairness framework commonly considered in sociology in order to address sampling bias in ecology using graph embeddings. \n\n\n\n\n\nJul 15, 2024\n\n\nEmre Anakok, Pierre Barbillon, Colin Fontaine, Elisa Thebault\n\n\n\n\n\n\n\n\n\n\n\n\nDisentangling the structure of ecological bipartite networks from observation processes\n\n\n\n\n\n\nLatent Block Model\n\n\nSampling Effect\n\n\nStochastic Expectation Maximization\n\n\nNestedness\n\n\nModularity\n\n\n\nA new model to for network analysis. \n\n\n\n\n\nMar 1, 2024\n\n\nEmre Anakok, Pierre Barbillon, Colin Fontaine, Elisa Thebault\n\n\n\n\n\n\n\n\n\n\n\n\nImpact of the Ileal Microbiota on Surgical Site Infections in Crohn’s Disease: A Nationwide Prospective Cohort\n\n\n\n\n\n\nRandom forest\n\n\nGut microbiota\n\n\nCrohn’s disease\n\n\nPrediction\n\n\n\nThe objective of this study was to assess the impact of the gut microbiota on surgical site infection in Crohn’s disease.\n\n\n\n\n\nFeb 26, 2022\n\n\nEmre Anakok, Clément Julien\n\n\n\n\n\n\nNo matching items"
+    "text": "Bipartite Graph Variational Auto-Encoder with Fair Latent Representation to Account for Sampling Bias in Ecological Networks\n\n\n\n\n\n\nCitizen Science\n\n\nEcological network\n\n\nGraph Neural Network\n\n\nHilbert-Schmidt Independence Criterion\n\n\nSampling Effect\n\n\n\nTranslating the fairness framework commonly considered in sociology in order to address sampling bias in ecology using graph embeddings. \n\n\n\n\n\nJul 15, 2024\n\n\nEmre Anakok, Pierre Barbillon, Colin Fontaine, Elisa Thebault\n\n\n\n\n\n\n\n\n\n\n\n\nDisentangling the structure of ecological bipartite networks from observation processes\n\n\n\n\n\n\nLatent Block Model\n\n\nSampling Effect\n\n\nStochastic Expectation Maximization\n\n\nNestedness\n\n\nModularity\n\n\n\nA new model for network analysis. \n\n\n\n\n\nMar 1, 2024\n\n\nEmre Anakok, Pierre Barbillon, Colin Fontaine, Elisa Thebault\n\n\n\n\n\n\n\n\n\n\n\n\nImpact of the Ileal Microbiota on Surgical Site Infections in Crohn’s Disease: A Nationwide Prospective Cohort\n\n\n\n\n\n\nRandom forest\n\n\nGut microbiota\n\n\nCrohn’s disease\n\n\nPrediction\n\n\n\nThe objective of this study was to assess the impact of the gut microbiota on surgical site infection in Crohn’s disease.\n\n\n\n\n\nFeb 26, 2022\n\n\nEmre Anakok, Clément Julien\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -46,27 +46,125 @@
     "href": "posts/BFVGAE.html",
     "title": "Bipartite Graph Variational Auto-Encoder with Fair Latent Representation to Account for Sampling Bias in Ecological Networks",
     "section": "",
-    "text": "##Abstract\nWe propose a method to represent bipartite networks using graph embeddings tailored to tackle the challenges of studying ecological networks, such as the ones linking plants and pollinators, where many covariates need to be accounted for, in particular to control for sampling bias. We adapt the variational graph auto-encoder approach to the bipartite case, which enables us to generate embeddings in a latent space where the two sets of nodes are positioned based on their probability of connection. We translate the fairness framework commonly considered in sociology in order to address sampling bias in ecology. By incorporating the Hilbert-Schmidt independence criterion (HSIC) as an additional penalty term in the loss we optimize, we ensure that the structure of the latent space is independent of continuous variables, which are related to the sampling process. Finally, we show how our approach can change our understanding of ecological networks when applied to the Spipoll data set, a citizen science monitoring program of plant-pollinator interactions to which many observers contribute, making it prone to sampling bias.\n\n\n\nCitationBibTeX citation:@online{anakok2024,\n  author = {Anakok, Emre and Barbillon, Pierre and Fontaine, Colin and\n    Thebault, Elisa},\n  title = {Bipartite {Graph} {Variational} {Auto-Encoder} with {Fair}\n    {Latent} {Representation} to {Account} for {Sampling} {Bias} in\n    {Ecological} {Networks}},\n  date = {2024-07-15},\n  url = {https://arxiv.org/abs/2403.02011},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nAnakok, Emre, Pierre Barbillon, Colin Fontaine, and Elisa Thebault.\n2024. “Bipartite Graph Variational Auto-Encoder with Fair Latent\nRepresentation to Account for Sampling Bias in Ecological\nNetworks.” July 15, 2024. https://arxiv.org/abs/2403.02011."
+    "text": "We propose a method to represent bipartite networks using graph embeddings tailored to tackle the challenges of studying ecological networks, such as the ones linking plants and pollinators, where many covariates need to be accounted for, in particular to control for sampling bias. We adapt the variational graph auto-encoder approach to the bipartite case, which enables us to generate embeddings in a latent space where the two sets of nodes are positioned based on their probability of connection. We translate the fairness framework commonly considered in sociology in order to address sampling bias in ecology. By incorporating the Hilbert-Schmidt independence criterion (HSIC) as an additional penalty term in the loss we optimize, we ensure that the structure of the latent space is independent of continuous variables, which are related to the sampling process. Finally, we show how our approach can change our understanding of ecological networks when applied to the Spipoll data set, a citizen science monitoring program of plant-pollinator interactions to which many observers contribute, making it prone to sampling bias.\nLink to preprint\nGitHub Repository"
   },
   {
     "objectID": "posts/CoOPLBM.html",
     "href": "posts/CoOPLBM.html",
     "title": "Disentangling the structure of ecological bipartite networks from observation processes",
     "section": "",
-    "text": "The structure of a bipartite interaction network can be described by providing a clustering for each of the two types of nodes. Such clusterings are outputted by fitting a Latent Block Model (LBM) on an observed network that comes from a sampling of species interactions in the field. However, the sampling is limited and possibly uneven. This may jeopardize the fit of the LBM and then the description of the structure of the network by detecting structures which result from the sampling and not from actual underlying ecological phenomena. If the observed interaction network consists of a weighted bipartite network where the number of observed interactions between two species is available, the sampling efforts for all species can be estimated and used to correct the LBM fit. We propose to combine an observation model that accounts for sampling and an LBM for describing the structure of underlying possible ecological interactions. We develop an original inference procedure for this model, the efficiency of which is demonstrated on simulation studies. The pratical interest in ecology of our model is highlighted on a large dataset of plant-pollinator network."
+    "text": "The structure of a bipartite interaction network can be described by providing a clustering for each of the two types of nodes. Such clusterings are outputted by fitting a Latent Block Model (LBM) on an observed network that comes from a sampling of species interactions in the field. However, the sampling is limited and possibly uneven. This may jeopardize the fit of the LBM and then the description of the structure of the network by detecting structures which result from the sampling and not from actual underlying ecological phenomena. If the observed interaction network consists of a weighted bipartite network where the number of observed interactions between two species is available, the sampling efforts for all species can be estimated and used to correct the LBM fit. We propose to combine an observation model that accounts for sampling and an LBM for describing the structure of underlying possible ecological interactions. We develop an original inference procedure for this model, the efficiency of which is demonstrated on simulation studies. The pratical interest in ecology of our model is highlighted on a large dataset of plant-pollinator network.\nLink to paper\nGitHub repository"
   },
   {
     "objectID": "posts/CoOPLBM.html#abstract",
     "href": "posts/CoOPLBM.html#abstract",
     "title": "Disentangling the structure of ecological bipartite networks from observation processes",
     "section": "",
-    "text": "The structure of a bipartite interaction network can be described by providing a clustering for each of the two types of nodes. Such clusterings are outputted by fitting a Latent Block Model (LBM) on an observed network that comes from a sampling of species interactions in the field. However, the sampling is limited and possibly uneven. This may jeopardize the fit of the LBM and then the description of the structure of the network by detecting structures which result from the sampling and not from actual underlying ecological phenomena. If the observed interaction network consists of a weighted bipartite network where the number of observed interactions between two species is available, the sampling efforts for all species can be estimated and used to correct the LBM fit. We propose to combine an observation model that accounts for sampling and an LBM for describing the structure of underlying possible ecological interactions. We develop an original inference procedure for this model, the efficiency of which is demonstrated on simulation studies. The pratical interest in ecology of our model is highlighted on a large dataset of plant-pollinator network."
+    "text": "The structure of a bipartite interaction network can be described by providing a clustering for each of the two types of nodes. Such clusterings are outputted by fitting a Latent Block Model (LBM) on an observed network that comes from a sampling of species interactions in the field. However, the sampling is limited and possibly uneven. This may jeopardize the fit of the LBM and then the description of the structure of the network by detecting structures which result from the sampling and not from actual underlying ecological phenomena. If the observed interaction network consists of a weighted bipartite network where the number of observed interactions between two species is available, the sampling efforts for all species can be estimated and used to correct the LBM fit. We propose to combine an observation model that accounts for sampling and an LBM for describing the structure of underlying possible ecological interactions. We develop an original inference procedure for this model, the efficiency of which is demonstrated on simulation studies. The pratical interest in ecology of our model is highlighted on a large dataset of plant-pollinator network.\nLink to paper\nGitHub repository"
   },
   {
     "objectID": "posts/ImpactMicrobiota.html",
     "href": "posts/ImpactMicrobiota.html",
     "title": "Impact of the Ileal Microbiota on Surgical Site Infections in Crohn’s Disease: A Nationwide Prospective Cohort",
     "section": "",
-    "text": "##Abstract\nBackground and aims: Surgery is performed in 50-70% of Crohn’s disease [CD] patients, and its main risk is surgical site infection [SSI]. The microbiota has been extensively assessed in CD but not as a potential risk factor for septic morbidity. The objective of this study was to assess the impact of the gut microbiota on SSI in CD.\nMethods: We used the multicentric REMIND prospective cohort to identify all patients who experienced SSI after ileocolonic resection for CD, defined as any postoperative local septic complication within 90 days after surgery: wound abscess, intra-abdominal collection, anastomotic leakage or enterocutaneous fistula. The mucosa-associated microbiota of the ileal resection specimen was analysed by 16S gene sequencing in 149 patients. The variable selection and prediction were performed with random forests [R package VSURF] on clinical and microbiotal data. The criterion of performance that we considered was the area under the Receiver Operating Characteristic [ROC] curve [AUC].\nResults: SSI occurred in 24 patients [16.1%], including 15 patients [10.1%] with major morbidity. There were no significant differences between patients with or without SSI regarding alpha and beta diversity. The top selected variables for the prediction of SSI were all microbiota-related. The maximum AUC [0.796] was obtained with a model including 14 genera, but an AUC of 0.78 had already been obtained with a model including only six genera [Hungatella, Epulopiscium, Fusobacterium, Ruminococcaceae_ucg_009, Actinomyces and Ralstonia].\nConclusion: The gut microbiota has the potential to predict SSI after ileocolonic resection for CD. It might play a role in this frequent postoperative complication.\n\n\n\nCitationBibTeX citation:@online{anakok2022,\n  author = {Anakok, Emre and Julien, Clément},\n  title = {Impact of the {Ileal} {Microbiota} on {Surgical} {Site}\n    {Infections} in {Crohn’s} {Disease:} {A} {Nationwide} {Prospective}\n    {Cohort}},\n  date = {2022-02-26},\n  url = {https://academic.oup.com/ecco-jcc/article/16/8/1211/6537605},\n  doi = {10.1093/ecco-jcc/jjac026},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nAnakok, Emre, and Clément Julien. 2022. “Impact of the Ileal\nMicrobiota on Surgical Site Infections in Crohn’s Disease: A Nationwide\nProspective Cohort.” Journal of Crohn’s and Colitis. February 26,\n2022. https://doi.org/10.1093/ecco-jcc/jjac026."
+    "text": "Background and aims: Surgery is performed in 50-70% of Crohn’s disease [CD] patients, and its main risk is surgical site infection [SSI]. The microbiota has been extensively assessed in CD but not as a potential risk factor for septic morbidity. The objective of this study was to assess the impact of the gut microbiota on SSI in CD.\nMethods: We used the multicentric REMIND prospective cohort to identify all patients who experienced SSI after ileocolonic resection for CD, defined as any postoperative local septic complication within 90 days after surgery: wound abscess, intra-abdominal collection, anastomotic leakage or enterocutaneous fistula. The mucosa-associated microbiota of the ileal resection specimen was analysed by 16S gene sequencing in 149 patients. The variable selection and prediction were performed with random forests [R package VSURF] on clinical and microbiotal data. The criterion of performance that we considered was the area under the Receiver Operating Characteristic [ROC] curve [AUC].\nResults: SSI occurred in 24 patients [16.1%], including 15 patients [10.1%] with major morbidity. There were no significant differences between patients with or without SSI regarding alpha and beta diversity. The top selected variables for the prediction of SSI were all microbiota-related. The maximum AUC [0.796] was obtained with a model including 14 genera, but an AUC of 0.78 had already been obtained with a model including only six genera [Hungatella, Epulopiscium, Fusobacterium, Ruminococcaceae_ucg_009, Actinomyces and Ralstonia].\nConclusion: The gut microbiota has the potential to predict SSI after ileocolonic resection for CD. It might play a role in this frequent postoperative complication.\nLink to paper"
+  },
+  {
+    "objectID": "posts/BFVGAE.html#abstract",
+    "href": "posts/BFVGAE.html#abstract",
+    "title": "Bipartite Graph Variational Auto-Encoder with Fair Latent Representation to Account for Sampling Bias in Ecological Networks",
+    "section": "",
+    "text": "We propose a method to represent bipartite networks using graph embeddings tailored to tackle the challenges of studying ecological networks, such as the ones linking plants and pollinators, where many covariates need to be accounted for, in particular to control for sampling bias. We adapt the variational graph auto-encoder approach to the bipartite case, which enables us to generate embeddings in a latent space where the two sets of nodes are positioned based on their probability of connection. We translate the fairness framework commonly considered in sociology in order to address sampling bias in ecology. By incorporating the Hilbert-Schmidt independence criterion (HSIC) as an additional penalty term in the loss we optimize, we ensure that the structure of the latent space is independent of continuous variables, which are related to the sampling process. Finally, we show how our approach can change our understanding of ecological networks when applied to the Spipoll data set, a citizen science monitoring program of plant-pollinator interactions to which many observers contribute, making it prone to sampling bias.\nLink to preprint\nGitHub Repository"
+  },
+  {
+    "objectID": "posts/ImpactMicrobiota.html#abstract",
+    "href": "posts/ImpactMicrobiota.html#abstract",
+    "title": "Impact of the Ileal Microbiota on Surgical Site Infections in Crohn’s Disease: A Nationwide Prospective Cohort",
+    "section": "",
+    "text": "Background and aims: Surgery is performed in 50-70% of Crohn’s disease [CD] patients, and its main risk is surgical site infection [SSI]. The microbiota has been extensively assessed in CD but not as a potential risk factor for septic morbidity. The objective of this study was to assess the impact of the gut microbiota on SSI in CD.\nMethods: We used the multicentric REMIND prospective cohort to identify all patients who experienced SSI after ileocolonic resection for CD, defined as any postoperative local septic complication within 90 days after surgery: wound abscess, intra-abdominal collection, anastomotic leakage or enterocutaneous fistula. The mucosa-associated microbiota of the ileal resection specimen was analysed by 16S gene sequencing in 149 patients. The variable selection and prediction were performed with random forests [R package VSURF] on clinical and microbiotal data. The criterion of performance that we considered was the area under the Receiver Operating Characteristic [ROC] curve [AUC].\nResults: SSI occurred in 24 patients [16.1%], including 15 patients [10.1%] with major morbidity. There were no significant differences between patients with or without SSI regarding alpha and beta diversity. The top selected variables for the prediction of SSI were all microbiota-related. The maximum AUC [0.796] was obtained with a model including 14 genera, but an AUC of 0.78 had already been obtained with a model including only six genera [Hungatella, Epulopiscium, Fusobacterium, Ruminococcaceae_ucg_009, Actinomyces and Ralstonia].\nConclusion: The gut microbiota has the potential to predict SSI after ileocolonic resection for CD. It might play a role in this frequent postoperative complication.\nLink to paper"
+  },
+  {
+    "objectID": "about.html#expérience",
+    "href": "about.html#expérience",
+    "title": "Qui suis-je ?",
+    "section": "Expérience",
+    "text": "Expérience\n\n\nTimeline\n\n\n\n\nDinosaurs Roamed the Earth\n\n\nRAWWWWWWRRR 🐢🦂\n\n\n\n\nCreative Component Launched\n\n\n“We can be all things to all people!” 📣\n\n\n\n\nSquareflair was Born\n\n\n\n\n“We can be all things to Squarespace users!” 📣\n\n\n\n\nSquareflair Today\n\n\n“We design and build from scratch!” 📣\n\n\nWhen we say 100% custom we mean it— and we build all sites on the Squarespace Developer platform.\n\n\nDid you know that all of our pixels are hand-forged from the rarest of subpixels grown and harvested in the Nerd Forest? 🤜💥🤛\n\n  &lt;p&gt;&lt;strong&gt;Our success can be measured by lives and brands enhanced by 9+ years of 100% Squarespace-focused service!&lt;/strong&gt;&lt;/p&gt;\n  \n\nsquareflair.com\n\n&lt;/li&gt;"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "Qui suis-je ?",
+    "section": "Experience",
+    "text": "Experience\n\n\n  \n    \n    \n      Postdoctoral Position\n      LPSM / IMT\n      Oct 2019 – Present · Paris / Toulouse\n      \n        Courses at PolyTech for master students\n        Theoretical research on post hoc bounds\n        Collaboration on CNV dataset\n        Astrophysics research\n      \n    \n  \n\n  \n    \n    \n      PhD Student\n      AgroParisTech\n      Oct 2016 – Sep 2019 · Paris / Grignon\n      \n        Courses for first and second-year students\n        Theoretical research on multivariate models\n        Collaboration with immunologists"
+  },
+  {
+    "objectID": "about.html#expériences",
+    "href": "about.html#expériences",
+    "title": "Qui suis-je ?",
+    "section": "Expériences",
+    "text": "Expériences"
+  },
+  {
+    "objectID": "about.html#present",
+    "href": "about.html#present",
+    "title": "Qui suis-je ?",
+    "section": "2024 - Present",
+    "text": "2024 - Present\nSoftware Engineer at XYZ Corp\n- Developing web applications using React and Node.js\n- Leading a team of 5 developers"
+  },
+  {
+    "objectID": "about.html#section",
+    "href": "about.html#section",
+    "title": "Qui suis-je ?",
+    "section": "2021 - 2024",
+    "text": "2021 - 2024\nThèse : Prise en compte des effets d’échantillonnage pour la détection de structure des réseaux écologiques et .\n🏢  MIA Paris-Saclay, Palaiseau \nEncadrant: Pierre Barbillon (MIA Paris-Saclay), Colin Fontaine (MNHM), Elisa Thebault (iEES).\nThèse soutenue au campus Agro Paris-Saclay le 16 décembre 2024.\nMots-clés: Statistiques appliquées à l’écologie, Théorie des graphes, réseaux plantes-pollinisateurs, modèle à blocs stochastiques, algorithme EM, échantillonnage, réseaux de neurones convolutifs."
+  },
+  {
+    "objectID": "about.html#section-1",
+    "href": "about.html#section-1",
+    "title": "Qui suis-je ?",
+    "section": "2020 - 2021",
+    "text": "2020 - 2021\nMaster 2 de Mathématiques et Application, parcours Statistiques.\n🏢  Sorbonne Université, Paris \nMots-clés: Modèles linéaires en grande dimension, apprentissage statistique, apprentissage automatique, optimisation stochastique, analyse statistique de graphe, acquisition compressée."
+  },
+  {
+    "objectID": "about.html#section-2",
+    "href": "about.html#section-2",
+    "title": "Qui suis-je ?",
+    "section": "2019 – 2020",
+    "text": "2019 – 2020\nMaster 1 de Mathématiques et Application.\n🏢  Sorbonne Université, Paris \nMots-clés: Statistiques avancées, statistiques computationnelles, géométrie différentielle"
+  },
+  {
+    "objectID": "about.html#section-3",
+    "href": "about.html#section-3",
+    "title": "Qui suis-je ?",
+    "section": "2018 - 2019",
+    "text": "2018 - 2019\nLicence 3 de Mathématiques\n🏢  Sorbonne Université, Paris \nMots-clés: Statistiques numériques, approximation numérique de fonction, théorie de la mesure."
+  },
+  {
+    "objectID": "about.html#section-4",
+    "href": "about.html#section-4",
+    "title": "Qui suis-je ?",
+    "section": "2016 - 2018",
+    "text": "2016 - 2018\nClasse Préparatoire aux Grandes Écoles Math-Physique\n🏢  Lycée Fénelon, Paris"
+  },
+  {
+    "objectID": "about.html#depuis-2025",
+    "href": "about.html#depuis-2025",
+    "title": "Qui suis-je ?",
+    "section": "Depuis 2025",
+    "text": "Depuis 2025\nPost-Doctorat : Développement de méthodes statistiques pour la reconstruction de routes d’invasion biologique, inférence de scénarios évolutionnaires complexes à partir de données génomiques en utilisant des graphes admixtures.\n🏢  Centre Biologique de Gestion des Populations, Montpellier \nMots-clés: Génétique des populations, Graphes admixtures\n\nExploration de l’espace des graphes admixtures et problèmes d’identifiabilités.\nUtilisation de modèles génératifs de graphes.\nApplications à des données génétiques d’espèces invasives."
+  },
+  {
+    "objectID": "about.html#mai-sep-2021",
+    "href": "about.html#mai-sep-2021",
+    "title": "Qui suis-je ?",
+    "section": "Mai-Sep 2021",
+    "text": "Mai-Sep 2021\nStage de M2 : Participation à la conception du design magnétique d’une machine IRM à 14 T en utilisant différentes techniques d’intelligence artificielle\n🏢  CEA, Saclay \nMots-clés: Opera-2d 2020, algorithme génétique, optimisation sous contrainte, magnétisme\nEncadrants : Valerio Calvelli (CEA)\n\nMettre en place un code Python capable d’interagir avec le logiciel Opera-2d 2020.\nTrouver une configuration optimale respectant des contraintes à l’aide d’un algorithme génétique."
+  },
+  {
+    "objectID": "about.html#jul-sep-2020",
+    "href": "about.html#jul-sep-2020",
+    "title": "Qui suis-je ?",
+    "section": "Jul-Sep 2020",
+    "text": "Jul-Sep 2020\nStage de M1 : Apprentissage statistique pour tester l’influence du microbiote intestinal sur la réponse au traitement de la maladie de Crohn\n🏢  Laboratoire de Probabilité, Statistiques et Modélisation, Paris \nMots-clés: Machine learning, forêts aléatoires, sélection de variables en grande dimension, MCMC\nEncadrants : Anna Bonnet (LPSM), Sylvain Le Corff (LPSM), Harry Sokol (AP-HP)\n\nSélectionner des variables pertinentes à l’aide de forêts aléatoires et comparer les résultats avec d’autres études.\nImplémenter un algorithme MCMC de sélection de variables dans un modèle de régression logistique.\nLe stage a abouti à l’écriture d’un article publié : Impact of the Ileal Microbiota on Surgical Site Infections in Crohn’s Disease : A Nationwide Prospective Cohort, Journal of Crohn’s and Colitis, Volume 16, Issue 8, August 2022, Pages 1211–1221, https://doi.org/10.1093/ecco-jcc/jjac026"
   }
 ]

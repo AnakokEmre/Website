@@ -12,7 +12,7 @@ about:
       icon: github
       target: _blank
     - text: Email
-      href: mailto:emre.anakok@agroparistech.fr
+      href: mailto:emre.anakok@supagro.fr
       icon: envelope
 ---
 

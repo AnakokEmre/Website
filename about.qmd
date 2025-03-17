@@ -26,6 +26,7 @@ Actuellement en post-doc, je souhaite devenir enseignant-chercheur en statistiqu
 
 Thèse soutenue au campus Agro Paris-Saclay le 16 décembre 2024.
 
+[Lien vers la thèse](https://theses.hal.science/tel-04849734)
 
 **Mots-clés:** Statistiques appliquées à l'écologie, Théorie des graphes, réseaux plantes-pollinisateurs, modèle à blocs stochastiques, algorithme EM, échantillonnage, réseaux de neurones convolutifs.
 :::

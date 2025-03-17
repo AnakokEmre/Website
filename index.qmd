@@ -16,5 +16,4 @@ about:
       icon: envelope
 ---
 
-Troisième année de thèse, je devrais soutenir le 16 décembre 2024.
-
+Je suis actuellement post-doctorant au Centre Biologique de Gestion des Populations à Montpellier.

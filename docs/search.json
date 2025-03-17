@@ -11,14 +11,14 @@
     "href": "bibliographie.html",
     "title": "Publications",
     "section": "",
-    "text": "Bipartite Graph Variational Auto-Encoder with Fair Latent Representation to Account for Sampling Bias in Ecological Networks\n\n\n\n\n\n\n\nCitizen Science\n\n\nEcological network\n\n\nGraph Neural Network\n\n\nHilbert-Schmidt Independence Criterion\n\n\nSampling Effect\n\n\n\n\nTranslating the fairness framework commonly considered in sociology in order to address sampling bias in ecology using graph embeddings.\n\n\n\n\n\n\nJul 15, 2024\n\n\nEmre Anakok, Pierre Barbillon, Colin Fontaine, Elisa Thebault\n\n\n\n\n\n\n  \n\n\n\n\nDisentangling the structure of ecological bipartite networks from observation processes\n\n\n\n\n\n\n\nLatent Block Model\n\n\nSampling Effect\n\n\nStochastic Expectation Maximization\n\n\nNestedness\n\n\nModularity\n\n\n\n\nA new model to for network analysis.\n\n\n\n\n\n\nMar 1, 2024\n\n\nEmre Anakok, Pierre Barbillon, Colin Fontaine, Elisa Thebault\n\n\n\n\n\n\n  \n\n\n\n\nImpact of the Ileal Microbiota on Surgical Site Infections in Crohn’s Disease: A Nationwide Prospective Cohort\n\n\n\n\n\n\n\nRandom forest\n\n\nGut microbiota\n\n\nCrohn’s disease\n\n\nPrediction\n\n\n\n\nThe objective of this study was to assess the impact of the gut microbiota on surgical site infection in Crohn’s disease.\n\n\n\n\n\n\nFeb 26, 2022\n\n\nEmre Anakok, Clément Julien\n\n\n\n\n\n\nNo matching items"
+    "text": "Bipartite Graph Variational Auto-Encoder with Fair Latent Representation to Account for Sampling Bias in Ecological Networks\n\n\n\n\n\n\nCitizen Science\n\n\nEcological network\n\n\nGraph Neural Network\n\n\nHilbert-Schmidt Independence Criterion\n\n\nSampling Effect\n\n\n\nTranslating the fairness framework commonly considered in sociology in order to address sampling bias in ecology using graph embeddings. \n\n\n\n\n\nJul 15, 2024\n\n\nEmre Anakok, Pierre Barbillon, Colin Fontaine, Elisa Thebault\n\n\n\n\n\n\n\n\n\n\n\n\nDisentangling the structure of ecological bipartite networks from observation processes\n\n\n\n\n\n\nLatent Block Model\n\n\nSampling Effect\n\n\nStochastic Expectation Maximization\n\n\nNestedness\n\n\nModularity\n\n\n\nA new model to for network analysis. \n\n\n\n\n\nMar 1, 2024\n\n\nEmre Anakok, Pierre Barbillon, Colin Fontaine, Elisa Thebault\n\n\n\n\n\n\n\n\n\n\n\n\nImpact of the Ileal Microbiota on Surgical Site Infections in Crohn’s Disease: A Nationwide Prospective Cohort\n\n\n\n\n\n\nRandom forest\n\n\nGut microbiota\n\n\nCrohn’s disease\n\n\nPrediction\n\n\n\nThe objective of this study was to assess the impact of the gut microbiota on surgical site infection in Crohn’s disease.\n\n\n\n\n\nFeb 26, 2022\n\n\nEmre Anakok, Clément Julien\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Emre Anakok",
     "section": "",
-    "text": "Troisième année de thèse, je devrais soutenir le 16 décembre 2024."
+    "text": "Je suis actuellement post-doctorant au Centre Biologique de Gestion des Populations à Montpellier."
   },
   {
     "objectID": "latex/Back_propagation.html",
@@ -39,7 +39,7 @@
     "href": "latex.html",
     "title": "Latex plots",
     "section": "",
-    "text": "Back propagation\n\n\n\n\n\nNeural network with back propagation equation\n\n\n\n\n\n\nOct 24, 2024\n\n\nEmre Anakok\n\n\n\n\n\n\n  \n\n\n\n\nMessage Passing\n\n\n\n\n\nScheme of message passing\n\n\n\n\n\n\nOct 24, 2024\n\n\nEmre Anakok\n\n\n\n\n\n\nNo matching items"
+    "text": "Back propagation\n\n\n\n\n\nNeural network with back propagation equation \n\n\n\n\n\nOct 24, 2024\n\n\nEmre Anakok\n\n\n\n\n\n\n\n\n\n\n\n\nMessage Passing\n\n\n\n\n\nScheme of message passing \n\n\n\n\n\nOct 24, 2024\n\n\nEmre Anakok\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/BFVGAE.html",

@@ -1,0 +1,51 @@
+---
+title: "Node clustering"
+description: | 
+  Unsupervised node clustering task for networks
+image: Node_clustering.png
+date: 03/18/2025
+author:
+  - name: Emre Anakok 
+---
+
+![](Node_clustering.png)
+
+
+
+**The following code assumes that the following files are located in the same directory as the .tex file :<a href="vertices.csv" download="vertices.csv">vertices.csv</a> <a href="edges.csv" download="edges.csv">edges.csv</a>**
+
+
+
+
+```{r}
+vertices = read.table("vertices.csv",header=T, sep= ",")
+head(vertices)
+```
+
+```{r}
+edges = read.table("edges.csv",header=T, sep= ",")
+head(edges)
+```
+
+``` tex
+\documentclass[border=3pt,tikz]{standalone}
+\usepackage{amsmath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{pgfplots}
+\definecolor{taupegray}{rgb}{0.55, 0.52, 0.54}
+
+\usepackage{tikz-network}
+
+\begin{document}
+
+\begin{tikzpicture}
+    %\draw (-4,-3) grid (3,3);
+    \draw[color=red,dashed,fill=red, fill opacity = 0.25] (-2.1,0.25) ellipse (3 and 2);
+    \draw[color=blue,dashed,fill=blue, fill opacity = 0.25,rotate around = {-45:(2.9,1.4)}] (2.9,1.4) ellipse (3 and 2);
+    \Vertices[color=vertexfill]{vertices.csv}
+    \Edges{edges.csv}
+\end{tikzpicture}
+
+
+\end{document}
+```

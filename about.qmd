@@ -4,12 +4,23 @@ title: "Qui suis-je ?"
 
 Actuellement en post-doc, je souhaite devenir enseignant-chercheur en statistiques appliquées.
 
+# Travaux de recherche actuels
+
+**Mots Clés:** Graphes d'admixture, Invasion biologique, Génétique des populations.  
+
+**Collaborateurs:** Arnaud Estoup, Mathieu Gautier (INRAE, CBGP, Montpellier), Paul Bastide (CNRS, Univ. Paris Cité, Paris),
+Cécile Ané (Univ. of Wisconsin-Madison, USA), Jean-Michel Marin (IMAG, Univ. Montpellier, Montpellier)
+
+J'ai commencé depuis le 3 mars 2025 au **Centre Biologique de Gestion des Populations** de Montpellier un contrat post-doctoral en tant que chargé de recherche. Je travaille sur des développements méthodologiques pour inférer des graphes de mélange (ou d'admixture, abrégé en GM) en génétique des populations d’espèces envahissantes. Les GM représentent schématiquement l’histoire évolutive de populations via des fusions et des séparations de populations. Ils sont inférés à l’aide de méthodes statistiques appliquées aux corrélations des fréquences alléliques. Les objectifs du post-doc sont multiples. Il s'agit d'abord de comparer les méthodes d’inférence existantes sur des données simulées et réelles, en analysant notamment des approches bayésiennes et des méthodes basées sur la vraisemblance. De plus, la grande taille de l'espace des GM complique ces méthodologies et pose des défis d'identifiabilité, que nous souhaitons étudier en s'inspirant de la littérature déjà existante pour les arbres phylogénétiques. Un autre objectif du post-doctorat sera d’intégrer l’incertitude dans l’estimation de la covariance des fréquences alléliques des populations et d’adapter ces estimations à des données plus complexes, telles que les données Pool-Seq. Enfin, j'envisage également d'appliquer mes connaissances sur les Graph Neural Networks. Dans cette optique, je propose de développer des méthodologies innovantes pour l'estimation des GM, en m'inspirant des modèles génératifs de graphes. Les méthodologies développées seront appliquées à des jeux de données génomiques disponibles pour de nombreuses populations natives et envahissantes de deux espèces d’insectes envahissants, la coccinelle *Harmonia axyridis* et la drosophile *Drosophila suzukii*.
+
+
+
 # Études
 
 :::: {.columns}
 
 ::: {.column width="25%"}
-## 2021 - 2024
+### 2021 - 2024
 
 🏢 [ MIA Paris-Saclay, Palaiseau ]{style="color:gray;"}
 
@@ -22,7 +33,7 @@ Actuellement en post-doc, je souhaite devenir enseignant-chercheur en statistiqu
 
 
 ::: {.column width="70%"}
-## Thèse : Prise en compte des effets d'échantillonnage pour la détection de structure des réseaux écologiques
+### Thèse : Prise en compte des effets d'échantillonnage pour la détection de structure des réseaux écologiques
 
 Thèse soutenue au campus Agro Paris-Saclay le 16 décembre 2024.
 
@@ -33,13 +44,14 @@ Thèse soutenue au campus Agro Paris-Saclay le 16 décembre 2024.
 
 :::: 
 
+---
 
 
 :::: {.columns}
 
 
 ::: {.column width="25%"}
-## 2020 - 2021
+### 2020 - 2021
 
 🏢 [ Sorbonne Université, Paris ]{style="color:gray;"}
 :::
@@ -49,18 +61,20 @@ Thèse soutenue au campus Agro Paris-Saclay le 16 décembre 2024.
 :::
 
 ::: {.column width="70%"}
-## Master 2 de Mathématiques et Application, parcours Statistiques.
+### Master 2 de Mathématiques et Application, parcours Statistiques.
 **Mots-clés:** Modèles linéaires en grande dimension, apprentissage statistique, apprentissage automatique, optimisation stochastique, analyse statistique de graphe, acquisition compressée.
 :::
 
 :::: 
 
+---
+
 
 :::: {.columns}
 
 
 ::: {.column width="25%"}
-## 2019 - 2020
+### 2019 - 2020
 
 🏢 [ Sorbonne Université, Paris ]{style="color:gray;"}
 :::
@@ -70,17 +84,20 @@ Thèse soutenue au campus Agro Paris-Saclay le 16 décembre 2024.
 :::
 
 ::: {.column width="70%"}
-## Master 1 de Mathématiques et Application.
+### Master 1 de Mathématiques et Application.
 **Mots-clés:** Statistiques avancées, statistiques computationnelles, géométrie différentielle
 :::
 
 :::: 
 
+---
+
+
 :::: {.columns}
 
 
 ::: {.column width="25%"}
-## 2018 - 2019
+### 2018 - 2019
 
 🏢 [ Sorbonne Université, Paris ]{style="color:gray;"}
 :::
@@ -90,17 +107,19 @@ Thèse soutenue au campus Agro Paris-Saclay le 16 décembre 2024.
 :::
 
 ::: {.column width="70%"}
-## Licence 3 de Mathématiques
+### Licence 3 de Mathématiques
 **Mots-clés:** Statistiques numériques, approximation numérique de fonction, théorie de la mesure.
 :::
 
 :::: 
 
+---
+
 :::: {.columns}
 
 
 ::: {.column width="25%"}
-## 2016 - 2018
+### 2016 - 2018
 
 🏢 [ Lycée Fénelon, Paris ]{style="color:gray;"}
 :::
@@ -110,13 +129,14 @@ Thèse soutenue au campus Agro Paris-Saclay le 16 décembre 2024.
 :::
 
 ::: {.column width="70%"}
-## Classe Préparatoire aux Grandes Écoles Math-Physique
+### Classe Préparatoire aux Grandes Écoles Math-Physique
 
 
 :::
 
 :::: 
 
+---
 
 
 # Expériences
@@ -126,7 +146,7 @@ Thèse soutenue au campus Agro Paris-Saclay le 16 décembre 2024.
 
 
 ::: {.column width="25%"}
-## Depuis 2025
+### Depuis 2025
 
 🏢 [ Centre Biologique de Gestion des Populations, Montpellier ]{style="color:gray;"}
 :::
@@ -136,7 +156,7 @@ Thèse soutenue au campus Agro Paris-Saclay le 16 décembre 2024.
 :::
 
 ::: {.column width="70%"}
-## Post-Doctorat : Développement de méthodes statistiques pour la reconstruction de routes d'invasion biologique, inférence de scénarios évolutionnaires complexes à partir de données génomiques en utilisant des graphes admixtures.
+### Post-Doctorat : Développement de méthodes statistiques pour la reconstruction de routes d'invasion biologique, inférence de scénarios évolutionnaires complexes à partir de données génomiques en utilisant des graphes admixtures.
 **Mots-clés:** Génétique des populations, Graphes admixtures
 
 -   Exploration de l'espace des graphes admixtures et problèmes d'identifiabilités.
@@ -146,11 +166,14 @@ Thèse soutenue au campus Agro Paris-Saclay le 16 décembre 2024.
 
 :::: 
 
+---
+
+
 :::: {.columns}
 
 
 ::: {.column width="25%"}
-## Mai-Sep 2021 
+### Mai-Sep 2021 
 
 🏢 [ CEA, Saclay ]{style="color:gray;"}
 
@@ -163,7 +186,7 @@ Thèse soutenue au campus Agro Paris-Saclay le 16 décembre 2024.
 :::
 
 ::: {.column width="70%"}
-## Stage de M2 : Participation à la conception du design magnétique d'une machine IRM à 14 T en utilisant différentes techniques d'intelligence artificielle.
+### Stage de M2 : Participation à la conception du design magnétique d'une machine IRM à 14 T en utilisant différentes techniques d'intelligence artificielle.
 **Mots-clés:** Opera-2d 2020, algorithme génétique, optimisation sous contrainte, magnétisme
 
 -   Mettre en place un code Python capable d'interagir avec le logiciel Opera-2d 2020.
@@ -172,11 +195,14 @@ Thèse soutenue au campus Agro Paris-Saclay le 16 décembre 2024.
 
 :::: 
 
+---
+
+
 :::: {.columns}
 
 
 ::: {.column width="25%"}
-## Mai-Sep 2021 
+### Mai-Sep 2021 
 🏢 [ Laboratoire de Probabilité, Statistiques et Modélisation, Paris ]{style="color:gray;"}
 
 **Encadrants** : Anna Bonnet (LPSM), Sylvain Le Corff (LPSM), Harry Sokol (AP-HP)
@@ -187,7 +213,7 @@ Thèse soutenue au campus Agro Paris-Saclay le 16 décembre 2024.
 :::
 
 ::: {.column width="70%"}
-## Stage de M1 : Apprentissage statistique pour tester l'influence du microbiote intestinal sur la réponse au traitement de la maladie de Crohn.
+### Stage de M1 : Apprentissage statistique pour tester l'influence du microbiote intestinal sur la réponse au traitement de la maladie de Crohn.
 **Mots-clés:** Machine learning, forêts aléatoires, sélection de variables en grande dimension, MCMC
 
 

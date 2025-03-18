@@ -1,0 +1,112 @@
+---
+title: "Artificial neuron"
+description: | 
+  Basic unit of neural networks
+image: Neurone_formel.png
+date: 03/18/2025
+author:
+  - name: Emre Anakok 
+---
+
+![](Neurone_formel.png)
+
+``` tex
+\documentclass[border=3pt,tikz]{standalone}
+\usepackage{amsmath} % for aligned
+\usepackage{listofitems} % for \readlist to create arrays
+\usetikzlibrary{arrows.meta} % for arrow size
+\usepackage[outline]{contour} % glow around text
+\contourlength{1.4pt}
+
+% COLORS
+
+\usepackage{contour} % glow around text
+\contourlength{1.4pt}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{pgfplots}
+\definecolor{taupegray}{rgb}{0.55, 0.52, 0.54}
+\usepackage{neuralnetwork}
+
+\usepackage{tikz-network}
+\usepackage{xcolor}
+\colorlet{myred}{red!80!black}
+\colorlet{myblue}{blue!80!black}
+\colorlet{mygreen}{green!60!black}
+\colorlet{myyellow}{yellow!60!white}
+\colorlet{myorange}{orange!70!red!60!black}
+\colorlet{mydarkred}{red!30!black}
+\colorlet{mydarkblue}{blue!40!black}
+\colorlet{mydarkgreen}{green!30!black}
+\colorlet{mydarkyellow}{yellow!30!black}
+
+\tikzset{
+  >=latex, % for default LaTeX arrow head
+  node/.style={thick,circle,draw=myblue,minimum size=22,inner sep=0.5,outer sep=0.6},
+  node in/.style={node,green!20!black,draw=mygreen!30!black,fill=mygreen!25},
+  node hidden/.style={node,blue!20!black,draw=myblue!30!black,fill=myblue!20},
+  node convol/.style={node,orange!20!black,draw=myorange!30!black,fill=myorange!20},
+  node out/.style={node,red!20!black,draw=myred!30!black,fill=myred!20},
+  connect/.style={thick,mydarkblue}, %,line cap=round
+  connect arrow/.style={-{Latex[length=4,width=3.5]},thick,mydarkblue,shorten <=0.5,shorten >=1},
+  node 1/.style={node in}, % node styles, numbered for easy mapping with \nstyle
+  node 2/.style={node hidden},
+  node 3/.style={node out}
+}
+\def\nstyle{int(\lay<\Nnodlen?min(2,\lay):3)} % map layer number onto 1, 2, or 3
+
+\begin{document}
+
+\begin{tikzpicture}%[x=2.7cm,y=1.6cm]
+  \message{^^JNeural network activation}
+  \def\NI{5} % number of nodes in input layers
+  \def\NO{1} % number of nodes in output layers
+  \def\yshift{0.4} % shift last node for dots
+  
+  % INPUT LAYER
+  \foreach \i [evaluate={\c=int(\i==\NI); \y=\NI/2-\i-\c*\yshift; \index=(\i<\NI?int(\i):"n");}]
+              in {1,...,\NI}{ % loop over nodes
+    \node[node in,outer sep=0.6] (NI-\i) at (0,\y) {$x_{\index}$};
+  }
+  
+  % OUTPUT LAYER
+    \node[node hidden]
+        (NO) at (3,-2*\yshift) {$\Sigma$};
+      
+      \foreach \j [evaluate={\index=(\j<\NI?int(\j):"n");}] in {1,...,\NI}{ % loop over nodes in previous layer
+         \draw[connect arrow,white,line width=1.2] (NI-\j) -- (NO);
+         \draw[connect arrow] (NI-\j) -- (NO)
+           node[pos=0.50] {\contour{white}{$w_{\index}$}};
+      }
+    
+    % \fi
+  % DOTS
+  \path (NI-\NI) --++ (0,0.8+\yshift) node[midway,scale=1.2] {$\vdots$};
+
+  \node[dashed, circle,draw=myblue,fill=mygreen!25]
+  (NB) at (3,2*\yshift) {$b$};
+  \draw[connect arrow] (NB) -- (NO);
+  
+  \node[dashed,circle,draw=black,minimum size=22] (activation) at (5,-2*\yshift) {};
+  %\path (NO-\NO) --++ (0,1+\yshift) node[midway,scale=1.2] {$\vdots$};
+      \begin{scope}[shift={(5,-2*\yshift)},scale=0.08]
+      \draw[thick] (0,0) plot[domain=-3:3] (\x,{6/(1 + exp(-1*\x))-3});
+    \end{scope}
+    \draw[connect] (NO) -- (activation);
+  
+  \node[node out] (output) at (7,-2*\yshift) {$y$}; 
+      \draw[connect arrow] (activation) -- (output);
+
+  \node[above=0.5,align=center,mygreen!60!black] at (NI-1.90) {Couche\\[-0.2em]d'entrée};
+  \node[above=0.5,align=center,mygreen!60!black] at (NB) {Biais};
+  \node[above=0.5,align=center,myblue!60!black] at (output) {Sortie};
+  \node[above=0.5,align=center,black] at (activation) {Fonction\\[-0.2em]d'activation};
+  \node[above=0.75,align=center,myblue!60!black] at (1.5,0) {Poids};
+  \node[below=1,align=center ] at (6,-2*\yshift) {$\begin{aligned}
+  y=\sigma\left(\sum_{i=1}^n  w_i x_i +b\right)
+  \end{aligned}$};
+
+\end{tikzpicture}
+
+\end{document}
+```

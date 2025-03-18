@@ -1,0 +1,117 @@
+---
+title: "Etymology of the word \"échantillonnage\" "
+description: | 
+  Origin of the word \"échantillonnage\", which means \"sampling\" in French
+image: echantillonnage_etymologie.png
+date: 03/18/2025
+author:
+  - name: Emre Anakok 
+---
+
+![](echantillonnage_etymologie.png)
+
+``` tex
+\documentclass[border=3pt,tikz]{standalone}
+\usepackage{amsmath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{pgfplots}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta} 
+\def\v1{-4}
+
+\begin{document}
+
+\begin{tikzpicture}[thick,scale=1, every node/.style={scale=1.1}]
+    \node[draw] (A) at (0,0) {Échantillonnage};
+    \node[text width = 5.5cm] (A2) at ($(A) + (5,1)$) {\textit{Action d'échantillonner, détacher un morceau, prendre un fragment ou une partie d'un ensemble pour représenter l'ensemble.}};
+
+    \node[diamond,draw] (age) at ($(A) + (7,-2)$) {-age};
+    \node[text width = 2.2cm] (age2) at ($(age) + (2,0)$) {\textit{Résultat d'une action.}};
+    \draw[->,>=stealth] (age)--(A);
+
+    \node[diamond,draw] (aticus) at ($(age) + (0,-14.5)$) {-aticus};
+    \node[text width = 2.2cm] (aticus2) at ($(aticus) + (2.1,0)$) {\textit{Résultat d'une action.}};
+    \draw[->,>=stealth] (aticus)--(age);
+
+
+    \node[draw,align=center,text width={width("Échantillonnage")}] (eschantillon) at ($(A) + (-2,-4)$) {eschantillon};
+
+    \draw[->,>=stealth] (eschantillon)--(A);
+\node[text width = 3cm] (eschantillon2) at ($(eschantillon) + (3.2,0)$) {\textit{Morceau de bois, brique, ou bord.}};
+    \node[diamond,draw,align=center,text width={width(" -age")}] (on) at ($(eschantillon) + (6.5,-2)$) { -on};
+    \node[text width = 2.2cm] (on2) at ($(on) + (2,0)$) {\textit{Suffixe diminutif}};
+    \draw[->,>=stealth] (on)--(eschantillon);
+
+    \node[draw,align=center,text width={width("Échantillonnage")}] (eschantille) at ($(eschantillon) + (0,-2.5)$) {eschantille};
+    \node[text width = 2.5cm] (eschantille2) at ($(eschantille) + (2.9,0)$) {\textit{Brique de petite épaisseur.}};    
+    \draw[->,>=stealth] (eschantille)--(eschantillon);
+
+    \node[diamond,draw,align=center,text width={width(" -age")}] (es) at ($(eschantille) + (-3.5,-2.5)$) { es-};
+    \node[text width = 2.2cm] (es2) at ($(es) + (1.5,-0.5)$) {\textit{"Hors de".}};
+
+    \draw[->,>=stealth] (es)--(eschantille);
+
+    \node[diamond,draw,align=center,text width={width(" -age")}] (ex) at ($(es) + (0,-7)$) { ex-};
+    \node[text width = 2.2cm] (ex2) at ($(ex) + (1.5,0.5)$) {\textit{"Hors de".}};
+    \draw[->,>=stealth] (ex)--(es);
+
+  %  \node[inner sep=0pt] (whitehead) at (-6,-2)
+  %  {\includegraphics[width=0.5\textwidth]{Vocabulaire_face_chant_bout.pdf}};
+
+    \node[draw,align=center,text width={width("Échantillonnage")}] (chantille) at ($(eschantille) + (0,-2.5)$) {chantille};
+    \node[text width = 2.5cm] (chantille2) at ($(chantille) + (2.9,0)$) {\textit{Brique, résultat d'une brisure.}};  
+    \draw[->,>=stealth] (chantille)--(eschantille);
+    
+
+    \node[draw,align=center,text width={width("Échantillonnage")}] (chantel) at ($(chantille) + (0,-2.5)$) {chantel};
+    \node[text width = 2.2cm] (chantel2) at ($(chantel) + (2.9,0)$) {\textit{Morceau, fragment.}};  
+    \draw[->,>=stealth] (chantel)--(chantille);
+
+    \node[diamond,draw,align=center,text width={width(" -age")}] (el) at ($(chantel) + (3,-2.5)$) { -el};
+    \node[text width = 2.2cm] (el2) at ($(el) + (2,0)$) {\textit{Suffixe diminutif.}};
+    \draw[->,>=stealth] (el)--(chantel);
+
+    \node[diamond,draw,align=center] (ellus) at ($(el) + (0,-2.5)$) { -ellus};
+    \node[text width = 2.2cm] (ellus2) at ($(ellus) + (2,0)$) {\textit{Suffixe diminutif.}};
+    \draw[->,>=stealth] (ellus)--(el);
+
+    \node[diamond,draw,align=center] (onis) at ($(on) + (0,-10.5)$) { -onis};
+    \node[text width = 4cm] (onis2) at ($(onis) + (0,-1.5)$) {\textit{Suffixe potentiellement augmentatif ou diminutif.}};
+    \draw[->,>=stealth] (onis)--(on);
+
+
+    \node[draw,align=center,text width={width("Échantillonnage")}] (chant) at ($(chantel) + (0,-2.5)$) {chant};
+    \node[text width = 2.2cm] (chant2) at ($(chant) + (-1.7,0.5)$) {\textit{Bord le plus long d'une planche.}};  
+    \draw[->,>=stealth] (chant)--(chantel);
+
+    \node[draw,align=center,text width={width("Échantillonnage")}] (canthus) at ($(chant) + (0,-2.5)$) {canthus};
+    \node[text width = 2.2cm] (canthus2) at ($(canthus) + (-1.2,-0.7)$) {\textit{Cerclage d'une roue.}};  
+    \draw[->,>=stealth] (canthus)--(chant);
+
+    \node[draw,align=center,text width={width("Échantillonnage")}] (cantos) at ($(canthus) + (0,-2.5)$) {*cantos};
+    \node[text width = 2.2cm] (cantos2) at ($(cantos) + (2.9,0)$) {\textit{Cerclage d'une roue.}};  
+    \draw[->,>=stealth] (cantos)--(canthus);
+
+    \draw[dashed] (-7.5,-3) -- (9,-3);
+    \draw[dashed] (-7.5,-15) -- (9,-15);
+    \draw[dashed] (-7.5,-18.5) -- (9,-18.5);
+
+    \node[] (FR) at (-6,-2.5) {Français}; 
+    \node[] (FR) at (-6,-3.5) {Ancien Français}; 
+    \node[] (FR) at (-7,-14.5) {Ancien Français}; 
+    \node[] (FR) at (-7,-15.5) {Latin}; 
+    \node[] (FR) at (-7,-18) {Latin};
+    \node[] (FR) at (-7,-19) {Gaulois}; 
+ 
+
+
+
+
+\end{tikzpicture}
+%,align=left,label = right:\textit{action d'échantilloner,\\ détacher un morceau, prendre \\ un fragment ou une partie d'un ensemble pour représenter l'ensemble.}
+
+
+\end{document}
+```

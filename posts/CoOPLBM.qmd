@@ -4,7 +4,7 @@ description: |
   A new model for network analysis.
 image: image/CoOPLBM.png
 
-date: 3/1/2024
+date: 03/17/2025
 author:
   - name: Emre Anakok 
     affiliation: Université Paris-Saclay, AgroParisTech, INRAE, UMR MIA Paris-Saclay, 91120, Palaiseau, France.
@@ -16,7 +16,9 @@ author:
     affiliation: Sorbonne Université, CNRS, IRD, INRAE, Université Paris Est Créteil, Université Paris Cité, Institute of Ecology and Environmental Sciences (iEES-Paris), 75005 Paris, France
 categories: [Latent Block Model, Sampling Effect, Stochastic Expectation Maximization, Nestedness, Modularity] 
 citation:
-  url: https://arxiv.org/abs/2211.16364v2
+  type: article-journal
+  url: https://doi.org/10.1214/24-AOAS1965
+  container-title: The Annals of Applied Statistics
 ---
 
 ## Abstract

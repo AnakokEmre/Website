@@ -10,8 +10,25 @@
   {
     "listing": "/latex.html",
     "items": [
+      "/latex/Neurone_formel.html",
+      "/latex/schema_autoencoder.html",
       "/latex/Back_propagation.html",
-      "/latex/Message_passing.html"
+      "/latex/echantillonnage_etymologie.html",
+      "/latex/LBM.html",
+      "/latex/Link_prediction.html",
+      "/latex/neurone_formel_matriciel.html",
+      "/latex/Message_passing.html",
+      "/latex/complete_manquante.html",
+      "/latex/reseau_de_neurones.html",
+      "/latex/Node_classification.html",
+      "/latex/Node_clustering.html",
+      "/latex/Pooling_edge.html",
+      "/latex/Pooling_edge_node.html",
+      "/latex/Pooling_node_edge.html",
+      "/latex/Pooling_node.html",
+      "/latex/spipoll_encoder.html",
+      "/latex/spipoll_full_encoder.html",
+      "/latex/SBM.html"
     ]
   }
 ]

@@ -1,0 +1,158 @@
+---
+title: "Pooling nodes"
+description: | 
+  Node pooling operation, also known as node feature aggregation.
+image: Pooling_node.png
+date: 10/24/2024
+author:
+  - name: Emre Anakok 
+---
+
+![](Pooling_node.png)
+
+``` tex
+\documentclass[border=3pt,tikz]{standalone}
+\usepackage{amsmath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{pgfplots}
+\definecolor{taupegray}{rgb}{0.55, 0.52, 0.54}
+\def\general_height{0.2}
+\usepackage{tikz-network}
+\begin{document}
+
+\begin{tikzpicture}
+
+    %\Text[x=-0.18,y=3cm]{\Large Couche $N$}
+    %\Text[x=14cm,y=3cm]{\Large Couche $N+1$}
+    
+    \begin{scope}[scale=2]
+    \Vertex[x=0.88,y=0.48,label=A,color=red]{A}
+    \Vertex[x=-0.18,y=0.98,label=B,color=green]{B}
+    \Vertex[x=-1,y=0.12,label=C,color=pink]{C}
+    \Vertex[x=-0.42,y=-0.9,label=D,color=yellow]{D}
+    \Vertex[x=0.72,y=-0.69,label=E,color=cyan]{E}
+    \Edge[color=gray](A)(B)
+    \Edge[color=gray](A)(C)
+    \Edge[color=gray](A)(D)
+    \Edge[color=gray](A)(E)
+    \Edge[color=gray](B)(C)
+    \Edge[color=gray](B)(D)
+    \Edge[color=gray](B)(E)
+    \end{scope}
+    
+    \begin{scope}[xshift=4cm]
+    \node[] at (1.5cm,3.5cm) {\huge $X^{V(l)}$};
+    \node[align = center, text width=5cm] at (1.5cm,5cm) {\Large Données sur tous les noeuds};
+    
+    \Vertex[x=0,y=2,Pseudo]{bar_C}
+    \begin{axis}[ybar stacked, 
+    yshift = 2cm,
+    height=\general_height\textwidth,
+     bar width=13pt,ymin=0,
+     x=17pt,
+     ytick=\empty,
+     xtick=\empty,
+     hide axis]
+        \addplot[fill=pink,opacity=0.5] coordinates
+            {(0,0.1) (1,0.05) (2,0.3) (3,0.2) (4,0.0)};
+        \end{axis}
+     
+    \Vertex[x=0,y=0,Pseudo]{K}
+    \begin{axis}[ybar stacked,
+    height=\general_height\textwidth,
+     bar width=13pt,ymin=0,
+     x=17pt,
+     ytick=\empty,
+     xtick=\empty,
+     hide axis]
+        \addplot[fill=red,opacity=0.5] coordinates
+            {(0,0.1) (1,0.1) (2,0.15) (3,0.2) (4,0.15)};
+        \end{axis}
+    
+    \Vertex[x=0,y=1,Pseudo]{L}
+    \begin{axis}[ybar stacked, 
+    yshift = 1cm,
+    height=\general_height\textwidth,
+     bar width=13pt,ymin=0,
+     x=17pt,
+     ytick=\empty,
+     xtick=\empty,
+     hide axis]
+        \addplot[fill=green,opacity=0.5] coordinates
+            {(0,0.2) (1,0.05) (2,0.1) (3,0.15) (4,0.05)};
+        \end{axis}
+    
+    \Vertex[x=0,y=-1,Pseudo]{bar_E}
+    \begin{axis}[ybar stacked, 
+    yshift = -1cm,
+    height=\general_height\textwidth,
+     bar width=13pt,ymin=0,
+     x=17pt,
+     ytick=\empty,
+     xtick=\empty,
+     hide axis]
+        \addplot[fill=blue,opacity=0.5] coordinates
+            {(0,0.2) (1,0.1) (2,0.2) (3,0.15) (4,0.05)};
+        \end{axis}
+    
+    \Vertex[x=0,y=-2,Pseudo]{M}
+    \begin{axis}[ybar stacked, 
+    yshift = -2cm,
+    height=\general_height\textwidth,
+     bar width=13pt,ymin=0,
+     x=17pt,
+     ytick=\empty,
+     xtick=\empty,
+     hide axis]
+        \addplot[fill=yellow,opacity=0.5] coordinates
+            {(0,0.1) (1,0.2) (2,0) (3,0.1) (4,0.1)};
+        \end{axis}
+    
+    %\draw (0,-2.5cm) -- (3,-2.5cm);
+     %\Text[x=3.5,y=-2.5cm]{\Huge $\mathbf{+}$}
+     \Vertex[x=3,y=0,Pseudo]{barplots}
+    
+    \end{scope}
+    \begin{scope}[xshift=12cm]
+    \node[] at (1.5cm,3.5cm) {\huge $X^{U(l+1)}$};
+    \node[align = center, text width=4cm] at (1.5cm,5cm) {\Large Données de contexte global};
+    
+    \Vertex[x=0,y=0,Pseudo]{agregation}
+    
+    
+    \begin{axis}[ybar stacked,
+    height= 5cm,
+    yshift = -1cm,
+     bar width=13pt,ymin=0,
+     x=17pt,
+     ytick=\empty,
+     xtick=\empty,
+     hide axis]
+     \addplot[fill=yellow,opacity=0.5] coordinates
+            {(0,0.1) (1,0.2) (2,0) (3,0.1) (4,0.1)};
+      \addplot[fill=blue,opacity=0.5] coordinates
+            {(0,0.2) (1,0.1) (2,0.2) (3,0.15) (4,0.05)};
+      \addplot[fill=red,opacity=0.5] coordinates
+            {(0,0.1) (1,0.1) (2,0.15) (3,0.2) (4,0.15)};
+     \addplot[fill=green,opacity=0.5] coordinates
+            {(0,0.2) (1,0.05) (2,0.1) (3,0.15) (4,0.05)};
+      \addplot[fill=pink,opacity=0.5] coordinates
+            {(0,0.1) (1,0.05) (2,0.3) (3,0.2) (4,0.0)};
+     \end{axis}
+     \Vertex[x=3,y=-3.5,Pseudo]{N}	
+    \end{scope}
+    %\node[align=center,text width=5cm] at (1,-4.5) {\large Agrégation des données des noeuds voisins};
+    
+    \Edge[bend=35,style={dashed},Direct](A)(K)
+    \Edge[bend=35,style={dashed},Direct](B)(L)
+    \Edge[bend=-35,style={dashed},Direct](D)(M)
+    \Edge[bend=70,style={dashed},Direct](C)(bar_C)
+    \Edge[bend=35,style={dashed},Direct](E)(bar_E)
+    
+    \Edge[style={dashed},Direct,label={\Huge $\phi$}](barplots)(agregation)
+\end{tikzpicture}
+
+
+    
+\end{document}
+```

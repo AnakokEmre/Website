@@ -1,0 +1,45 @@
+---
+title: "Node classification"
+description: | 
+  Supervised node classification task for networks
+image: Node_classification.png
+date: 03/18/2025
+author:
+  - name: Emre Anakok 
+---
+
+![](Node_classification.png)
+
+**The following code assumes that the following files are located in the same directory as the .tex file :**<a href="vertices.csv" download="vertices.csv">vertices.csv</a> <a href="edges.csv" download="edges.csv">edges.csv</a>
+
+```{r}
+vertices = read.table("vertices.csv",header=T, sep= ",")
+head(vertices)
+```
+
+```{r}
+edges = read.table("edges.csv",header=T, sep= ",")
+head(edges)
+```
+
+``` tex
+\documentclass[border=3pt,tikz]{standalone}
+\usepackage{amsmath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{pgfplots}
+\definecolor{taupegray}{rgb}{0.55, 0.52, 0.54}
+
+\usepackage{tikz-network}
+\begin{document}
+
+\begin{tikzpicture}
+    \Vertices{vertices.csv}
+    \Edges{edges.csv}
+    %I'm just covering two nodes with black nodes
+    \Vertex[x=-3.46945129191032,y=0.133852921140818,color=black,fontcolor= white,label=\textbf{?},fontsize=\LARGE]{t1}
+    \Vertex[x=3.89715084263323,y=0.296719898386208,color=black,fontcolor= white,label=\textbf{?},fontsize=\LARGE]{t2}
+\end{tikzpicture}
+    
+    
+\end{document}
+```

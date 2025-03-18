@@ -1,0 +1,44 @@
+---
+title: "Link prediction"
+description: | 
+  Link prediction task for networks
+image: Link_prediction.png
+date: 03/18/2025
+author:
+  - name: Emre Anakok 
+---
+
+![](Node_classification.png)
+
+**The following code assumes that the following files are located in the same directory as the .tex file :**<a href="vertices.csv" download="vertices.csv">vertices.csv</a> <a href="edges.csv" download="edges.csv">edges.csv</a>
+
+```{r}
+vertices = read.table("vertices.csv",header=T, sep= ",")
+head(vertices)
+```
+
+```{r}
+edges = read.table("edges.csv",header=T, sep= ",")
+head(edges)
+```
+
+``` tex
+\documentclass[border=3pt,tikz]{standalone}
+\usepackage{amsmath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{pgfplots}
+\definecolor{taupegray}{rgb}{0.55, 0.52, 0.54}
+
+\usepackage{tikz-network}
+\begin{document}
+
+\begin{tikzpicture}
+    \Vertices[color=vertexfill]{vertices.csv}
+    \Edges{edges.csv}
+    \Edge[style={dashed},label=\textbf{?},fontcolor=black,fontsize=\LARGE](13)(10)
+    \Edge[style={dashed},label=\textbf{?},fontcolor=black,fontsize=\LARGE](20)(21)
+    \Edge[style={dashed},label=\textbf{?},fontcolor=black,fontsize=\LARGE](17)(13)
+\end{tikzpicture}
+
+\end{document}
+```

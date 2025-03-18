@@ -1,0 +1,26 @@
+---
+title: "Spipoll auto encoder"
+description: | 
+  Scheme of Bipartite auto encoder for Spipoll data set
+image: spipoll_encoder.png
+date: 03/18/2025
+author:
+  - name: Emre Anakok 
+---
+
+![](spipoll_encoder.png)
+
+``` tex
+\documentclass[border=0pt,tikz]{standalone}
+\usepackage{amsmath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{pgfplots}
+\usepackage{tikz-cd}
+
+\begin{document}
+\begin{tikzcd}
+B,X_1,X_2 \arrow[r,"q"] \arrow[d, "\mathbf{1}( P^{\top}B>0)"] & Z_1, Z_2 \arrow[r,"p"] & \widehat{B} \arrow[d,"\Tilde{P}^T \widehat{B} "]  \\
+B' &  & \widehat{B'} \\
+\end{tikzcd}
+\end{document}
+```

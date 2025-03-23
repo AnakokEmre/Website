@@ -2,8 +2,9 @@
   {
     "listing": "/bibliographie.html",
     "items": [
-      "/posts/BFVGAE.html",
+      "/posts/GNN_feature_importance.html",
       "/posts/CoOPLBM.html",
+      "/posts/BFVGAE.html",
       "/posts/ImpactMicrobiota.html"
     ]
   },

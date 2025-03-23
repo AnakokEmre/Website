@@ -7,8 +7,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Emre Anakok">
+<meta name="author" content="Pierre Barbillon">
+<meta name="author" content="Colin Fontaine">
+<meta name="author" content="Elisa Thebault">
+<meta name="dcterms.date" content="2025-03-19">
+<meta name="description" content="We explore existing methods for interpreting GNNs in order to highlight the effects of various environmental covariates on pollination network connectivity.">
 
-<title>Emre Anakok - Publications</title>
+<title>Emre Anakok - Interpretability of Graph Neural Networks to Assert Effects of Global Change Drivers on Ecological Networks</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,26 +29,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -63,40 +66,9 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -106,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Emre Anakok</span>
     </a>
   </div>
@@ -117,19 +89,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
+    <a class="nav-link" href="../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../about.html" rel="" target="">
  <span class="menu-text">À propos de moi</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./bibliographie.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../bibliographie.html" rel="" target="">
  <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./latex.html" rel="" target="">
+    <a class="nav-link" href="../latex.html" rel="" target="">
  <span class="menu-text">Latex</span></a>
   </li>  
 </ul>
@@ -145,27 +117,83 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Citizen Science">Citizen Science <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Crohn’s disease">Crohn’s disease <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ecological network">Ecological network <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Feature Importance">Feature Importance <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Graph Neural Network">Graph Neural Network <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Gut microbiota">Gut microbiota <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Hilbert-Schmidt Independence Criterion">Hilbert-Schmidt Independence Criterion <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Latent Block Model">Latent Block Model <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Modularity">Modularity <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Nestedness">Nestedness <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Prediction">Prediction <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Random forest">Random forest <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Sampling Effect">Sampling Effect <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Stochastic Expectation Maximization">Stochastic Expectation Maximization <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Publications</h1>
+<h1 class="title">Interpretability of Graph Neural Networks to Assert Effects of Global Change Drivers on Ecological Networks</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Citizen Science</div>
+    <div class="quarto-category">Ecological network</div>
+    <div class="quarto-category">Graph Neural Network</div>
+    <div class="quarto-category">Hilbert-Schmidt Independence Criterion</div>
+    <div class="quarto-category">Sampling Effect</div>
+    <div class="quarto-category">Feature Importance</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    <p>We explore existing methods for interpreting GNNs in order to highlight the effects of various environmental covariates on pollination network connectivity.</p>
+  </div>
 </div>
 
-
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliations</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Emre Anakok </p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Université Paris-Saclay, AgroParisTech, INRAE, UMR MIA Paris-Saclay, 91120, Palaiseau, France.
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    <p class="author">Pierre Barbillon </p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Université Paris-Saclay, AgroParisTech, INRAE, UMR MIA Paris-Saclay, 91120, Palaiseau, France.
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    <p class="author">Colin Fontaine </p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Centre d’Ecologie et des Sciences de la Conservation, MNHN, CNRS, SU, 43 rue Buffon, 75005 Paris, France
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    <p class="author">Elisa Thebault </p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Sorbonne Université, CNRS, IRD, INRAE, Université Paris Est Créteil, Université Paris Cité, Institute of Ecology and Environmental Sciences (iEES-Paris), 75005 Paris, France
+          </p>
+      </div>
+    </div>
 
 <div class="quarto-title-meta">
 
+      
     <div>
-    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-             <p>Emre Anakok </p>
-          </div>
+      <p class="date">March 19, 2025</p>
+    </div>
   </div>
-    
   
     
   </div>
@@ -173,205 +201,30 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<p>Pollinators play a crucial role for plant reproduction, either in natural ecosystem or in human-modified landscape. Global change drivers,including climate change or land use modifications, can alter the plant-pollinator interactions. To assert the potential influence of global change drivers on pollination, large-scale interactions, climate and land use data are required. While recent machine learning methods, such as graph neural networks (GNNs), allow the analysis of such datasets, interpreting their results can be challenging. We explore existing methods for interpreting GNNs in order to highlight the effects of various environmental covariates on pollination network connectivity. A large simulation study is performed to confirm whether these methods can detect the interactive effect between a covariate and a genus of plant on connectivity, and whether the application of debiasing techniques influences the estimation of these effects. An application on the Spipoll dataset, with and without accounting for sampling effects, highlights the potential impact of land use on network connectivity and shows that accounting for sampling effects partially alters the estimation of these effects.</p>
+<p><a href="https://arxiv.org/abs/2503.15107">Link to preprint</a></p>
+<p><a href="https://github.com/AnakokEmre/graph_features_importance">GitHub Repository</a></p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Citizen Science,Ecological network,Graph Neural Network,Hilbert-Schmidt Independence Criterion,Sampling Effect,Feature Importance" data-listing-date-sort="1742338800000" data-listing-file-modified-sort="1742737689003" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="./posts/GNN_feature_importance.html"> <img src="./posts/image/GNN_feature_importance.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/GNN_feature_importance.html">
-<h3 class="no-anchor listing-title">
-Interpretability of Graph Neural Networks to Assert Effects of Global Change Drivers on Ecological Networks
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Citizen Science'); return false;">
-Citizen Science
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Ecological network'); return false;">
-Ecological network
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Graph Neural Network'); return false;">
-Graph Neural Network
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Hilbert-Schmidt Independence Criterion'); return false;">
-Hilbert-Schmidt Independence Criterion
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Sampling Effect'); return false;">
-Sampling Effect
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Feature Importance'); return false;">
-Feature Importance
-</div>
-</div>
-<a href="./posts/GNN_feature_importance.html">
-<div class="listing-description">
-<p>We explore existing methods for interpreting GNNs in order to highlight the effects of various environmental covariates on pollination network connectivity.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/GNN_feature_importance.html">
-<div class="listing-date">
-Mar 19, 2025
-</div>
-<div class="listing-author">
-Emre Anakok, Pierre Barbillon, Colin Fontaine, Elisa Thebault
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Latent Block Model,Sampling Effect,Stochastic Expectation Maximization,Nestedness,Modularity" data-listing-date-sort="1742166000000" data-listing-file-modified-sort="1742392039057" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="./posts/CoOPLBM.html"> <img src="./posts/image/CoOPLBM.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/CoOPLBM.html">
-<h3 class="no-anchor listing-title">
-Disentangling the structure of ecological bipartite networks from observation processes
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Latent Block Model'); return false;">
-Latent Block Model
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Sampling Effect'); return false;">
-Sampling Effect
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Stochastic Expectation Maximization'); return false;">
-Stochastic Expectation Maximization
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Nestedness'); return false;">
-Nestedness
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Modularity'); return false;">
-Modularity
-</div>
-</div>
-<a href="./posts/CoOPLBM.html">
-<div class="listing-description">
-<p>A new model for network analysis.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/CoOPLBM.html">
-<div class="listing-date">
-Mar 17, 2025
-</div>
-<div class="listing-author">
-Emre Anakok, Pierre Barbillon, Colin Fontaine, Elisa Thebault
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="Citizen Science,Ecological network,Graph Neural Network,Hilbert-Schmidt Independence Criterion,Sampling Effect" data-listing-date-sort="1720994400000" data-listing-file-modified-sort="1742237436067" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="./posts/BFVGAE.html"> <img src="./posts/image/BVGAE.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/BFVGAE.html">
-<h3 class="no-anchor listing-title">
-Bipartite Graph Variational Auto-Encoder with Fair Latent Representation to Account for Sampling Bias in Ecological Networks
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Citizen Science'); return false;">
-Citizen Science
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Ecological network'); return false;">
-Ecological network
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Graph Neural Network'); return false;">
-Graph Neural Network
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Hilbert-Schmidt Independence Criterion'); return false;">
-Hilbert-Schmidt Independence Criterion
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Sampling Effect'); return false;">
-Sampling Effect
-</div>
-</div>
-<a href="./posts/BFVGAE.html">
-<div class="listing-description">
-<p>Translating the fairness framework commonly considered in sociology in order to address sampling bias in ecology using graph embeddings.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/BFVGAE.html">
-<div class="listing-date">
-Jul 15, 2024
-</div>
-<div class="listing-author">
-Emre Anakok, Pierre Barbillon, Colin Fontaine, Elisa Thebault
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="Random forest,Gut microbiota,Crohn’s disease,Prediction" data-listing-date-sort="1645830000000" data-listing-file-modified-sort="1742237436069" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
-<div class="thumbnail">
-<p><a href="./posts/ImpactMicrobiota.html"> <img src="./posts/image/CD.jpeg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/ImpactMicrobiota.html">
-<h3 class="no-anchor listing-title">
-Impact of the Ileal Microbiota on Surgical Site Infections in Crohn’s Disease: A Nationwide Prospective Cohort
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Random forest'); return false;">
-Random forest
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Gut microbiota'); return false;">
-Gut microbiota
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Crohn’s disease'); return false;">
-Crohn’s disease
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Prediction'); return false;">
-Prediction
-</div>
-</div>
-<a href="./posts/ImpactMicrobiota.html">
-<div class="listing-description">
-<p>The objective of this study was to assess the impact of the gut microbiota on surgical site infection in Crohn’s disease.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/ImpactMicrobiota.html">
-<div class="listing-date">
-Feb 26, 2022
-</div>
-<div class="listing-author">
-Emre Anakok, Clément Julien
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{anakok2025,
+  author = {Anakok, Emre and Barbillon, Pierre and Fontaine, Colin and
+    Thebault, Elisa},
+  title = {Interpretability of {Graph} {Neural} {Networks} to {Assert}
+    {Effects} of {Global} {Change} {Drivers} on {Ecological} {Networks}},
+  date = {2025-03-19},
+  url = {https://arxiv.org/abs/2503.15107},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-anakok2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+Anakok, Emre, Pierre Barbillon, Colin Fontaine, and Elisa Thebault.
+2025. <span>“Interpretability of Graph Neural Networks to Assert Effects
+of Global Change Drivers on Ecological Networks.”</span> March 19, 2025.
+<a href="https://arxiv.org/abs/2503.15107">https://arxiv.org/abs/2503.15107</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

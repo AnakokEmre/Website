@@ -1,5 +1,5 @@
 ---
-title: "Interpretability of Graph Neural Networks to Assert Effects of Global Change Drivers on Ecological Networks"
+title: "Interpretability of Graph Neural Networks to Assess Effects of Global Change Drivers on Ecological Networks"
 description: | 
    We explore existing methods for interpreting GNNs in order to highlight the effects of various environmental covariates on pollination network connectivity.
 date: 3/19/2025
@@ -21,10 +21,7 @@ citation:
 
 ## Abstract
 
-Pollinators play a crucial role for plant reproduction, either in
-natural ecosystem or in human-modified landscape. Global change drivers,including climate change or land use modifications, can alter the plant-pollinator interactions. To assert the potential influence of global change drivers on pollination, large-scale interactions, climate and land use data are required. While recent machine learning methods, such as graph neural networks (GNNs), allow the analysis of such datasets, interpreting their results can be challenging. We explore existing methods for interpreting GNNs in order to highlight the effects of various environmental covariates on pollination network connectivity. A large simulation study is performed to confirm whether these methods can detect the interactive effect between a covariate and a
-genus of plant on connectivity, and whether the application of debiasing techniques influences the estimation of these effects. An application on the Spipoll dataset, with and without accounting for sampling effects, highlights the potential impact of land use on network connectivity and shows that accounting for sampling effects partially
-alters the estimation of these effects.
+Pollinators play a crucial role for plant reproduction, either in natural ecosystem or in human-modified landscape. Global change drivers,including climate change or land use modifications, can alter the plant-pollinator interactions. To assess the potential influence of global change drivers on pollination, large-scale interactions, climate and land use data are required. While recent machine learning methods, such as graph neural networks (GNNs), allow the analysis of such datasets, interpreting their results can be challenging. We explore existing methods for interpreting GNNs in order to highlight the effects of various environmental covariates on pollination network connectivity. A large simulation study is performed to confirm whether these methods can detect the interactive effect between a covariate and a genus of plant on connectivity, and whether the application of debiasing techniques influences the estimation of these effects. An application on the Spipoll dataset, with and without accounting for sampling effects, highlights the potential impact of land use on network connectivity and shows that accounting for sampling effects partially alters the estimation of these effects.
 
 [Link to preprint](https://arxiv.org/abs/2503.15107)
 

@@ -12,8 +12,8 @@ about:
       icon: github
       target: _blank
     - text: Email
-      href: mailto:emre.anakok@supagro.fr
+      href: mailto:emre.anakok@u-paris.fr
       icon: envelope
 ---
 
-Je suis actuellement post-doctorant au Centre Biologique de Gestion des Populations à Montpellier.
+Je suis actuellement enseignant chercheur à l'IUT de Paris - Rives de Seine, Université Paris Cité, et au laboratoire du MAP5 (UMR 8145).

@@ -124,9 +124,13 @@ theme_bw()
 p
 ```
 
-::: fragment
-$$J(a,b) =\sum_{i=1}^n e_i ^2=  \sum_{i=1}^n (y_i - \widehat{y_i})^2 = \sum_{i=1}^n (y_i - (ax_i + b))^2$$
-:::
+$$\begin{align}J(a,b) &=\sum_{i=1}^n e_i ^2\\
+ &=\sum_{i=1}^n (y_i - \widehat{y_i})^2\\
+ &= \sum_{i=1}^n (y_i - (ax_i + b))^2
+\end{align}$$
+
+
+
 
 
 ## Méthode des moindres carrés
@@ -190,9 +194,9 @@ $y_i$ est la réalisation d'une variable aléatoire $Y_i$ telle que pour $1 \leq
 :::{.callout-tip title= "Estimateurs du modèle"}
 
 
-$$
-{A}=\frac{\sum_{i=1}^n(x_i-\bar{x})(Y_i-\bar{Y})}{\sum_{i=1}^n(x_i-\bar{x})^2} \quad;\quad{B}=\bar{Y}-A\bar{x} \quad; \quad S^2=\frac{1}{n-2}\sum_{i=1}^n(Y_i-\widehat{Y_i})^2
-$$
+$${A}=\frac{\sum_{i=1}^n(x_i-\bar{x})(Y_i-\bar{Y})}{\sum_{i=1}^n(x_i-\bar{x})^2}$$
+$${B}=\bar{Y}-A\bar{x}$$
+$$S^2=\frac{1}{n-2}\sum_{i=1}^n(Y_i-\widehat{Y_i})^2$$
 
 :::
 
@@ -292,7 +296,7 @@ $\Rightarrow$ les $E_i$ sont indépendants et identiquement distribués de loi $
 ## Aléatoire ou pas ?
 
 ::: {.callout-caution title="Remarques"}
-$$\color{red}{Y_i} = {\color{blue}{\underbrace{\alpha x_i + \beta}_{{déterministe}{}}}}  + \color{red}{\overbrace{E_i}^{aléatoire}}, 1 \leq i \leq n $$
+$$\color{red}{Y_i} = {\color{blue}{\underbrace{\alpha x_i + \beta}_{{déterministe}{}}}}  + \color{red}{\overbrace{E_i}^{aléatoire}}\color{black}, 1 \leq i \leq n $$
 
 où
 
@@ -306,11 +310,18 @@ où
 ## Autre formulation du modèle linéaire
 
 ::: {.callout-caution title="Remarques"}
--   Le modèle
 
-$$Y_i = \alpha x_i + \beta  + E_i,\quad 1 \leq i \leq n, \quad E_i\overset{iid}\sim \mathcal{N}(0,\sigma^2)$$ est équivalent à
+Le modèle
 
-Les $Y_i$ sont **indépendants** et $Y_i \sim \mathcal{N}($ [$\alpha x_i +\beta, \sigma^2$]{.fragment fragment-index="1"} $), \; 1 \leq i \leq n$
+$$Y_i = \alpha x_i + \beta  + E_i,\quad 1 \leq i \leq n,$$
+
+$$\text{avec } E_i\overset{i.i.d.}\sim \mathcal{N}(0,\sigma^2)$$ 
+
+est équivalent à
+
+Les $Y_i$ sont **indépendants** et 
+
+$$Y_i \sim \mathcal{N}( \alpha x_i +\beta, \sigma^2 ), \; 1 \leq i \leq n$$
 
 -   $\mathbb{E}[Y_i]=$ [$\alpha x_i + \beta$]{.fragment fragment-index="1"} , $\mathbb{V}[Y_i]=$ [$\sigma^2$]{.fragment fragment-index="1"}
 -   $x$ n'influe que sur la moyenne et pas sur la variance de $Y$
@@ -392,9 +403,7 @@ tac %>%
 
 ## Méthode des moindres carrés
 
-:::{.columns}
 
-:::{.column width = "50%"}
 
 ::: {.callout-note title= "Définition"}
 
@@ -404,11 +413,10 @@ $$\widehat{y}_i = ax_i+b$$
 
 -   $a$ et $b$ obtenus en minimisant la somme des carrés des erreurs
 
+
 $$J(a,b)=\sum_{i=1}^{n} \left(y_i-(ax_i+b)\right)^2$$
 :::
 
-:::
-:::{.column width = "50%"}
 
 ::: {.callout-tip title="Théorème"}
 -   La minimisation de $J(a,b)$ en $a$ et $b$ conduit à 
@@ -418,8 +426,8 @@ $$J(a,b)=\sum_{i=1}^{n} \left(y_i-(ax_i+b)\right)^2$$
 $a =$ [$\frac{\displaystyle\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})}{\displaystyle\sum_{i=1}^n(x_i-\bar{x})^2}= \frac{Cov_{emp}(x,y)}{\mathbb{V}_{emp}(x)}$]{.fragment fragment-index="1"} et $b$ = [$\bar{y} - a\bar{x}$]{.fragment fragment-index="1"}
 :::
 
-:::
-:::
+
+
 
 
 ## Estimateurs des paramètres du modèle :
@@ -429,14 +437,14 @@ $a =$ [$\frac{\displaystyle\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})}{\displaystyle
 -   [A et B estimateurs]{.red} de $\alpha$ et $\beta$ obtenus par la méthode des moindres carré.
 
 $$\begin{align}
-\color{red}{A}&=\frac{\sum_{i=1}^n(x_i-\bar{x})(Y_i-\bar{Y})}{\sum_{i=1}^n(x_i-\bar{x})^2}=\frac{\sum_{i=1}^n(x_iY_i)-n\bar{x}\bar{Y}}{\sum_{i=1}^n x_i^2-n(\bar{x})^2}\\ 
+\color{red}{A}&=\frac{\sum_{i=1}^n(x_i-\bar{x})(Y_i-\bar{Y})}{\sum_{i=1}^n(x_i-\bar{x})^2}\\ \color{red}{A}&=\frac{\sum_{i=1}^n(x_iY_i)-n\bar{x}\bar{Y}}{\sum_{i=1}^n x_i^2-n(\bar{x})^2}\\ 
 \color{red}{B}&=\bar{Y}-A\bar{x}
 \end{align}$$
 
 -   [$a$ et $b$ estimations]{.blue} de $\alpha$ et $\beta$ : réalisations $a$ et $b$ des estimateurs $A$ et $B$ sur les données
 
 $$ \begin{align}
-\color{blue}{a}&=\frac{\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n(x_i-\bar{x})^2}=\frac{\sum_{i=1}^n(x_iy_i)-n\bar{x}\bar{y}}{\sum_{i=1}^n x_i^2-n(\bar{x})^2}\\
+\color{blue}{a}&=\frac{\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n(x_i-\bar{x})^2}\\ \color{blue}{a}&=\frac{\sum_{i=1}^n(x_iy_i)-n\bar{x}\bar{y}}{\sum_{i=1}^n x_i^2-n(\bar{x})^2}\\
 \color{blue}{b}&=\bar{y}-a\bar{x}
 \end{align}$$
 
@@ -459,9 +467,10 @@ $a =$ [`r coef(mod)[2]`]{.fragment fragment-index="1"} et $b =$ [`r coef(mod)[1]
 ::: {.callout-note title="Définition"}
 -   $\widehat{Y_i}=Ax_i+B$, la prévision (aléatoire) par le modèle de régression linéaire associée à $x_i$.
 
--   [$S^2$ **estimateur**]{.red} de $\sigma^2$ : variance empirique $$\color{red}{S^2=\frac{1}{n-2}\sum_{i=1}^n(Y_i-\widehat{Y_i})^2=\frac{1}{n-2}\sum_{i=1}^n(Y_i-Ax_i-B)^2}$$
+-   [$S^2$ **estimateur**]{.red} de $\sigma^2$ : variance empirique
+$$\color{red}{\begin{align}S^2&=\frac{1}{n-2}\sum_{i=1}^n(Y_i-\widehat{Y_i})^2\\&=\frac{1}{n-2}\sum_{i=1}^n(Y_i-Ax_i-B)^2\end{align}}$$
 
--   [Estimation de $\sigma^2$]{.blue} : réalisation $s^2$ de $S^2$ sur les données $$\color{blue}{s^2=\frac{1}{n-2}\sum_{i=1}^n(y_i-ax_i-b)^2=\frac{1}{n-2}\sum_{i=1}^n \widehat{e}_i^2}$$ où $\widehat{e}_i = y_i - ax_i -b$ sont les résidus observés.
+-   [Estimation de $\sigma^2$]{.blue} : réalisation $s^2$ de $S^2$ sur les données $$\color{blue}{\begin{align}s^2&=\frac{1}{n-2}\sum_{i=1}^n(y_i-ax_i-b)^2\\ &=\frac{1}{n-2}\sum_{i=1}^n \widehat{e}_i^2\end{align}}$$ où $\widehat{e}_i = y_i - ax_i -b$ sont les résidus observés.
 :::
 ::::
 
@@ -791,8 +800,9 @@ $y_i$ est la réalisation d'une variable aléatoire $Y_i$ telle que pour $1 \leq
 :::{.callout-tip title= "Estimateurs du modèle"}
 
 
-$$
-{A}=\frac{\sum_{i=1}^n(x_i-\bar{x})(Y_i-\bar{Y})}{\sum_{i=1}^n(x_i-\bar{x})^2} \quad;\quad{B}=\bar{Y}-A\bar{x} \quad; \quad S^2=\frac{1}{n-2}\sum_{i=1}^n(Y_i-\widehat{Y_i})^2
+$${A}=\frac{\sum_{i=1}^n(x_i-\bar{x})(Y_i-\bar{Y})}{\sum_{i=1}^n(x_i-\bar{x})^2}$$
+$${B}=\bar{Y}-A\bar{x}$$
+$$S^2=\frac{1}{n-2}\sum_{i=1}^n(Y_i-\widehat{Y_i})^2
 $$
 
 :::
@@ -818,7 +828,9 @@ autoplot(modele_reg_simple, which = 1:4, ncol = 4, label.size=1) + theme_bw()
 
 :::{.callout-tip title= "Lois des estimateurs"}
 
-$$\frac{(A-\alpha)}{S_A}\sim \mathcal{T}{(n-2)}\mbox{ et }\frac{(B-\beta)}{S_B}\sim \mathcal{T}{(n-2)}$$
+$$\frac{(A-\alpha)}{S_A}\sim \mathcal{T}{(n-2)}$$
+
+$$\frac{(B-\beta)}{S_B}\sim \mathcal{T}{(n-2)}$$
 :::
 
 :::{.callout-tip title= "Estimateurs du modèle"}
@@ -848,11 +860,10 @@ $s_A = \sqrt{\frac{s^2}{\sum_{i=1}^n(x_i-\bar{x})^2}}$ et  $s_B = \sqrt{s^2\left
 :::
 
 :::{.callout-note title= "Test de Fisher de Comparaison de modèles"}
-$$H_0\; :\; \text{modèle}\; M_1:Y_i=\beta+E_i,\quad E_i\; \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
+$$H_0\; :\; \text{modèle}\; M_1:Y_i=\beta+E_i$$
 
 
-$$H_1\; :\; \text{modèle}\; M_2:Y_i=\alpha x_i+\beta+E_i,\quad E_i\; \overset{i.i.d.}{\sim}
-{\cal N}(0,\sigma^2)$$
+$$H_1\; :\; \text{modèle}\; M_2:Y_i=\alpha x_i+\beta+E_i$$
 
 :::
 
@@ -860,8 +871,6 @@ $$H_1\; :\; \text{modèle}\; M_2:Y_i=\alpha x_i+\beta+E_i,\quad E_i\; \overset{i
 
 :::: {style="font-size: 0.65em;"}
 
-::: {.columns}
-::: {.column width = "33%"}
 
 
 ::: {.callout-note title="Définition : SCT"}
@@ -871,9 +880,6 @@ $$\color{purple}{SCT =\displaystyle\sum_{i = 1}^n( Y_i - \bar{Y})^2}$$
 :::
 
 
-:::
-
-::: {.column width = "33%"}
 
 ::: {.callout-note title="Définition : SCM"}
 Partie de la variabilité de $Y$ **expliquée par le modèle**.
@@ -881,8 +887,6 @@ Partie de la variabilité de $Y$ **expliquée par le modèle**.
 $$\color{blue}{SCM = \displaystyle\sum_{i=1}^n(\widehat{Y_i}-\bar{Y})^2}$$
 :::
 
-:::
-::: {.column width = "33%"}
 
 ::: {.callout-note title="Définition : SCR"}
 Partie de la variabilité de $Y$ qui n'est **pas expliquée par le modèle**.
@@ -891,9 +895,6 @@ $$\color{red}{SCR = \displaystyle\sum_{i=1}^n(Y_i-\widehat{Y_i})^2=\displaystyle
 :::
 
 
-:::
-
-:::
 
 
 
@@ -926,9 +927,10 @@ $$R^2 = \frac{SCM}{SCT}$$
 :::{.callout-tip title= "Intervalle de confiance de la droite de régression"}
 
 
+$$IC_{1-\delta}(\mathbb{E}[Y_0])= $$
 $$\begin{align}
-IC_{1-\delta}(\mathbb{E}[Y_0])=&&\left[\widehat{y_0}-t_{1-\frac{\delta}{2}}\sqrt{s^2\left(\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)};\right.\\
-&&\left.\widehat{y_0}+t_{1-\frac{\delta}{2}}\sqrt{s^2\left(\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)}\right]
+&\left[\widehat{y_0}-t_{1-\frac{\delta}{2}}\sqrt{s^2\left(\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)};\right.\\
+&\left.\widehat{y_0}+t_{1-\frac{\delta}{2}}\sqrt{s^2\left(\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)}\right]
 \end{align}$$
 
 :::
@@ -936,9 +938,13 @@ IC_{1-\delta}(\mathbb{E}[Y_0])=&&\left[\widehat{y_0}-t_{1-\frac{\delta}{2}}\sqrt
 
 :::{.callout-tip title= "Intervalle de prévision"}
 
+
+$$IP_{1-\delta}(Y_0)=$$
+
+
 $$\begin{align}
-IP_{1-\delta}(Y_0)=&&\left[\widehat{y_0}-t_{1-\frac{\delta}{2}}\sqrt{s^2\left(1+\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)};\right.\\
-&&\left.\widehat{y_0}+t_{1-\frac{\delta}{2}}\sqrt{s^2\left(1+\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)}\right]
+&\left[\widehat{y_0}-t_{1-\frac{\delta}{2}}\sqrt{s^2\left(1+\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)};\right.\\
+&\left.\widehat{y_0}+t_{1-\frac{\delta}{2}}\sqrt{s^2\left(1+\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)}\right]
 \end{align}$$
 
 :::
@@ -985,7 +991,9 @@ fish %>%
 
 $S^2$ est un estimateur sans biais de $\sigma^2$ et on a
 
-$$\frac{(n-2)S^2}{\sigma^2}=\frac{\sum_{i=1}^n(Y_i-Ax_i-B)^2}{\sigma^2}\sim\chi^2(n-2)$$ De plus $S^2$ est **indépendant** de $A$, $B$ et $\bar{Y}$
+$$\frac{(n-2)S^2}{\sigma^2}=\frac{\sum_{i=1}^n(Y_i-Ax_i-B)^2}{\sigma^2}$$
+
+$$\frac{(n-2)S^2}{\sigma^2}\sim\chi^2(n-2)$$ De plus $S^2$ est **indépendant** de $A$, $B$ et $\bar{Y}$
 :::
 
 ## Propriétés et loi des estimateurs $A$ et $B$
@@ -1002,13 +1010,16 @@ Var(A)&=\frac{\sigma^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\\
 Var(B)&=\sigma^2\left(\frac{1}{n}+\frac{\bar{x}^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)
 \end{align}$$ Si on remplace $\sigma^2$ par $S^2$ pour obtenir des estimateurs des variances
 
-$$\begin{align}
-S^2_A&=&\frac{S^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\mbox{ et } S^2_B=S^2\left(\frac{1}{n}+\frac{\bar{x}^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)
-\end{align}$$
+$$S^2_A=\frac{S^2}{\sum_{i=1}^n(x_i-\bar{x})^2}$$
+
+$$S^2_B=S^2\left(\frac{1}{n}+\frac{\bar{x}^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)$$
+
 
 on a
 
-[$$\frac{(A-\alpha)}{S_A}\sim \mathcal{T}{(n-2)}\mbox{ et }\frac{(B-\beta)}{S_B}\sim \mathcal{T}{(n-2)}$$]{.red}
+[$$\frac{(A-\alpha)}{S_A}\sim \mathcal{T}{(n-2)}$$]{.red}
+
+[$$\frac{(B-\beta)}{S_B}\sim \mathcal{T}{(n-2)}$$]{.red}
 :::
 ::::
 
@@ -1064,18 +1075,21 @@ confint(modele_reg_simple, level = 0.95)
 
 -   Test de Student de la nullité de la pente de régression $H_0:\alpha=0$ contre $H_1:\alpha\neq 0$
 
--   Test de Fisher de Comparaison de modèles : $$H_0\; \text{modèle}\; M_1:Y_i=\beta+E_i,\quad E_i\; i.i.d.\; {\cal N}(0,\sigma^2)$$
+-   Test de Fisher de Comparaison de modèles : $$H_0\; \text{modèle}\; M_1:Y_i=\beta+E_i$$ $$\text{avec } E_i\overset{i.i.d}\sim {\cal N}(0,\sigma^2)$$
 
 <center>contre l'alternative</center>
 
-$$H_1\; :\; \text{modèle}\; M_2:Y_i=\alpha x_i+\beta+E_i,\quad E_i\; i.i.d.\;
-{\cal N}(0,\sigma^2)$$
+$$H_1\; :\; \text{modèle}\; M_2:Y_i=\alpha x_i+\beta+E_i$$
+
+$$\text{avec } E_i\overset{i.i.d}\sim {\cal N}(0,\sigma^2)$$
 
 ## Test de Student de la nullité de la pente de régression
 
 [**Modélisation des données** :]{.upc}
 
-$(x_i,y_i)$, $i=1,\dots,n$ : modèle linéaire $$\forall i=1,\cdots,n,\quad Y_i=\alpha x_i+\beta+E_i, \; E_i\overset{i.i.d.}\sim{\cal N}(0,\sigma^2)$$
+$(x_i,y_i)$, $i=1,\dots,n$ : modèle linéaire $\forall i=1,\cdots,n$
+
+$$Y_i=\alpha x_i+\beta+E_i, \; E_i\overset{i.i.d.}\sim{\cal N}(0,\sigma^2)$$
 
 [**Hypothèses** :]{.upc}
 
@@ -1157,7 +1171,7 @@ contre l'alternative
 
 $$H_1 : \mbox{ modèle } M_2$$
 
-## Etude de la variance
+## Étude de la variance
 
 ```{r}
 df0 = data.frame(x= c(0,1,2,3,4),y = c(0,0.5,2,3,2.5))
@@ -1194,10 +1208,7 @@ La variabilité de $Y$ **sans tenir compte du modèle**.
 $$\color{purple}{SCT =\displaystyle\sum_{i = 1}^n( Y_i - \bar{Y})^2}$$
 :::
 
-## Etude de la variance
-
-::: {.columns}
-::: {.column width = "50%"}
+## Étude de la variance
 
 ```{r, fig.height=5,fig.align='center'}
 mod0=(lm(y~x,data=df0))
@@ -1215,7 +1226,6 @@ ggplot(data = df0, aes(x=x,y=y)) +geom_point() + geom_abline(slope = a  ,interce
 
 ```
 
-:::: {style="font-size: 0.85em;"}
 
 ::: {.callout-note title="Définition : Somme des Carrés du Modèle"}
 Partie de la variabilité de $Y$ **expliquée par le modèle**.
@@ -1223,11 +1233,8 @@ Partie de la variabilité de $Y$ **expliquée par le modèle**.
 $$\color{blue}{SCM = \displaystyle\sum_{i=1}^n(\widehat{Y_i}-\bar{Y})^2}$$
 :::
 
-::::
 
-:::
 
-::: {.column width = "50%"}
 
 ```{r, fig.height=5,fig.align='center'}
 mod0=(lm(y~x,data=df0))
@@ -1245,19 +1252,17 @@ ggplot(data = df0, aes(x=x,y=y)) +geom_point() + geom_abline(slope = a  ,interce
 
 ```
 
-:::: {style="font-size: 0.85em;"}
 
 ::: {.callout-note title="Définition : Somme des Carrés Résiduelles"}
 Partie de la variabilité de $Y$ qui n'est **pas expliquée par le modèle**.
 
-$$\color{red}{SCR = \displaystyle\sum_{i=1}^n(Y_i-\widehat{Y_i})^2=\displaystyle\sum_{i=1}^n E_i ^2}$$
+$$\color{red}{\begin{align}SCR = \displaystyle\sum_{i=1}^n(Y_i-\widehat{Y_i})^2=\displaystyle\sum_{i=1}^n E_i ^2\end{align}}$$
 :::
 
-::::
 
-::: 
 
-:::
+
+
 
 ## Décomposition de la variance
 
@@ -1290,7 +1295,6 @@ ggplot(data = df0, aes(x=x,y=y)) +
 
 ```
 
-$$\color{purple}{SCT =\displaystyle\sum_{i = 1}^n( Y_i - \bar{Y})^2}$$
 
 :::
 
@@ -1313,7 +1317,7 @@ ggplot(data = df0, aes(x=x,y=y)) +geom_point() + geom_abline(slope = a  ,interce
 
 ```
 
-$$\color{blue}{SCM = \displaystyle\sum_{i=1}^n(\widehat{Y_i}-\bar{Y})^2}$$
+
 
 :::
 
@@ -1336,12 +1340,16 @@ ggplot(data = df0, aes(x=x,y=y)) +geom_point() + geom_abline(slope = a  ,interce
 
 ```
 
+
+
+:::
+
+:::
+$$\color{purple}{SCT =\displaystyle\sum_{i = 1}^n( Y_i - \bar{Y})^2}$$
+
+$$\color{blue}{SCM = \displaystyle\sum_{i=1}^n(\widehat{Y_i}-\bar{Y})^2}$$
+
 $$\color{red}{SCR = \displaystyle\sum_{i=1}^n(Y_i-\widehat{Y_i})^2=\displaystyle\sum_{i=1}^n E_i ^2}$$
-
-:::
-
-:::
-
 
 :::{.callout-tip title ="Théorème"}
 
@@ -1476,18 +1484,15 @@ $f_{1-\delta}$ est le quantile $1 - \delta$ de la loi de Fisher $\mathcal{F}(1,n
 
 $\mathbb{P}_{H_0}(T_n<f_{1-\delta})=1-\delta$
 
-::: {.columns}
 
-::: {.column width = "50%"}
 
 [**Application numérique**]{.upc}
 
 -   On calcule $t_n$
 -   On rejette $H_0$ si $t_{n} \in R_{\delta}$
 
-:::
 
-::: {.column width = "50%"}
+
 
 
 [**Calcul de** $p_c$]{.upc}
@@ -1495,9 +1500,7 @@ $\mathbb{P}_{H_0}(T_n<f_{1-\delta})=1-\delta$
 $p_{c} = \mathbb{P}_{H_0}(T_n > t_n)=1-\mathbb{P}(F<t_n)$ où $F\sim \mathcal{F}(1,n-2)$
 
 
-:::
 
-:::
 
 
 
@@ -1551,7 +1554,7 @@ $$Y_i=\beta+ \alpha x_i+E_i, \mbox{ où } E_i\overset{i.i.d.}\sim{\cal N}(0,\sig
 
 -   Somme des carrés résiduelles :
 
-$$SCR(M_2) = \sum_{i=1}^n (Y_i-\widehat{Y_i}(M_2))^2 = \sum_{i=1}^n (Y_i-Axi-B)^2$$
+$$\begin{align}SCR(M_2) = \sum_{i=1}^n (Y_i-\widehat{Y_i}(M_2))^2 \\= \sum_{i=1}^n (Y_i-Axi-B)^2\end{align}$$
 
 ## Les résidus du modèle $M_1$
 
@@ -1565,7 +1568,7 @@ $$Y_i=\beta+E_i, \mbox{ où }  E_i\overset{i.i.d.}\sim{\cal N}(0,\sigma^2)$$
 
 -   Somme des carrés résiduelles :
 
-$$SCR(M_1)=\sum_{i=1}^n E_i^2(M_1)=\sum_{i=1}^n (Y_i-\widehat{Y}_i(M_1))^2=\sum_{i=1}^n (Y_i-\bar{Y})^2=SCT$$
+$$SCR(M_1)=\sum_{i=1}^n E_i^2(M_1)=\sum_{i=1}^n (Y_i-\widehat{Y}_i(M_1))^2\\=\sum_{i=1}^n (Y_i-\bar{Y})^2=SCT$$
 
 
 ## Interprétation du test de Fisher
@@ -1576,7 +1579,7 @@ Statistique de test $T_n$ peut s'écrire
 $$
 \begin{align}
 T_n &= \frac{SCM/ 1}{SCR(M_2)/(n-2)} \\
-&= \frac{(SCR(M_{\color{red}{1}}) - SCR(M_{\color{red}{2}}))/ ( 2 - 1)}{SCR(M_2)/(n- 2)}\overset{H_0}\sim \mathcal{F}(1,n-2)
+= &\frac{(SCR(M_{\color{red}{1}}) - SCR(M_{\color{red}{2}}))/ ( 2 - 1)}{SCR(M_2)/(n- 2)}\overset{H_0}\sim \mathcal{F}(1,n-2)
 \end{align}
 $$
 
@@ -1881,13 +1884,13 @@ On rajoute l'aléa non expliqué par le modèle
 
 $Y_0=\alpha x_0+\beta + E_0$
 
-$$\mathbb{V}(\widehat{Y_0} - Y_0)= \mathbb{V}[Ax_0+ B] + \mathbb{V}[E_0] = \sigma^2\left( 1 + \frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)$$ estimée par $$S_{P_0}^2=S^2\left( 1 + \frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)$$ De plus, $$
-\frac{(\widehat{Y_0} -Y_0)}{S_{P_0}}\sim\mathcal{T}(n-2)
-$$
+$$\begin{align}\mathbb{V}(\widehat{Y_0} - Y_0)&= \mathbb{V}[Ax_0+ B] + \mathbb{V}[E_0] \\&= \sigma^2\left( 1 + \frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)\end{align}$$ estimée par $$S_{P_0}^2=S^2\left( 1 + \frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)$$ De plus, $$
+\frac{(\widehat{Y_0} -Y_0)}{S_{P_0}}\sim\mathcal{T}(n-2)$$
 :::
 ::::
 
 ## Intervalle de prévision de $Y_0$
+
 
 :::: {style="font-size: 0.70em;"}
 ::: callout-tip
@@ -1895,10 +1898,13 @@ $$
 
 $$\frac{(\widehat{Y_0}-Y_0)}{\sqrt{S^2\left(1+\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)}}\sim\mathcal{T}(n-2)$$ [**Intervalle de prédiction de** $Y_0$ de niveau $1-\delta$ :]{.upc}
 
+
+$$IP_{1-\delta}(Y_0)=$$
+
 $$
 \begin{align}
-IP_{1-\delta}(Y_0)=&&\left[\widehat{y_0}-t_{1-\frac{\delta}{2}}\sqrt{s^2\left(1+\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)};\right.\\
-&&\left.\widehat{y_0}+t_{1-\frac{\delta}{2}}\sqrt{s^2\left(1+\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)}\right]
+&\left[\widehat{y_0}-t_{1-\frac{\delta}{2}}\sqrt{s^2\left(1+\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)};\right.\\
+&\left.\widehat{y_0}+t_{1-\frac{\delta}{2}}\sqrt{s^2\left(1+\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)}\right]
 \end{align}
 $$
 
@@ -1962,12 +1968,15 @@ predict(modele_reg_simple, new_data, interval = "prediction")
 
 
 
+
 ## Ce qu'il faut retenir de ce cours 1/3
 
 
 :::{.callout-tip title= "Lois des estimateurs"}
 
-$$\frac{(A-\alpha)}{S_A}\sim \mathcal{T}{(n-2)}\mbox{ et }\frac{(B-\beta)}{S_B}\sim \mathcal{T}{(n-2)}$$
+$$\frac{(A-\alpha)}{S_A}\sim \mathcal{T}{(n-2)}$$
+
+$$\frac{(B-\beta)}{S_B}\sim \mathcal{T}{(n-2)}$$
 :::
 
 :::{.callout-tip title= "Estimateurs du modèle"}
@@ -1993,25 +2002,21 @@ $s_A = \sqrt{\frac{s^2}{\sum_{i=1}^n(x_i-\bar{x})^2}}$ et  $s_B = \sqrt{s^2\left
  
  $$H_1:\alpha\neq 0$$
 :::
-:::
 
+:::
 
 :::{.callout-note title= "Test de Fisher de Comparaison de modèles"}
-$$H_0\; :\; \text{modèle}\; M_1:Y_i=\beta+E_i,\quad E_i\; \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
+$$H_0\; :\; \text{modèle}\; M_1:Y_i=\beta+E_i$$
 
 
-$$H_1\; :\; \text{modèle}\; M_2:Y_i=\alpha x_i+\beta+E_i,\quad E_i\; \overset{i.i.d.}{\sim}
-{\cal N}(0,\sigma^2)$$
+$$H_1\; :\; \text{modèle}\; M_2:Y_i=\alpha x_i+\beta+E_i$$
+
 :::
-
-
-
 
 ## Ce qu'il faut retenir de ce cours 2/3
 
+:::: {style="font-size: 0.65em;"}
 
-::: {.columns}
-::: {.column width = "33%"}
 
 
 ::: {.callout-note title="Définition : SCT"}
@@ -2021,9 +2026,6 @@ $$\color{purple}{SCT =\displaystyle\sum_{i = 1}^n( Y_i - \bar{Y})^2}$$
 :::
 
 
-:::
-
-::: {.column width = "33%"}
 
 ::: {.callout-note title="Définition : SCM"}
 Partie de la variabilité de $Y$ **expliquée par le modèle**.
@@ -2031,19 +2033,14 @@ Partie de la variabilité de $Y$ **expliquée par le modèle**.
 $$\color{blue}{SCM = \displaystyle\sum_{i=1}^n(\widehat{Y_i}-\bar{Y})^2}$$
 :::
 
-:::
-::: {.column width = "33%"}
 
 ::: {.callout-note title="Définition : SCR"}
 Partie de la variabilité de $Y$ qui n'est **pas expliquée par le modèle**.
 
 $$\color{red}{SCR = \displaystyle\sum_{i=1}^n(Y_i-\widehat{Y_i})^2=\displaystyle\sum_{i=1}^n E_i ^2}$$
-
 :::
 
-:::
 
-:::
 
 
 
@@ -2059,6 +2056,7 @@ $$\color{purple}{SCT} = \color{blue}{SCM} + \color{red}{SCR} $$
 $$T_n=\frac{SCM/1}{SCR/(n-2)} \overset{H_0}{\sim} \mathcal{F}(1,n-2)$$
 :::
 
+:::
 
 ## Ce qu'il faut retenir de ce cours 3/3
 
@@ -2075,9 +2073,10 @@ $$R^2 = \frac{SCM}{SCT}$$
 :::{.callout-tip title= "Intervalle de confiance de la droite de régression"}
 
 
+$$IC_{1-\delta}(\mathbb{E}[Y_0])= $$
 $$\begin{align}
-IC_{1-\delta}(\mathbb{E}[Y_0])=&&\left[\widehat{y_0}-t_{1-\frac{\delta}{2}}\sqrt{s^2\left(\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)};\right.\\
-&&\left.\widehat{y_0}+t_{1-\frac{\delta}{2}}\sqrt{s^2\left(\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)}\right]
+&\left[\widehat{y_0}-t_{1-\frac{\delta}{2}}\sqrt{s^2\left(\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)};\right.\\
+&\left.\widehat{y_0}+t_{1-\frac{\delta}{2}}\sqrt{s^2\left(\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)}\right]
 \end{align}$$
 
 :::
@@ -2085,9 +2084,13 @@ IC_{1-\delta}(\mathbb{E}[Y_0])=&&\left[\widehat{y_0}-t_{1-\frac{\delta}{2}}\sqrt
 
 :::{.callout-tip title= "Intervalle de prévision"}
 
+
+$$IP_{1-\delta}(Y_0)=$$
+
+
 $$\begin{align}
-IP_{1-\delta}(Y_0)=&&\left[\widehat{y_0}-t_{1-\frac{\delta}{2}}\sqrt{s^2\left(1+\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)};\right.\\
-&&\left.\widehat{y_0}+t_{1-\frac{\delta}{2}}\sqrt{s^2\left(1+\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)}\right]
+&\left[\widehat{y_0}-t_{1-\frac{\delta}{2}}\sqrt{s^2\left(1+\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)};\right.\\
+&\left.\widehat{y_0}+t_{1-\frac{\delta}{2}}\sqrt{s^2\left(1+\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)}\right]
 \end{align}$$
 
 :::
@@ -2100,7 +2103,7 @@ pc <- predict(modele_reg_simple, new, interval = "confidence")
 pp <- predict(modele_reg_simple, new, interval = "prediction")
 ```
 
-```{r,fig.align='center',fig.height=4}
+```{r,fig.align='center',fig.height=4,message=FALSE}
 pp <- predict(modele_reg_simple, new, interval = "prediction") %>% 
   cbind(new)
 fish %>% 
@@ -2109,7 +2112,6 @@ fish %>%
   geom_line(data = pp, aes(y = lwr), color ="red", linetype ="dashed")+
   geom_line(data = pp, aes(y = upr), color ="red", linetype ="dashed")
 ```
-
 
 
 

@@ -917,7 +917,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#trouver-la-meilleure-droite",
     "title": "Introduction aux modèles linéaires",
     "section": "2.3 Trouver “la meilleure droite” ?",
-    "text": "2.3 Trouver “la meilleure droite” ?\n\n\n\n\n\n\n\n\n\n\n\\[J(a,b) =\\sum_{i=1}^n e_i ^2=  \\sum_{i=1}^n (y_i - \\widehat{y_i})^2 = \\sum_{i=1}^n (y_i - (ax_i + b))^2\\]",
+    "text": "2.3 Trouver “la meilleure droite” ?\n\n\n\n\n\n\n\n\n\n\\[\\begin{align}J(a,b) &=\\sum_{i=1}^n e_i ^2\\\\\n&=\\sum_{i=1}^n (y_i - \\widehat{y_i})^2\\\\\n&= \\sum_{i=1}^n (y_i - (ax_i + b))^2\n\\end{align}\\]",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -953,7 +953,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#ce-quil-faut-retenir-de-ce-cours",
     "title": "Introduction aux modèles linéaires",
     "section": "2.6 Ce qu’il faut retenir de ce cours",
-    "text": "2.6 Ce qu’il faut retenir de ce cours\n\n\n\n\n\n\n\nNoteModélisation probabiliste du modèle linéaire\n\n\n\n\\(y_i\\) est la réalisation d’une variable aléatoire \\(Y_i\\) telle que pour \\(1 \\leq i \\leq n\\): \\[Y_i = \\alpha x_i + \\beta  + E_i, \\quad E_i\\overset{i.i.d.}\\sim{\\cal N}(0,\\sigma^2) \\]\n\n\n\n\n\n\n\n\nTipEstimateurs du modèle\n\n\n\n\\[\n{A}=\\frac{\\sum_{i=1}^n(x_i-\\bar{x})(Y_i-\\bar{Y})}{\\sum_{i=1}^n(x_i-\\bar{x})^2} \\quad;\\quad{B}=\\bar{Y}-A\\bar{x} \\quad; \\quad S^2=\\frac{1}{n-2}\\sum_{i=1}^n(Y_i-\\widehat{Y_i})^2\n\\]\n\n\n\n\n\n\n\n\nTipValider les hypothèses du modèle avec les 4 graphes de diagnostic",
+    "text": "2.6 Ce qu’il faut retenir de ce cours\n\n\n\n\n\n\n\nNoteModélisation probabiliste du modèle linéaire\n\n\n\n\\(y_i\\) est la réalisation d’une variable aléatoire \\(Y_i\\) telle que pour \\(1 \\leq i \\leq n\\): \\[Y_i = \\alpha x_i + \\beta  + E_i, \\quad E_i\\overset{i.i.d.}\\sim{\\cal N}(0,\\sigma^2) \\]\n\n\n\n\n\n\n\n\nTipEstimateurs du modèle\n\n\n\n\\[{A}=\\frac{\\sum_{i=1}^n(x_i-\\bar{x})(Y_i-\\bar{Y})}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\] \\[{B}=\\bar{Y}-A\\bar{x}\\] \\[S^2=\\frac{1}{n-2}\\sum_{i=1}^n(Y_i-\\widehat{Y_i})^2\\]\n\n\n\n\n\n\n\n\nTipValider les hypothèses du modèle avec les 4 graphes de diagnostic",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1001,7 +1001,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#aléatoire-ou-pas",
     "title": "Introduction aux modèles linéaires",
     "section": "3.4 Aléatoire ou pas ?",
-    "text": "3.4 Aléatoire ou pas ?\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\\[\\color{red}{Y_i} = {\\color{blue}{\\underbrace{\\alpha x_i + \\beta}_{{déterministe}{}}}}  + \\color{red}{\\overbrace{E_i}^{aléatoire}}, 1 \\leq i \\leq n \\]\noù\n\n\\(\\color{red}{Y_i}\\) réponse aléatoire pour l’unité \\(i\\)\n\\(\\color{blue}{x_i}\\) valeur non-aléatoire de \\(x\\) pour l’unité \\(i\\)\n\\(\\color{blue}\\alpha\\) est un paramètre inconnu, l’effet de la longueur sur le poids;\n\\(\\color{blue}\\beta\\) est un paramètre inconnu;\n\\(\\color{red}{E_i}\\) une variable aléatoire appelée erreur résiduelle les \\(\\color{red}{E_i}\\) sont indépendants et identiquement distribués de loi \\(\\mathcal{N}(0, \\sigma^2)\\)",
+    "text": "3.4 Aléatoire ou pas ?\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\\[\\color{red}{Y_i} = {\\color{blue}{\\underbrace{\\alpha x_i + \\beta}_{{déterministe}{}}}}  + \\color{red}{\\overbrace{E_i}^{aléatoire}}\\color{black}, 1 \\leq i \\leq n \\]\noù\n\n\\(\\color{red}{Y_i}\\) réponse aléatoire pour l’unité \\(i\\)\n\\(\\color{blue}{x_i}\\) valeur non-aléatoire de \\(x\\) pour l’unité \\(i\\)\n\\(\\color{blue}\\alpha\\) est un paramètre inconnu, l’effet de la longueur sur le poids;\n\\(\\color{blue}\\beta\\) est un paramètre inconnu;\n\\(\\color{red}{E_i}\\) une variable aléatoire appelée erreur résiduelle les \\(\\color{red}{E_i}\\) sont indépendants et identiquement distribués de loi \\(\\mathcal{N}(0, \\sigma^2)\\)",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1013,7 +1013,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#autre-formulation-du-modèle-linéaire",
     "title": "Introduction aux modèles linéaires",
     "section": "3.5 Autre formulation du modèle linéaire",
-    "text": "3.5 Autre formulation du modèle linéaire\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\nLe modèle\n\n\\[Y_i = \\alpha x_i + \\beta  + E_i,\\quad 1 \\leq i \\leq n, \\quad E_i\\overset{iid}\\sim \\mathcal{N}(0,\\sigma^2)\\] est équivalent à\nLes \\(Y_i\\) sont indépendants et \\(Y_i \\sim \\mathcal{N}(\\) \\(\\alpha x_i +\\beta, \\sigma^2\\) \\(), \\; 1 \\leq i \\leq n\\)\n\n\\(\\mathbb{E}[Y_i]=\\) \\(\\alpha x_i + \\beta\\) , \\(\\mathbb{V}[Y_i]=\\) \\(\\sigma^2\\)\n\\(x\\) n’influe que sur la moyenne et pas sur la variance de \\(Y\\)\n\\(Y_i\\) se décompose en\n\nUne partie fixe expliquée par le modèle:\nUne partie aléatoire non expliquée par le modèle",
+    "text": "3.5 Autre formulation du modèle linéaire\n\n\n\n\n\n\nCautionRemarques\n\n\n\nLe modèle\n\\[Y_i = \\alpha x_i + \\beta  + E_i,\\quad 1 \\leq i \\leq n,\\]\n\\[\\text{avec } E_i\\overset{i.i.d.}\\sim \\mathcal{N}(0,\\sigma^2)\\]\nest équivalent à\nLes \\(Y_i\\) sont indépendants et\n\\[Y_i \\sim \\mathcal{N}( \\alpha x_i +\\beta, \\sigma^2 ), \\; 1 \\leq i \\leq n\\]\n\n\\(\\mathbb{E}[Y_i]=\\) \\(\\alpha x_i + \\beta\\) , \\(\\mathbb{V}[Y_i]=\\) \\(\\sigma^2\\)\n\\(x\\) n’influe que sur la moyenne et pas sur la variance de \\(Y\\)\n\\(Y_i\\) se décompose en\n\nUne partie fixe expliquée par le modèle:\nUne partie aléatoire non expliquée par le modèle",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1073,7 +1073,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#méthode-des-moindres-carrés-1",
     "title": "Introduction aux modèles linéaires",
     "section": "4.4 Méthode des moindres carrés",
-    "text": "4.4 Méthode des moindres carrés\n\n\n\n\n\n\n\n\nNoteDéfinition\n\n\n\n\nÉquation de la droite des moindres carrés :\n\n\\[\\widehat{y}_i = ax_i+b\\]\n\n\\(a\\) et \\(b\\) obtenus en minimisant la somme des carrés des erreurs\n\n\\[J(a,b)=\\sum_{i=1}^{n} \\left(y_i-(ax_i+b)\\right)^2\\]\n\n\n\n\n\n\n\n\n\nTipThéorème\n\n\n\n\nLa minimisation de \\(J(a,b)\\) en \\(a\\) et \\(b\\) conduit à\n\nExercice :\n\\(a =\\) \\(\\frac{\\displaystyle\\sum_{i=1}^n(x_i-\\bar{x})(y_i-\\bar{y})}{\\displaystyle\\sum_{i=1}^n(x_i-\\bar{x})^2}= \\frac{Cov_{emp}(x,y)}{\\mathbb{V}_{emp}(x)}\\) et \\(b\\) = \\(\\bar{y} - a\\bar{x}\\)",
+    "text": "4.4 Méthode des moindres carrés\n\n\n\n\n\n\nNoteDéfinition\n\n\n\n\nÉquation de la droite des moindres carrés :\n\n\\[\\widehat{y}_i = ax_i+b\\]\n\n\\(a\\) et \\(b\\) obtenus en minimisant la somme des carrés des erreurs\n\n\\[J(a,b)=\\sum_{i=1}^{n} \\left(y_i-(ax_i+b)\\right)^2\\]\n\n\n\n\n\n\n\n\nTipThéorème\n\n\n\n\nLa minimisation de \\(J(a,b)\\) en \\(a\\) et \\(b\\) conduit à\n\nExercice :\n\\(a =\\) \\(\\frac{\\displaystyle\\sum_{i=1}^n(x_i-\\bar{x})(y_i-\\bar{y})}{\\displaystyle\\sum_{i=1}^n(x_i-\\bar{x})^2}= \\frac{Cov_{emp}(x,y)}{\\mathbb{V}_{emp}(x)}\\) et \\(b\\) = \\(\\bar{y} - a\\bar{x}\\)",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1085,7 +1085,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#estimateurs-des-paramètres-du-modèle",
     "title": "Introduction aux modèles linéaires",
     "section": "4.5 Estimateurs des paramètres du modèle :",
-    "text": "4.5 Estimateurs des paramètres du modèle :\n\n\n\n\n\n\n\nNoteDéfinition\n\n\n\n\nA et B estimateurs de \\(\\alpha\\) et \\(\\beta\\) obtenus par la méthode des moindres carré.\n\n\\[\\begin{align}\n\\color{red}{A}&=\\frac{\\sum_{i=1}^n(x_i-\\bar{x})(Y_i-\\bar{Y})}{\\sum_{i=1}^n(x_i-\\bar{x})^2}=\\frac{\\sum_{i=1}^n(x_iY_i)-n\\bar{x}\\bar{Y}}{\\sum_{i=1}^n x_i^2-n(\\bar{x})^2}\\\\\n\\color{red}{B}&=\\bar{Y}-A\\bar{x}\n\\end{align}\\]\n\n\\(a\\) et \\(b\\) estimations de \\(\\alpha\\) et \\(\\beta\\) : réalisations \\(a\\) et \\(b\\) des estimateurs \\(A\\) et \\(B\\) sur les données\n\n\\[ \\begin{align}\n\\color{blue}{a}&=\\frac{\\sum_{i=1}^n(x_i-\\bar{x})(y_i-\\bar{y})}{\\sum_{i=1}^n(x_i-\\bar{x})^2}=\\frac{\\sum_{i=1}^n(x_iy_i)-n\\bar{x}\\bar{y}}{\\sum_{i=1}^n x_i^2-n(\\bar{x})^2}\\\\\n\\color{blue}{b}&=\\bar{y}-a\\bar{x}\n\\end{align}\\]\n\n\\(a\\) et \\(b\\) sont les coefficients de la droite des moindres carrés.",
+    "text": "4.5 Estimateurs des paramètres du modèle :\n\n\n\n\n\n\n\nNoteDéfinition\n\n\n\n\nA et B estimateurs de \\(\\alpha\\) et \\(\\beta\\) obtenus par la méthode des moindres carré.\n\n\\[\\begin{align}\n\\color{red}{A}&=\\frac{\\sum_{i=1}^n(x_i-\\bar{x})(Y_i-\\bar{Y})}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\\\ \\color{red}{A}&=\\frac{\\sum_{i=1}^n(x_iY_i)-n\\bar{x}\\bar{Y}}{\\sum_{i=1}^n x_i^2-n(\\bar{x})^2}\\\\\n\\color{red}{B}&=\\bar{Y}-A\\bar{x}\n\\end{align}\\]\n\n\\(a\\) et \\(b\\) estimations de \\(\\alpha\\) et \\(\\beta\\) : réalisations \\(a\\) et \\(b\\) des estimateurs \\(A\\) et \\(B\\) sur les données\n\n\\[ \\begin{align}\n\\color{blue}{a}&=\\frac{\\sum_{i=1}^n(x_i-\\bar{x})(y_i-\\bar{y})}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\\\ \\color{blue}{a}&=\\frac{\\sum_{i=1}^n(x_iy_i)-n\\bar{x}\\bar{y}}{\\sum_{i=1}^n x_i^2-n(\\bar{x})^2}\\\\\n\\color{blue}{b}&=\\bar{y}-a\\bar{x}\n\\end{align}\\]\n\n\\(a\\) et \\(b\\) sont les coefficients de la droite des moindres carrés.",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1109,7 +1109,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#estimateur-de-la-variance-des-résidus",
     "title": "Introduction aux modèles linéaires",
     "section": "4.7 Estimateur de la variance des résidus",
-    "text": "4.7 Estimateur de la variance des résidus\n\n\n\n\n\n\n\nNoteDéfinition\n\n\n\n\n\\(\\widehat{Y_i}=Ax_i+B\\), la prévision (aléatoire) par le modèle de régression linéaire associée à \\(x_i\\).\n\\(S^2\\) estimateur de \\(\\sigma^2\\) : variance empirique \\[\\color{red}{S^2=\\frac{1}{n-2}\\sum_{i=1}^n(Y_i-\\widehat{Y_i})^2=\\frac{1}{n-2}\\sum_{i=1}^n(Y_i-Ax_i-B)^2}\\]\nEstimation de \\(\\sigma^2\\) : réalisation \\(s^2\\) de \\(S^2\\) sur les données \\[\\color{blue}{s^2=\\frac{1}{n-2}\\sum_{i=1}^n(y_i-ax_i-b)^2=\\frac{1}{n-2}\\sum_{i=1}^n \\widehat{e}_i^2}\\] où \\(\\widehat{e}_i = y_i - ax_i -b\\) sont les résidus observés.",
+    "text": "4.7 Estimateur de la variance des résidus\n\n\n\n\n\n\n\nNoteDéfinition\n\n\n\n\n\\(\\widehat{Y_i}=Ax_i+B\\), la prévision (aléatoire) par le modèle de régression linéaire associée à \\(x_i\\).\n\\(S^2\\) estimateur de \\(\\sigma^2\\) : variance empirique \\[\\color{red}{\\begin{align}S^2&=\\frac{1}{n-2}\\sum_{i=1}^n(Y_i-\\widehat{Y_i})^2\\\\&=\\frac{1}{n-2}\\sum_{i=1}^n(Y_i-Ax_i-B)^2\\end{align}}\\]\nEstimation de \\(\\sigma^2\\) : réalisation \\(s^2\\) de \\(S^2\\) sur les données \\[\\color{blue}{\\begin{align}s^2&=\\frac{1}{n-2}\\sum_{i=1}^n(y_i-ax_i-b)^2\\\\ &=\\frac{1}{n-2}\\sum_{i=1}^n \\widehat{e}_i^2\\end{align}}\\] où \\(\\widehat{e}_i = y_i - ax_i -b\\) sont les résidus observés.",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1241,7 +1241,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#ce-quil-faut-retenir-de-ce-cours-1",
     "title": "Introduction aux modèles linéaires",
     "section": "5.8 Ce qu’il faut retenir de ce cours",
-    "text": "5.8 Ce qu’il faut retenir de ce cours\n\n\n\n\n\n\n\nNoteModélisation probabiliste du modèle linéaire\n\n\n\n\\(y_i\\) est la réalisation d’une variable aléatoire \\(Y_i\\) telle que pour \\(1 \\leq i \\leq n\\): \\[Y_i = \\alpha x_i + \\beta  + E_i, \\quad E_i\\overset{i.i.d.}\\sim{\\cal N}(0,\\sigma^2) \\]\n\n\n\n\n\n\n\n\nTipEstimateurs du modèle\n\n\n\n\\[\n{A}=\\frac{\\sum_{i=1}^n(x_i-\\bar{x})(Y_i-\\bar{Y})}{\\sum_{i=1}^n(x_i-\\bar{x})^2} \\quad;\\quad{B}=\\bar{Y}-A\\bar{x} \\quad; \\quad S^2=\\frac{1}{n-2}\\sum_{i=1}^n(Y_i-\\widehat{Y_i})^2\n\\]\n\n\n\n\n\n\n\n\nTipValider les hypothèses du modèle avec les 4 graphes de diagnostic",
+    "text": "5.8 Ce qu’il faut retenir de ce cours\n\n\n\n\n\n\n\nNoteModélisation probabiliste du modèle linéaire\n\n\n\n\\(y_i\\) est la réalisation d’une variable aléatoire \\(Y_i\\) telle que pour \\(1 \\leq i \\leq n\\): \\[Y_i = \\alpha x_i + \\beta  + E_i, \\quad E_i\\overset{i.i.d.}\\sim{\\cal N}(0,\\sigma^2) \\]\n\n\n\n\n\n\n\n\nTipEstimateurs du modèle\n\n\n\n\\[{A}=\\frac{\\sum_{i=1}^n(x_i-\\bar{x})(Y_i-\\bar{Y})}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\] \\[{B}=\\bar{Y}-A\\bar{x}\\] \\[S^2=\\frac{1}{n-2}\\sum_{i=1}^n(Y_i-\\widehat{Y_i})^2\n\\]\n\n\n\n\n\n\n\n\nTipValider les hypothèses du modèle avec les 4 graphes de diagnostic",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1253,7 +1253,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#ce-quil-faut-retenir-de-ce-cours-13",
     "title": "Introduction aux modèles linéaires",
     "section": "6.1 Ce qu’il faut retenir de ce cours 1/3",
-    "text": "6.1 Ce qu’il faut retenir de ce cours 1/3\n\n\n\n\n\n\nTipLois des estimateurs\n\n\n\n\\[\\frac{(A-\\alpha)}{S_A}\\sim \\mathcal{T}{(n-2)}\\mbox{ et }\\frac{(B-\\beta)}{S_B}\\sim \\mathcal{T}{(n-2)}\\]\n\n\n\n\n\n\n\n\nTipEstimateurs du modèle\n\n\n\n\\[\\begin{align}\nIC_{1-\\delta}(\\alpha) =& \\left[a-t_{1-\\frac{\\delta}{2}} s_A;a+t_{1-\\frac{\\delta}{2}} s_A\\right]\\\\\nIC_{1-\\delta}(\\beta)=&\\left[b-t_{1-\\frac{\\delta}{2}} s_B;b+t_{1-\\frac{\\delta}{2}} s_B\\right]\\\\\n\\end{align}\\]\n\n\\(s_A = \\sqrt{\\frac{s^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}}\\) et \\(s_B = \\sqrt{s^2\\left(\\frac{1}{n}+\\frac{\\bar{x}^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)}\\)\n\n\n\n\n\n\n\n\n\nNoteTest de Student de la nullité de la pente de régression\n\n\n\n\n\\[H_0:\\alpha=0\\]\n\\[H_1:\\alpha\\neq 0\\]\n\n\n\n\n\n\n\n\n\nNoteTest de Fisher de Comparaison de modèles\n\n\n\n\\[H_0\\; :\\; \\text{modèle}\\; M_1:Y_i=\\beta+E_i,\\quad E_i\\; \\overset{i.i.d.}{\\sim} {\\cal N}(0,\\sigma^2)\\]\n\\[H_1\\; :\\; \\text{modèle}\\; M_2:Y_i=\\alpha x_i+\\beta+E_i,\\quad E_i\\; \\overset{i.i.d.}{\\sim}\n{\\cal N}(0,\\sigma^2)\\]",
+    "text": "6.1 Ce qu’il faut retenir de ce cours 1/3\n\n\n\n\n\n\nTipLois des estimateurs\n\n\n\n\\[\\frac{(A-\\alpha)}{S_A}\\sim \\mathcal{T}{(n-2)}\\]\n\\[\\frac{(B-\\beta)}{S_B}\\sim \\mathcal{T}{(n-2)}\\]\n\n\n\n\n\n\n\n\nTipEstimateurs du modèle\n\n\n\n\\[\\begin{align}\nIC_{1-\\delta}(\\alpha) =& \\left[a-t_{1-\\frac{\\delta}{2}} s_A;a+t_{1-\\frac{\\delta}{2}} s_A\\right]\\\\\nIC_{1-\\delta}(\\beta)=&\\left[b-t_{1-\\frac{\\delta}{2}} s_B;b+t_{1-\\frac{\\delta}{2}} s_B\\right]\\\\\n\\end{align}\\]\n\n\\(s_A = \\sqrt{\\frac{s^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}}\\) et \\(s_B = \\sqrt{s^2\\left(\\frac{1}{n}+\\frac{\\bar{x}^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)}\\)\n\n\n\n\n\n\n\n\n\nNoteTest de Student de la nullité de la pente de régression\n\n\n\n\n\\[H_0:\\alpha=0\\]\n\\[H_1:\\alpha\\neq 0\\]\n\n\n\n\n\n\n\n\n\nNoteTest de Fisher de Comparaison de modèles\n\n\n\n\\[H_0\\; :\\; \\text{modèle}\\; M_1:Y_i=\\beta+E_i\\]\n\\[H_1\\; :\\; \\text{modèle}\\; M_2:Y_i=\\alpha x_i+\\beta+E_i\\]",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1265,7 +1265,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#ce-quil-faut-retenir-de-ce-cours-23",
     "title": "Introduction aux modèles linéaires",
     "section": "6.2 Ce qu’il faut retenir de ce cours 2/3",
-    "text": "6.2 Ce qu’il faut retenir de ce cours 2/3\n\n\n\n\n\n\n\n\n\nNoteDéfinition : SCT\n\n\n\nLa variabilité de \\(Y\\) sans tenir compte du modèle.\n\\[\\color{purple}{SCT =\\displaystyle\\sum_{i = 1}^n( Y_i - \\bar{Y})^2}\\]\n\n\n\n\n\n\n\n\n\nNoteDéfinition : SCM\n\n\n\nPartie de la variabilité de \\(Y\\) expliquée par le modèle.\n\\[\\color{blue}{SCM = \\displaystyle\\sum_{i=1}^n(\\widehat{Y_i}-\\bar{Y})^2}\\]\n\n\n\n\n\n\n\n\n\nNoteDéfinition : SCR\n\n\n\nPartie de la variabilité de \\(Y\\) qui n’est pas expliquée par le modèle.\n\\[\\color{red}{SCR = \\displaystyle\\sum_{i=1}^n(Y_i-\\widehat{Y_i})^2=\\displaystyle\\sum_{i=1}^n E_i ^2}\\]\n\n\n\n\n\n\n\n\n\n\nTipDécomposition de la variance\n\n\n\n\\[\\color{purple}{SCT} = \\color{blue}{SCM} + \\color{red}{SCR} \\]\n\n\n\n\n\n\n\n\nTipTest de Fisher\n\n\n\n\\[T_n=\\frac{SCM/1}{SCR/(n-2)} \\overset{H_0}{\\sim} \\mathcal{F}(1,n-2)\\]",
+    "text": "6.2 Ce qu’il faut retenir de ce cours 2/3\n\n\n\n\n\n\n\nNoteDéfinition : SCT\n\n\n\nLa variabilité de \\(Y\\) sans tenir compte du modèle.\n\\[\\color{purple}{SCT =\\displaystyle\\sum_{i = 1}^n( Y_i - \\bar{Y})^2}\\]\n\n\n\n\n\n\n\n\nNoteDéfinition : SCM\n\n\n\nPartie de la variabilité de \\(Y\\) expliquée par le modèle.\n\\[\\color{blue}{SCM = \\displaystyle\\sum_{i=1}^n(\\widehat{Y_i}-\\bar{Y})^2}\\]\n\n\n\n\n\n\n\n\nNoteDéfinition : SCR\n\n\n\nPartie de la variabilité de \\(Y\\) qui n’est pas expliquée par le modèle.\n\\[\\color{red}{SCR = \\displaystyle\\sum_{i=1}^n(Y_i-\\widehat{Y_i})^2=\\displaystyle\\sum_{i=1}^n E_i ^2}\\]\n\n\n\n\n\n\n\n\nTipDécomposition de la variance\n\n\n\n\\[\\color{purple}{SCT} = \\color{blue}{SCM} + \\color{red}{SCR} \\]\n\n\n\n\n\n\n\n\nTipTest de Fisher\n\n\n\n\\[T_n=\\frac{SCM/1}{SCR/(n-2)} \\overset{H_0}{\\sim} \\mathcal{F}(1,n-2)\\]",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1277,7 +1277,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#ce-quil-faut-retenir-de-ce-cours-33",
     "title": "Introduction aux modèles linéaires",
     "section": "6.3 Ce qu’il faut retenir de ce cours 3/3",
-    "text": "6.3 Ce qu’il faut retenir de ce cours 3/3\n\n\n\n\n\n\nNoteCoefficient de détermination\n\n\n\n\\[R^2 = \\frac{SCM}{SCT}\\]\n\n\n\n\n\n\n\n\nTipIntervalle de confiance de la droite de régression\n\n\n\n\\[\\begin{align}\nIC_{1-\\delta}(\\mathbb{E}[Y_0])=&&\\left[\\widehat{y_0}-t_{1-\\frac{\\delta}{2}}\\sqrt{s^2\\left(\\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)};\\right.\\\\\n&&\\left.\\widehat{y_0}+t_{1-\\frac{\\delta}{2}}\\sqrt{s^2\\left(\\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)}\\right]\n\\end{align}\\]\n\n\n\n\n\n\n\n\nTipIntervalle de prévision\n\n\n\n\\[\\begin{align}\nIP_{1-\\delta}(Y_0)=&&\\left[\\widehat{y_0}-t_{1-\\frac{\\delta}{2}}\\sqrt{s^2\\left(1+\\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)};\\right.\\\\\n&&\\left.\\widehat{y_0}+t_{1-\\frac{\\delta}{2}}\\sqrt{s^2\\left(1+\\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)}\\right]\n\\end{align}\\]",
+    "text": "6.3 Ce qu’il faut retenir de ce cours 3/3\n\n\n\n\n\n\nNoteCoefficient de détermination\n\n\n\n\\[R^2 = \\frac{SCM}{SCT}\\]\n\n\n\n\n\n\n\n\nTipIntervalle de confiance de la droite de régression\n\n\n\n\\[IC_{1-\\delta}(\\mathbb{E}[Y_0])= \\] \\[\\begin{align}\n&\\left[\\widehat{y_0}-t_{1-\\frac{\\delta}{2}}\\sqrt{s^2\\left(\\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)};\\right.\\\\\n&\\left.\\widehat{y_0}+t_{1-\\frac{\\delta}{2}}\\sqrt{s^2\\left(\\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)}\\right]\n\\end{align}\\]\n\n\n\n\n\n\n\n\nTipIntervalle de prévision\n\n\n\n\\[IP_{1-\\delta}(Y_0)=\\]\n\\[\\begin{align}\n&\\left[\\widehat{y_0}-t_{1-\\frac{\\delta}{2}}\\sqrt{s^2\\left(1+\\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)};\\right.\\\\\n&\\left.\\widehat{y_0}+t_{1-\\frac{\\delta}{2}}\\sqrt{s^2\\left(1+\\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)}\\right]\n\\end{align}\\]",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1301,7 +1301,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#propriété-et-loi-de-lestimateur-s2",
     "title": "Introduction aux modèles linéaires",
     "section": "6.5 Propriété et loi de l’estimateur \\(S^2\\):",
-    "text": "6.5 Propriété et loi de l’estimateur \\(S^2\\):\n\n\n\n\n\n\nTipThéorème\n\n\n\n\\(S^2\\) est un estimateur sans biais de \\(\\sigma^2\\) et on a\n\\[\\frac{(n-2)S^2}{\\sigma^2}=\\frac{\\sum_{i=1}^n(Y_i-Ax_i-B)^2}{\\sigma^2}\\sim\\chi^2(n-2)\\] De plus \\(S^2\\) est indépendant de \\(A\\), \\(B\\) et \\(\\bar{Y}\\)",
+    "text": "6.5 Propriété et loi de l’estimateur \\(S^2\\):\n\n\n\n\n\n\nTipThéorème\n\n\n\n\\(S^2\\) est un estimateur sans biais de \\(\\sigma^2\\) et on a\n\\[\\frac{(n-2)S^2}{\\sigma^2}=\\frac{\\sum_{i=1}^n(Y_i-Ax_i-B)^2}{\\sigma^2}\\]\n\\[\\frac{(n-2)S^2}{\\sigma^2}\\sim\\chi^2(n-2)\\] De plus \\(S^2\\) est indépendant de \\(A\\), \\(B\\) et \\(\\bar{Y}\\)",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1313,7 +1313,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#propriétés-et-loi-des-estimateurs-a-et-b",
     "title": "Introduction aux modèles linéaires",
     "section": "6.6 Propriétés et loi des estimateurs \\(A\\) et \\(B\\)",
-    "text": "6.6 Propriétés et loi des estimateurs \\(A\\) et \\(B\\)\n\n\n\n\n\n\n\nTipThéorème\n\n\n\n\\(A\\) et \\(B\\) sont des estimateurs sans biais et consistants de \\(\\alpha\\) et \\(\\beta\\). \\(A\\) et \\(B\\) suivent des lois normales d’espérance \\(\\alpha\\) et \\(\\beta\\), et de variance\n\\[\\begin{align}\nVar(A)&=\\frac{\\sigma^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\\\\n& \\\\\nVar(B)&=\\sigma^2\\left(\\frac{1}{n}+\\frac{\\bar{x}^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)\n\\end{align}\\] Si on remplace \\(\\sigma^2\\) par \\(S^2\\) pour obtenir des estimateurs des variances\n\\[\\begin{align}\nS^2_A&=&\\frac{S^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\mbox{ et } S^2_B=S^2\\left(\\frac{1}{n}+\\frac{\\bar{x}^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)\n\\end{align}\\]\non a\n\\[\\frac{(A-\\alpha)}{S_A}\\sim \\mathcal{T}{(n-2)}\\mbox{ et }\\frac{(B-\\beta)}{S_B}\\sim \\mathcal{T}{(n-2)}\\]",
+    "text": "6.6 Propriétés et loi des estimateurs \\(A\\) et \\(B\\)\n\n\n\n\n\n\n\nTipThéorème\n\n\n\n\\(A\\) et \\(B\\) sont des estimateurs sans biais et consistants de \\(\\alpha\\) et \\(\\beta\\). \\(A\\) et \\(B\\) suivent des lois normales d’espérance \\(\\alpha\\) et \\(\\beta\\), et de variance\n\\[\\begin{align}\nVar(A)&=\\frac{\\sigma^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\\\\n& \\\\\nVar(B)&=\\sigma^2\\left(\\frac{1}{n}+\\frac{\\bar{x}^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)\n\\end{align}\\] Si on remplace \\(\\sigma^2\\) par \\(S^2\\) pour obtenir des estimateurs des variances\n\\[S^2_A=\\frac{S^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\]\n\\[S^2_B=S^2\\left(\\frac{1}{n}+\\frac{\\bar{x}^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)\\]\non a\n\\[\\frac{(A-\\alpha)}{S_A}\\sim \\mathcal{T}{(n-2)}\\]\n\\[\\frac{(B-\\beta)}{S_B}\\sim \\mathcal{T}{(n-2)}\\]",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1361,7 +1361,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#test-dans-le-modèle-de-régression-linéaire-simple-gaussien",
     "title": "Introduction aux modèles linéaires",
     "section": "6.10 Test dans le modèle de régression linéaire simple gaussien",
-    "text": "6.10 Test dans le modèle de régression linéaire simple gaussien\nTest du caractère significatif de la liaison linéaire\n\nTest de Student de la nullité de la pente de régression \\(H_0:\\alpha=0\\) contre \\(H_1:\\alpha\\neq 0\\)\nTest de Fisher de Comparaison de modèles : \\[H_0\\; \\text{modèle}\\; M_1:Y_i=\\beta+E_i,\\quad E_i\\; i.i.d.\\; {\\cal N}(0,\\sigma^2)\\]\n\n\ncontre l’alternative\n\n\\[H_1\\; :\\; \\text{modèle}\\; M_2:Y_i=\\alpha x_i+\\beta+E_i,\\quad E_i\\; i.i.d.\\;\n{\\cal N}(0,\\sigma^2)\\]",
+    "text": "6.10 Test dans le modèle de régression linéaire simple gaussien\nTest du caractère significatif de la liaison linéaire\n\nTest de Student de la nullité de la pente de régression \\(H_0:\\alpha=0\\) contre \\(H_1:\\alpha\\neq 0\\)\nTest de Fisher de Comparaison de modèles : \\[H_0\\; \\text{modèle}\\; M_1:Y_i=\\beta+E_i\\] \\[\\text{avec } E_i\\overset{i.i.d}\\sim {\\cal N}(0,\\sigma^2)\\]\n\n\ncontre l’alternative\n\n\\[H_1\\; :\\; \\text{modèle}\\; M_2:Y_i=\\alpha x_i+\\beta+E_i\\]\n\\[\\text{avec } E_i\\overset{i.i.d}\\sim {\\cal N}(0,\\sigma^2)\\]",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1373,7 +1373,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#test-de-student-de-la-nullité-de-la-pente-de-régression",
     "title": "Introduction aux modèles linéaires",
     "section": "6.11 Test de Student de la nullité de la pente de régression",
-    "text": "6.11 Test de Student de la nullité de la pente de régression\nModélisation des données :\n\\((x_i,y_i)\\), \\(i=1,\\dots,n\\) : modèle linéaire \\[\\forall i=1,\\cdots,n,\\quad Y_i=\\alpha x_i+\\beta+E_i, \\; E_i\\overset{i.i.d.}\\sim{\\cal N}(0,\\sigma^2)\\]\nHypothèses :\nTest de \\[H_0:\\alpha=0\\]\ncontre\n\\[H_1:\\alpha\\neq 0\\] au risque \\(\\delta=5\\%\\)",
+    "text": "6.11 Test de Student de la nullité de la pente de régression\nModélisation des données :\n\\((x_i,y_i)\\), \\(i=1,\\dots,n\\) : modèle linéaire \\(\\forall i=1,\\cdots,n\\)\n\\[Y_i=\\alpha x_i+\\beta+E_i, \\; E_i\\overset{i.i.d.}\\sim{\\cal N}(0,\\sigma^2)\\]\nHypothèses :\nTest de \\[H_0:\\alpha=0\\]\ncontre\n\\[H_1:\\alpha\\neq 0\\] au risque \\(\\delta=5\\%\\)",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1457,7 +1457,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#décomposition-de-la-variance",
     "title": "Introduction aux modèles linéaires",
     "section": "6.18 Décomposition de la variance",
-    "text": "6.18 Décomposition de la variance\n\n\n\n\n\n\n\n\n\n\n\n\\[\\color{purple}{SCT =\\displaystyle\\sum_{i = 1}^n( Y_i - \\bar{Y})^2}\\]\n\n\n\n\n\n\n\n\n\n\n\\[\\color{blue}{SCM = \\displaystyle\\sum_{i=1}^n(\\widehat{Y_i}-\\bar{Y})^2}\\]\n\n\n\n\n\n\n\n\n\n\n\\[\\color{red}{SCR = \\displaystyle\\sum_{i=1}^n(Y_i-\\widehat{Y_i})^2=\\displaystyle\\sum_{i=1}^n E_i ^2}\\]\n\n\n\n\n\n\n\n\nTipThéorème\n\n\n\n\\[\\color{purple}{SCT} = \\color{blue}{SCM} + \\color{red}{SCR} \\]",
+    "text": "6.18 Décomposition de la variance\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\[\\color{purple}{SCT =\\displaystyle\\sum_{i = 1}^n( Y_i - \\bar{Y})^2}\\]\n\\[\\color{blue}{SCM = \\displaystyle\\sum_{i=1}^n(\\widehat{Y_i}-\\bar{Y})^2}\\]\n\\[\\color{red}{SCR = \\displaystyle\\sum_{i=1}^n(Y_i-\\widehat{Y_i})^2=\\displaystyle\\sum_{i=1}^n E_i ^2}\\]\n\n\n\n\n\n\nTipThéorème\n\n\n\n\\[\\color{purple}{SCT} = \\color{blue}{SCM} + \\color{red}{SCR} \\]",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1481,7 +1481,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#test-de-fisher",
     "title": "Introduction aux modèles linéaires",
     "section": "6.20 Test de Fisher",
-    "text": "6.20 Test de Fisher\nIl s’agit d’un test unilatéral de comparaison de variance !\nStatistique de test\n\\[T_n=\\frac{SCM/1}{SCR/(n-2)} \\overset{H_0}{\\sim} \\mathcal{F}(1,n-2)\\]\nZone de rejet\n\\[R_\\delta = \\{T_n &gt; f_{1-\\delta} \\}\\]\n\\(f_{1-\\delta}\\) est le quantile \\(1 - \\delta\\) de la loi de Fisher \\(\\mathcal{F}(1,n-2)\\).\n\\(\\mathbb{P}_{H_0}(T_n&lt;f_{1-\\delta})=1-\\delta\\)\n\n\nApplication numérique\n\nOn calcule \\(t_n\\)\nOn rejette \\(H_0\\) si \\(t_{n} \\in R_{\\delta}\\)\n\n\nCalcul de \\(p_c\\)\n\\(p_{c} = \\mathbb{P}_{H_0}(T_n &gt; t_n)=1-\\mathbb{P}(F&lt;t_n)\\) où \\(F\\sim \\mathcal{F}(1,n-2)\\)",
+    "text": "6.20 Test de Fisher\nIl s’agit d’un test unilatéral de comparaison de variance !\nStatistique de test\n\\[T_n=\\frac{SCM/1}{SCR/(n-2)} \\overset{H_0}{\\sim} \\mathcal{F}(1,n-2)\\]\nZone de rejet\n\\[R_\\delta = \\{T_n &gt; f_{1-\\delta} \\}\\]\n\\(f_{1-\\delta}\\) est le quantile \\(1 - \\delta\\) de la loi de Fisher \\(\\mathcal{F}(1,n-2)\\).\n\\(\\mathbb{P}_{H_0}(T_n&lt;f_{1-\\delta})=1-\\delta\\)\nApplication numérique\n\nOn calcule \\(t_n\\)\nOn rejette \\(H_0\\) si \\(t_{n} \\in R_{\\delta}\\)\n\nCalcul de \\(p_c\\)\n\\(p_{c} = \\mathbb{P}_{H_0}(T_n &gt; t_n)=1-\\mathbb{P}(F&lt;t_n)\\) où \\(F\\sim \\mathcal{F}(1,n-2)\\)",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1529,7 +1529,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#les-résidus-du-modèle-m_2",
     "title": "Introduction aux modèles linéaires",
     "section": "6.24 Les résidus du modèle \\(M_2\\)",
-    "text": "6.24 Les résidus du modèle \\(M_2\\)\n\\[Y_i=\\beta+ \\alpha x_i+E_i, \\mbox{ où } E_i\\overset{i.i.d.}\\sim{\\cal N}(0,\\sigma^2)\\]\n\n\\(Y_i \\overset{i.i.d.}\\sim {\\mathcal N}(\\alpha x_i+\\beta;\\sigma^2)\\).\n2 paramètres d’espérance \\(\\alpha\\) et \\(\\beta\\) estimés (par les moindres carrés) par \\(A\\) et \\(B\\).\nPrédicteur \\(\\widehat{Y_i}(M_2)=Ax_i+B\\)\nSomme des carrés résiduelles :\n\n\\[SCR(M_2) = \\sum_{i=1}^n (Y_i-\\widehat{Y_i}(M_2))^2 = \\sum_{i=1}^n (Y_i-Axi-B)^2\\]",
+    "text": "6.24 Les résidus du modèle \\(M_2\\)\n\\[Y_i=\\beta+ \\alpha x_i+E_i, \\mbox{ où } E_i\\overset{i.i.d.}\\sim{\\cal N}(0,\\sigma^2)\\]\n\n\\(Y_i \\overset{i.i.d.}\\sim {\\mathcal N}(\\alpha x_i+\\beta;\\sigma^2)\\).\n2 paramètres d’espérance \\(\\alpha\\) et \\(\\beta\\) estimés (par les moindres carrés) par \\(A\\) et \\(B\\).\nPrédicteur \\(\\widehat{Y_i}(M_2)=Ax_i+B\\)\nSomme des carrés résiduelles :\n\n\\[\\begin{align}SCR(M_2) = \\sum_{i=1}^n (Y_i-\\widehat{Y_i}(M_2))^2 \\\\= \\sum_{i=1}^n (Y_i-Axi-B)^2\\end{align}\\]",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1541,7 +1541,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#les-résidus-du-modèle-m_1",
     "title": "Introduction aux modèles linéaires",
     "section": "6.25 Les résidus du modèle \\(M_1\\)",
-    "text": "6.25 Les résidus du modèle \\(M_1\\)\n\\[Y_i=\\beta+E_i, \\mbox{ où }  E_i\\overset{i.i.d.}\\sim{\\cal N}(0,\\sigma^2)\\]\n\n\\(Y_i\\overset{i.i.d.}\\sim{\\cal N}(\\beta;\\sigma^2)\\)\n1 paramètre d’espérance \\(\\beta\\) estimé (par les moindres carrés) par \\(\\bar{Y}\\).\nPrédicteur \\(\\widehat{Y_i}(M_1) = \\bar{Y}\\)\nSomme des carrés résiduelles :\n\n\\[SCR(M_1)=\\sum_{i=1}^n E_i^2(M_1)=\\sum_{i=1}^n (Y_i-\\widehat{Y}_i(M_1))^2=\\sum_{i=1}^n (Y_i-\\bar{Y})^2=SCT\\]",
+    "text": "6.25 Les résidus du modèle \\(M_1\\)\n\\[Y_i=\\beta+E_i, \\mbox{ où }  E_i\\overset{i.i.d.}\\sim{\\cal N}(0,\\sigma^2)\\]\n\n\\(Y_i\\overset{i.i.d.}\\sim{\\cal N}(\\beta;\\sigma^2)\\)\n1 paramètre d’espérance \\(\\beta\\) estimé (par les moindres carrés) par \\(\\bar{Y}\\).\nPrédicteur \\(\\widehat{Y_i}(M_1) = \\bar{Y}\\)\nSomme des carrés résiduelles :\n\n\\[SCR(M_1)=\\sum_{i=1}^n E_i^2(M_1)=\\sum_{i=1}^n (Y_i-\\widehat{Y}_i(M_1))^2\\\\=\\sum_{i=1}^n (Y_i-\\bar{Y})^2=SCT\\]",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1553,7 +1553,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#interprétation-du-test-de-fisher",
     "title": "Introduction aux modèles linéaires",
     "section": "6.26 Interprétation du test de Fisher",
-    "text": "6.26 Interprétation du test de Fisher\n\n\n\n\n\n\nTipThéorème\n\n\n\nStatistique de test \\(T_n\\) peut s’écrire\n\\[\n\\begin{align}\nT_n &= \\frac{SCM/ 1}{SCR(M_2)/(n-2)} \\\\\n&= \\frac{(SCR(M_{\\color{red}{1}}) - SCR(M_{\\color{red}{2}}))/ ( 2 - 1)}{SCR(M_2)/(n- 2)}\\overset{H_0}\\sim \\mathcal{F}(1,n-2)\n\\end{align}\n\\]\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\n\\(SCR(M_{\\color{red}{1}}) - SCR(M_{\\color{red}{2}})\\) : différence des variances non expliquées par les modèles.\n\\((2-1)\\) : différence du nombre de paramètres.\n\\(SCR(M_1)\\geq SCR(M_2)\\) (toujours !).",
+    "text": "6.26 Interprétation du test de Fisher\n\n\n\n\n\n\nTipThéorème\n\n\n\nStatistique de test \\(T_n\\) peut s’écrire\n\\[\n\\begin{align}\nT_n &= \\frac{SCM/ 1}{SCR(M_2)/(n-2)} \\\\\n= &\\frac{(SCR(M_{\\color{red}{1}}) - SCR(M_{\\color{red}{2}}))/ ( 2 - 1)}{SCR(M_2)/(n- 2)}\\overset{H_0}\\sim \\mathcal{F}(1,n-2)\n\\end{align}\n\\]\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\n\\(SCR(M_{\\color{red}{1}}) - SCR(M_{\\color{red}{2}})\\) : différence des variances non expliquées par les modèles.\n\\((2-1)\\) : différence du nombre de paramètres.\n\\(SCR(M_1)\\geq SCR(M_2)\\) (toujours !).",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1709,7 +1709,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#intervalle-de-prévision-de-y_0",
     "title": "Introduction aux modèles linéaires",
     "section": "8.7 Intervalle de prévision de \\(Y_0\\)",
-    "text": "8.7 Intervalle de prévision de \\(Y_0\\)\n\nOn rajoute l’aléa non expliqué par le modèle\n\n\n\n\n\n\nTipThéorème\n\n\n\n\\(Y_0=\\alpha x_0+\\beta + E_0\\)\n\\[\\mathbb{V}(\\widehat{Y_0} - Y_0)= \\mathbb{V}[Ax_0+ B] + \\mathbb{V}[E_0] = \\sigma^2\\left( 1 + \\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)\\] estimée par \\[S_{P_0}^2=S^2\\left( 1 + \\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)\\] De plus, \\[\n\\frac{(\\widehat{Y_0} -Y_0)}{S_{P_0}}\\sim\\mathcal{T}(n-2)\n\\]",
+    "text": "8.7 Intervalle de prévision de \\(Y_0\\)\n\nOn rajoute l’aléa non expliqué par le modèle\n\n\n\n\n\n\nTipThéorème\n\n\n\n\\(Y_0=\\alpha x_0+\\beta + E_0\\)\n\\[\\begin{align}\\mathbb{V}(\\widehat{Y_0} - Y_0)&= \\mathbb{V}[Ax_0+ B] + \\mathbb{V}[E_0] \\\\&= \\sigma^2\\left( 1 + \\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)\\end{align}\\] estimée par \\[S_{P_0}^2=S^2\\left( 1 + \\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)\\] De plus, \\[\n\\frac{(\\widehat{Y_0} -Y_0)}{S_{P_0}}\\sim\\mathcal{T}(n-2)\\]",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1721,7 +1721,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#intervalle-de-prévision-de-y_0-1",
     "title": "Introduction aux modèles linéaires",
     "section": "8.8 Intervalle de prévision de \\(Y_0\\)",
-    "text": "8.8 Intervalle de prévision de \\(Y_0\\)\n\n\n\n\n\n\n\nTipThéorème\n\n\n\n\\[\\frac{(\\widehat{Y_0}-Y_0)}{\\sqrt{S^2\\left(1+\\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)}}\\sim\\mathcal{T}(n-2)\\] Intervalle de prédiction de \\(Y_0\\) de niveau \\(1-\\delta\\) :\n\\[\n\\begin{align}\nIP_{1-\\delta}(Y_0)=&&\\left[\\widehat{y_0}-t_{1-\\frac{\\delta}{2}}\\sqrt{s^2\\left(1+\\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)};\\right.\\\\\n&&\\left.\\widehat{y_0}+t_{1-\\frac{\\delta}{2}}\\sqrt{s^2\\left(1+\\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)}\\right]\n\\end{align}\n\\]\noù \\(t_{1-\\frac{\\delta}{2}}\\) est tel que \\(\\mathbb{P}\\left(\\mid \\mathcal{T}(n-2)\\mid \\leq t_{1-\\frac{\\delta}{2}}\\right)=1-\\delta\\)\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\\[IC_{1-\\delta}(\\mathbb{E}[Y_0])\\subset\nIP_{1-\\delta}(Y_0)\\]",
+    "text": "8.8 Intervalle de prévision de \\(Y_0\\)\n\n\n\n\n\n\n\nTipThéorème\n\n\n\n\\[\\frac{(\\widehat{Y_0}-Y_0)}{\\sqrt{S^2\\left(1+\\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)}}\\sim\\mathcal{T}(n-2)\\] Intervalle de prédiction de \\(Y_0\\) de niveau \\(1-\\delta\\) :\n\\[IP_{1-\\delta}(Y_0)=\\]\n\\[\n\\begin{align}\n&\\left[\\widehat{y_0}-t_{1-\\frac{\\delta}{2}}\\sqrt{s^2\\left(1+\\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)};\\right.\\\\\n&\\left.\\widehat{y_0}+t_{1-\\frac{\\delta}{2}}\\sqrt{s^2\\left(1+\\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)}\\right]\n\\end{align}\n\\]\noù \\(t_{1-\\frac{\\delta}{2}}\\) est tel que \\(\\mathbb{P}\\left(\\mid \\mathcal{T}(n-2)\\mid \\leq t_{1-\\frac{\\delta}{2}}\\right)=1-\\delta\\)\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\\[IC_{1-\\delta}(\\mathbb{E}[Y_0])\\subset\nIP_{1-\\delta}(Y_0)\\]",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1757,7 +1757,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#ce-quil-faut-retenir-de-ce-cours-13-1",
     "title": "Introduction aux modèles linéaires",
     "section": "8.11 Ce qu’il faut retenir de ce cours 1/3",
-    "text": "8.11 Ce qu’il faut retenir de ce cours 1/3\n\n\n\n\n\n\nTipLois des estimateurs\n\n\n\n\\[\\frac{(A-\\alpha)}{S_A}\\sim \\mathcal{T}{(n-2)}\\mbox{ et }\\frac{(B-\\beta)}{S_B}\\sim \\mathcal{T}{(n-2)}\\]\n\n\n\n\n\n\n\n\nTipEstimateurs du modèle\n\n\n\n\\[\\begin{align}\nIC_{1-\\delta}(\\alpha) =& \\left[a-t_{1-\\frac{\\delta}{2}} s_A;a+t_{1-\\frac{\\delta}{2}} s_A\\right]\\\\\nIC_{1-\\delta}(\\beta)=&\\left[b-t_{1-\\frac{\\delta}{2}} s_B;b+t_{1-\\frac{\\delta}{2}} s_B\\right]\\\\\n\\end{align}\\]\n\n\\(s_A = \\sqrt{\\frac{s^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}}\\) et \\(s_B = \\sqrt{s^2\\left(\\frac{1}{n}+\\frac{\\bar{x}^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)}\\)\n\n\n\n\n\n\n\n\n\nNoteTest de Student de la nullité de la pente de régression\n\n\n\n\n\\[H_0:\\alpha=0\\]\n\\[H_1:\\alpha\\neq 0\\]\n\n\n\n\n\n\n\n\n\nNoteTest de Fisher de Comparaison de modèles\n\n\n\n\\[H_0\\; :\\; \\text{modèle}\\; M_1:Y_i=\\beta+E_i,\\quad E_i\\; \\overset{i.i.d.}{\\sim} {\\cal N}(0,\\sigma^2)\\]\n\\[H_1\\; :\\; \\text{modèle}\\; M_2:Y_i=\\alpha x_i+\\beta+E_i,\\quad E_i\\; \\overset{i.i.d.}{\\sim}\n{\\cal N}(0,\\sigma^2)\\]",
+    "text": "8.11 Ce qu’il faut retenir de ce cours 1/3\n\n\n\n\n\n\nTipLois des estimateurs\n\n\n\n\\[\\frac{(A-\\alpha)}{S_A}\\sim \\mathcal{T}{(n-2)}\\]\n\\[\\frac{(B-\\beta)}{S_B}\\sim \\mathcal{T}{(n-2)}\\]\n\n\n\n\n\n\n\n\nTipEstimateurs du modèle\n\n\n\n\\[\\begin{align}\nIC_{1-\\delta}(\\alpha) =& \\left[a-t_{1-\\frac{\\delta}{2}} s_A;a+t_{1-\\frac{\\delta}{2}} s_A\\right]\\\\\nIC_{1-\\delta}(\\beta)=&\\left[b-t_{1-\\frac{\\delta}{2}} s_B;b+t_{1-\\frac{\\delta}{2}} s_B\\right]\\\\\n\\end{align}\\]\n\n\\(s_A = \\sqrt{\\frac{s^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}}\\) et \\(s_B = \\sqrt{s^2\\left(\\frac{1}{n}+\\frac{\\bar{x}^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)}\\)\n\n\n\n\n\n\n\n\n\nNoteTest de Student de la nullité de la pente de régression\n\n\n\n\n\\[H_0:\\alpha=0\\]\n\\[H_1:\\alpha\\neq 0\\]\n\n\n\n\n\n\n\n\n\nNoteTest de Fisher de Comparaison de modèles\n\n\n\n\\[H_0\\; :\\; \\text{modèle}\\; M_1:Y_i=\\beta+E_i\\]\n\\[H_1\\; :\\; \\text{modèle}\\; M_2:Y_i=\\alpha x_i+\\beta+E_i\\]",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1769,7 +1769,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#ce-quil-faut-retenir-de-ce-cours-23-1",
     "title": "Introduction aux modèles linéaires",
     "section": "8.12 Ce qu’il faut retenir de ce cours 2/3",
-    "text": "8.12 Ce qu’il faut retenir de ce cours 2/3\n\n\n\n\n\n\n\n\nNoteDéfinition : SCT\n\n\n\nLa variabilité de \\(Y\\) sans tenir compte du modèle.\n\\[\\color{purple}{SCT =\\displaystyle\\sum_{i = 1}^n( Y_i - \\bar{Y})^2}\\]\n\n\n\n\n\n\n\n\n\nNoteDéfinition : SCM\n\n\n\nPartie de la variabilité de \\(Y\\) expliquée par le modèle.\n\\[\\color{blue}{SCM = \\displaystyle\\sum_{i=1}^n(\\widehat{Y_i}-\\bar{Y})^2}\\]\n\n\n\n\n\n\n\n\n\nNoteDéfinition : SCR\n\n\n\nPartie de la variabilité de \\(Y\\) qui n’est pas expliquée par le modèle.\n\\[\\color{red}{SCR = \\displaystyle\\sum_{i=1}^n(Y_i-\\widehat{Y_i})^2=\\displaystyle\\sum_{i=1}^n E_i ^2}\\]\n\n\n\n\n\n\n\n\n\n\nTipDécomposition de la variance\n\n\n\n\\[\\color{purple}{SCT} = \\color{blue}{SCM} + \\color{red}{SCR} \\]\n\n\n\n\n\n\n\n\nTipTest de Fisher\n\n\n\n\\[T_n=\\frac{SCM/1}{SCR/(n-2)} \\overset{H_0}{\\sim} \\mathcal{F}(1,n-2)\\]",
+    "text": "8.12 Ce qu’il faut retenir de ce cours 2/3\n\n\n\n\n\n\n\nNoteDéfinition : SCT\n\n\n\nLa variabilité de \\(Y\\) sans tenir compte du modèle.\n\\[\\color{purple}{SCT =\\displaystyle\\sum_{i = 1}^n( Y_i - \\bar{Y})^2}\\]\n\n\n\n\n\n\n\n\nNoteDéfinition : SCM\n\n\n\nPartie de la variabilité de \\(Y\\) expliquée par le modèle.\n\\[\\color{blue}{SCM = \\displaystyle\\sum_{i=1}^n(\\widehat{Y_i}-\\bar{Y})^2}\\]\n\n\n\n\n\n\n\n\nNoteDéfinition : SCR\n\n\n\nPartie de la variabilité de \\(Y\\) qui n’est pas expliquée par le modèle.\n\\[\\color{red}{SCR = \\displaystyle\\sum_{i=1}^n(Y_i-\\widehat{Y_i})^2=\\displaystyle\\sum_{i=1}^n E_i ^2}\\]\n\n\n\n\n\n\n\n\nTipDécomposition de la variance\n\n\n\n\\[\\color{purple}{SCT} = \\color{blue}{SCM} + \\color{red}{SCR} \\]\n\n\n\n\n\n\n\n\nTipTest de Fisher\n\n\n\n\\[T_n=\\frac{SCM/1}{SCR/(n-2)} \\overset{H_0}{\\sim} \\mathcal{F}(1,n-2)\\]",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1781,7 +1781,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#ce-quil-faut-retenir-de-ce-cours-33-1",
     "title": "Introduction aux modèles linéaires",
     "section": "8.13 Ce qu’il faut retenir de ce cours 3/3",
-    "text": "8.13 Ce qu’il faut retenir de ce cours 3/3\n\n\n\n\n\n\nNoteCoefficient de détermination\n\n\n\n\\[R^2 = \\frac{SCM}{SCT}\\]\n\n\n\n\n\n\n\n\nTipIntervalle de confiance de la droite de régression\n\n\n\n\\[\\begin{align}\nIC_{1-\\delta}(\\mathbb{E}[Y_0])=&&\\left[\\widehat{y_0}-t_{1-\\frac{\\delta}{2}}\\sqrt{s^2\\left(\\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)};\\right.\\\\\n&&\\left.\\widehat{y_0}+t_{1-\\frac{\\delta}{2}}\\sqrt{s^2\\left(\\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)}\\right]\n\\end{align}\\]\n\n\n\n\n\n\n\n\nTipIntervalle de prévision\n\n\n\n\\[\\begin{align}\nIP_{1-\\delta}(Y_0)=&&\\left[\\widehat{y_0}-t_{1-\\frac{\\delta}{2}}\\sqrt{s^2\\left(1+\\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)};\\right.\\\\\n&&\\left.\\widehat{y_0}+t_{1-\\frac{\\delta}{2}}\\sqrt{s^2\\left(1+\\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)}\\right]\n\\end{align}\\]\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'",
+    "text": "8.13 Ce qu’il faut retenir de ce cours 3/3\n\n\n\n\n\n\nNoteCoefficient de détermination\n\n\n\n\\[R^2 = \\frac{SCM}{SCT}\\]\n\n\n\n\n\n\n\n\nTipIntervalle de confiance de la droite de régression\n\n\n\n\\[IC_{1-\\delta}(\\mathbb{E}[Y_0])= \\] \\[\\begin{align}\n&\\left[\\widehat{y_0}-t_{1-\\frac{\\delta}{2}}\\sqrt{s^2\\left(\\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)};\\right.\\\\\n&\\left.\\widehat{y_0}+t_{1-\\frac{\\delta}{2}}\\sqrt{s^2\\left(\\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)}\\right]\n\\end{align}\\]\n\n\n\n\n\n\n\n\nTipIntervalle de prévision\n\n\n\n\\[IP_{1-\\delta}(Y_0)=\\]\n\\[\\begin{align}\n&\\left[\\widehat{y_0}-t_{1-\\frac{\\delta}{2}}\\sqrt{s^2\\left(1+\\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)};\\right.\\\\\n&\\left.\\widehat{y_0}+t_{1-\\frac{\\delta}{2}}\\sqrt{s^2\\left(1+\\frac{1}{n}+\\frac{(x_0-\\bar{x})^2}{\\sum_{i=1}^n(x_i-\\bar{x})^2}\\right)}\\right]\n\\end{align}\\]",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -2650,6 +2650,30 @@
       "Cours",
       "Modèles linéaires.",
       "Modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#étude-de-la-variance",
+    "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#étude-de-la-variance",
+    "title": "Introduction aux modèles linéaires",
+    "section": "6.16 Étude de la variance",
+    "text": "6.16 Étude de la variance\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteDéfinition : Somme des Carrés Totale\n\n\n\nLa variabilité de \\(Y\\) sans tenir compte du modèle.\n\\[\\color{purple}{SCT =\\displaystyle\\sum_{i = 1}^n( Y_i - \\bar{Y})^2}\\]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires.",
+      "Introduction aux modèles linéaires"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#étude-de-la-variance-1",
+    "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#étude-de-la-variance-1",
+    "title": "Introduction aux modèles linéaires",
+    "section": "6.17 Étude de la variance",
+    "text": "6.17 Étude de la variance\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteDéfinition : Somme des Carrés du Modèle\n\n\n\nPartie de la variabilité de \\(Y\\) expliquée par le modèle.\n\\[\\color{blue}{SCM = \\displaystyle\\sum_{i=1}^n(\\widehat{Y_i}-\\bar{Y})^2}\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteDéfinition : Somme des Carrés Résiduelles\n\n\n\nPartie de la variabilité de \\(Y\\) qui n’est pas expliquée par le modèle.\n\\[\\color{red}{\\begin{align}SCR = \\displaystyle\\sum_{i=1}^n(Y_i-\\widehat{Y_i})^2=\\displaystyle\\sum_{i=1}^n E_i ^2\\end{align}}\\]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires.",
+      "Introduction aux modèles linéaires"
     ]
   }
 ]

@@ -1123,7 +1123,7 @@ On compare avec $t_{1-\frac{\delta}{2}}$ et on conclue.
 
 [$p$-valeur :]{.upc}
 
-$$p_c=\mathbb{P}_{H_0}(\mid T_n\mid >\mid t_{obs}\mid)=2(1-\mathbb{P}(T_n\leq |t_n|))$$ où $T_n\sim \mathcal{T}(n-2)$
+$$p_c=\mathbb{P}_{H_0}(\mid T_n\mid >\mid t_{obs}\mid)\\=2(1-\mathbb{P}(T_n\leq |t_n|))$$ où $T_n\sim \mathcal{T}(n-2)$
 
 Pour un risque de 1ere espèce $\delta$ fixé acceptable (par ex $\delta=5\%$)
 
@@ -1159,8 +1159,8 @@ n <- nrow(fish)
 -   Comparer les modèles $M_1$ et $M_2$ (à un et deux paramètres d'espérance) définis par
 
 $$\begin{align}
-M_1 &: Y_i= \beta+E_i,\quad &E_i\ \overset{i.i.d.}\sim\ {\cal N}(0,\sigma^2)\\
-M_2 &: Y_i=\alpha x_i+\beta+E_i,\quad &E_i\ \overset{i.i.d.}\sim\ {\cal N}(0,\sigma^2)
+M_1 &: Y_i= \beta+E_i,\quad E_i\ \overset{i.i.d.}\sim\ {\cal N}(0,\sigma^2)\\
+M_2 &: Y_i=\alpha x_i+\beta+E_i,\quad E_i\ \overset{i.i.d.}\sim\ {\cal N}(0,\sigma^2)
 \end{align}$$
 
 -   Revient à tester, au risque $\delta$ fixé, l'hypothèse nulle
@@ -1568,7 +1568,7 @@ $$Y_i=\beta+E_i, \mbox{ où }  E_i\overset{i.i.d.}\sim{\cal N}(0,\sigma^2)$$
 
 -   Somme des carrés résiduelles :
 
-$$SCR(M_1)=\sum_{i=1}^n E_i^2(M_1)=\sum_{i=1}^n (Y_i-\widehat{Y}_i(M_1))^2\\=\sum_{i=1}^n (Y_i-\bar{Y})^2=SCT$$
+$$\begin{align}SCR(M_1)&=\sum_{i=1}^n E_i^2(M_1)\\&=\sum_{i=1}^n (Y_i-\widehat{Y}_i(M_1))^2\\&=\sum_{i=1}^n (Y_i-\bar{Y})^2=SCT\end{align}$$
 
 
 ## Interprétation du test de Fisher
@@ -1579,7 +1579,7 @@ Statistique de test $T_n$ peut s'écrire
 $$
 \begin{align}
 T_n &= \frac{SCM/ 1}{SCR(M_2)/(n-2)} \\
-= &\frac{(SCR(M_{\color{red}{1}}) - SCR(M_{\color{red}{2}}))/ ( 2 - 1)}{SCR(M_2)/(n- 2)}\overset{H_0}\sim \mathcal{F}(1,n-2)
+= &\frac{(SCR(M_{\color{red}{1}}) - SCR(M_{\color{red}{2}}))/ ( 2 - 1)}{SCR(M_2)/(n- 2)}\\&\overset{H_0}\sim \mathcal{F}(1,n-2)
 \end{align}
 $$
 

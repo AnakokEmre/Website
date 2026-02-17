@@ -1397,7 +1397,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#p-valeur-du-test",
     "title": "Introduction aux modèles linéaires",
     "section": "6.13 p-valeur du test",
-    "text": "6.13 p-valeur du test\n\\(p\\)-valeur :\n\\[p_c=\\mathbb{P}_{H_0}(\\mid T_n\\mid &gt;\\mid t_{obs}\\mid)=2(1-\\mathbb{P}(T_n\\leq |t_n|))\\] où \\(T_n\\sim \\mathcal{T}(n-2)\\)\nPour un risque de 1ere espèce \\(\\delta\\) fixé acceptable (par ex \\(\\delta=5\\%\\))\n\nsi \\(p_c &lt;\\delta\\), on rejette \\(H_0\\), le test de niveau \\(\\delta\\) est significatif (liaison significative)\nsi \\(p_c &gt;\\delta\\), on ne rejette \\(H_0\\) pas, le test de niveau \\(\\delta\\) n’est pas significatif (liaison non significative)",
+    "text": "6.13 p-valeur du test\n\\(p\\)-valeur :\n\\[p_c=\\mathbb{P}_{H_0}(\\mid T_n\\mid &gt;\\mid t_{obs}\\mid)\\\\=2(1-\\mathbb{P}(T_n\\leq |t_n|))\\] où \\(T_n\\sim \\mathcal{T}(n-2)\\)\nPour un risque de 1ere espèce \\(\\delta\\) fixé acceptable (par ex \\(\\delta=5\\%\\))\n\nsi \\(p_c &lt;\\delta\\), on rejette \\(H_0\\), le test de niveau \\(\\delta\\) est significatif (liaison significative)\nsi \\(p_c &gt;\\delta\\), on ne rejette \\(H_0\\) pas, le test de niveau \\(\\delta\\) n’est pas significatif (liaison non significative)",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1421,7 +1421,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#test-de-fisher-du-caractère-significatif-de-la-linéarité",
     "title": "Introduction aux modèles linéaires",
     "section": "6.15 Test de Fisher du caractère significatif de la linéarité",
-    "text": "6.15 Test de Fisher du caractère significatif de la linéarité\nApproche par comparaison de modèles\n\nComparer les modèles \\(M_1\\) et \\(M_2\\) (à un et deux paramètres d’espérance) définis par\n\n\\[\\begin{align}\nM_1 &: Y_i= \\beta+E_i,\\quad &E_i\\ \\overset{i.i.d.}\\sim\\ {\\cal N}(0,\\sigma^2)\\\\\nM_2 &: Y_i=\\alpha x_i+\\beta+E_i,\\quad &E_i\\ \\overset{i.i.d.}\\sim\\ {\\cal N}(0,\\sigma^2)\n\\end{align}\\]\n\nRevient à tester, au risque \\(\\delta\\) fixé, l’hypothèse nulle\n\n\\[H_0 : \\mbox{ modèle } M_1\\]\ncontre l’alternative\n\\[H_1 : \\mbox{ modèle } M_2\\]",
+    "text": "6.15 Test de Fisher du caractère significatif de la linéarité\nApproche par comparaison de modèles\n\nComparer les modèles \\(M_1\\) et \\(M_2\\) (à un et deux paramètres d’espérance) définis par\n\n\\[\\begin{align}\nM_1 &: Y_i= \\beta+E_i,\\quad E_i\\ \\overset{i.i.d.}\\sim\\ {\\cal N}(0,\\sigma^2)\\\\\nM_2 &: Y_i=\\alpha x_i+\\beta+E_i,\\quad E_i\\ \\overset{i.i.d.}\\sim\\ {\\cal N}(0,\\sigma^2)\n\\end{align}\\]\n\nRevient à tester, au risque \\(\\delta\\) fixé, l’hypothèse nulle\n\n\\[H_0 : \\mbox{ modèle } M_1\\]\ncontre l’alternative\n\\[H_1 : \\mbox{ modèle } M_2\\]",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1541,7 +1541,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#les-résidus-du-modèle-m_1",
     "title": "Introduction aux modèles linéaires",
     "section": "6.25 Les résidus du modèle \\(M_1\\)",
-    "text": "6.25 Les résidus du modèle \\(M_1\\)\n\\[Y_i=\\beta+E_i, \\mbox{ où }  E_i\\overset{i.i.d.}\\sim{\\cal N}(0,\\sigma^2)\\]\n\n\\(Y_i\\overset{i.i.d.}\\sim{\\cal N}(\\beta;\\sigma^2)\\)\n1 paramètre d’espérance \\(\\beta\\) estimé (par les moindres carrés) par \\(\\bar{Y}\\).\nPrédicteur \\(\\widehat{Y_i}(M_1) = \\bar{Y}\\)\nSomme des carrés résiduelles :\n\n\\[SCR(M_1)=\\sum_{i=1}^n E_i^2(M_1)=\\sum_{i=1}^n (Y_i-\\widehat{Y}_i(M_1))^2\\\\=\\sum_{i=1}^n (Y_i-\\bar{Y})^2=SCT\\]",
+    "text": "6.25 Les résidus du modèle \\(M_1\\)\n\\[Y_i=\\beta+E_i, \\mbox{ où }  E_i\\overset{i.i.d.}\\sim{\\cal N}(0,\\sigma^2)\\]\n\n\\(Y_i\\overset{i.i.d.}\\sim{\\cal N}(\\beta;\\sigma^2)\\)\n1 paramètre d’espérance \\(\\beta\\) estimé (par les moindres carrés) par \\(\\bar{Y}\\).\nPrédicteur \\(\\widehat{Y_i}(M_1) = \\bar{Y}\\)\nSomme des carrés résiduelles :\n\n\\[\\begin{align}SCR(M_1)&=\\sum_{i=1}^n E_i^2(M_1)\\\\&=\\sum_{i=1}^n (Y_i-\\widehat{Y}_i(M_1))^2\\\\&=\\sum_{i=1}^n (Y_i-\\bar{Y})^2=SCT\\end{align}\\]",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",
@@ -1553,7 +1553,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#interprétation-du-test-de-fisher",
     "title": "Introduction aux modèles linéaires",
     "section": "6.26 Interprétation du test de Fisher",
-    "text": "6.26 Interprétation du test de Fisher\n\n\n\n\n\n\nTipThéorème\n\n\n\nStatistique de test \\(T_n\\) peut s’écrire\n\\[\n\\begin{align}\nT_n &= \\frac{SCM/ 1}{SCR(M_2)/(n-2)} \\\\\n= &\\frac{(SCR(M_{\\color{red}{1}}) - SCR(M_{\\color{red}{2}}))/ ( 2 - 1)}{SCR(M_2)/(n- 2)}\\overset{H_0}\\sim \\mathcal{F}(1,n-2)\n\\end{align}\n\\]\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\n\\(SCR(M_{\\color{red}{1}}) - SCR(M_{\\color{red}{2}})\\) : différence des variances non expliquées par les modèles.\n\\((2-1)\\) : différence du nombre de paramètres.\n\\(SCR(M_1)\\geq SCR(M_2)\\) (toujours !).",
+    "text": "6.26 Interprétation du test de Fisher\n\n\n\n\n\n\nTipThéorème\n\n\n\nStatistique de test \\(T_n\\) peut s’écrire\n\\[\n\\begin{align}\nT_n &= \\frac{SCM/ 1}{SCR(M_2)/(n-2)} \\\\\n= &\\frac{(SCR(M_{\\color{red}{1}}) - SCR(M_{\\color{red}{2}}))/ ( 2 - 1)}{SCR(M_2)/(n- 2)}\\\\&\\overset{H_0}\\sim \\mathcal{F}(1,n-2)\n\\end{align}\n\\]\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\n\\(SCR(M_{\\color{red}{1}}) - SCR(M_{\\color{red}{2}})\\) : différence des variances non expliquées par les modèles.\n\\((2-1)\\) : différence du nombre de paramètres.\n\\(SCR(M_1)\\geq SCR(M_2)\\) (toujours !).",
     "crumbs": [
       "Cours",
       "Modèles linéaires.",

@@ -1,0 +1,37 @@
+/*-- scss:defaults --*/
+
+//$body-bg: #191919;
+//$body-color: #fff;
+//$link-color: #42affa;
+$presentation-h2-font-size: 1.4em;
+$presentation-heading-color: #8A1538;
+
+/*-- scss:rules --*/
+
+.reveal .slide blockquote {
+  border-left: 3px solid $text-muted;
+  padding-left: 0.5em;
+}
+
+
+.green {
+  color: green;
+}
+.blue {
+  color: blue;
+}
+.red {
+  color: red;
+}
+
+.upc {
+  color: #8A1538;
+}
+
+.reveal .callout {
+  font-size: 1em !important;
+}
+
+
+
+

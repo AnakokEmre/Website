@@ -14,6 +14,19 @@ website:
         text: Publications
       - href: latex.qmd
         text: Latex
+      - href: Cours.qmd
+        text: Cours
+  sidebar:
+      - title: "Cours"
+        style: "docked"
+        search: true
+        contents:
+          - text: "Cours"
+            href: Cours.qmd
+          - section: Modèles linéaires.
+            contents:
+            - Cours/EMS/Modèle linéaire/Cours1/cours1.qmd
+            - Cours/EMS/Modèle linéaire/Cours2/cours2.qmd
 format:
   html:
     theme:

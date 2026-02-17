@@ -1,0 +1,2117 @@
+---
+title: "Introduction aux modèles linéaires"
+subtitle: "2eme-FA-EMS - BUT SD - E. Anakok"
+format: 
+  html:
+    
+    toc: true           # Adds a Table of Contents (great for courses)
+    toc-depth: 3
+    number-sections: true
+    embed-resources: true
+    toc-location: left
+    css: style.scss  # Keeping your existing styles
+
+engine: knitr
+editor: 
+  mode: source
+---
+
+# Organisation
+
+\newcommand\b{\color{blue}}
+\newcommand\r{\color{red}}
+\newcommand\p{\color{purple}}
+
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+knitr::opts_chunk$set(echo = F)
+knitr::opts_chunk$set(warning  = F)
+
+library(tidyverse)
+library(extrafont) 
+require(ggsci)
+library(ggpubr)
+library(knitr)
+library(ggfortify)
+library(ggrepel)
+```
+
+## Apprentissage critique
+
+-   **AC22.01** \| Prendre conscience de la différence entre modélisation statistique et analyse exploratoire
+-   **AC22.03** \| Comprendre l’intérêt des analyses multivariées pour synthétiser et résumer l’information portée par plusieurs variables
+-   **AC22.05** \| Apprécier les limites de validité et les conditions d’application d’une analyse
+-   **AC24.03EMS** \| Comprendre l’impact du type de données sur le choix de la modélisation à mettre en œuvre
+-   **AC24.04EMS** \| Apprécier les limites de validité et les conditions d’application d’un modèle
+-   **AC24.05EMS** \| Réaliser l’importance de la mise en oeuvre d’une procédure de test statistique pour valider ou non une hypothèse
+
+## Plan du cours
+
+-   I Modèle linaire simple
+-   II Modèle linéaire multiple
+-   III Sélection de variables
+-   IV ANOVA
+
+
+# Introduction
+
+
+## Problématique biologique
+
+[**Données :**]{.upc} On a pour 20 brèmes péchées dans le lac Laengelmavesi en Finland leurs poids (en gramme) et leurs tailles (en cm).
+
+
+
+Pour $i \in 1,\dots, n$ :
+
+-   $y_i$ est le poids du poisson $i$ (en grammes)
+
+-   $x_i$ la longueur du poisson $i$ (en cm).
+
+```{r}
+fish <- read.table(file = "fish_linsimple.csv",
+                   sep =";", header = TRUE) %>% 
+  transmute( Especes = paste0("P",1:20), Poids = Poids, Longueur = Longueur)
+n_obs <- nrow(fish)
+kable(fish[1:5,])
+```
+
+
+
+![](breme.jpg){fig-align="center"}
+
+
+
+## Représentation
+
+```{r}
+ggplot(data = fish, aes(x = Longueur, y = Poids,label= Especes))+ geom_point()+geom_text_repel(size = 2)+ theme_bw()
+
+
+```
+
+**Questions**
+
+-   Expliquer le poids des poissons en fonctions de leurs tailles ?
+
+-   Y'a-t-il une relation linéaire entre les deux ?
+
+## Trouver "la meilleure droite" ?
+
+
+
+```{r}
+
+library(tidyverse)
+library(ggrepel)
+library(latex2exp)
+mod = lm(Poids~Longueur,data=fish)
+
+a = coef(mod)[2]
+b = coef(mod)[1]
+
+
+fish$prevision <- fish$Longueur * a +b
+p<-ggplot(data = fish,
+       aes(x = Longueur,
+           y = Poids,
+           label= Especes))+
+geom_point()+
+geom_text_repel(size = 2)+ 
+geom_abline(slope = a  ,intercept = b)+
+  geom_point(data = fish,aes(x = Longueur,y=prevision),shape=4,color="blue")+
+  geom_segment(data = fish,aes(x=Longueur, xend = Longueur,y=Poids, yend= prevision),linetype = 2,color= "purple")+
+theme_bw()
+p
+```
+
+::: fragment
+$$J(a,b) =\sum_{i=1}^n e_i ^2=  \sum_{i=1}^n (y_i - \widehat{y_i})^2 = \sum_{i=1}^n (y_i - (ax_i + b))^2$$
+:::
+
+
+## Méthode des moindres carrés
+
+::: {.callout-note title= "Définition"}
+
+-   Équation de la droite des [moindres carrés :]{.upc}
+
+$$\widehat{y}_i = ax_i+b$$
+
+-   $a$ et $b$ sont obtenus en minimisant la somme des carrés des erreurs :
+
+$$J(a,b)=\sum_{i=1}^{n} \left(y_i-(ax_i+b)\right)^2$$
+:::
+
+
+
+```{r}
+mod <- lm(Poids ~ Longueur, data = fish)
+```
+
+
+## Droite des moindres carrés et erreurs
+
+```{r, fig.align='center'}
+a = coef(mod)[2]
+b = coef(mod)[1]
+
+
+fish$prevision <- fish$Longueur * a +b
+p<-ggplot(data = fish,
+       aes(x = Longueur,
+           y = Poids,
+           label= Especes))+
+geom_point()+
+geom_text_repel(size = 2)+ 
+geom_abline(slope = a  ,intercept = b)+
+  annotate("text",parse = TRUE, x = 25, y = 600, label =  'y == 48.6 *x - 876')+
+  geom_point(data = fish,aes(x = Longueur,y=prevision),shape=4,color="blue")+
+  geom_segment(data = fish,aes(x=Longueur, xend = Longueur,y=Poids, yend= prevision),linetype = 2,color= "purple")+
+theme_bw()
+p
+```
+
+$$J(a,b)=91435.22$$
+
+:::{.callout-warning title="Objectif"}
+Avec notre échantillon de $n$ observations, quelle confiance donner à l'estimation des coefficients $a$ et $b$ ?
+
+:::
+
+## Ce qu'il faut retenir de ce cours
+
+:::: {style="font-size: 0.65em;"}
+
+:::{.callout-note title= "Modélisation probabiliste du modèle linéaire"}
+
+$y_i$ est la réalisation d'une variable aléatoire $Y_i$ telle que pour $1 \leq i \leq n$: [$$Y_i = \alpha x_i + \beta  + E_i, \quad E_i\overset{i.i.d.}\sim{\cal N}(0,\sigma^2) $$]{.red}
+:::
+
+:::{.callout-tip title= "Estimateurs du modèle"}
+
+
+$$
+{A}=\frac{\sum_{i=1}^n(x_i-\bar{x})(Y_i-\bar{Y})}{\sum_{i=1}^n(x_i-\bar{x})^2} \quad;\quad{B}=\bar{Y}-A\bar{x} \quad; \quad S^2=\frac{1}{n-2}\sum_{i=1}^n(Y_i-\widehat{Y_i})^2
+$$
+
+:::
+
+
+:::{.callout-tip title= "Valider les hypothèses du modèle avec les 4 graphes de diagnostic"}
+
+```{r, fig.align='center',fig.height= 2}
+modele_reg_simple <- lm(Poids~ Longueur, data = fish)
+autoplot(modele_reg_simple, which = 1:4, ncol = 4, label.size=1) + theme_bw()
+```
+
+:::
+
+:::
+
+
+# Modèle linéaire simple : théorie
+
+## Données 
+
+
+On a $n = `r n_obs`$ observations. 
+
+Pour $1 \leq i \leq n$:
+
+-   $x_i$ : longueur du poisson $i$.
+
+-   $y_i$ : poids du poisson $i$.
+
+
+```{r, echo = TRUE}
+fish <- read.table(file = "fish_linsimple.csv",
+                   sep =";", header = TRUE)
+kable(fish[1:5,])
+```
+
+
+
+
+```{r, echo = TRUE}
+summary(fish)
+```
+
+
+```{r,echo = TRUE}
+ggplot(fish, aes(x = Longueur, y = Poids)) +
+  geom_point()
+```
+
+
+## Écriture du modèle
+
+
+#### Notations
+
+::: {style="font-size: 0.75em;"}
+On a $n=20$ observations. On note, pour $1 \leq i \leq n$
+
+-   $x_i$ la mesure de la longueur du poisson $i$.
+-   $y_i$ la mesure du poids du poisson $i$.
+
+:::{.callout-note title= "Définition : Modèle de régression linéaire simple"}
+
+On suppose que $y_i$ est la réalisation d'une variable aléatoire $Y_i$ telle que pour $1 \leq i \leq n$: [$$Y_i = \alpha x_i + \beta  + E_i$$]{.red} où
+
+-   $\alpha$ est un paramètre inconnu;
+-   $\beta$ est un paramètre inconnu;
+-   $E_i$ une variable aléatoire appelée **erreur résiduelle**.
+:::
+
+:::
+
+Dans notre exemple, $\alpha$ est l'effet de la longueur sur le poids.
+
+## Modélisation de l'erreur résiduelle
+
+:::{.callout-note title= "Définition : Modèle de régression linéaire simple"}
+
+$E_i$ une variable aléatoire appelée **erreur résiduelle** , telle que:
+
+-   Toutes les variables aléatoires $E_1,\dots, E_n$ sont **indépendantes**;
+
+-   Tous les $E_i$ ont la **même espérance**, égale à **0**;
+
+-   Tous les $E_i$ ont la **même variance**, égale à $\mathbf{\sigma^2}$ (paramètre inconnu);
+
+-   Tous les $E_i$ suivent une **loi normale**;
+
+$\Rightarrow$ les $E_i$ sont indépendants et identiquement distribués de loi $\mathcal{N}(0, \sigma^2)$
+
+- On notera directement $E_i\overset{i.i.d.}\sim{\cal N}(0,\sigma^2)$
+
+:::
+
+
+
+## Aléatoire ou pas ?
+
+::: {.callout-caution title="Remarques"}
+$$\color{red}{Y_i} = {\color{blue}{\underbrace{\alpha x_i + \beta}_{{déterministe}{}}}}  + \color{red}{\overbrace{E_i}^{aléatoire}}, 1 \leq i \leq n $$
+
+où
+
+-   $\color{red}{Y_i}$ réponse **aléatoire** pour l'unité $i$
+-   $\color{blue}{x_i}$ valeur **non-aléatoire** de $x$ pour l'unité $i$
+-   $\color{blue}\alpha$ est un paramètre inconnu, l'effet de la longueur sur le poids;
+-   $\color{blue}\beta$ est un paramètre inconnu;
+-   $\color{red}{E_i}$ une variable aléatoire appelée **erreur résiduelle** les $\color{red}{E_i}$ sont indépendants et identiquement distribués de loi $\mathcal{N}(0, \sigma^2)$
+:::
+
+## Autre formulation du modèle linéaire
+
+::: {.callout-caution title="Remarques"}
+-   Le modèle
+
+$$Y_i = \alpha x_i + \beta  + E_i,\quad 1 \leq i \leq n, \quad E_i\overset{iid}\sim \mathcal{N}(0,\sigma^2)$$ est équivalent à
+
+Les $Y_i$ sont **indépendants** et $Y_i \sim \mathcal{N}($ [$\alpha x_i +\beta, \sigma^2$]{.fragment fragment-index="1"} $), \; 1 \leq i \leq n$
+
+-   $\mathbb{E}[Y_i]=$ [$\alpha x_i + \beta$]{.fragment fragment-index="1"} , $\mathbb{V}[Y_i]=$ [$\sigma^2$]{.fragment fragment-index="1"}
+-   $x$ n'influe que sur la moyenne et pas sur la variance de $Y$
+-   $Y_i$ se décompose en
+    -   Une partie fixe expliquée par le modèle:
+    -   Une partie aléatoire non expliquée par le modèle
+:::
+
+## Exemple de modélisation linéaire simple
+
+On a $n=20$ observations. On note, pour $1 \leq i \leq n$
+
+-   $x_i$ la mesure de la longueur du poisson $i$.
+-   $y_i$ la mesure du poids du poisson $i$.
+
+On suppose que $y_i$ est la réalisation d'une v. a. $Y_i$ telle que pour $1 \leq i \leq n$: $$Y_i = \alpha x_i + \beta  + E_i \quad \text{avec} \quad E_i\overset{i.i.d.}\sim{\cal N}(0,\sigma^2)$$ 
+
+
+# Estimateurs et estimations des paramètres
+
+## Rappel : covariance et corrélation
+
+:::: {.callout-note title="Rappel"}
+::: {style="font-size: 0.8em;"}
+$$\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i\quad, \quad \bar{y}\ =\ \frac{1}{n}\sum_{i=1}^{n} y_i$$ $$\mathbb{V}_{emp}(x) = \frac{1}{n}\sum_{i=1}^{n}(x_i-\bar{x})^2\quad \text{ (estimateur biaisé)}$$
+
+$$Cov_{emp}(x,y)= \frac{1}{n}\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y}) $$ $$\begin{align}
+r(x,y) &= \frac{\displaystyle\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\displaystyle\sum_{i=1}^n(x_i-\bar{x})^2}\sqrt{\displaystyle \sum_{i=1}^n(y_i-\bar{y})^2}} \\
+& = \frac{Cov_{emp}(x,y)}{\sqrt{\mathbb{V}_{emp}(x)}\sqrt{\mathbb{V}_{emp}(y)}}
+\end{align}$$
+:::
+::::
+
+## Questions
+
+::: {.callout-note title="Rappel"}
+-   Quelle est la moyenne empirique de $x$ ? de $y$ ?
+-   Quelle est la valeur du coefficient de correlation ? -2, -0.5 , 0, 0.3 , 0.8 ou 5 ?
+:::
+
+```{r,  out.width = "0.7\\textwidth",fig.align='center'}
+set.seed(3)
+
+tac <- tibble(rho = c(0.01, 0.8,0.3, 0.5), mult = c(0.01,2, 1,-2), 
+       type = c("A", "B", "C", "D"), 
+       esp_x = c(0,2,0,1), 
+       esp_y = c(0,0, 5, 0)) %>% 
+  mutate(x = map(rho, ~rnorm(500)), 
+         sigma = sqrt((mult/ rho) ^2 - mult^2),
+         e = map(sigma,  ~rnorm(500, 0, .))) %>% 
+  unnest() %>% 
+  mutate(y = x*mult + e + esp_y,
+         x= x + esp_x) 
+cor_mean_emp <- tac %>% group_by(rho, mult) %>% nest() %>% 
+  mutate(cor = map_dbl(data, ~cor(.$x, .$y)), 
+         mean_x =map_dbl(data, ~mean(.$y)),
+         mean_y = map_dbl(data, ~mean(.$x)))
+tac %>% 
+  ggplot(aes(x = x, y = y)) + geom_point(size=0.5) + 
+  facet_wrap(type~., scale = "free")+ theme_bw()
+
+
+```
+
+## Questions
+
+::: {.callout-note title="Rappel"}
+-   Quelle est la valeur du coefficients de correlation de $X$ avec $X$ ?
+
+-   Quelle est la valeur du coefficients de correlation de $X$ avec $2X$ ?
+
+-   Quelle est la valeur du coefficients de correlation de $X$ avec $2X + 3$ ?
+
+-   Quelle est la valeur du coefficients de correlation de $X$ avec $-X$ ?
+:::
+
+
+
+
+## Méthode des moindres carrés
+
+:::{.columns}
+
+:::{.column width = "50%"}
+
+::: {.callout-note title= "Définition"}
+
+-   Équation de la droite des [moindres carrés :]{.upc}
+
+$$\widehat{y}_i = ax_i+b$$
+
+-   $a$ et $b$ obtenus en minimisant la somme des carrés des erreurs
+
+$$J(a,b)=\sum_{i=1}^{n} \left(y_i-(ax_i+b)\right)^2$$
+:::
+
+:::
+:::{.column width = "50%"}
+
+::: {.callout-tip title="Théorème"}
+-   La minimisation de $J(a,b)$ en $a$ et $b$ conduit à 
+
+[**Exercice :**]{.upc}
+
+$a =$ [$\frac{\displaystyle\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})}{\displaystyle\sum_{i=1}^n(x_i-\bar{x})^2}= \frac{Cov_{emp}(x,y)}{\mathbb{V}_{emp}(x)}$]{.fragment fragment-index="1"} et $b$ = [$\bar{y} - a\bar{x}$]{.fragment fragment-index="1"}
+:::
+
+:::
+:::
+
+
+## Estimateurs des paramètres du modèle :
+
+:::: {style="font-size: 0.95em;"}
+::: {.callout-note title="Définition"}
+-   [A et B estimateurs]{.red} de $\alpha$ et $\beta$ obtenus par la méthode des moindres carré.
+
+$$\begin{align}
+\color{red}{A}&=\frac{\sum_{i=1}^n(x_i-\bar{x})(Y_i-\bar{Y})}{\sum_{i=1}^n(x_i-\bar{x})^2}=\frac{\sum_{i=1}^n(x_iY_i)-n\bar{x}\bar{Y}}{\sum_{i=1}^n x_i^2-n(\bar{x})^2}\\ 
+\color{red}{B}&=\bar{Y}-A\bar{x}
+\end{align}$$
+
+-   [$a$ et $b$ estimations]{.blue} de $\alpha$ et $\beta$ : réalisations $a$ et $b$ des estimateurs $A$ et $B$ sur les données
+
+$$ \begin{align}
+\color{blue}{a}&=\frac{\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n(x_i-\bar{x})^2}=\frac{\sum_{i=1}^n(x_iy_i)-n\bar{x}\bar{y}}{\sum_{i=1}^n x_i^2-n(\bar{x})^2}\\
+\color{blue}{b}&=\bar{y}-a\bar{x}
+\end{align}$$
+
+-   $a$ et $b$ sont les coefficients de la droite des moindres carrés.
+:::
+::::
+
+## Modèle linéaire avec R
+
+```{r, echo = TRUE}
+modele_reg_simple <- lm(Poids~ Longueur, data = fish)
+coef(modele_reg_simple)
+```
+
+$a =$ [`r coef(mod)[2]`]{.fragment fragment-index="1"} et $b =$ [`r coef(mod)[1]`]{.fragment fragment-index="1"}
+
+## Estimateur de la variance des résidus
+
+:::: {style="font-size: 0.95em;"}
+::: {.callout-note title="Définition"}
+-   $\widehat{Y_i}=Ax_i+B$, la prévision (aléatoire) par le modèle de régression linéaire associée à $x_i$.
+
+-   [$S^2$ **estimateur**]{.red} de $\sigma^2$ : variance empirique $$\color{red}{S^2=\frac{1}{n-2}\sum_{i=1}^n(Y_i-\widehat{Y_i})^2=\frac{1}{n-2}\sum_{i=1}^n(Y_i-Ax_i-B)^2}$$
+
+-   [Estimation de $\sigma^2$]{.blue} : réalisation $s^2$ de $S^2$ sur les données $$\color{blue}{s^2=\frac{1}{n-2}\sum_{i=1}^n(y_i-ax_i-b)^2=\frac{1}{n-2}\sum_{i=1}^n \widehat{e}_i^2}$$ où $\widehat{e}_i = y_i - ax_i -b$ sont les résidus observés.
+:::
+::::
+
+## Modélisation des données avec R
+
+```{r, echo = TRUE}
+summary(modele_reg_simple)
+```
+
+## Résidus observés
+
+```{r, echo = TRUE}
+summary(modele_reg_simple)$residuals %>% head()
+```
+
+```{r}
+fish <-fish%>% 
+  transmute( Especes = paste0("P",1:20), Poids = Poids, Longueur = Longueur)
+```
+
+```{r , fig.height= 5}
+mod <- lm(Poids~Longueur, fish)
+coef <- summary(mod)$coefficients
+b <- coef[1, 1]
+a <- coef[2,1]
+fish$prevision <- a*fish$Longueur+b
+  
+  
+ggplot(data = fish,
+       aes(x = Longueur,
+           y = Poids,
+           label= Especes))+
+geom_point()+
+geom_text_repel(size = 2)+ 
+geom_abline(slope = a  ,intercept = b)+
+  annotate("text",parse = TRUE, x = 25, y = 600, label =  'y == 48.6 *x - 876')+
+  geom_point(data = fish,aes(x = Longueur,y=prevision),shape=4,color="blue")+
+  geom_segment(data = fish,aes(x=Longueur, xend = Longueur,y=Poids, yend= prevision),linetype = 2,color= "purple")+
+theme_bw()
+```
+
+## Fonction summary
+
+On peut récupérer les infos:
+
+```{r summary, echo = TRUE}
+Coef <- summary(modele_reg_simple)$coefficients
+class(Coef)
+```
+
+\
+
+```{r , echo = TRUE}
+Coef
+```
+
+\
+
+```{r, echo = TRUE}
+names(summary(modele_reg_simple))
+```
+
+\
+
+```{r, echo = TRUE}
+summary(modele_reg_simple)$sigma
+```
+
+# Validité des hypothèses
+
+## **Validité des hypothèses**
+
+Les résidus observés permettent de valider les hypothèses du modèle linéaire:
+
+-   $E_i$ une variable aléatoire appelée **résidu**, telle que:
+    -   Toutes les variables aléatoires $E_1,\dots, E_n$ sont **indépendantes**;
+    -   Tous les $E_i$ ont la **même espérance**, égale à **0**;
+    -   Tous les $E_i$ ont la **même variance**, égale à $\mathbf{\sigma^2}$ (paramètre inconnu);
+    -   Tous les $E_i$ suivent une **loi normale**;
+
+### Validation des hypothèses
+
+-   **Hypothèse d'indépendance:** Elle doit être validée par le plan d'expérience !
+-   **Distribution identique, de loi normale:** Ces hypothèses doivent être vérifiées grâce aux $\widehat{e}_i = y_i - \widehat{y_i}$.
+-   **En pratique:** diagnostic graphique des résidus
+
+## 4 graphes de diagnostic
+
+```{r graphes_res, echo = TRUE, fig.width=8, fig.height=6,fig.align='center'}
+par(mfrow = c(2,2))
+plot(modele_reg_simple)
+```
+
+## Distribution identique, espérance constante et nulle
+
+**Ce qu'on regarde:** Les résidus observés $\widehat{e}_i$ en fonction des prédictions $\widehat{y}_i$.
+
+::::::::: columns
+::::: {.column width="45%"}
+::: center
+<center>✅</center>
+:::
+
+```{r graphe_res1, fig.height=2, fig.width=4,fig.align='center'}
+autoplot(modele_reg_simple, which = 1, ncol = 1, label.size=1) + theme_bw()
+```
+
+::: {style="font-size: 0.65em;"}
+**Ce qu'on voit:** La valeur des résidus ne semble pas dépendre de la valeur des prédictions (il ne sont donc pas structurés en fonction de la prédiction). Ils sont globalement identiquement distribués autour de 0.
+
+**Ce qu'on conclut:** On valide l'hypothèse d'espérance constante et égale à 0.
+:::
+:::::
+
+::: {.column width="10%"}
+:::
+
+:::: {.column width="45%"}
+<center>❌</center>
+
+```{r}
+n <- 100
+x <- rnorm(n)
+y <- x + 2*x ^2 + rnorm(100)
+mod0 <- lm(y~x)
+```
+
+```{r , fig.height=2, fig.width=4, fig.align='center'}
+autoplot(mod0, which = 1, ncol = 1, label.size=1) + theme_bw()
+```
+
+::: {style="font-size: 0.65em;"}
+**Ce qu'on voit:** Les valeurs des résidus dépendent de la valeur des prédictions (il sont donc structurés en fonction de la prédiction).
+
+**Ce qu'on conclut:** On ne valide pas l'hypothèse d'espérance constante et égale à 0.
+:::
+::::
+:::::::::
+
+## Distribution identique, variance constante
+
+**Ce qu'on regarde:** la racine carrée de la valeur absolue des résidus (standardisés) observés en fonction des prédictions $\widehat{y}_k$.
+
+::::::::: columns
+::::: {.column width="45%"}
+::: center
+<center>✅</center>
+:::
+
+```{r , fig.height=2, fig.width=4,fig.align='center'}
+autoplot(modele_reg_simple, which = 3, ncol = 1, label.size=1) + 
+  geom_hline(yintercept = 0.8, linetype = 2) + theme_bw()
+```
+
+::: {style="font-size: 0.65em;"}
+**Ce qu'on voit:** la racine carrée de la valeur absolue des résidus ne semble pas dépendre de la valeur des prédictions (il ne sont donc pas structurés en fonction de la prédiction). Ils sont globalement identiquement distribués autour de 0.8.
+
+**Ce qu'on conclut:** On valide l'hypothèse de variance constante.
+:::
+:::::
+
+::: {.column width="10%"}
+:::
+
+:::: {.column width="45%"}
+<center>❌</center>
+
+```{r}
+n <- 100
+x <- rnorm(n)
+x<- sort(x)
+y <- x + rnorm(100)*(1:100)/100
+mod0 <- lm(y~x)
+```
+
+```{r , fig.height=2, fig.width=4,fig.align='center'}
+autoplot(mod0, which = 3, ncol = 1, label.size=1) + 
+  geom_hline(yintercept = 0.8, linetype = 2) + theme_bw()
+```
+
+::: {style="font-size: 0.65em;"}
+**Ce qu'on voit:** la racine carrée de la valeur absolue des résidus dépend de la valeur des prédictions (il sont donc structurés en fonction de la prédiction).
+
+**Ce qu'on conclut:** On ne valide pas l'hypothèse de variance constante.
+:::
+::::
+:::::::::
+
+## Distribution normale
+
+**Ce qu'on regarde:** La valeur des quantiles empiriques des résidus standardisés en fonction de la valeur quantiles théoriques d'une loi normale $\mathcal{N}(0 ,1)$.
+
+::::::::: columns
+::::: {.column width="45%"}
+::: center
+<center>✅</center>
+:::
+
+```{r graphe_res3, fig.height=3, fig.width=3,fig.align='center'}
+autoplot(modele_reg_simple, which = 2, ncol = 1, label.size=1) +  theme_bw()+ geom_abline(slope = 1, intercept = 0, linetype =2)
+```
+
+::: {style="font-size: 0.65em;"}
+**Ce qu'on voit:** Les points sont globalement alignés sur la droite $y = x$. Les quantiles empiriques sont donc à peu près égaux aux quantiles théoriques (si les hypothèses du modèle sont vraies).
+
+**Ce qu'on conclut:** On valide l'hypothèse de distribution normale des résidus.
+:::
+:::::
+
+::: {.column width="10%"}
+:::
+
+:::: {.column width="45%"}
+<center>❌</center>
+
+```{r}
+set.seed(1)
+n <- 100
+x <- rnorm(n)
+x<- sort(x)
+y <- x + exp(x)
+mod0 <- lm(y~x)
+```
+
+```{r , fig.height=3, fig.width=3,fig.align='center'}
+autoplot(mod0, which = 2, ncol = 1, label.size=1) +  theme_bw()+ geom_abline(slope = 1, intercept = 0, linetype =2)
+```
+
+::: {style="font-size: 0.65em;"}
+**Ce qu'on voit:** Les points ne sont pas globalement alignés sur la droite $y = x$. Les quantiles empiriques sont donc différents des quantiles théoriques.
+
+**Ce qu'on conclut:** On ne valide pas l'hypothèse de distribution normale des résidus.
+:::
+::::
+:::::::::
+
+## Points influents ou aberrants
+
+**Ce qu'on regarde:** La valeur des résidus (standardisés) en fonction du levier de l'observation (poids d'une observation dans l'estimation de sa prédiction).
+
+::::::::: columns
+::::: {.column width="45%"}
+::: center
+<center>✅</center>
+:::
+
+```{r graphe_res4, fig.height=2, fig.width=4}
+cd_cont_pos <- function(leverage, level, model) {
+  sqrt(level*length(coef(model))*(1-leverage)/leverage)
+  }
+cd_cont_neg <- function(leverage, level, model) {
+  -cd_cont_pos(leverage, level, model)
+  }
+
+autoplot(modele_reg_simple, which = 5, ncol = 1, label.size=1) +
+  lims(y = c(-4, 4), x = c(0, .25)) + theme_bw() +
+    stat_function(fun = cd_cont_pos, 
+                  args = list(level = 0.5, model = modele_reg_simple), 
+                  xlim = c(0, 0.25), lty = 2, colour = "red") +
+    stat_function(fun = cd_cont_neg, args = list(level = 0.5, 
+                                                 model = modele_reg_simple), 
+                  xlim = c(0, 0.25), lty = 2, colour = "red")
+```
+
+::: {style="font-size: 0.65em;"}
+**Ce qu'on voit:** Les points ont tous un petit levier, donc aucun point n'influe trop sur la droite. Aucun point n'est en dehors de l'enveloppe délimitée par les hyperboles rouges, représentant les lignes de niveau 0.5 de la distance de Cook.
+
+**Ce qu'on conclut:** Aucun point n'est aberrant ou trop influent.
+:::
+:::::
+
+::: {.column width="10%"}
+:::
+
+:::: {.column width="45%"}
+<center>❌</center>
+
+```{r}
+set.seed(1)
+n <- 20
+x <- rnorm(n)
+x<- sort(x)
+y <- 3*x + rnorm(20)
+x = c(x,5)
+y <- c(y,-80)
+mod0 <- lm(y~x)
+```
+
+```{r , fig.height=2, fig.width=4,fig.align='center'}
+
+autoplot(mod0, which = 5, ncol = 1, label.size=1) +
+  lims(y = c(-4, 4), x = c(0, .25)) + theme_bw() +
+    stat_function(fun = cd_cont_pos, 
+                  args = list(level = 0.5, model = mod0), 
+                  xlim = c(0, 0.25), lty = 2, colour = "red") +
+    stat_function(fun = cd_cont_neg, args = list(level = 0.5, 
+                                                 model = modele_reg_simple), 
+                  xlim = c(0, 0.25), lty = 2, colour = "red")
+```
+
+::: {style="font-size: 0.65em;"}
+**Ce qu'on voit:** Un point est en dehors de l'enveloppe délimitée par les hyperboles rouges, représentant les lignes de niveau 0.5 de la distance de Cook.
+
+**Ce qu'on conclut:** Il y a un point aberrant dans les données.
+:::
+::::
+:::::::::
+
+## 4 graphes
+
+```{r graphes_res_again,fig.align='center'}
+autoplot(modele_reg_simple) + theme_bw()
+```
+
+Donc on valide les hypothèses du modèle pour notre exemple.
+
+
+## Ce qu'il faut retenir de ce cours
+
+:::: {style="font-size: 0.65em;"}
+
+:::{.callout-note title= "Modélisation probabiliste du modèle linéaire"}
+
+$y_i$ est la réalisation d'une variable aléatoire $Y_i$ telle que pour $1 \leq i \leq n$: [$$Y_i = \alpha x_i + \beta  + E_i, \quad E_i\overset{i.i.d.}\sim{\cal N}(0,\sigma^2) $$]{.red}
+:::
+
+:::{.callout-tip title= "Estimateurs du modèle"}
+
+
+$$
+{A}=\frac{\sum_{i=1}^n(x_i-\bar{x})(Y_i-\bar{Y})}{\sum_{i=1}^n(x_i-\bar{x})^2} \quad;\quad{B}=\bar{Y}-A\bar{x} \quad; \quad S^2=\frac{1}{n-2}\sum_{i=1}^n(Y_i-\widehat{Y_i})^2
+$$
+
+:::
+
+
+:::{.callout-tip title= "Valider les hypothèses du modèle avec les 4 graphes de diagnostic"}
+
+```{r, fig.align='center',fig.height= 2}
+modele_reg_simple <- lm(Poids~ Longueur, data = fish)
+autoplot(modele_reg_simple, which = 1:4, ncol = 4, label.size=1) + theme_bw()
+```
+
+:::
+
+:::
+
+
+# Tests de linéarité
+
+
+## Ce qu'il faut retenir de ce cours 1/3
+
+
+:::{.callout-tip title= "Lois des estimateurs"}
+
+$$\frac{(A-\alpha)}{S_A}\sim \mathcal{T}{(n-2)}\mbox{ et }\frac{(B-\beta)}{S_B}\sim \mathcal{T}{(n-2)}$$
+:::
+
+:::{.callout-tip title= "Estimateurs du modèle"}
+
+
+$$\begin{align}
+IC_{1-\delta}(\alpha) =& \left[a-t_{1-\frac{\delta}{2}} s_A;a+t_{1-\frac{\delta}{2}} s_A\right]\\
+IC_{1-\delta}(\beta)=&\left[b-t_{1-\frac{\delta}{2}} s_B;b+t_{1-\frac{\delta}{2}} s_B\right]\\
+\end{align}$$
+
+:::{style="text-align: center;"}
+
+$s_A = \sqrt{\frac{s^2}{\sum_{i=1}^n(x_i-\bar{x})^2}}$ et  $s_B = \sqrt{s^2\left(\frac{1}{n}+\frac{\bar{x}^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)}$ 
+
+:::
+
+:::
+
+:::{.callout-note title= "Test de Student de la nullité de la pente de régression"}
+
+:::{style="text-align: center;"}
+ $$H_0:\alpha=0$$
+ 
+ $$H_1:\alpha\neq 0$$
+:::
+
+:::
+
+:::{.callout-note title= "Test de Fisher de Comparaison de modèles"}
+$$H_0\; :\; \text{modèle}\; M_1:Y_i=\beta+E_i,\quad E_i\; \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
+
+
+$$H_1\; :\; \text{modèle}\; M_2:Y_i=\alpha x_i+\beta+E_i,\quad E_i\; \overset{i.i.d.}{\sim}
+{\cal N}(0,\sigma^2)$$
+
+:::
+
+## Ce qu'il faut retenir de ce cours 2/3
+
+:::: {style="font-size: 0.65em;"}
+
+::: {.columns}
+::: {.column width = "33%"}
+
+
+::: {.callout-note title="Définition : SCT"}
+La variabilité de $Y$ **sans tenir compte du modèle**.
+
+$$\color{purple}{SCT =\displaystyle\sum_{i = 1}^n( Y_i - \bar{Y})^2}$$
+:::
+
+
+:::
+
+::: {.column width = "33%"}
+
+::: {.callout-note title="Définition : SCM"}
+Partie de la variabilité de $Y$ **expliquée par le modèle**.
+
+$$\color{blue}{SCM = \displaystyle\sum_{i=1}^n(\widehat{Y_i}-\bar{Y})^2}$$
+:::
+
+:::
+::: {.column width = "33%"}
+
+::: {.callout-note title="Définition : SCR"}
+Partie de la variabilité de $Y$ qui n'est **pas expliquée par le modèle**.
+
+$$\color{red}{SCR = \displaystyle\sum_{i=1}^n(Y_i-\widehat{Y_i})^2=\displaystyle\sum_{i=1}^n E_i ^2}$$
+:::
+
+
+:::
+
+:::
+
+
+
+:::{.callout-tip title ="Décomposition de la variance"}
+
+$$\color{purple}{SCT} = \color{blue}{SCM} + \color{red}{SCR} $$ 
+
+:::
+
+
+:::{.callout-tip title ="Test de Fisher"}
+
+$$T_n=\frac{SCM/1}{SCR/(n-2)} \overset{H_0}{\sim} \mathcal{F}(1,n-2)$$
+:::
+
+:::
+
+## Ce qu'il faut retenir de ce cours 3/3
+
+
+:::{.callout-note title= "Coefficient de détermination"}
+
+$$R^2 = \frac{SCM}{SCT}$$
+
+:::
+
+
+
+
+:::{.callout-tip title= "Intervalle de confiance de la droite de régression"}
+
+
+$$\begin{align}
+IC_{1-\delta}(\mathbb{E}[Y_0])=&&\left[\widehat{y_0}-t_{1-\frac{\delta}{2}}\sqrt{s^2\left(\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)};\right.\\
+&&\left.\widehat{y_0}+t_{1-\frac{\delta}{2}}\sqrt{s^2\left(\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)}\right]
+\end{align}$$
+
+:::
+
+
+:::{.callout-tip title= "Intervalle de prévision"}
+
+$$\begin{align}
+IP_{1-\delta}(Y_0)=&&\left[\widehat{y_0}-t_{1-\frac{\delta}{2}}\sqrt{s^2\left(1+\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)};\right.\\
+&&\left.\widehat{y_0}+t_{1-\frac{\delta}{2}}\sqrt{s^2\left(1+\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)}\right]
+\end{align}$$
+
+:::
+
+
+
+```{r}
+new <- data.frame(Longueur = seq(min(fish$Longueur), max(fish$Longueur), length = 100))
+pc <- predict(modele_reg_simple, new, interval = "confidence")
+pp <- predict(modele_reg_simple, new, interval = "prediction")
+```
+
+```{r,fig.align='center',fig.height=4,message=FALSE}
+pp <- predict(modele_reg_simple, new, interval = "prediction") %>% 
+  cbind(new)
+fish %>% 
+  ggplot(aes(x = Longueur, y = Poids)) + geom_point() +
+  stat_smooth(method = 'lm') +
+  geom_line(data = pp, aes(y = lwr), color ="red", linetype ="dashed")+
+  geom_line(data = pp, aes(y = upr), color ="red", linetype ="dashed")
+```
+
+
+
+
+
+
+## Degrés de libertés (Degrees of freedom)
+
+::: callout-note
+## Définition
+
+**Degrés de libertés (Degrees of freedom)** : Le nombre d'observations moins le nombre de paramètres d'espérance à estimer.
+:::
+
+-   Dans le cadre du modèle linéaire simple le nombre de paramètre d'espérance à estimer est [2.]{.fragment}
+
+-   On a $n$ observations le nombre de degrées de libertés est donc : [$n-2$]{.fragment}
+
+## Propriété et loi de l'estimateur $S^2$:
+
+::: callout-tip
+## Théorème
+
+$S^2$ est un estimateur sans biais de $\sigma^2$ et on a
+
+$$\frac{(n-2)S^2}{\sigma^2}=\frac{\sum_{i=1}^n(Y_i-Ax_i-B)^2}{\sigma^2}\sim\chi^2(n-2)$$ De plus $S^2$ est **indépendant** de $A$, $B$ et $\bar{Y}$
+:::
+
+## Propriétés et loi des estimateurs $A$ et $B$
+
+:::: {style="font-size: 0.85em;"}
+::: callout-tip
+## Théorème
+
+$A$ et $B$ sont des estimateurs sans biais et consistants de $\alpha$ et $\beta$. $A$ et $B$ suivent des lois normales d'espérance $\alpha$ et $\beta$, et de variance
+
+$$\begin{align}
+Var(A)&=\frac{\sigma^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\\
+& \\
+Var(B)&=\sigma^2\left(\frac{1}{n}+\frac{\bar{x}^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)
+\end{align}$$ Si on remplace $\sigma^2$ par $S^2$ pour obtenir des estimateurs des variances
+
+$$\begin{align}
+S^2_A&=&\frac{S^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\mbox{ et } S^2_B=S^2\left(\frac{1}{n}+\frac{\bar{x}^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)
+\end{align}$$
+
+on a
+
+[$$\frac{(A-\alpha)}{S_A}\sim \mathcal{T}{(n-2)}\mbox{ et }\frac{(B-\beta)}{S_B}\sim \mathcal{T}{(n-2)}$$]{.red}
+:::
+::::
+
+## Intervalle de confiance aléatoire de $\alpha$ et $\beta$
+
+::: {.callout-tip title="Théorème"}
+A partir des lois de $A$ et $B$, on obtient:
+
+[Intervalles de confiance aléatoire des estimateurs de niveau $1-\delta$ de $\alpha$ et $\beta$]{.upc}
+
+$$\begin{align}
+IC_{1-\delta}(\alpha) = \left[A-t_{1-\frac{\delta}{2}} S_A;A+t_{1-\frac{\delta}{2}} S_A\right]\\
+IC_{1-\delta}(\beta)=\left[B-t_{1-\frac{\delta}{2}} S_B;B+t_{1-\frac{\delta}{2}} S_B\right]\\
+\end{align}$$
+
+où $t_{1-\frac{\delta}{2}}$ est tel que $\mathbb{P}\left(\mid \mathcal{T}(n-2)\mid \leq t_{1-\frac{\delta}{2}}\right)=1-\delta$
+
+$t_{1-\frac{\delta}{2}}$ est le quantile d'ordre $1-\frac{\delta}{2}$ de la loi de $\mathcal{T}(n-2)$.
+:::
+
+## Intervalle de confiance de $\alpha$ et $\beta$
+
+:::: {style="font-size: 0.95em;"}
+::: {.callout-tip title="Théorème"}
+-   Intervalles de confiance des estimateurs de niveau $1-\delta$ de $\alpha$ et $\beta$
+
+$$\begin{align}
+IC_{1-\delta}(\alpha) = &\left[a-t_{1-\frac{\delta}{2}} s_A;a+t_{1-\frac{\delta}{2}} s_A\right]\\
+IC_{1-\delta}(\beta)=&\left[b-t_{1-\frac{\delta}{2}} s_B;b+t_{1-\frac{\delta}{2}} s_B\right]\\
+\end{align}$$
+
+-   où $t_{1-\frac{\delta}{2}}$ est tel que $\mathbb{P}\left(\mid \mathcal{T}(n-2)\mid \leq t_{1-\frac{\delta}{2}}\right)=1-\delta$
+
+-   $t_{1-\frac{\delta}{2}}$ est le quantile d'ordre $1-\frac{\delta}{2}$ de la loi de $\mathcal{T}(n-2)$.
+
+-   $s_A = \sqrt{\frac{s^2}{\sum_{i=1}^n(x_i-\bar{x})^2}}$ : réalisation de $S_A$
+
+-   $s_B = \sqrt{s^2\left(\frac{1}{n}+\frac{\bar{x}^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)}$ : réalisation de $S_B$
+:::
+::::
+
+## Intervalle de confiance avec R
+
+-   Intervalle de confiance à 95%
+
+```{r, echo = TRUE}
+confint(modele_reg_simple, level = 0.95)
+```
+
+## Test dans le modèle de régression linéaire simple gaussien
+
+**Test du caractère significatif de la liaison linéaire**
+
+-   Test de Student de la nullité de la pente de régression $H_0:\alpha=0$ contre $H_1:\alpha\neq 0$
+
+-   Test de Fisher de Comparaison de modèles : $$H_0\; \text{modèle}\; M_1:Y_i=\beta+E_i,\quad E_i\; i.i.d.\; {\cal N}(0,\sigma^2)$$
+
+<center>contre l'alternative</center>
+
+$$H_1\; :\; \text{modèle}\; M_2:Y_i=\alpha x_i+\beta+E_i,\quad E_i\; i.i.d.\;
+{\cal N}(0,\sigma^2)$$
+
+## Test de Student de la nullité de la pente de régression
+
+[**Modélisation des données** :]{.upc}
+
+$(x_i,y_i)$, $i=1,\dots,n$ : modèle linéaire $$\forall i=1,\cdots,n,\quad Y_i=\alpha x_i+\beta+E_i, \; E_i\overset{i.i.d.}\sim{\cal N}(0,\sigma^2)$$
+
+[**Hypothèses** :]{.upc}
+
+Test de $$H_0:\alpha=0$$
+
+contre
+
+$$H_1:\alpha\neq 0$$ au risque $\delta=5\%$
+
+## Statistique de test
+
+$H_0:\alpha=0$ contre $H_1:\alpha\neq 0$
+
+[**Statistique de test** :]{.upc}
+
+$$T_n =\frac{(A-\alpha)}{S_A} \overset{H_0}= \frac{A}{S_A} \overset{H_0}\sim \mathcal{T}{(n-2)}$$
+
+[**Zone de rejet** :]{.upc}
+
+$$R_\delta = \{|T_n| > t_{1-\frac{\delta}{2}}\}$$
+
+On rejette $H_0$ si $t_{n} \in R_{\delta}$
+
+[**Application numérique** :]{.upc}
+
+On calcule $t_{n} = \frac{a}{s_A}$ la réalisation de $T_n$.
+
+On compare avec $t_{1-\frac{\delta}{2}}$ et on conclue.
+
+## p-valeur du test
+
+[$p$-valeur :]{.upc}
+
+$$p_c=\mathbb{P}_{H_0}(\mid T_n\mid >\mid t_{obs}\mid)=2(1-\mathbb{P}(T_n\leq |t_n|))$$ où $T_n\sim \mathcal{T}(n-2)$
+
+Pour un risque de 1ere espèce $\delta$ fixé acceptable (par ex $\delta=5\%$)
+
+-   si $p_c <\delta$, on rejette $H_0$, le test de niveau $\delta$ est significatif (liaison significative)
+-   si $p_c >\delta$, on ne rejette $H_0$ pas, le test de niveau $\delta$ n'est pas significatif (liaison non significative)
+
+## Test de student sur la pente de régression avec R
+
+```{r, echo = TRUE}
+summary(modele_reg_simple)$coefficient
+
+```
+
+::: fragment
+$T_n = \frac{a}{s_A}$
+
+```{r, echo = TRUE}
+48.63832 / 7.082325
+```
+
+$p_c=\mathbb{P}_{H_0}(\mid T_n\mid >\mid t_n\mid)=2(1-\mathbb{P}_{H_0}(T_n\leq |t_n|))$ où $T_n\sim \mathcal{T}(n-2)$
+
+```{r, echo = TRUE}
+n <- nrow(fish)
+2*(1-pt(abs(6.867564), n - 2))
+```
+:::
+
+## Test de Fisher du caractère significatif de la linéarité
+
+[**Approche par comparaison de modèles**]{.upc}
+
+-   Comparer les modèles $M_1$ et $M_2$ (à un et deux paramètres d'espérance) définis par
+
+$$\begin{align}
+M_1 &: Y_i= \beta+E_i,\quad &E_i\ \overset{i.i.d.}\sim\ {\cal N}(0,\sigma^2)\\
+M_2 &: Y_i=\alpha x_i+\beta+E_i,\quad &E_i\ \overset{i.i.d.}\sim\ {\cal N}(0,\sigma^2)
+\end{align}$$
+
+-   Revient à tester, au risque $\delta$ fixé, l'hypothèse nulle
+
+$$H_0 : \mbox{ modèle } M_1$$
+
+contre l'alternative
+
+$$H_1 : \mbox{ modèle } M_2$$
+
+## Etude de la variance
+
+```{r}
+df0 = data.frame(x= c(0,1,2,3,4),y = c(0,0.5,2,3,2.5))
+```
+
+```{r, fig.height=2.5,fig.align='center'}
+mod0=(lm(y~x,data=df0))
+a = coef(mod0)[2]
+b = coef(mod0)[1]
+df0$prevision = a*df0$x + b
+ybar = mean(df0$y)
+ggplot(data = df0, aes(x=x,y=y)) +
+  geom_point() +
+  geom_abline(slope = 0  ,intercept = ybar,lty=2 ) +
+  annotate("text",parse=TRUE,x=-2,y = 1.8,label = "bar(Y)",size=8)+ 
+  geom_rect(aes(xmin = x, xmax = x+(y-ybar), ymin = ybar, ymax = y), 
+            fill = "purple",alpha = 0.5)  +
+  geom_point(data = df0,aes(x =x,y=ybar),shape=4,color="purple")+
+  geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= ybar),linetype = 2,color= "purple")+
+  xlim(-2,5.8)+ylim(0,3.5)+
+  ggtitle("Somme des carrés totaux (SCT)")+
+  coord_fixed()+
+  theme_bw()#+
+  #geom_point(data = df0,aes(x = x,y=prevision),shape=4,color="blue")+
+  #geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "purple")+theme_bw()
+
+ #geom_abline(slope = a  ,intercept = b)
+
+```
+
+::: {.callout-note title="Définition : Somme des Carrés Totale"}
+La variabilité de $Y$ **sans tenir compte du modèle**.
+
+$$\color{purple}{SCT =\displaystyle\sum_{i = 1}^n( Y_i - \bar{Y})^2}$$
+:::
+
+## Etude de la variance
+
+::: {.columns}
+::: {.column width = "50%"}
+
+```{r, fig.height=5,fig.align='center'}
+mod0=(lm(y~x,data=df0))
+a = coef(mod0)[2]
+b = coef(mod0)[1]
+df0$prevision = a*df0$x + b
+ybar = mean(df0$y)
+ggplot(data = df0, aes(x=x,y=y)) +geom_point() + geom_abline(slope = a  ,intercept = b,lty=1 ) + annotate("text",parse=TRUE,x=-2,y = 1.8,label = "bar(Y)",size=8)+ geom_abline(slope = 0  ,intercept = ybar,lty=2)+
+  geom_rect(aes(xmin = x, xmax = x+(prevision-ybar), ymin = ybar, ymax = prevision), 
+            fill = "blue",alpha = 0.5)  +geom_point(data = df0,aes(x = x,y=prevision),shape=4,color="blue")+geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "purple")+xlim(-2,5.8)+ylim(0,3.5)+ggtitle("Somme des carrés du modèle (SCM)")+ coord_fixed()+theme_bw()#+
+  
+  #geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "purple")+theme_bw()
+
+ #geom_abline(slope = a  ,intercept = b)
+
+```
+
+:::: {style="font-size: 0.85em;"}
+
+::: {.callout-note title="Définition : Somme des Carrés du Modèle"}
+Partie de la variabilité de $Y$ **expliquée par le modèle**.
+
+$$\color{blue}{SCM = \displaystyle\sum_{i=1}^n(\widehat{Y_i}-\bar{Y})^2}$$
+:::
+
+::::
+
+:::
+
+::: {.column width = "50%"}
+
+```{r, fig.height=5,fig.align='center'}
+mod0=(lm(y~x,data=df0))
+a = coef(mod0)[2]
+b = coef(mod0)[1]
+df0$prevision = a*df0$x + b
+ybar = mean(df0$y)
+ggplot(data = df0, aes(x=x,y=y)) +geom_point() + geom_abline(slope = a  ,intercept = b,lty=1 ) + 
+  geom_rect(aes(xmin = x, xmax = x+(y-prevision), ymin = prevision, ymax = y), 
+            fill = "red",alpha = 0.5)  +geom_point(data = df0,aes(x = x,y=prevision),shape=4,color="red")+geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "red")+ggtitle("Somme des carrés résiduels (SCR)")+xlim(-2,5.8)+ylim(0,3.5)+ coord_fixed()+theme_bw()#+
+  
+  #geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "purple")+theme_bw()
+
+ #geom_abline(slope = a  ,intercept = b)
+
+```
+
+:::: {style="font-size: 0.85em;"}
+
+::: {.callout-note title="Définition : Somme des Carrés Résiduelles"}
+Partie de la variabilité de $Y$ qui n'est **pas expliquée par le modèle**.
+
+$$\color{red}{SCR = \displaystyle\sum_{i=1}^n(Y_i-\widehat{Y_i})^2=\displaystyle\sum_{i=1}^n E_i ^2}$$
+:::
+
+::::
+
+::: 
+
+:::
+
+## Décomposition de la variance
+
+:::{.columns}
+
+::: {.column width = "33%"}
+
+```{r, fig.height=5,fig.align='center'}
+mod0=(lm(y~x,data=df0))
+a = coef(mod0)[2]
+b = coef(mod0)[1]
+df0$prevision = a*df0$x + b
+ybar = mean(df0$y)
+ggplot(data = df0, aes(x=x,y=y)) +
+  geom_point() +
+  geom_abline(slope = 0  ,intercept = ybar,lty=2 ) +
+  annotate("text",parse=TRUE,x=-2,y = 1.8,label = "bar(Y)",size=8)+ 
+  geom_rect(aes(xmin = x, xmax = x+(y-ybar), ymin = ybar, ymax = y), 
+            fill = "purple",alpha = 0.5)  +
+  geom_point(data = df0,aes(x =x,y=ybar),shape=4,color="purple")+
+  geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= ybar),linetype = 2,color= "purple")+
+  xlim(-2,5.8)+ylim(0,3.5)+
+  ggtitle("Somme des carrés totaux (SCT)")+
+  coord_fixed()+
+  theme_bw()#+
+  #geom_point(data = df0,aes(x = x,y=prevision),shape=4,color="blue")+
+  #geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "purple")+theme_bw()
+
+ #geom_abline(slope = a  ,intercept = b)
+
+```
+
+$$\color{purple}{SCT =\displaystyle\sum_{i = 1}^n( Y_i - \bar{Y})^2}$$
+
+:::
+
+
+::: {.column width = "33%"}
+
+```{r, fig.height=5,fig.align='center'}
+mod0=(lm(y~x,data=df0))
+a = coef(mod0)[2]
+b = coef(mod0)[1]
+df0$prevision = a*df0$x + b
+ybar = mean(df0$y)
+ggplot(data = df0, aes(x=x,y=y)) +geom_point() + geom_abline(slope = a  ,intercept = b,lty=1 ) + annotate("text",parse=TRUE,x=-2,y = 1.8,label = "bar(Y)",size=8)+ geom_abline(slope = 0  ,intercept = ybar,lty=2)+
+  geom_rect(aes(xmin = x, xmax = x+(prevision-ybar), ymin = ybar, ymax = prevision), 
+            fill = "blue",alpha = 0.5)  +geom_point(data = df0,aes(x = x,y=prevision),shape=4,color="blue")+geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "purple")+xlim(-2,5.8)+ylim(0,3.5)+ggtitle("Somme des carrés du modèle (SCM)")+ coord_fixed()+theme_bw()#+
+  
+  #geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "purple")+theme_bw()
+
+ #geom_abline(slope = a  ,intercept = b)
+
+```
+
+$$\color{blue}{SCM = \displaystyle\sum_{i=1}^n(\widehat{Y_i}-\bar{Y})^2}$$
+
+:::
+
+
+::: {.column width = "33%"}
+
+```{r, fig.height=5,fig.align='center'}
+mod0=(lm(y~x,data=df0))
+a = coef(mod0)[2]
+b = coef(mod0)[1]
+df0$prevision = a*df0$x + b
+ybar = mean(df0$y)
+ggplot(data = df0, aes(x=x,y=y)) +geom_point() + geom_abline(slope = a  ,intercept = b,lty=1 ) + 
+  geom_rect(aes(xmin = x, xmax = x+(y-prevision), ymin = prevision, ymax = y), 
+            fill = "red",alpha = 0.5)  +geom_point(data = df0,aes(x = x,y=prevision),shape=4,color="red")+geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "red")+ggtitle("Somme des carrés résiduels (SCR)")+xlim(-2,5.8)+ylim(0,3.5)+ coord_fixed()+theme_bw()#+
+  
+  #geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "purple")+theme_bw()
+
+ #geom_abline(slope = a  ,intercept = b)
+
+```
+
+$$\color{red}{SCR = \displaystyle\sum_{i=1}^n(Y_i-\widehat{Y_i})^2=\displaystyle\sum_{i=1}^n E_i ^2}$$
+
+:::
+
+:::
+
+
+:::{.callout-tip title ="Théorème"}
+
+$$\color{purple}{SCT} = \color{blue}{SCM} + \color{red}{SCR} $$ 
+
+:::
+
+## L'idée derrière le test
+
+
+#### Modèle avec pente significative. $SCM$ est significativement plus grande que $SCR$.
+
+::: {.columns}
+::: {.column width = "50%"}
+
+```{r, fig.height=4,fig.align='center'}
+mod0=(lm(y~x,data=df0))
+a = coef(mod0)[2]
+b = coef(mod0)[1]
+df0$prevision = a*df0$x + b
+ybar = mean(df0$y)
+ggplot(data = df0, aes(x=x,y=y)) +geom_point() + geom_abline(slope = a  ,intercept = b,lty=1 ) + annotate("text",parse=TRUE,x=-2,y = 1.8,label = "bar(Y)",size=8)+ geom_abline(slope = 0  ,intercept = ybar,lty=2)+
+  geom_rect(aes(xmin = x, xmax = x+(prevision-ybar), ymin = ybar, ymax = prevision), 
+            fill = "blue",alpha = 0.5)  +geom_point(data = df0,aes(x = x,y=prevision),shape=4,color="blue")+geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "purple")+xlim(-2,5.8)+ylim(0,3.5)+ggtitle("Somme des carrés du modèle (SCM)")+ coord_fixed()+theme_bw()#+
+  
+  #geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "purple")+theme_bw()
+
+ #geom_abline(slope = a  ,intercept = b)
+
+```
+:::
+
+::: {.column width = "50%"}
+
+```{r, fig.height=4,fig.align='center'}
+mod0=(lm(y~x,data=df0))
+a = coef(mod0)[2]
+b = coef(mod0)[1]
+df0$prevision = a*df0$x + b
+ybar = mean(df0$y)
+ggplot(data = df0, aes(x=x,y=y)) +geom_point() + geom_abline(slope = a  ,intercept = b,lty=1 ) + 
+  geom_rect(aes(xmin = x, xmax = x+(y-prevision), ymin = prevision, ymax = y), 
+            fill = "red",alpha = 0.5)  +geom_point(data = df0,aes(x = x,y=prevision),shape=4,color="red")+geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "red")+ggtitle("Somme des carrés résiduels (SCR)")+xlim(-2,5.8)+ylim(0,3.5)+ coord_fixed()+theme_bw()#+
+  
+  #geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "purple")+theme_bw()
+
+ #geom_abline(slope = a  ,intercept = b)
+
+```
+
+:::
+:::
+
+
+
+#### Modèle sans pente significative. $SCM$ n'est pas significativement plus grande que $SCR$.
+
+```{r}
+df1 = data.frame(x= c(0,1,2,3,4),y = c(-0.2,0.5,-0.5,-0.6,0.7)+4)
+```
+
+::: {.columns}
+::: {.column width = "50%"}
+
+```{r, fig.height=4,fig.align='center'}
+mod1=(lm(y~x,data=df1))
+a1 = coef(mod1)[2]
+b1 = coef(mod1)[1]
+df1$prevision = a1*df1$x + b1
+ybar = mean(df1$y)
+ggplot(data = df1, aes(x=x,y=y)) +
+  geom_point() +
+  geom_abline(slope = a1  ,intercept = b1,lty=1 ) +
+  annotate("text",parse=TRUE,x=0.5,y = 4.2,label = "bar(Y)",size=8)+
+  geom_abline(slope = 0  ,intercept = ybar,lty=2)+
+  geom_rect(aes(xmin = x,
+                xmax = x+(prevision-ybar),
+                ymin = ybar,
+                ymax = prevision), 
+                fill = "blue",alpha = 0.5)  +
+  geom_point(data = df1,aes(x =x,y=prevision),shape=4,color="blue")+
+  geom_segment(data = df1,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "purple")+
+
+  
+  ggtitle("Somme des carrés du modèle (SCM)")+
+  coord_fixed()+theme_bw()#+
+  
+  #geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "purple")+theme_bw()
+
+ #geom_abline(slope = a  ,intercept = b)
+
+```
+:::
+
+::: {.column width = "50%"}
+
+```{r, fig.height=4,fig.align='center'}
+ggplot(data = df1, aes(x=x,y=y)) +
+  geom_point() + geom_abline(slope = a1  ,intercept = b1,lty=1 ) +
+  geom_rect(aes(xmin = x,
+                xmax = x+(y-prevision),
+                ymin = prevision, ymax = y), fill = "red",alpha = 0.5)  +
+  geom_point(data = df1,aes(x = x,y=prevision),shape=4,color="red")+
+  geom_segment(data = df1,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "red")+
+  ggtitle("Somme des carrés résiduels (SCR)")+
+  coord_fixed()+
+  theme_bw()#+
+  
+  #geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "purple")+theme_bw()
+
+ #geom_abline(slope = a  ,intercept = b)
+
+```
+
+::: 
+
+:::
+
+## Test de Fisher
+
+Il s'agit d'un test unilatéral de comparaison de variance !
+
+[**Statistique de test**]{.upc}
+
+$$T_n=\frac{SCM/1}{SCR/(n-2)} \overset{H_0}{\sim} \mathcal{F}(1,n-2)$$
+
+[**Zone de rejet**]{.upc}
+
+$$R_\delta = \{T_n > f_{1-\delta} \}$$
+
+$f_{1-\delta}$ est le quantile $1 - \delta$ de la loi de Fisher $\mathcal{F}(1,n-2)$.
+
+$\mathbb{P}_{H_0}(T_n<f_{1-\delta})=1-\delta$
+
+::: {.columns}
+
+::: {.column width = "50%"}
+
+[**Application numérique**]{.upc}
+
+-   On calcule $t_n$
+-   On rejette $H_0$ si $t_{n} \in R_{\delta}$
+
+:::
+
+::: {.column width = "50%"}
+
+
+[**Calcul de** $p_c$]{.upc}
+
+$p_{c} = \mathbb{P}_{H_0}(T_n > t_n)=1-\mathbb{P}(F<t_n)$ où $F\sim \mathcal{F}(1,n-2)$
+
+
+:::
+
+:::
+
+
+
+## Test de fisher avec R
+
+```{r, echo=TRUE}
+summary(modele_reg_simple)
+```
+
+## Table d'analyse de la variance
+
+::: {style="font-size: 0.85em;"}
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline \text{Source}  &  \text{ddl}  & \text{Somme} &  \text{Carrés Moyens} &
+ \text{statistique} & p_c\\ \text{de variabilité} & \text{des Carrés} &  SC & CM & \text{de test} & \\
+ \text{de }Y &&&&&\\
+\hline \text{Modèle} & 1  & \text{SCM} &   CMM=SCM/1 & t_n=\frac{CMM}{CMR} &
+\mathbb{P}(\mathcal{F}(1,n-2)>t_n) \\ \text{Résidu} &  n-2  &  SCR &  CMR=SCR/(n-2) &&\\
+\hline \text{Total} & n-1 & SCT  & CMT=SCT/(n-1) &&\\ \hline
+\end{array}
+$$
+:::
+
+```{r, echo= TRUE}
+anova(modele_reg_simple)
+```
+
+
+## Une autre formulation du test de Fisher
+
+On veut tester
+
+-   $H_0$: Modèle $M_1$ : $Y_i=\beta+E_i$ avec $E_i\overset{i.i.d}\sim{\cal N}(0,\sigma^2)$
+
+contre
+
+-   $H_1$: Modèle $M_2$ : $Y_i=\beta+ \alpha x_i+E_i$ avec $E_i\overset{i.i.d}\sim{\cal N}(0,\sigma^2)$
+
+Cette fois-ci, on va se concentrer sur les **résidus** de ces deux modèles.
+
+## Les résidus du modèle $M_2$
+
+$$Y_i=\beta+ \alpha x_i+E_i, \mbox{ où } E_i\overset{i.i.d.}\sim{\cal N}(0,\sigma^2)$$
+
+-   $Y_i \overset{i.i.d.}\sim {\mathcal N}(\alpha x_i+\beta;\sigma^2)$.
+
+-   **2 paramètres d'espérance** $\alpha$ et $\beta$ estimés (par les moindres carrés) par $A$ et $B$.
+
+-   Prédicteur $\widehat{Y_i}(M_2)=Ax_i+B$
+
+-   Somme des carrés résiduelles :
+
+$$SCR(M_2) = \sum_{i=1}^n (Y_i-\widehat{Y_i}(M_2))^2 = \sum_{i=1}^n (Y_i-Axi-B)^2$$
+
+## Les résidus du modèle $M_1$
+
+$$Y_i=\beta+E_i, \mbox{ où }  E_i\overset{i.i.d.}\sim{\cal N}(0,\sigma^2)$$
+
+-   $Y_i\overset{i.i.d.}\sim{\cal N}(\beta;\sigma^2)$
+
+-   **1 paramètre d'espérance** $\beta$ estimé (par les moindres carrés) par $\bar{Y}$.
+
+-   Prédicteur $\widehat{Y_i}(M_1) = \bar{Y}$
+
+-   Somme des carrés résiduelles :
+
+$$SCR(M_1)=\sum_{i=1}^n E_i^2(M_1)=\sum_{i=1}^n (Y_i-\widehat{Y}_i(M_1))^2=\sum_{i=1}^n (Y_i-\bar{Y})^2=SCT$$
+
+
+## Interprétation du test de Fisher
+
+::: {.callout-tip title="Théorème"}
+Statistique de test $T_n$ peut s'écrire 
+
+$$
+\begin{align}
+T_n &= \frac{SCM/ 1}{SCR(M_2)/(n-2)} \\
+&= \frac{(SCR(M_{\color{red}{1}}) - SCR(M_{\color{red}{2}}))/ ( 2 - 1)}{SCR(M_2)/(n- 2)}\overset{H_0}\sim \mathcal{F}(1,n-2)
+\end{align}
+$$
+
+:::
+
+::: {.callout-caution title="Remarques"}
+-   $SCR(M_{\color{red}{1}}) - SCR(M_{\color{red}{2}})$ : différence des variances non expliquées par les modèles.
+
+-   $(2-1)$ : différence du nombre de paramètres.
+
+-   $SCR(M_1)\geq SCR(M_2)$ (toujours !).
+:::
+
+
+## Remarque sur le test de Fisher
+
+::: {.callout-caution title="Remarques"}
+-   Le test répond à la question : la droite des moindres carrés $y=ax+b$ (modèle $M_2$ estimé) explique mieux le nuage de points que la droite horizontale $y=b$ (modèle $M_1$ estimé), mais le gain est-il significatif ?
+
+-   $SCR(M_1)\geq SCR(M_2)$
+
+-   On n'abandonnera $M_1$ pour que $M_2$ que si la réduction d'erreurs en passant du "petit" modèle $M_1$ au "grand" modèle $M_2$ est significative.
+
+-   L'introduction de la pente a permis d'expliquer $SCM=SCR(M_1)-SCR(M_2)$ et a laissé inexpliquée $SCR(M_2)$.
+:::
+
+## Autre méthode: test de Fisher avec R
+
+```{r, echo = TRUE}
+mod1 <- lm(Poids~1, data = fish)
+
+summary(mod1)
+```
+
+## Autre méthode: test de Fisher avec R
+
+```{r anova, echo = TRUE}
+anova(mod1,modele_reg_simple)
+```
+
+## Lien entre les deux tests
+
+::: {.callout-caution title="Remarques"}
+-   Test de Student : $T^S_{n}=\frac{A}{S_A}\overset{H_0}\sim \mathcal{T}(n-2)$
+-   Test de Fisher : $T^F_{n}=\displaystyle\frac{SCM/1}{SCR/(n-2)}\overset{H_0}\sim \mathcal{F}(1,n-2)$.
+-   procédure équivalente : $\left(T^S_{n,1}\right)^2=T^F_{n}$ et la loi du carré d'une variable aléatoire $\mathcal{T}(n-2)$ est une loi de Fisher $\mathcal{F}(1,n-2)$
+:::
+
+# Qualité d'ajustement du modèle
+
+## Coefficient de détermination
+
+::: callout-note
+## Définition : Coefficient de détermination
+
+On appelle le coefficient de détermination $R^2$ la proportion de la variabilité de $Y$ expliquée par le modèle. Cette proportion est donnée par
+
+$$R^2 = \frac{SCM}{SCT}$$
+:::
+
+-   On a $0\leq R^2\leq 1$. Plus $R^2$ est proche de $1$, meilleur est l'ajustement.\
+-   Si la qualité d'ajustement est mauvais on ne peut pas espérer avoir une bonne prédiction.
+
+
+## Visualisation : Coefficient de détermination
+
+#### Modèle avec pente significative.
+
+::: {style="font-size: 0.90em;"}
+$$R^2 = `r summary(mod0)$r.squared`$$
+:::
+
+::: columns
+::: {.column width = "50%"}
+
+```{r, fig.height=3.8,fig.align='center'}
+mod0=(lm(y~x,data=df0))
+a = coef(mod0)[2]
+b = coef(mod0)[1]
+df0$prevision = a*df0$x + b
+ybar = mean(df0$y)
+ggplot(data = df0, aes(x=x,y=y)) +
+  geom_point() +
+  geom_abline(slope = 0  ,intercept = ybar,lty=2 ) +
+  annotate("text",parse=TRUE,x=-2,y = 1.8,label = "bar(Y)",size=8)+ 
+  geom_rect(aes(xmin = x, xmax = x+(y-ybar), ymin = ybar, ymax = y), 
+            fill = "purple",alpha = 0.5)  +
+  geom_point(data = df0,aes(x =x,y=ybar),shape=4,color="purple")+
+  geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= ybar),linetype = 2,color= "purple")+
+  xlim(-2,5.8)+ylim(0,3.5)+
+  ggtitle("Somme des carrés totaux (SCT)")+
+  coord_fixed()+
+  theme_bw()#+
+  #geom_point(data = df0,aes(x = x,y=prevision),shape=4,color="blue")+
+  #geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "purple")+theme_bw()
+
+ #geom_abline(slope = a  ,intercept = b)
+
+```
+
+:::
+
+::: {.column width = "50%"}
+
+```{r, fig.height=3.8,fig.align='center'}
+mod0=(lm(y~x,data=df0))
+a = coef(mod0)[2]
+b = coef(mod0)[1]
+df0$prevision = a*df0$x + b
+ybar = mean(df0$y)
+ggplot(data = df0, aes(x=x,y=y)) +geom_point() + geom_abline(slope = a  ,intercept = b,lty=1 ) + annotate("text",parse=TRUE,x=-2,y = 1.8,label = "bar(Y)",size=8)+ geom_abline(slope = 0  ,intercept = ybar,lty=2)+
+  geom_rect(aes(xmin = x, xmax = x+(prevision-ybar), ymin = ybar, ymax = prevision), 
+            fill = "blue",alpha = 0.5)  +geom_point(data = df0,aes(x = x,y=prevision),shape=4,color="blue")+geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "purple")+xlim(-2,5.8)+ylim(0,3.5)+ggtitle("Somme des carrés du modèle (SCM)")+ coord_fixed()+theme_bw()#+
+  
+  #geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "purple")+theme_bw()
+
+ #geom_abline(slope = a  ,intercept = b)
+
+```
+
+::: 
+
+:::
+
+#### Modèle sans pente significative.
+
+```{r}
+df1 = data.frame(x= c(0,1,2,3,4),y = c(-0.2,0.5,-0.5,-0.6,0.7)+4)
+mod1=(lm(y~x,data=df1))
+```
+
+::: {style="font-size: 0.90em;"}
+$$R^2 = `r summary(mod1)$r.squared`$$
+:::
+
+::: columns
+::: {.column width = "50%"}
+
+```{r, fig.height=3,fig.align='center'}
+
+ybar = mean(df1$y)
+ggplot(data = df1, aes(x=x,y=y)) +
+  geom_point() +
+  geom_abline(slope = 0  ,intercept = ybar,lty=2 ) +
+  annotate("text",parse=TRUE,x=0.5,y = 4.2,label = "bar(Y)",size=8)+
+  geom_rect(aes(xmin = x, xmax = x+(y-ybar), ymin = ybar, ymax = y), 
+            fill = "purple",alpha = 0.5)  +
+  geom_point(data = df1,aes(x =x,y=ybar),shape=4,color="purple")+
+  geom_segment(data = df1,aes(x=x, xend = x,y=y, yend= ybar),linetype = 2,color= "purple")+
+  ggtitle("Somme des carrés totaux (SCT)")+
+  coord_fixed()+
+  theme_bw()#+
+  #geom_point(data = df0,aes(x = x,y=prevision),shape=4,color="blue")+
+  #geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "purple")+theme_bw()
+
+ #geom_abline(slope = a  ,intercept = b)
+
+```
+:::
+
+::: {.column width = "50%"}
+
+```{r, fig.height=3,fig.align='center'}
+a1 = coef(mod1)[2]
+b1 = coef(mod1)[1]
+df1$prevision = a1*df1$x + b1
+ybar = mean(df1$y)
+ggplot(data = df1, aes(x=x,y=y)) +
+  geom_point() +
+  geom_abline(slope = a1  ,intercept = b1,lty=1 ) +
+  annotate("text",parse=TRUE,x=0.5,y = 4.2,label = "bar(Y)",size=8)+
+  geom_abline(slope = 0  ,intercept = ybar,lty=2)+
+  geom_rect(aes(xmin = x,
+                xmax = x+(prevision-ybar),
+                ymin = ybar,
+                ymax = prevision), 
+                fill = "blue",alpha = 0.5)  +
+  geom_point(data = df1,aes(x =x,y=prevision),shape=4,color="blue")+
+  geom_segment(data = df1,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "purple")+
+
+  
+  ggtitle("Somme des carrés du modèle (SCM)")+
+  coord_fixed()+theme_bw()#+
+  
+  #geom_segment(data = df0,aes(x=x, xend = x,y=y, yend= prevision),linetype = 2,color= "purple")+theme_bw()
+
+ #geom_abline(slope = a  ,intercept = b)
+
+```
+
+::: 
+
+:::
+
+
+
+# Prévision: intervalles de confiance et de prédiction
+
+## Prévision
+
+-   Données $(x_i,y_i)_{i=1,\cdots,n}$ modélisées par $$Y_i=\alpha x_i+\beta +E_i,\quad E_i\overset{i.i.d.}\sim{\cal N}(0,\sigma^2)$$
+-   [**Problématique**]{.upc}
+    -   Etant donnée une valeur $x_0$ de $x$ pour laquelle on n'a pas observé $y_0$, construire une prévision de ce $y_0$ non disponible
+    -   prévision intuitive par droite des moindres carrées de $y_0$ : $\widehat{y_0}=ax_0+b$
+    -   Quel sens lui donner ? Quelle qualité ?
+
+## Prévision
+
+-   ${\widehat y}_0 = ax_0 +b$ est une réalisation de la variable aléatoire $\widehat{Y_0}$ définie par $\widehat{Y_0}=Ax_0+B$
+
+-   $\mathbb{E}[\widehat{Y_0}]=\alpha x_0+\beta$ : $\widehat{Y_0}$ est un estimateur sans biais de $\mathbb{E}[Y_0] = \alpha x_0+\beta$
+
+-   De plus, si $y_0$ était disponible, on lui associerait une v.a. $Y_0$ définie par $$Y_0=\alpha x_0+\beta + E_0,\quad
+    E_0\overset{i.i.d}\sim{\cal N}(0,\sigma^2)$$
+
+-   $\widehat{y_0}$ est donc à la fois une estimation de $\mathbb{E}[Y_0]$ et une prévision de $y_0$
+
+## Deux problématiques
+
+::::: {style="font-size: 0.90em;"}
+::: {.callout-warning title="1 : On ne prend pas en compte la variabilité de $E_0$"}
+$\widehat{y_0} = a x_0 +b$ est une estimation de $\mathbb{E}[Y_0]$ :
+
+-   Construire un intervalle de confiance pour le paramètre $\mathbb{E}[Y_0]$. On s'interesse ici à la partie de la réponse expliquée par le modèle. (Seulement la partie du poids du poisson qui est expliquée par sa longueur)
+
+-   En faisant varier $x_0$, construire un intervalle de confiance de la droite de régression $\alpha x+\beta$
+:::
+
+::: {.callout-warning title="2 : On prend en compte la variabilité de $E_0$"}
+$\widehat{y_0}$ est une prévision de $y_0$ :
+
+-   Construire un intervalle de prédiction pour $Y_0$.
+
+On s'interesse ici à la totalité de la réponse. (On veut un intervalle sur le poids du poisson totale.)
+:::
+:::::
+
+## Intervalle de confiance de $\mathbb{E}[Y_0]$
+
+:::: {style="font-size: 0.90em;"}
+::: callout-tip
+## Théorème
+
+$\widehat{Y_0}=Ax_0+B$ est un estimateur sans biais de $\mathbb{E}[Y_0]=\alpha x_0+ \beta$, de variance $$\mathbb{V}\left[\widehat{Y_0}\right]=\sigma^2\left(\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right).$$
+
+L'estimateur de la variance $\mathbb{V}\left[\widehat{Y_0}\right]$ est donnée par $$S_0^2=S^2\left(\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)$$
+
+De plus, $$
+\frac{\left(\widehat{Y_0}-\mathbb{E}[Y_0]\right)}{S_0}\sim \mathcal{T}(n-2)
+$$
+:::
+::::
+
+## Intervalle de confiance de $\mathbb{E}[Y_0]$
+
+::: {.callout-tip title="Théorème"}
+Intervalle de confiance de $\mathbb{E}[Y_0]$ au niveau de confiance $1-\delta$
+
+$$
+IC_{1-\delta}(\mathbb{E}[Y_0]) =
+ \left[\widehat{y_0}-t_{1-\frac{\delta}{2}}\ s_0;\right.
+\left.\widehat{y_0}+t_{1-\frac{\delta}{2}}\ s_0\right], 
+$$ où
+
+-   $s_0 = \sqrt{s^2\left(\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)}$
+
+-   $t_{1-\frac{\delta}{2}}$ est tel que $\mathbb{P}\left(\mid \mathcal{T}(n-2)\mid \leq t_{1-\frac{\delta}{2}}\right)=1-\delta$.
+:::
+
+::: {style="font-size: 0.90em;"}
+## Intervalle de confiance de la droite de régression
+
+::: {.callout-caution title = "Remarques"}
+
+
+$IC_{1-\delta}(\mathbb{E}[Y_0]) = \left[\widehat{y_0}-t_{1-\frac{\delta}{2}}\ s_0;\right.\left.\widehat{y_0}+t_{1-\frac{\delta}{2}}\ s_0\right],$ avec $s_0 = \sqrt{s^2\left(\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)}$
+
+-   En faisant varier $x_0$, les IC définissent deux hyperboles qui sont l'IC de la droite de régression
+
+-   Plus on s'éloigne du point moyen $(\bar{x},\bar{y})$, moins l'estimation est précise
+:::
+
+```{r,fig.align='center'}
+new <- data.frame(Longueur = seq(min(fish$Longueur), max(fish$Longueur), length = 100))
+pp <- predict(modele_reg_simple, new, interval = "prediction") %>% 
+  cbind(new)
+fish %>% 
+  ggplot(aes(x = Longueur, y = Poids)) + geom_point() +
+  stat_smooth(method = 'lm') 
+
+```
+
+:::
+
+## Intervalle de prévision de $Y_0$
+
+:::: {style="font-size: 0.90em;"}
+On rajoute l'aléa non expliqué par le modèle
+
+::: callout-tip
+## Théorème
+
+$Y_0=\alpha x_0+\beta + E_0$
+
+$$\mathbb{V}(\widehat{Y_0} - Y_0)= \mathbb{V}[Ax_0+ B] + \mathbb{V}[E_0] = \sigma^2\left( 1 + \frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)$$ estimée par $$S_{P_0}^2=S^2\left( 1 + \frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)$$ De plus, $$
+\frac{(\widehat{Y_0} -Y_0)}{S_{P_0}}\sim\mathcal{T}(n-2)
+$$
+:::
+::::
+
+## Intervalle de prévision de $Y_0$
+
+:::: {style="font-size: 0.70em;"}
+::: callout-tip
+## Théorème
+
+$$\frac{(\widehat{Y_0}-Y_0)}{\sqrt{S^2\left(1+\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)}}\sim\mathcal{T}(n-2)$$ [**Intervalle de prédiction de** $Y_0$ de niveau $1-\delta$ :]{.upc}
+
+$$
+\begin{align}
+IP_{1-\delta}(Y_0)=&&\left[\widehat{y_0}-t_{1-\frac{\delta}{2}}\sqrt{s^2\left(1+\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)};\right.\\
+&&\left.\widehat{y_0}+t_{1-\frac{\delta}{2}}\sqrt{s^2\left(1+\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)}\right]
+\end{align}
+$$
+
+où $t_{1-\frac{\delta}{2}}$ est tel que $\mathbb{P}\left(\mid \mathcal{T}(n-2)\mid \leq t_{1-\frac{\delta}{2}}\right)=1-\delta$
+:::
+
+:::{.callout-caution title = "Remarques"}
+
+$$IC_{1-\delta}(\mathbb{E}[Y_0])\subset
+IP_{1-\delta}(Y_0)$$
+::::
+
+:::
+
+## Représentation intervalle de confiance et de prévision
+
+```{r}
+new <- data.frame(Longueur = seq(min(fish$Longueur), max(fish$Longueur), length = 100))
+pc <- predict(modele_reg_simple, new, interval = "confidence")
+pp <- predict(modele_reg_simple, new, interval = "prediction")
+```
+
+```{r}
+pp <- predict(modele_reg_simple, new, interval = "prediction") %>% 
+  cbind(new)
+fish %>% 
+  ggplot(aes(x = Longueur, y = Poids)) + geom_point() +
+  stat_smooth(method = 'lm') +
+  geom_line(data = pp, aes(y = lwr), color ="red", linetype ="dashed")+
+  geom_line(data = pp, aes(y = upr), color ="red", linetype ="dashed")
+```
+
+## Prévisions avec R
+
+\tiny
+
+-   Prédiction des $\widehat{y}_i = ax_i+b$ (utilisés pour faire le modèle)
+
+```{r, echo = TRUE}
+y_hat <- fitted(modele_reg_simple)
+head(y_hat)
+```
+
+-   Prédiction du poids d'un poisson qui mesurerait 30 cm: pour $x_0=30$
+
+```{r, echo = TRUE}
+new_data <- data.frame(Longueur = 30)
+```
+
+-   Prédiction et intervalle de confiance ( de $E[Y_0]$)
+
+```{r, echo = TRUE}
+predict(modele_reg_simple, new_data,interval="confidence")
+```
+
+-   Prédiction et intervalle de prévision ( de $Y_0$)
+
+```{r, echo = TRUE}
+predict(modele_reg_simple, new_data, interval = "prediction")
+```
+
+
+
+## Ce qu'il faut retenir de ce cours 1/3
+
+
+:::{.callout-tip title= "Lois des estimateurs"}
+
+$$\frac{(A-\alpha)}{S_A}\sim \mathcal{T}{(n-2)}\mbox{ et }\frac{(B-\beta)}{S_B}\sim \mathcal{T}{(n-2)}$$
+:::
+
+:::{.callout-tip title= "Estimateurs du modèle"}
+
+
+$$\begin{align}
+IC_{1-\delta}(\alpha) =& \left[a-t_{1-\frac{\delta}{2}} s_A;a+t_{1-\frac{\delta}{2}} s_A\right]\\
+IC_{1-\delta}(\beta)=&\left[b-t_{1-\frac{\delta}{2}} s_B;b+t_{1-\frac{\delta}{2}} s_B\right]\\
+\end{align}$$
+
+:::{style="text-align: center;"}
+
+$s_A = \sqrt{\frac{s^2}{\sum_{i=1}^n(x_i-\bar{x})^2}}$ et  $s_B = \sqrt{s^2\left(\frac{1}{n}+\frac{\bar{x}^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)}$ 
+
+:::
+
+:::
+
+:::{.callout-note title= "Test de Student de la nullité de la pente de régression"}
+
+:::{style="text-align: center;"}
+ $$H_0:\alpha=0$$
+ 
+ $$H_1:\alpha\neq 0$$
+:::
+:::
+
+
+:::{.callout-note title= "Test de Fisher de Comparaison de modèles"}
+$$H_0\; :\; \text{modèle}\; M_1:Y_i=\beta+E_i,\quad E_i\; \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
+
+
+$$H_1\; :\; \text{modèle}\; M_2:Y_i=\alpha x_i+\beta+E_i,\quad E_i\; \overset{i.i.d.}{\sim}
+{\cal N}(0,\sigma^2)$$
+:::
+
+
+
+
+## Ce qu'il faut retenir de ce cours 2/3
+
+
+::: {.columns}
+::: {.column width = "33%"}
+
+
+::: {.callout-note title="Définition : SCT"}
+La variabilité de $Y$ **sans tenir compte du modèle**.
+
+$$\color{purple}{SCT =\displaystyle\sum_{i = 1}^n( Y_i - \bar{Y})^2}$$
+:::
+
+
+:::
+
+::: {.column width = "33%"}
+
+::: {.callout-note title="Définition : SCM"}
+Partie de la variabilité de $Y$ **expliquée par le modèle**.
+
+$$\color{blue}{SCM = \displaystyle\sum_{i=1}^n(\widehat{Y_i}-\bar{Y})^2}$$
+:::
+
+:::
+::: {.column width = "33%"}
+
+::: {.callout-note title="Définition : SCR"}
+Partie de la variabilité de $Y$ qui n'est **pas expliquée par le modèle**.
+
+$$\color{red}{SCR = \displaystyle\sum_{i=1}^n(Y_i-\widehat{Y_i})^2=\displaystyle\sum_{i=1}^n E_i ^2}$$
+
+:::
+
+:::
+
+:::
+
+
+
+:::{.callout-tip title ="Décomposition de la variance"}
+
+$$\color{purple}{SCT} = \color{blue}{SCM} + \color{red}{SCR} $$ 
+
+:::
+
+
+:::{.callout-tip title ="Test de Fisher"}
+
+$$T_n=\frac{SCM/1}{SCR/(n-2)} \overset{H_0}{\sim} \mathcal{F}(1,n-2)$$
+:::
+
+
+## Ce qu'il faut retenir de ce cours 3/3
+
+
+:::{.callout-note title= "Coefficient de détermination"}
+
+$$R^2 = \frac{SCM}{SCT}$$
+
+:::
+
+
+
+
+:::{.callout-tip title= "Intervalle de confiance de la droite de régression"}
+
+
+$$\begin{align}
+IC_{1-\delta}(\mathbb{E}[Y_0])=&&\left[\widehat{y_0}-t_{1-\frac{\delta}{2}}\sqrt{s^2\left(\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)};\right.\\
+&&\left.\widehat{y_0}+t_{1-\frac{\delta}{2}}\sqrt{s^2\left(\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)}\right]
+\end{align}$$
+
+:::
+
+
+:::{.callout-tip title= "Intervalle de prévision"}
+
+$$\begin{align}
+IP_{1-\delta}(Y_0)=&&\left[\widehat{y_0}-t_{1-\frac{\delta}{2}}\sqrt{s^2\left(1+\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)};\right.\\
+&&\left.\widehat{y_0}+t_{1-\frac{\delta}{2}}\sqrt{s^2\left(1+\frac{1}{n}+\frac{(x_0-\bar{x})^2}{\sum_{i=1}^n(x_i-\bar{x})^2}\right)}\right]
+\end{align}$$
+
+:::
+
+
+
+```{r}
+new <- data.frame(Longueur = seq(min(fish$Longueur), max(fish$Longueur), length = 100))
+pc <- predict(modele_reg_simple, new, interval = "confidence")
+pp <- predict(modele_reg_simple, new, interval = "prediction")
+```
+
+```{r,fig.align='center',fig.height=4}
+pp <- predict(modele_reg_simple, new, interval = "prediction") %>% 
+  cbind(new)
+fish %>% 
+  ggplot(aes(x = Longueur, y = Poids)) + geom_point() +
+  stat_smooth(method = 'lm') +
+  geom_line(data = pp, aes(y = lwr), color ="red", linetype ="dashed")+
+  geom_line(data = pp, aes(y = upr), color ="red", linetype ="dashed")
+```
+
+
+
+
+
+

@@ -1123,7 +1123,7 @@ On compare avec $t_{1-\frac{\delta}{2}}$ et on conclue.
 
 [$p$-valeur :]{.upc}
 
-$$p_c=\mathbb{P}_{H_0}(\mid T_n\mid >\mid t_{obs}\mid)\\=2(1-\mathbb{P}(T_n\leq |t_n|))$$ où $T_n\sim \mathcal{T}(n-2)$
+$$\begin{align}p_c&=\mathbb{P}_{H_0}(\mid T_n\mid >\mid t_{obs}\mid)\\&=2(1-\mathbb{P}(T_n\leq |t_n|))\end{align}$$ où $T_n\sim \mathcal{T}(n-2)$
 
 Pour un risque de 1ere espèce $\delta$ fixé acceptable (par ex $\delta=5\%$)
 
@@ -1144,7 +1144,7 @@ $T_n = \frac{a}{s_A}$
 48.63832 / 7.082325
 ```
 
-$p_c=\mathbb{P}_{H_0}(\mid T_n\mid >\mid t_n\mid)=2(1-\mathbb{P}_{H_0}(T_n\leq |t_n|))$ où $T_n\sim \mathcal{T}(n-2)$
+$\begin{align}p_c &=\mathbb{P}_{H_0}(\mid T_n\mid >\mid t_n\mid)\\&= 2(1-\mathbb{P}_{H_0}(T_n\leq |t_n|))\end{align}$ où $T_n\sim \mathcal{T}(n-2)$
 
 ```{r, echo = TRUE}
 n <- nrow(fish)

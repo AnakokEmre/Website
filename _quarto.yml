@@ -23,7 +23,7 @@ website:
         contents:
           - text: "Cours"
             href: Cours.qmd
-          - section: Modèles linéaires.
+          - section: Modèles linéaires
             contents:
             - Cours/EMS/Modèle linéaire/Cours1/cours1.qmd
             - Cours/EMS/Modèle linéaire/Cours2/cours2.qmd

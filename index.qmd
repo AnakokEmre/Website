@@ -12,7 +12,7 @@ about:
       icon: github
       target: _blank
     - text: Email
-      href: mailto:emre.anakok@u-paris.fr
+      href: mailto:emre.anakok@u-paris.fr 
       icon: envelope
 ---
 

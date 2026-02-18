@@ -1514,8 +1514,7 @@ summary(modele_reg_simple)
 
 ## Table d'analyse de la variance
 
-<!---
-::: {style="font-size: 0.55em;"}
+::: {style="font-size: 0.25em;"}
 $$
 \begin{array}{|c|c|c|c|c|c|}
 \hline \text{Source}  &  \text{ddl}  & \text{Somme} &  \text{Carrés Moyens} &
@@ -1528,13 +1527,6 @@ $$
 $$
 :::
 
---->
-
-| Source de variabilité | ddl  | Somme des Carrés | Carrés Moyens        | Statistique de test              | $p_c$ |
-|-----------------------|------|------------------|----------------------|----------------------------------|-----|
-| Modèle                | $1$    | $SCM$              | $CMM = SCM / 1$        | $t_n = \frac{CMM}{CMR}$          | $\mathbb{P}(\mathcal{F}(1,n-2) > t_n)$ |
-| Résidu                | $n-2$  | $SCR$              | $CMR = SCR / (n-2)$    |                                  |     |
-| Total                 | $n-1$  | $SCT$              | $CMT = SCT / (n-1)$    |                                  |     |
 
 
 ```{r, echo= TRUE}

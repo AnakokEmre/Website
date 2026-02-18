@@ -423,7 +423,9 @@ $$J(a,b)=\sum_{i=1}^{n} \left(y_i-(ax_i+b)\right)^2$$
 
 [**Exercice :**]{.upc}
 
-$a =$ [$\frac{\displaystyle\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})}{\displaystyle\sum_{i=1}^n(x_i-\bar{x})^2}= \frac{Cov_{emp}(x,y)}{\mathbb{V}_{emp}(x)}$]{.fragment fragment-index="1"} et $b$ = [$\bar{y} - a\bar{x}$]{.fragment fragment-index="1"}
+$a =$ [$\frac{\displaystyle\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})}{\displaystyle\sum_{i=1}^n(x_i-\bar{x})^2}= \frac{Cov_{emp}(x,y)}{\mathbb{V}_{emp}(x)}$]{.fragment fragment-index="1"} et
+
+$b$ = [$\bar{y} - a\bar{x}$]{.fragment fragment-index="1"}
 :::
 
 
@@ -1512,7 +1514,7 @@ summary(modele_reg_simple)
 
 ## Table d'analyse de la variance
 
-::: {style="font-size: 0.85em;"}
+::: {style="font-size: 0.55em;"}
 $$
 \begin{array}{|c|c|c|c|c|c|}
 \hline \text{Source}  &  \text{ddl}  & \text{Somme} &  \text{Carrés Moyens} &

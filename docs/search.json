@@ -1073,7 +1073,7 @@
     "href": "Cours/EMS/Modèle linéaire/Cours1/cours1.html#méthode-des-moindres-carrés-1",
     "title": "Introduction aux modèles linéaires",
     "section": "4.4 Méthode des moindres carrés",
-    "text": "4.4 Méthode des moindres carrés\n\n\n\n\n\n\nNoteDéfinition\n\n\n\n\nÉquation de la droite des moindres carrés :\n\n\\[\\widehat{y}_i = ax_i+b\\]\n\n\\(a\\) et \\(b\\) obtenus en minimisant la somme des carrés des erreurs\n\n\\[J(a,b)=\\sum_{i=1}^{n} \\left(y_i-(ax_i+b)\\right)^2\\]\n\n\n\n\n\n\n\n\nTipThéorème\n\n\n\n\nLa minimisation de \\(J(a,b)\\) en \\(a\\) et \\(b\\) conduit à\n\nExercice :\n\\(a =\\) \\(\\frac{\\displaystyle\\sum_{i=1}^n(x_i-\\bar{x})(y_i-\\bar{y})}{\\displaystyle\\sum_{i=1}^n(x_i-\\bar{x})^2}= \\frac{Cov_{emp}(x,y)}{\\mathbb{V}_{emp}(x)}\\) et \\(b\\) = \\(\\bar{y} - a\\bar{x}\\)",
+    "text": "4.4 Méthode des moindres carrés\n\n\n\n\n\n\nNoteDéfinition\n\n\n\n\nÉquation de la droite des moindres carrés :\n\n\\[\\widehat{y}_i = ax_i+b\\]\n\n\\(a\\) et \\(b\\) obtenus en minimisant la somme des carrés des erreurs\n\n\\[J(a,b)=\\sum_{i=1}^{n} \\left(y_i-(ax_i+b)\\right)^2\\]\n\n\n\n\n\n\n\n\nTipThéorème\n\n\n\n\nLa minimisation de \\(J(a,b)\\) en \\(a\\) et \\(b\\) conduit à\n\nExercice :\n\\(a =\\) \\(\\frac{\\displaystyle\\sum_{i=1}^n(x_i-\\bar{x})(y_i-\\bar{y})}{\\displaystyle\\sum_{i=1}^n(x_i-\\bar{x})^2}= \\frac{Cov_{emp}(x,y)}{\\mathbb{V}_{emp}(x)}\\) et\n\\(b\\) = \\(\\bar{y} - a\\bar{x}\\)",
     "crumbs": [
       "Cours",
       "Modèles linéaires",

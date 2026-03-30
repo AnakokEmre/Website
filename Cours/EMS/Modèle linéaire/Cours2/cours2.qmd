@@ -17,7 +17,10 @@ editor:
 ---
 
 
-```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+
+
+```{r,message=FALSE,echo=FALSE}
 library(tidyverse)
 library(extrafont) 
 require(ggsci)
@@ -25,21 +28,70 @@ library(ggpubr)
 library(knitr)
 library(ggfortify)
 library(ggrepel)
+library(corrplot)
+library(ggplot2)
+knitr::opts_chunk$set(echo=FALSE)
 ```
+
+
+## Ce qu'il faut retenir de ce cours
+
+
+:::{.callout-note title= "Modélisation probabiliste du modèle linéaire"}
+
+$y_i$ est la réalisation d'une variable aléatoire $Y_i$ telle que pour $1 \leq i \leq n$: $$Y_i = \beta + \sum_{j=1}^p\alpha_j x_{i,j}    + E_i, \quad E_i\overset{i.i.d.}\sim{\cal N}(0,\sigma^2) $$
+:::
+
+
+:::{.callout-tip title= "Écriture matricielle du modèle"}
+
+Le modèle linéaire multiple peut s'écrire matriciellement
+
+[$$ Y = X \theta + E $$]{.red}
+
+
+:::
+
+:::{.callout-tip title="Estimateur des moindres carrés de $\theta$" }
+
+$$\widehat{\theta}  =\underset{\theta\in\mathbb{R}^{p+1}}{argmin} ||Y-X\theta||^2$$ 
+
+Si $(X^t\,X)$ est inversible, alors [$\hat{\theta}=(X^t\,X)^{-1}\,X^t\,Y$]{.red}
+:::
+
+
+::: {.callout-tip title="Vérification des hypothèses : Graphe de diagnostic, corrélation et vif"}
+
+
+```{r,fig.height= 2,fig.align='center'}
+fish <- read.table(file = "Fish.csv",
+                   sep =",", header = TRUE)%>% filter(Species == "Bream") %>% slice(1:20)
+M = cor(fish[c("Length1","Height","Width","Weight")])
+
+modele_reg_multiple <- lm(Weight~ Length1 + Height + Width, data = fish)
+#plot(modele_reg_multiple, which = 1:4)
+autoplot(modele_reg_multiple, which = 1:4, ncol = 4, label.size=1) + theme_bw()
+```
+
+
+
+```{r,fig.height=3,fig.align='center'}
+corrplot.mixed(M)
+
+```
+
+
+
+$$
+  VIF(x_i) = \frac{1}{1-R^2(x_i)}
+$$
+
+:::
+
 
 
 ## Problématique biologique 
 
-\newcommand\b{\color{blue}}
-\newcommand\r{\color{red}}
-\newcommand\p{\color{purple}}
-
-:::{.callout-warning title="Objectif"}
-  * Peut-on prédire le poids des poissons par leurs largeurs, leurs longueurs et leurs épaisseurs ?
-  * Tester le caractère significatif de la liaison : Y'a t'il un lien significatif entre le poids des poissons et leurs largeurs, leurs longueurs et leurs épaisseurs  ?
-  * Y'a t'il un lien entre le poids du poisson et sa largeur après avoir pris en compte sa longueur et son epaisseur ? 
-
-:::
 
 - **Données**
 On a pour 20 brèmes péchées dans le lac Laengelmavesi en Finland  leurs poids (en gramme) et leurs longeurs (en cm), leurs largeurs (en cm) leurs épaisseur (en cm). 
@@ -47,13 +99,41 @@ On a pour 20 brèmes péchées dans le lac Laengelmavesi en Finland  leurs poids
 
 ![](breme.jpg){fig-align="center"}
 
+
+\newcommand\b{\textcolor{blue}}
+\newcommand\r{\textcolor{red}}
+\newcommand\p{\textcolor{purple}}
+\newcommand\br{\textcolor{brown}}
+\newcommand\g{\textcolor{green}}
+\newcommand\o{\textcolor{magenta}}
+
+
+
+:::{.callout-warning title="Objectif"}
+
+::: {.fragment .fade-transparent}
+  * Peut-on prédire le poids des poissons par leurs largeurs, leurs longueurs et leurs épaisseurs ?
+
+:::
+
+::: {.fragment .fade-transparent}
+
+  * Tester le caractère significatif de la liaison : Y'a t'il un lien significatif entre le poids des poissons et leurs largeurs, leurs longueurs et leurs épaisseurs  ?
+
+:::
+
+::: {.fragment .fade-transparent}
+  * Y'a t'il un lien entre le poids du poisson et sa largeur après avoir pris en compte sa longueur et son epaisseur ? 
+
+:::
+:::
+
 # Écriture et remarque sur le modèle
 
 
-## Écriture du modèle 
+## Écriture du modèle dans cet exemple
 
 #### Notations
-::: {style="font-size: 0.75em;"}
 
 On a $n = 20$ observations. On note, pour $1 \leq i \leq 20$
 
@@ -61,6 +141,8 @@ On a $n = 20$ observations. On note, pour $1 \leq i \leq 20$
 - $x_{2,i}$ la mesure de la largeure du poisson $i$.
 - $x_{3,i}$ la mesure de l'epaisseur du poisson $i$.
 - $y_i$ la mesure du poids du poisson $i$.
+
+::: {.fragment .fade-transparent}
 
 :::{.callout-note title= "Définition : Modèle de régression linéaire multiple"}
 
@@ -81,7 +163,7 @@ $$Y_i = \alpha_1 x_{1,i} + \alpha_2 x_{2,i} + \alpha_3 x_{3,i} + \beta  + E_i,\q
 
 #### Notations
 
-::: {style="font-size: 0.75em;"}
+::: {style="font-size: 1em;"}
 
 On a $n = 20$ observations. On note, pour $1 \leq i \leq 20$
 
@@ -89,21 +171,25 @@ On a $n = 20$ observations. On note, pour $1 \leq i \leq 20$
 - $y_i$ la mesure de la variable réponse de l'individu $i$.
 - $\forall j \in \{ 1,\dots, p \}$, $x_{j,i}$ la valeur de la variable $x_j$ de l'individu $i$
 
+::: {.fragment .fade-transparent}
+
+
 :::{.callout-note title= "Définition : Modèle de régression linéaire multiple"}
 
 On suppose que $y_i$ est la réalisation d'une variable aléatoire $Y_i$ telle que:
 $$Y_i = \sum_{j=1}^p \alpha_j x_{j,i} + \beta  + E_i,\quad 1 \leq i \leq n$$
 
 
-- $\alpha_j$  est un paramètre inconnu,  l'effet de la variable $x_j$  sur le y;
-- $\beta$ est un paramètre inconnu
-- $E_i$ une variable aléatoire, $E_i \overset{i.i.d.}\sim \mathcal{N}(0, \sigma^2)$
-- Les $x_i$ sont linéairement indépendants (en pratique vérifier avec le VIF)
+- $\alpha_j$  est un paramètre inconnu,  l'effet de la variable $x_j$  sur le y.
+- $\beta$ est un paramètre inconnu.
+- $E_i$ une variable aléatoire, $E_i \overset{i.i.d.}\sim \mathcal{N}(0, \sigma^2)$.
+- Les $x_i$ sont linéairement indépendants.
 
 :::
 
 :::
 
+:::
 
 ## Deux écritures équivalentes 
 
@@ -115,10 +201,12 @@ Les deux modèles suivant sont équivalent :
 
 $$ Y_i = \sum_{j=1}^p \alpha_j x_{j,i} + \beta  + E_i,\quad  \ E_i \overset{i.i.d.}\sim \mathcal{N}(0, \sigma^2)$$
 
+::: {.fragment .fade-transparent}
 
 -  $\forall i \in \{1, \dots, n\} \;\;$
 
 $$ Y_i \overset{i.i.d.}\sim \mathcal{N}\left(\sum_{j=1}^p \alpha_j x_{j,i} + \beta, \sigma^2\right)$$
+:::
 :::
 
 
@@ -132,8 +220,12 @@ Les deux modèles suivant sont équivalent :
 -  $\forall i \in \{1, \dots, n\} \;\;$
 $$ Y_i = \alpha_1 x_{1,i} + \alpha_2 x_{2,i} + \alpha_3 x_{3,i} + \beta  + E_i,\quad  \ E_i \overset{i.i.d.}\sim \mathcal{N}(0, \sigma^2)$$
 
+::: {.fragment .fade-transparent}
+
 -  $\forall i \in \{1, \dots, n\} \;\;$
 $$Y_i \overset{i.i.d.}\sim \mathcal{N}\left(\alpha_1 x_{1,i} + \alpha_2 x_{2,i} + \alpha_3 x_{3,i} + \beta, \sigma^2\right)$$
+
+:::
 
 :::
 
@@ -154,10 +246,17 @@ $$ Y_i = \sum_{j=1}^p \alpha_j x_{j,i} + \beta  + E_i,\quad\ E_i \overset{i.i.d.
  - $\alpha_j$ représente l'accroissement de $Y_i$ correspondant à l'accroissement d'une unité sur $x_j$ si les autres variables explicatives sont fixées. [Dans l'exemple des poissons :
   $\alpha_1$ represente l'accroissement du poids correspondant à l'accroissement d'1 cm sur la longeurs du poisson si la largeur et l'épaisseur son fixé.]{.upc}
 
+::: {.fragment .fade-transparent}
 
 - Ce modèle est de dimension $p + 1$. (Avec $p+1$ paramètres d'espérance à estimer $p$ pour $\alpha$ et $1$  pour$\beta$)
 
+:::
+::: {.fragment .fade-transparent}
+
 - $\forall i \in \{1, \dots, n\}$ $Y_i$ se décompose en  $\color{red}{Y_i} = {\color{blue}{\underbrace{\displaystyle\sum_{j=1}^p \alpha_j x_{j,i} + \beta}_{{déterministe}{}}}}  + \color{red}{\overbrace{E_i}^{aléatoire}}$
+
+:::
+
 :::
 
 :::
@@ -181,10 +280,8 @@ $$ Y_i = \sum_{j=1}^p \alpha_j x_{j,i} + \beta  + E_i,\quad\ E_i \overset{i.i.d.
 ## Rappels d'algèbre
 
 
-::: {style="font-size: 0.65em;"}
+::: {style="font-size: 1em;"}
 
-::: {.columns}
-::: {.column width = "50%"}
 
 ::: {.callout-note title="Rappel : Matrice"}
 
@@ -200,10 +297,9 @@ a_{p1} & a_{p2} & \ldots & a_{pq}
 \end{bmatrix}$$
 
 :::
-:::
 
-::: {.column width = "50%"}
 
+::: {.fragment .fade-transparent}
 
 ::: {.callout-note title="Rappel : Transposée d'une matrice"}
 
@@ -221,13 +317,14 @@ a_{1q} & a_{2q} & \ldots & a_{pq}
 :::
 :::
 :::
-:::
+
 
 
 ::: {style="font-size: 0.65em;"}
 
-::: {.columns}
-::: {.column width = "50%"}
+
+
+::: {.fragment .fade-transparent}
 
 ::: {.callout-note title="Rappel : Matrice symétrique"}
 
@@ -242,8 +339,8 @@ une **matrice symétrique** si :
 :::
 :::
 
-::: {.column width = "50%"}
 
+::: {.fragment .fade-transparent}
 
 ::: {.callout-note title="Rappel : Transposée du produit"}
 
@@ -253,7 +350,7 @@ Soit $A$ et $B$ deux matrices. On a
 $$ (A  B)^t  = B^t A^t$$ 
 :::
 :::
-:::
+
 :::
 
 
@@ -292,7 +389,7 @@ a_{p1} & a_{p2} & \ldots & a_{pq}
 
 ##  Rappels d'algèbre : Identité et inverse
 
-::: {style="font-size: 0.75em;"}
+::: {style="font-size: 1em;"}
 
 ::: {.callout-note title="Rappel : matrice identité"}
 La matrice **identité** $I_n$ est la matrice carré à $n$ lignes et $n$ colonnes, dont les coefficients diagonaux valent $1$ et les autres valent $0$.
@@ -306,8 +403,8 @@ $$I_n =  \begin{bmatrix}
 
 :::
 
-::::: {.columns}
-:::: {.column width = "50%"}
+
+::: {.fragment .fade-transparent}
 
 ::: {.callout-note title="Rappel : Inverse d'une matrice"}
 
@@ -316,8 +413,9 @@ une matrice carrée $(p \times p)$ **inversible**, alors on note son **inverse**
 
 $$A\,A^{-1} = A^{-1}\,A = I_p $$
 :::
-:::: 
-:::: {.column width = "50%"}
+:::
+
+::: {.fragment .fade-transparent}
 
 ::: {.callout-note title="Rappel : Transposée de l'inverse"}
 
@@ -325,15 +423,15 @@ Si $A$ est une matrice inversible, alors
 
 $$(A^{-1})^t=(A^t)^{-1}$$
 :::
-::::
-:::::
+:::
+
 
 :::
 
 ## Vecteurs aléatoires
 
 
-::: {style="font-size: 0.65em;"}
+::: {style="font-size: 1em;"}
 
 ::: {.callout-note title="Rappel : Vecteurs aléatoires"}
 
@@ -344,9 +442,9 @@ $$V = \begin{bmatrix} V_1 \\ V_2 \\ \vdots \\ V_n \end{bmatrix} $$
 
 
 
-::::: {.columns}
-:::: {.column width = "50%"}
 
+
+::: {.fragment .fade-transparent}
 
 ::: {.callout-note title="Rappel : Espérance d'un vecteur aléatoire"}
 $V$ a pour **espérance** 
@@ -354,10 +452,10 @@ $V$ a pour **espérance**
 $$\mathbb{E}[V] =  \begin{bmatrix} \mathbb{E}[V_1] \\ \mathbb{E}[V_2] \\ \vdots \\ \mathbb{E}[V_n] \end{bmatrix}$$
 
 :::
+:::
 
-::::
 
-:::: {.column width = "50%"}
+::: {.fragment .fade-transparent}
 
 ::: {.callout-note title="Rappel : Matrice de variance-covariance"}
 $V$ a pour matrice de **variance-covariance** (symétrique)
@@ -372,14 +470,14 @@ $$\begin{bmatrix} \mathbb{V}[V_1] & cov(V_1,V_2) & \dots& Cov(V_1,V_n) \\
   cov(V_n,V_1) & cov(V_n,V_2) & \dots&  \mathbb{V}[V_n]\end{bmatrix}$$
 
 :::
-::::
-:::::
+:::
+
 :::
 
 
 ## Propriétés 
 
-::: {style="font-size: 0.85em;"}
+::: {style="font-size: 1em;"}
 
 ::: {.callout-tip title="Théorème"}
 Soient $\b{A}$ et $\b{B}$ des matrices
@@ -392,6 +490,7 @@ Soient $\b{A}$ et $\b{B}$ des matrices
 
 
 :::
+::: {.fragment .fade-transparent}
 
 ::: {.callout-note title="Rappel : Vecteurs gaussiens"}
 
@@ -403,6 +502,7 @@ Si $V_1, V_2, \ldots, V_n \overset{i.i.d}\sim \mathcal{N}(0,\sigma ^2)$,  alors
 
 $$V \sim \mathcal{N}\left(\vec{0}_n,\,\sigma^2 I_n\right)$$  où $I_n$ est la matrice identité d'ordre $n$.
 
+:::
 :::
 
 :::
@@ -424,8 +524,12 @@ Y_n  =  \beta\ +\ \alpha_1\,x_{1,n}\ +\ \alpha_2\,x_{2, n}\ +\
 
 peut se réécrire sous la forme 
 
+::: {.fragment .fade-transparent}
+
 [$$ Y = X \theta + E $$]{.upc}
 
+:::
+::: {.fragment .fade-transparent}
 
 avec 
 
@@ -441,6 +545,8 @@ $$Y =\begin{bmatrix} Y_1\\ Y_2\\ \vdots \\ Y_n\end{bmatrix},\quad  X = \begin{bm
 E_2\\ \vdots \\ E_n\end{bmatrix}$$
 
 :::
+
+:::
 :::
 
 ## Écriture matricielle du modèle
@@ -449,23 +555,37 @@ E_2\\ \vdots \\ E_n\end{bmatrix}$$
 
 ::: {.callout-tip title="Propriété"}
 
+
 - $X$ est de taille $n\times (p+1)$
 
+::: {.fragment .fade-transparent}
+
 - $\theta$ est de dimension $(p+1)\times 1$ : vecteur des paramètres d'espérance
+
+:::
+::: {.fragment .fade-transparent}
 
 - $E$ est de dimension $(n\times 1)$ : est un vecteur Gaussien tel que 
 
  $$E \sim \mathcal{N}\left(\vec{0}_n,\,\sigma^2 I_n\right) $$
 
+:::
+::: {.fragment .fade-transparent}
+
 - $Y$ est de dimension $(n\times 1)$ : est un vecteur Gaussien tel que 
 
  $$ Y \sim \mathcal{N}\left(X\theta,\,\sigma^2 I_n\right)$$
+
+:::
 :::
 
+::: {.fragment .fade-transparent}
 
 ::: {.callout-caution title="Remarques"}
 Si les vecteurs colonnes de $X$ sont linéairement
 indépendants, $X$ est de rang $p+1$ et $X^t X$ est inversible.
+:::
+
 :::
 :::
 
@@ -474,7 +594,7 @@ indépendants, $X$ est de rang $p+1$ et $X^t X$ est inversible.
 ## Exercice : écrire le modèle linéaire univarié sous forme matricielle
 
 
-## Correction 
+::: {.fragment}
 
 
 Le modèle de régression simple $$Y_i=\alpha x_i+\beta+E_i$$
@@ -490,6 +610,9 @@ X =  \begin{bmatrix}
 \theta\ =\  \begin{bmatrix}\beta\\ \alpha\end{bmatrix},\quad
 E\ =\  \begin{bmatrix} E_1\\
 E_2\\ \vdots \\ E_n\end{bmatrix}$$
+
+:::
+
 
 ## Écriture du modèle linéaire simple
 
@@ -545,9 +668,9 @@ $$Y_i = \alpha_1 x_{1,i} + \alpha_2 x_{2,i} + \alpha_3 x_{3,i} + \beta  + E_i,\q
 
 
 
-
 ## Comment écrire le modèle : 
 
+::: {style="font-size: 0.75em;"}
 
 $$\left\{\begin{matrix}
 Y_1  =  \beta\ +\ \alpha_1\,x_{1,1}\ +\ \alpha_2\,x_{2,1}\
@@ -573,10 +696,10 @@ $$Y =\begin{bmatrix} Y_1\\ Y_2\\ \vdots \\ Y_n\end{bmatrix},\quad  X = \begin{bm
 \vdots & \vdots & & \vdots \\
 1 & x_{1, n} & x_{2,1} & x_{3, n}
 \end{bmatrix},\quad \theta = \begin{bmatrix} \beta\\ \alpha_1\\
-\alpha_2\\ \alpha_{3}\end{bmatrix},\quad E = \begin{bmatrix}E_1\\
+\alpha_2\\\vdots\\ \alpha_{3}\end{bmatrix},\quad E = \begin{bmatrix}E_1\\
 E_2\\ \vdots \\ E_n\end{bmatrix}$$
 
-
+:::
 
 ## Avec les données : 
 
@@ -628,6 +751,8 @@ un vecteur de $\mathbb{R}^n$. On appelle norme de $V$ le réel
 
 $$\displaystyle V^t V \ =\ \sum_{i=1}^{n} v_i^2\ =\ ||V||^2 $$
 :::
+::: {.fragment .fade-transparent}
+
 
 ::: {.callout-caution title="Remarque"}
 
@@ -642,7 +767,7 @@ v_n\,v_1 & v_n\,v_2 & \ldots & v_n^2 \end{bmatrix}$$
 
 :::
 
-
+:::
 
 
 ## Estimateurs des moindres carrés
@@ -657,6 +782,8 @@ On souhaite trouver $\theta= (\beta,\alpha_1,...\alpha_p)^t$ qui minimise
 $$J(\theta)=\sum_{i = 1}^n \left( y_i -(\beta +  \sum_{j=1}^p \alpha _j x_{j,i}) \right)^2 = (Y-X\theta)^t(Y-X\theta) = ||Y-X\theta||^2$$
 
 :::
+::: {.fragment .fade-transparent}
+
 
 ::: {.callout-tip title="Théorème"}
 
@@ -675,16 +802,23 @@ $$
 :::
 
 :::
-
+:::
 
 
 
 ## À la recherche de  $\widehat{\theta}$
 
+::: {style="font-size: 0.75em;"}
+
+:::{.callout-note title="Estimateur des moindres carrés"}
+
 $$\widehat{\theta} = \underset{\theta\in\mathbb{R}^{p+1}}{argmin} (Y-X\theta)^t(Y-X\theta) =\underset{\theta\in\mathbb{R}^{p+1}}{argmin} ||Y-X\theta||^2$$
 
 $\widehat{\theta} = [B,A_1, \dots, A_p]^t$ où $B$ est l'estimateur de $\beta$ et $A_j$ l'estimateur de $\alpha_j$
 
+:::
+
+:::{.callout-tip title="Écriture matricielle des équations"}
 
 
 $$\begin{align}
@@ -693,17 +827,25 @@ $$\begin{align}
 &= Y^tY - 2 Y^tX\theta -\theta^tX^tX\theta
 \end{align}$$
 
-En dérivant par rapport à $\theta$ on obtient : $$-2Y^tX + 2\theta^tX^tX $$
-[Le système $-2Y^tX + 2\theta^tX^tX=0$ est bien le même que les $p+1$ equations de la slide précédente]{.upc}
+::: {.fragment .fade-transparent}
 
+En dérivant par rapport à $\theta$ on obtient : $$-2Y^tX + 2\theta^tX^tX $$
+
+:::
+
+::: {.fragment .fade-transparent}
+[Le système $-2Y^tX + 2\theta^tX^tX=0$ est bien le même que les $p+1$ équations de la slide précédente]{.upc}
+:::
+
+:::
+:::
 
 ## À la recherche de  $\widehat{\theta}$
 
+::: {style="font-size: 0.85em;"}
 
-$$\begin{align}
--2Y^tX + 2\widehat{\theta}^tX^tX = 0 &\iff \widehat{\theta}^tX^tX  =  Y^tX  \\ 
-\iff X^tX  \widehat{\theta}   =  X^tY   & \iff \widehat{\theta} = (X^tX)^{-1}  X^tY
-\end{align}$$
+
+
 
 ::: {.callout-caution title="Remarques"}
 
@@ -711,6 +853,19 @@ $X$ est de rang $p+1$ donc $X^tX$ est inversible.
 
 :::
 
+::: {.fragment .fade-transparent}
+
+:::{.callout-tip title="Fin du calcul"}
+
+$$\begin{align}
+-2Y^tX + 2\widehat{\theta}^tX^tX = 0 &\iff \widehat{\theta}^tX^tX  =  Y^tX  \\ 
+\iff X^tX  \widehat{\theta}   =  X^tY   & \iff \widehat{\theta} = (X^tX)^{-1}  X^tY
+\end{align}$$
+:::
+
+:::
+
+::: {.fragment .fade-transparent}
 
 ::: {.callout-tip title="Théorème"}
 
@@ -719,10 +874,10 @@ a pour solution
 
 $$\widehat{\theta} = (X^tX)^{-1}  X^tY$$
 :::
+:::
 
 
-
-
+:::
 
 
 ## Estimateurs des paramètres d'espérance
@@ -734,6 +889,10 @@ $$\widehat{\theta} = (X^tX)^{-1}  X^tY$$
 $$\widehat{\theta}  =\underset{\theta\in\mathbb{R}^{p+1}}{argmin} ||Y-X\theta||^2$$ 
 
 :::
+
+::: {.fragment .fade-transparent}
+
+
 
 ::: {.callout-tip title="Théorème"}
 
@@ -749,7 +908,7 @@ $$\hat{\theta}=(X^t\,X)^{-1}\,X^t\,Y$$
 :::
 :::
 
-
+:::
 
 # Validation des hypothèses et estimation avec R
 
@@ -796,24 +955,30 @@ $$
 ## Exemple du VIF sur les poissons : 
 
 Calcul 'à la main'
+
 ```{r,echo=TRUE}
 mod_length<- lm(Length1 ~ Height + Width , data =  fish)
 vif_length <- 1/ ( 1-summary(mod_length)$r.squared)
+print(vif_length)
 ```
+
+::: {.fragment .fade-transparent}
+
 
 Avec la fonction VIF : 
   
-```{r,echo=TRUE}
+```{r,echo=TRUE,message=FALSE}
 library(car)
 vif(mod)
 ```
 
-[**En pratique :**]{.upc} on retire les covariales qui ont un VIF supérieur à 10 (ou 5 si on veut être plus strict)
+[**En pratique :**]{.upc} on retire les covariables qui ont un VIF supérieur à 10 (ou 5 si on veut être plus strict)
 
+:::
 
 
 ## Estimations des paramètres sur notre exemple : 
-\small
+
 
 ```{r}
 fish <- read.table(file = "Fish.csv",
@@ -829,7 +994,7 @@ summary(mod)
 
 ## Sur notre exemple  (sans la fonction lm) 
 
-1. On récupère les matrices X et Y : 
+1. On récupère les matrices $X$ et $Y$ : 
 
 ```{r, echo = TRUE}
 
@@ -845,31 +1010,41 @@ Y <- fish[,"Weight"] %>%
 
 ## Sur notre exemple  (sans la fonction lm) 
 
-\small
 
 2. On cherche maintenant $\widehat{\theta}=(X^t\,X)^{-1}\,X^t\,Y$.
 
 Le produit matriciel $AB$ s'obtient en faisant `A %*% B`,
 La transposée d'une matrice A s'obtient avec la fonction `t(A)` et     son inverse avec la fonction `solve(A)`.
 
-- $X^t\,X$ s'obtient avec :
+::: {.fragment .fade-transparent}
+
+
+- $X^t\,X$ s'obtient donc :
 ```{r, eval = FALSE, echo = TRUE}
 t(X) %*% X
 ```
 
-- $(X^t\,X)^{-1}$ s'obtient avec :
+:::
+::: {.fragment .fade-transparent}
+
+
+- $(X^t\,X)^{-1}$ s'obtient donc :
 ```{r, eval = FALSE, echo = TRUE}
 solve(t(X) %*% X)
 ```
 
-On a finalement $\widehat{\theta}$ :
+:::
+::: {.fragment .fade-transparent}
 
+
+On a finalement $\widehat{\theta}$ :
 ```{r, eval = FALSE, echo = TRUE}
 solve(t(X) %*% X)%*% t(X)%*% Y
 ```
 
+:::
 
-## On retrouve bien les mêmes valeurs 
+## On retrouve bien les mêmes valeurs
 
 
 ```{r, echo = TRUE}
@@ -882,7 +1057,139 @@ solve(t(X) %*% X)%*% t(X)%*% Y
 ```
 
 
+
+
+## Ce qu'il faut retenir de ce cours
+
+
+:::{.callout-note title= "Modélisation probabiliste du modèle linéaire"}
+
+$y_i$ est la réalisation d'une variable aléatoire $Y_i$ telle que pour $1 \leq i \leq n$: $$Y_i = \beta + \sum_{j=1}^p\alpha_j x_{i,j}    + E_i, \quad E_i\overset{i.i.d.}\sim{\cal N}(0,\sigma^2) $$
+:::
+
+
+:::{.callout-tip title= "Écriture matricielle du modèle"}
+
+Le modèle linéaire multiple peut s'écrire matriciellement
+
+[$$ Y = X \theta + E $$]{.red}
+
+
+:::
+
+:::{.callout-tip title="Estimateur des moindres carrés de $\theta$" }
+
+$$\widehat{\theta}  =\underset{\theta\in\mathbb{R}^{p+1}}{argmin} ||Y-X\theta||^2$$ 
+
+Si $(X^t\,X)$ est inversible, alors [$\hat{\theta}=(X^t\,X)^{-1}\,X^t\,Y$]{.red}
+:::
+
+
+::: {.callout-tip title="Vérification des hypothèses : Graphe de diagnostic, corrélation et vif"}
+
+
+```{r,fig.height= 2,fig.align='center'}
+fish <- read.table(file = "Fish.csv",
+                   sep =",", header = TRUE)%>% filter(Species == "Bream") %>% slice(1:20)
+M = cor(fish[c("Length1","Height","Width","Weight")])
+
+modele_reg_multiple <- lm(Weight~ Length1 + Height + Width, data = fish)
+#plot(modele_reg_multiple, which = 1:4)
+autoplot(modele_reg_multiple, which = 1:4, ncol = 4, label.size=1) + theme_bw()
+```
+
+
+
+```{r,fig.height=3,fig.align='center'}
+corrplot.mixed(M)
+
+```
+
+
+
+$$
+  VIF(x_i) = \frac{1}{1-R^2(x_i)}
+$$
+
+:::
+
+
+
 # Estimateur de la variance
+
+
+## Ce qu'il faut retenir de ce cours 1/2
+
+:::: {style="font-size: 0.75em;"}
+
+:::{.callout-note title = "Estimateur de $\sigma^2$ et loi"}
+
+
+
+
+$${S^2}_{(M_{p+1})}=\frac{SCR(M_{p+1})}{n-(p+1)}=\frac{||Y - X\,\widehat{\theta}||^2}{n-p-1}$$
+
+$$\frac{(n-p-1){S^2}_{(M_{p+1})}}{\sigma^2}\sim\chi^2(n-p-1)$$
+
+:::
+
+
+:::{.callout-tip title="Loi de $\widehat{\theta}$ et $\widehat{\theta}_k$"}
+$$\widehat{\theta} \sim \mathcal{N}\left(\theta,\sigma^2(X^tX)^{-1}\right)$$
+$$\widehat{\theta}_k \sim \mathcal{N}\left(\theta,\sigma^2c_{kk}\right)\text{ avec } c_{kk} = (X^tX)^{-1}_{k,k}$$
+
+$$\frac{\widehat{\theta}_k- \theta_k}{\sqrt{S^2_{(M_{p+1})}c_{kk}}}\sim\mathcal{T}(n-p-1) $$
+
+
+:::
+
+:::{.callout-tip title="Intervalle de confiance de $\theta_k$"}
+$$IC_{1-\delta}(\theta_k) = 
+\left[\hat{\theta}_k-t_{1-\frac{\delta}{2}} \sqrt{{S^2}_{(M_{p+1})}c_{kk}};\quad\hat{\theta}_k+t_{1-\frac{\delta}{2}} \sqrt{{S^2}_{(M_{p+1})}c_{kk}}\;\right]$$
+:::
+
+:::
+
+## Ce qu'il faut retenir de ce cours 2/2
+
+:::: {style="font-size: 1em;"}
+
+
+:::{.callout-note title= "Test de Student de la nullité de la pente"}
+
+:::{style="text-align: center;"}
+ $$H_0:\alpha_k=0$$
+ 
+ $$H_1:\alpha_k\neq 0$$
+:::
+:::
+
+
+:::{.callout-note title= "Test de Fisher de comparaison de $M_1$ contre $M_{p+1}$"}
+$$H_0\; :\; \text{modèle}\; M_1:Y_i=\beta+E_i,\quad E_i\; \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
+
+
+$$H_1\; :\; \text{modèle}\; M_{p+1}:Y_i= \beta +  \sum_{j=1}^p\alpha_j x_{j,i}+E_i,\; E_i\; \overset{i.i.d.}{\sim}
+{\cal N}(0,\sigma^2)$$
+:::
+
+
+:::{.callout-tip title= "Test de Fisher de comparaison de $M_{q+1}$ contre $M_{p+1}$"}
+Pour $q<p$, on veut tester 
+$$H_0\; :\; \text{modèle}\; M_{q+1}:Y_i=\beta+ \sum_{j=1}^q\alpha_j x_{j,i}+E_i,\quad E_i\; \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
+
+
+$$H_1\; :\; \text{modèle}\; M_{p+1}:Y_i= \beta +  \sum_{j=1}^p\alpha_j x_{j,i}+E_i,\quad E_i\; \overset{i.i.d.}{\sim}
+{\cal N}(0,\sigma^2)$$
+
+
+$$\frac{\left(SCR(M_{q+1}) - SCR(M_{p+1})\right)\Bigl/(p-q)}{SCR(M_{p+1})\Bigl/~(n-p-1)} \sim_{H_0}^{}~\mathcal{F}(p-q\,,\,n-p-1)$$
+:::
+
+
+
+:::
+
 
 
 ## Dans le modèle linéaire simple 
@@ -944,6 +1251,8 @@ $$\widehat{Y_i}=B+A_1x_{i,1}+\cdots+A_px_{i,p}=B+\sum_{j=1}^p A_jx_{i,j}$$
 
 
 :::
+::: {.fragment .fade-transparent}
+
 
 :::{.callout-note title="Définition : Résidus aléatoires du modèle $M_{p+1}$"}
 
@@ -952,11 +1261,15 @@ $$E_i=Y_i-\widehat{Y_i}$$
 
 :::
 
+:::
+::: {.fragment .fade-transparent}
+
 
 :::{.callout-note title="Définition : Somme des carrés résiduels"}
 
 $$SCR(M_{p+1})=\sum_{i=1}^n E_i^2=\sum_{i=1}^n\left(Y_i-(B+A_1x_{i,1}+\cdots+A_px_{i,p})\right)^2$$
 
+:::
 :::
 
 :::
@@ -973,6 +1286,8 @@ $$SCR(M_{p+1})=\sum_{i=1}^n E_i^2=\sum_{i=1}^n\left(Y_i-(B+A_1x_{i,1}+\cdots+A_p
 B+\sum_{j=1}^p A_jx_{2,j}\\ \vdots \\ B+\sum_{j=1}^p A_jx_{n,j}\end{bmatrix}=X\hat{\theta}$$
 
 :::
+::: {.fragment .fade-transparent}
+
 
 :::{.callout-note title="Définition : Vecteur (aléatoire) des résidus"}
 
@@ -981,10 +1296,16 @@ E_2\\ \vdots \\ E_n\end{bmatrix}=\ \begin{bmatrix} Y_1-\widehat{Y_1}\\
 Y_2-\widehat{Y_2}\\ \vdots \\ Y_n-\widehat{Y_n}\end{bmatrix}=Y-X\hat{\theta}$$
 
 :::
+:::
+
+::: {.fragment .fade-transparent}
+
 
 :::{.callout-note title="Définition : Somme des carrés résiduels"}
 
 $$SCR(M_{p+1})=\sum_{i=1}^n E_i^2= ||E||^2=||Y-X\hat{\theta}||^2$$
+
+:::
 
 :::
 
@@ -999,10 +1320,12 @@ $$SCR(M_{p+1})=\sum_{i=1}^n E_i^2= ||E||^2=||Y-X\hat{\theta}||^2$$
 
 $$\begin{align}
 {S^2}_{(M_{p+1})}&=\frac{SCR(M_{p+1})}{n-(p+1)}=\frac{1}{n-p-1}\sum_{i=1}^n E_i^2\\ 
-&=\frac{1}{n-p-1}\sum_{i=1}^n\left(Y_i-(B+\sum_{j=1}^p A_jx_{i,j})\right)^2=\frac{||Y - X\,\hat{\theta}||^2}{n-p-1}
+{S^2}_{(M_{p+1})}&=\frac{1}{n-p-1}\sum_{i=1}^n\left(Y_i-(B+\sum_{j=1}^p A_jx_{i,j})\right)^2=\frac{||Y - X\,\hat{\theta}||^2}{n-p-1}
 \end{align}$$
 
 :::
+::: {.fragment .fade-transparent}
+
 
 :::{.callout-note title="Définition : Estimation de $\sigma^2$"}
 
@@ -1012,7 +1335,7 @@ $$s^2=\frac{1}{n-p-1}\sum_{i=1}^n e_i(M_{p+1})^2=\sum_{i=1}^n(y_i-(b+a_1x_{i,1}+
 où $e_i(M_{p+1})$ sont les résidus observés dans le modèle $M_{p+1}$
 
 :::
-
+:::
 :::
 
 # Propriétés et lois des estimateurs
@@ -1037,14 +1360,27 @@ De plus ${S^2}_{(M_{p+1})}$ est indépendant de $\hat{\theta}$.
 $\hat{\theta}$  est un vecteur gaussien d'espérance $\theta$ et de matrice de variance-covariance
 $$Var(\hat{\theta})=\sigma^2(X^t\,X)^{-1} \quad \mbox{estimée par} \quad
 S^2(\hat{\theta})={S^2}_{(M_{p+1})}(X^t\,X)^{-1}$$
+
+
+::: {.fragment .fade-transparent}
+
+
 On montre que $$\widehat{\theta}\sim{\cal N}(\theta\,,\,\sigma^2(X^t\,X)^{-1})$$
+
+:::
+
+::: {.fragment .fade-transparent}
 
 En particulier, pour tout $k=1,\cdots,p+1$, si $c_{kk}={(X^t\,X)^{-1}}_{kk}$ désigne le $k$-ème élément diagonal de $(X^t\,X)^{-1}$, et $\widehat{\theta}_k$ désigne le $k$-ème élément du vecteur $\hat{\theta}$, on a 
 $$\widehat{\theta}_k\sim{\cal N}(\theta_k\,,\,\sigma^2c_{kk})$$
 
+:::
+::: {.fragment .fade-transparent}
+
 En remplaçant $\sigma^2$ par son estimateur on a,
 $$\frac{(\widehat{\theta}_k-\theta_k)}{\sqrt{{S^2}_{(M_{p+1})}c_{kk}}}\sim \mathcal{T}{(n-p-1)}$$
 
+:::
 :::
 
 :::
@@ -1085,11 +1421,16 @@ $$\begin{align}
 
 $$\frac{(\hat{\theta}_k-\theta_k)}{\sqrt{{S^2}_{(M_{p+1})}c_{kk}}}\sim \mathcal{T}{(n-p-1)}$$
 
+::: {.fragment .fade-transparent}
+
 - On peut construire un intervalle de confiance de chaque paramètre de régression $\theta_k$, où $\theta_k$ désigne l'un des paramètres d'espérance ($\beta$, ou $\alpha_1$, ..., ou $\alpha_p$).
+
+:::
+::: {.fragment .fade-transparent}
 
 - On peut construire le test de Student de la nullité de chaque coefficient de régression $H_0:\theta_k=0$ contre $H_1:\theta_k\neq 0$ à partir de la statistique de test $$T_n=\frac{\hat{\theta}_k}{\sqrt{{S^2}_{(M_{p+1})}c_{kk}}}\sim_{H_0} \mathcal{T}{(n-p-1)}$$
 
-
+:::
 
 ## Intervalle de confiance de $\theta_k$
 
@@ -1117,17 +1458,29 @@ confint(mod, level = 0.95)
 
 
 
-# V. Test dans le modèle de régression linéaire multiple
+# Test dans le modèle de régression linéaire multiple
 
 ## Test dans le modèle de régression multiple
 
 :::{.callout-warning title="Objectifs"}
 
 - Tester si un coefficient $\theta_k$ est significativement différent de $0$.
+
+::: {.fragment .fade-transparent}
+
 - Tester si la contribution globale des variables explicatives est significative pour expliquer $Y$.
+
+:::
+::: {.fragment .fade-transparent}
+
 - Déterminer la contribution effective des variables explicatives dans la modélisation de $Y$.
+
+:::
+::: {.fragment .fade-transparent}
+
 - Tester si un ensemble de $q$ variables explicatives ($q<p$) ne suffit pas à modéliser correctement $Y$.
 
+:::
 :::
 
 
@@ -1137,24 +1490,37 @@ confint(mod, level = 0.95)
 
 ::: {style="font-size: 0.80em;"}
 
-1. [**Statistique de test  et loi sous $H_0$**]{.upc} 
+:::{.callout-tip title="Statistique de test  et loi sous $H_0$"}
+
+
+
 
 $${T_n= \frac{\hat{\theta}_k}{\sqrt{{S^2}_{(M_{p+1})}c_{kk}}}\sim_{H_0}\mathcal{T}(n- p -1)}$$
 
+:::
 
-2. [**Zone de rejet**]{.upc} 
+::: {.fragment .fade-transparent}
 
-$$R_\alpha = \{T> t_{1-\frac{\delta}{2}} \} $$
 
+:::{.callout-tip title="Zone de rejet"}
+$$R_\delta = \{T> t_{1-\frac{\delta}{2}} \} $$
 
 On rejette $H_0$ si $t_{obs}> t_{1-\frac{\delta}{2}}$
 
+:::
 
-3. [**Application numérique**]{.upc}  
+:::
+::: {.fragment .fade-transparent}
 
-On calcul  $t_{obs} = \frac{a}{\sqrt{{s^2}_{(M_{p+1})}c_{kk}}}$ la réalisation de $T_n$.
+:::{.callout-tip title="Application numérique"}
+
+On calcule  $t_{obs} = \frac{a}{\sqrt{{s^2}_{(M_{p+1})}c_{kk}}}$ la réalisation de $T_n$.
 
 On compare avec $t_{1-\frac{\delta}{2}}$ et on conclut.
+
+:::
+:::
+
 
 :::
 
@@ -1168,6 +1534,8 @@ $$p_c=\mathbb{P}_{H_0}(\mid T_n\mid >\mid t_n\mid)=2(1-\mathbb{P}(T_n\leq |t_n|)
 
 :::
 
+::: {.fragment .fade-transparent}
+
 :::{.callout-note title="Inteprétation"}
 
 Pour un risque de 1ère espèce $\delta$ fixé acceptable (par ex $\delta=5\%$)
@@ -1177,6 +1545,7 @@ Pour un risque de 1ère espèce $\delta$ fixé acceptable (par ex $\delta=5\%$)
 
 :::
 
+:::
 
 
 
@@ -1197,6 +1566,9 @@ $H_0$ : aucune des $p$ variables explicatives n'a d'influence sur $Y$.
 
 $H_1$ : au moins une des variables explicatives contribue à expliquer $Y$.
 
+::: {.fragment .fade-transparent}
+
+
 [**Autre formulation :**]{.upc}  
 
 Test du modèle constant 
@@ -1204,9 +1576,16 @@ $$H_0\ :\ \text{modèle}\ M_1:Y_i=\beta+E_i,\quad E_i\ \overset{i.i.d.}{\sim}\ {
 
 $$H_1\ :\ \text{modèle}\ M_{p+1}:Y_i=\beta+\sum_{j=1}^p\alpha_j x_{i,j}+E_i,\quad E_i\ \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
 
+:::
+
+::: {.fragment .fade-transparent}
+
 [**Autre formulation :**]{.upc}
 
 Test de $H_0:\ \forall j=1,\cdots,p,\ \alpha_j=0\quad$ contre $\quad H_1:\exists j\ \alpha_j\neq 0$ 
+
+
+:::
 
 :::
 
@@ -1221,8 +1600,8 @@ Test de $H_0:\ \forall j=1,\cdots,p,\ \alpha_j=0\quad$ contre $\quad H_1:\exists
 
 
 
-::: {.columns}
-::: {.column width = "33%"}
+
+
 
 
 ::: {.callout-note title="Définition : $SCT$"}
@@ -1232,9 +1611,9 @@ $$\color{purple}{SCT =\displaystyle\sum_{i = 1}^n( Y_i - \bar{Y})^2}$$
 :::
 
 
-:::
 
-::: {.column width = "33%"}
+::: {.fragment .fade-transparent}
+
 
 ::: {.callout-note title="Définition : $SCM(M_{p+1})$"}
 Partie de la variabilité de $Y$ **expliquée par le modèle $M_{p+1}$**.
@@ -1243,7 +1622,10 @@ $$\color{blue}{SCM(M_{p+1}) = \displaystyle\sum_{i=1}^n(\widehat{Y_i}(M_{p+1})-\
 :::
 
 :::
-::: {.column width = "33%"}
+
+
+::: {.fragment .fade-transparent}
+
 
 ::: {.callout-note title="Définition : $SCR(M_{p+1})$"}
 Partie de la variabilité de $Y$ qui n'est **pas expliquée par le modèle $M_{p+1}$**.
@@ -1253,16 +1635,16 @@ $$\color{red}{\begin{align}SCR(M_{p+1}) &= \displaystyle\sum_{i=1}^n(Y_i-\wideha
 
 :::
 
-
 :::
 
-:::
 
+::: {.fragment .fade-transparent}
 
 :::{.callout-tip title="Théorème de décomposition de la variance du modèle $M_{p+1}$"}
 
 $$\color{purple}{SCT}=\color{blue}{SCM(M_{p+1})}+ \color{red}{SCR(M_{p+1})}$$
 
+:::
 :::
 
 :::
@@ -1270,20 +1652,25 @@ $$\color{purple}{SCT}=\color{blue}{SCM(M_{p+1})}+ \color{red}{SCR(M_{p+1})}$$
 
 ## Test de Fisher de la contribution globale des variables explicatives (suite)
 
+
+:::{.callout-note title="Notations"}
+
+Pour mieux distinguer $M_1$ et $M_{p+1}$, nous allons les noter $\g{M_1}$ et $\o{M_{p+1}}$.
+
+:::
+
+::: {.fragment .fade-transparent}
+
+
 ::: {.callout-caution title="Remarques"}
-Dans le modèle $M_1$, $\beta$ est estimée par $\bar{Y}$ et  $\widehat{Y_i}(M_{1})=\bar{Y}$ donc  $$SCR(M_1)=\sum_{i=1}^n(Y_i-\widehat{Y_i}(M_{1}))^2=\sum_{i=1}^n(Y_i-\bar{Y})^2=SCT$$
+Dans le modèle $\g{M_1}$, $\beta$ est estimée par $\p{\bar{Y}}$ et  $\widehat{Y_i}(\g{M_{1}})=\p{\bar{Y}}$ donc  $$SCR(\g{M_1})=\sum_{i=1}^n(Y_i-\widehat{Y_i}(\g{M_{1}}))^2=\p{\sum_{i=1}^n(Y_i-\bar{Y})^2=SCT}$$
 
+::: {.fragment .fade-transparent}
 
-On a donc $SCM(M_{p+1})=SCR(M_1)-SCR(M_{p+1})$ qui représente la réduction d'erreur quand on passe du modèle $M_1$ au modèle $M_{p+1}$.
+On a donc $SCM(\o{M_{p+1}})=SCR(\g{M_1})-SCR(\o{M_{p+1}})$ : représente la réduction d'erreur quand on passe du modèle $\g{M_1}$ au modèle $\o{M_{p+1}}$.
 :::
-
-
-:::{.callout-tip title="Réécriture de la décomposition de la variance du modèle $M_{p+1}$"}
-
-$$SCR(M_1)=(SCR(M_1)-SCR(M_{p+1}))+SCR(M_{p+1})$$ 
-
 :::
-
+:::
 
 <!---
 \item $SCT=\displaystyle\sum_{i=1}^n(Y_i-\bar{Y})^2$ la somme des carrés totale.
@@ -1292,19 +1679,31 @@ $$SCR(M_1)=(SCR(M_1)-SCR(M_{p+1}))+SCR(M_{p+1})$$
 \end{itemize}
 --->
 
+::: {style="font-size: 0.85em;"}
 
-## Test de $H_0 : \mbox{ modèle } M_1$ contre $H_1$ : modèle $M_{p+1}$
+## Test de $H_0$ :  modèle  $M_1$ contre $H_1$ : modèle $M_{p+1}$
 
-[**Statistique de test**]{.upc}
-$$T_n=\frac{SCM(M_{p+1})/p}{SCR(M_{p+1})/(n-p-1)}\sim_{H_0} \mathcal{F}(p,n-p-1)$$
+
+
+:::{.callout-tip title="Statistique de test"}
+
+$$T_n=\frac{SCM(\o{M_{p+1}})/p}{SCR(\o{M_{p+1}})/(n-p-1)}\sim_{H_0} \mathcal{F}(p,n-p-1)$$
+
+::: {.fragment .fade-transparent}
+
 
 qui s'écrit donc aussi
 
-[$$T_n=\frac{(SCR(M_1)-SCR(M_{p+1}))/p}{SCR(M_{p+1})/(n-p-1)}\sim_{H_0} \mathcal{F}(p,n-p-1)$$]{.upc}
+$$T_n=\frac{(SCR(\g{M_1})-SCR(\o{M_{p+1}}))/p}{SCR(\o{M_{p+1}})/(n-p-1)}\sim_{H_0} \mathcal{F}(p,n-p-1)$$
+
+:::
+
+:::
+
+::: {.fragment .fade-transparent}
 
 
-
-[**Zone de rejet**]{.upc}
+:::{.callout-tip title="Zone de rejet"}
 
 $$R_\delta = \{T_n > f_{1-\delta} \}$$
 
@@ -1313,20 +1712,34 @@ $f_{1-\delta}$ est le quantile $1 - \delta$ de la loi de Fisher $\mathcal{F}(p,n
 
 Si $t_{obs} > f_{1-\delta}$, on rejette $H_0$ au risque $\delta$.
 
+:::
+:::
+:::
 
-## Test de $H_0 : \mbox{ modèle } M_1$ contre $H_1$ : modèle $M_{p+1}$
+## Test de $H_0$ : modèle  $M_1$ contre $H_1$ : modèle $M_{p+1}$
 
-[**Mise en oeuvre et conclusion :**]{.upc}
+
+:::{.callout-tip title="Mise en oeuvre et conclusion"}
 
 - Si $t_{obs} > f_{1-\delta}$, on conserve le
-modèle complet $M_{p+1}$ et la contribution globale des $p$ variables explicatives est significative : au moins une des variables explicatives contribue à expliquer la variabilité de $Y$.
-- Si $t_{obs} < f_{1-\delta}$, on ne rejette pas $H_0$ : le modèle $M_1$ suffit et les variables explicatives ne contribuent pas à expliquer de manière significative $Y$.
+modèle complet $\o{M_{p+1}}$ et la contribution globale des $p$ variables explicatives est significative : au moins une des variables explicatives contribue à expliquer la variabilité de $Y$.
+- Si $t_{obs} < f_{1-\delta}$, on ne rejette pas $H_0$ : le modèle $\g{M_1}$ suffit et les variables explicatives ne contribuent pas à expliquer de manière significative $Y$.
 
-[**$p$-valeur :**]{.upc} 
+:::
+::: {.fragment .fade-transparent}
+
+
+:::{.callout-tip title="$p$-valeur"}
+
+
 
 $$p_c=\mathbb{P}_{H_0}(T_n > t_{obs})$$ que l'on compare à un risque, par exemple $\delta=5\%$
 
 On rejette $H_0$ si $p_c<\delta$.
+
+:::
+
+:::
 
 ## Test avec R 
 
@@ -1346,12 +1759,7 @@ m1 <- lm(Weight ~1, data = fish)
 anova(m1, mod)
 ```
 
-
-## Après le test
-
-- Comme le test global $H_0$ : $M_1$ contre $H_1$ : $M_{p+1}$ est significatif, au moins une des variables explicatives contribue à expliquer $Y$.
-- Dans ce cas on peut modéliser nos données par un modèle de régression linéaire multiple (sous réserve de validation des hypothèses).
-- Prendre en compte toutes les variables peut s'avérer très couteux (voir exemples en TP).
+Comme le test global $H_0$ : $M_1$ contre $H_1$ : $M_{p+1}$ est significatif, au moins une des variables explicatives contribue à expliquer $Y$.
 
 
 
@@ -1360,16 +1768,24 @@ anova(m1, mod)
 
 :::{.callout-warning title="Objectif"}
 
-- Tester si un ensemble de $q$ variables explicatives ne suffit pas à expliquer $Y$, avec $q<p$.
+- Tester si un ensemble de $\g{q}$ variables explicatives ne suffit pas à expliquer $Y$, avec $\o{q}<\g{p}$.
+
+::: {.fragment .fade-transparent}
+
 
 - [**Autre formulation :**]{.upc}  
 
- $$H_0\ :\ \text{modèle}\ M_{q+1}\ :Y_i=\beta+\sum_{j=1}^q\alpha_j x_{i,j}+E_i,\quad E_i\overset{iid}{\sim}{\cal N}(0,\sigma^2)$$ contre l'alternative $$H_1\ :\ \text{modèle}\ M_{p+1}:Y_i=\beta+\sum_{j=1}^p\alpha_j x_{i,j}+E_i,\quad E_i\ \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
+ $$H_0\ :\ \text{modèle}\ \o{M_{q+1}}\ :Y_i=\beta+\sum_{j=1}^{\o{q}}\alpha_j x_{i,j}+E_i,\quad E_i\overset{i.i.d.}{\sim}{\cal N}(0,\sigma^2)$$ contre l'alternative $$H_1\ :\ \text{modèle}\ \o{M_{p+1}}:Y_i=\beta+\sum_{j=1}^{\o{p}}\alpha_j x_{i,j}+E_i,\quad E_i\ \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
+
+:::
+::: {.fragment .fade-transparent}
+
 
 - [**Autre formulation :**]{.upc}  
 
-Test de $H_0:\ \forall j=q+1,\cdots,p,\ \alpha_j=0 \quad$ contre $\quad H_1:\exists j=q+1,\cdots,p\ \alpha_j\neq 0$ 
+Test de $H_0:\ \forall j=\g{q}+1,\cdots,\o{p},\ \alpha_j=0 \quad$ contre $\quad H_1:\exists j=\g{q}+1,\cdots,\o{p}\ \alpha_j\neq 0$ 
 
+:::
 :::
 
 :::
@@ -1380,25 +1796,25 @@ Test de $H_0:\ \forall j=q+1,\cdots,p,\ \alpha_j=0 \quad$ contre $\quad H_1:\exi
 
 ::: {style="font-size: 0.90em;"}
 
-Modèle à $p$ variables explicatives $M_{p+1}$
+Modèle à $\o{p}$ variables explicatives $\o{M_{p+1}}$
 
-$$ Y_i  =  \beta\ +\ \sum_{j=1}^p\alpha_j\,x_{i,j}+ E_i,\quad E_i\ \overset{i.i.d.}{\sim}\ {\cal N}(0,\sigma^2).$$
+$$ Y_i  =  \beta\ +\ \sum_{j=1}^{\o{p}}\alpha_j\,x_{i,j}+ E_i,\quad E_i\ \overset{i.i.d.}{\sim}\ {\cal N}(0,\sigma^2).$$
   
 
 Sous la forme matricielle :
 
-$$(M_{p+1})\,:  Y  =  X^{(p)}\theta^{(p)}\ +\  E, \quad 
+$$(\o{M_{p+1}})\,:  Y  =  X^{(\o{p})}\theta^{(\o{p})}\ +\  E, \quad 
 E \sim {\cal N}(0, \sigma^2 I_n) $$
  
  avec
  
  $$
-X^{(p)} = \begin{bmatrix}
-1 & x_{1,1} & \ldots & x_{1,p}\\
-1 & x_{2,1} & \ldots & x_{2,p}\\
+X^{(\o{p})} = \begin{bmatrix}
+1 & x_{1,1} & \ldots & x_{1,\o{p}}\\
+1 & x_{2,1} & \ldots & x_{2,\o{p}}\\
 \vdots & \vdots & & \vdots \\
-1 & x_{n,1} & \ldots & x_{n,p}
-\end{bmatrix} \mbox{ et } \theta^{(p)}=[\beta,\alpha_1,\cdots,\alpha_p]^t$$
+1 & x_{n,1} & \ldots & x_{n,\o{p}}
+\end{bmatrix} \mbox{ et } \theta^{(\o{p})}=[\beta,\alpha_1,\cdots,\alpha_\o{p}]^t$$
 
 :::
 
@@ -1406,27 +1822,30 @@ X^{(p)} = \begin{bmatrix}
 
 ::: {style="font-size: 0.90em;"}
 
-Modèle à $q$ variables explicatives $M_{q+1}$
+Modèle à $\g{q}$ variables explicatives $\g{M_{q+1}}$
 
-$$ Y_i  =  \beta\ +\ \sum_{j=1}^q\alpha_j\,x_{i,j}+ E_i,\quad E_i\ \overset{i.i.d.}{\sim}\ {\cal N}(0,\sigma^2).$$
+$$ Y_i  =  \beta\ +\ \sum_{j=1}^{\g{q}}\alpha_j\,x_{i,j}+ E_i,\quad E_i\ \overset{i.i.d.}{\sim}\ {\cal N}(0,\sigma^2).$$
   
 
 Sous la forme matricielle :
 
-$$(M_{p+1})\,:  Y  =  X^{(q)}\theta^{(q)}\ +\  E, \quad 
+$$(\g{M_{q+1}})\,:  Y  =  X^{(\g{q})}\theta^{(\g{q})}\ +\  E, \quad 
 E \sim {\cal N}(0, \sigma^2 I_n) $$
  
  avec
  
  $$
-X^{(q)} = \begin{bmatrix}
-1 & x_{1,1} & \ldots & x_{1,q}\\
-1 & x_{2,1} & \ldots & x_{2,q}\\
+X^{(\g{q})} = \begin{bmatrix}
+1 & x_{1,1} & \ldots & x_{1,\g{q}}\\
+1 & x_{2,1} & \ldots & x_{2,\g{q}}\\
 \vdots & \vdots & & \vdots \\
-1 & x_{n,1} & \ldots & x_{n,q}
-\end{bmatrix} \mbox{ et } \theta^{(q)}=[\beta,\alpha_1,\cdots,\alpha_q]^t$$
+1 & x_{n,1} & \ldots & x_{n,\g{q}}
+\end{bmatrix} \mbox{ et } \theta^{(\g{q})}=[\beta,\alpha_1,\cdots,\alpha_\g{q}]^t$$
 
-Le modèle à $q$ variables explicatives $M_{q+1}$ est [**emboîté**]{.upc} dans le modèle à $p$ variables explicatives $M_{p+1}$ : les $q$ variables explicatives forment un sous-ensemble des $p$ variables explicatives.
+::: {.fragment}
+
+Le modèle à $\g{q}$ variables explicatives $\g{M_{q+1}}$ est [**emboîté**]{.upc} dans le modèle à $\o{p}$ variables explicatives $\o{M_{p+1}}$ : les $\g{q}$ variables explicatives forment un sous-ensemble des $\o{p}$ variables explicatives.
+:::
 
 :::
 
@@ -1435,13 +1854,13 @@ Le modèle à $q$ variables explicatives $M_{q+1}$ est [**emboîté**]{.upc} dan
 [**Paramètres d'espérances**]{.upc}
 
 $$\begin{array}{ccc}
-\hat{\theta}^{(p)} &=& (B^{(p)},A_1^{(p)},\dots,A_{p}^{(p)})^t = \left((X^{(p)})^t\,X^{(p)}\right)^{-1}\,\!(X^{(p)})^t\,Y\\
-\hat{\theta}^{(q)}  & = & (B^{(q)},A_1^{(q)},\dots,A_{q}^{(q)})^t=\left((X^{(q)})^t\,X^{(q)}\right)^{-1}\,\!(X^{(q)})^t\,Y\ 
+\hat{\theta}^{(\o{p})} &=& (B^{(\o{p})},A_1^{(\o{p})},\dots,A_{\o{p}}^{(\o{p})})^t = \left((X^{(\o{p})})^t\,X^{(\o{p})}\right)^{-1}\,\!(X^{(\o{p})})^t\,Y\\
+\hat{\theta}^{(\g{q})}  & = & (B^{(\g{q})},A_1^{(\g{q})},\dots,A_{\g{q}}^{(\g{q})})^t=\left((X^{(\g{q})})^t\,X^{(\g{q})}\right)^{-1}\,\!(X^{(\g{q})})^t\,Y\ 
 \end{array}$$
 
 ::: {.callout-caution title="Remarques"}
 
-$B^{(p)}\neq B^{(q)}, A_1^{(p)}\neq A_1^{(q)},\cdots$
+$B^{(\o{p})}\neq B^{(\g{q})}, A_1^{(\o{p})}\neq A_1^{(\g{q})},\cdots$
 
 :::
 
@@ -1452,19 +1871,24 @@ $B^{(p)}\neq B^{(q)}, A_1^{(p)}\neq A_1^{(q)},\cdots$
 
 ::: {.callout-note title="Prévision dans $M_{p+1}$ et dans $M_{q+1}$"}
 
-$$\begin{align}\widehat{Y_i}(M_{p+1})&=B^{(p)}+\sum_{j=1}^p A^{(p)}_jx_{i,j}\\
-\widehat{Y_i}(M_{q+1})&=B^{(q)}+\sum_{j=1}^q A^{(q)}_jx_{i,j}
+$$\begin{align}\widehat{Y_i}(\o{M_{p+1}})&=B^{(\o{p})}+\sum_{j=1}^{\o{p}} A^{(\o{p})}_jx_{i,j}\\
+\widehat{Y_i}(\g{M_{q+1}})&=B^{(\g{q})}+\sum_{j=1}^{\g{q}} A^{(\g{q})}_jx_{i,j}
 \end{align}$$
 
 
 :::
 
+::: {.fragment .fade-transparent}
+
+
 
 ::: {.callout-note title="Résidu dans $M_{p+1}$ et dans $M_{q+1}$"}
 
-$$\begin{align}E_i(M_{p+1})&=Y_i-\widehat{Y_i}(M_{p+1})=Y_i-(B^{(p)}+\sum_{j=1}^p A^{(p)}_jx_{i,j})\\
-E_i(M_{q+1})&=Y_i-\widehat{Y_i}(M_{q+1})=Y_i-(B^{(q)}+\sum_{j=1}^q A^{(q)}_jx_{i,j})
+$$\begin{align}E_i(\o{M_{p+1}})&=Y_i-\widehat{Y_i}(\o{M_{p+1}})=Y_i-(B^{(\o{p})}+\sum_{j=1}^{\o{p}} A^{(\o{p})}_jx_{i,j})\\
+E_i(\g{M_{q+1}})&=Y_i-\widehat{Y_i}(\g{M_{q+1}})=Y_i-(B^{(\g{q})}+\sum_{j=1}^{\g{q}} A^{(\g{q})}_jx_{i,j})
 \end{align}$$
+
+:::
 
 :::
 
@@ -1476,18 +1900,24 @@ E_i(M_{q+1})&=Y_i-\widehat{Y_i}(M_{q+1})=Y_i-(B^{(q)}+\sum_{j=1}^q A^{(q)}_jx_{i
 
 ::: {.callout-note title="SCR dans $M_{p+1}$ et dans $M_{q+1}$"}
 
-$$SCR(M_{p+1}) = \sum_{i=1}^{n}\left(Y_i-B^{(p)}-\sum_{j=1}^{p}A^{(p)}_j\,x_{i,j}\right)^2\ =\ ||Y - X^{(p)}\hat{\theta}^{(p)}||^2$$
+$$SCR(\o{M_{p+1}}) = \sum_{i=1}^{n}\left(Y_i-B^{(\o{p})}-\sum_{j=1}^{p}A^{(\o{p})}_j\,x_{i,j}\right)^2\ =\ ||Y - X^{(\o{p})}\hat{\theta}^{(\o{p})}||^2$$ 
 
-$$SCR(M_{q+1}) = \sum_{i=1}^{n}\left(Y_i-B^{(q)}-\sum_{j=1}^{q}A^{(q)}_j\,x_{i,j}\right)^2\ =\ ||Y - X^{(q)}\hat{\theta}^{(q)}||^2$$
+$$SCR(\g{M_{q+1}}) = \sum_{i=1}^{n}\left(Y_i-B^{(\g{q})}-\sum_{j=1}^{\g{q}}A^{(\g{q})}_j\,x_{i,j}\right)^2\ =\ ||Y - X^{(\g{q})}\hat{\theta}^{(\g{q})}||^2$$
 
 :::
+
+::: {.fragment .fade-transparent}
 
 ::: {.callout-note title="Estimation  de $\sigma^2$ dans $M_{p+1}$ et dans $M_{q+1}$"}
 
-$$S^2_{(M_{p+1})}=\frac{SCR(M_{p+1})}{n-p-1}\\
-S^2_{(M_{q+1})}=\frac{SCR(M_{q+1})}{n-q-1}$$
+$$S^2_{(\o{M_{p+1}})}=\frac{SCR(\o{M_{p+1}})}{n\o{-p-1}}$$ 
+
+$$S^2_{(\g{M_{q+1}})}=\frac{SCR(\g{M_{q+1}})}{n\g{-q-1}}$$
 
 :::
+
+:::
+
 
 :::
 
@@ -1497,35 +1927,48 @@ S^2_{(M_{q+1})}=\frac{SCR(M_{q+1})}{n-q-1}$$
 
 ::: {.callout-tip title="Théorème important du cours"}
 
-Sous les hypothèses du modèle linéaire Gaussien multiple,  et si on définit $SCE=SCR(M_{q+1})-SCR(M_{p+1})$
+Sous les hypothèses du modèle linéaire Gaussien multiple,  et si on définit $SCE=SCR(\g{M_{q+1}})-SCR(\o{M_{p+1}})$
 alors 
 
-- $\frac{SCR(M_{p+1})}{\sigma^2}\, \sim\,\chi^2_{n-p-1}$
-- Sous le modèle $M_{q+1}$, c'est à dire sous $H_0$ :
-
-$$\frac{SCR(M_{q+1})}{\sigma^2} \underset{H_0}{\sim}\,\chi^2_{n-q-1}\quad;\quad \frac{SCE}{\sigma^2} \underset{H_0}{\sim}\,\chi^2_{p-q}\\$$
-
-et **$SCE$ et $SCR(M_{p+1})$ sont indépendants** ce qui permet de déduire que
+::: {.fragment .fade-transparent}
 
 
-$$\frac{\left(SCR(M_{q+1}) - SCR(M_{p+1})\right)\Bigl/(p-q)}{SCR(M_{p+1})\Bigl/~(n-p-1)} \sim_{H_0}^{}~\mathcal{F}(p-q\,,\,n-p-1)$$
+Sous le modèle $\g{M_{q+1}}$, c'est à dire sous $H_0$ :
+
+$$\frac{SCR(\g{M_{q+1}})}{\sigma^2} \underset{H_0}{\sim}\,\chi^2_{n\g{-q-1}}$$
+
+$$\frac{SCE}{\sigma^2} \underset{H_0}{\sim}\,\chi^2_{\o{p}-\g{q}}\\$$
+
+:::
+::: {.fragment .fade-transparent}
+
+
+et **$SCE$ et $SCR(\o{M_{p+1}})$ sont indépendants** ce qui permet de déduire que
+
+
+$$\frac{\left(SCR(\g{M_{q+1}}) - SCR(\o{M_{p+1}})\right)\Bigl/(\o{p}-\g{q})}{SCR(\o{M_{p+1}})\Bigl/~(n\o{-p-1})} \sim_{H_0}^{}~\mathcal{F}(\o{p}-\g{q}\,,\,n\o{-p-1})$$
+
+:::
 :::
 
 :::
 
 
 
-## Test de $H_0$ :  modèle  $M_{q+1}$ contre $H_1$ : modèle $M_{p+1}$
+## Test de $H_0$ : modèle $M_{q+1}$ contre $H_1$ : modèle $M_{p+1}$
 
 ::: {.callout-tip title="Statistique de test"}
 
 $$
-{T_n=\frac{(SCR(M_{q+1})-SCR(M_{p+1}))/(p-q)}{SCR(M_{p+1})/(n-p-1)}\sim_{H_0} \mathcal{F}(p-q,n-p-1)}
+{T_n=\frac{(SCR(\g{M_{q+1}})-SCR(\o{M_{p+1}}))/(\g{p}-\o{q})}{SCR(\o{M_{p+1}})/(n\o{-p-1})}\sim_{H_0} \mathcal{F}(\o{p}-\g{q},n\o{-p-1})}
 $$
-- $SCR(M_{q+1})-SCR(M_{p+1})$ représente la réduction d'erreur quand on passe de $M_{q+1}$ à $M_{p+1}$.
+
+$SCR(\g{M_{q+1}})-SCR(\o{M_{p+1}})$ représente la réduction d'erreur quand on passe de $\g{M_{q+1}}$ à $\o{M_{p+1}}$.
 
 
 :::
+::: {.fragment .fade-transparent}
+
 
 ::: {.callout-tip title="Zone de rejet"}
 
@@ -1535,26 +1978,27 @@ où $f_\delta$ est le quantile d'ordre $1-\delta$ de la $\mathcal{F}(p-q,n-p-1)$
 On rejette $H_0$ si $t_{n}> f_{1-\delta}$
 
 :::
+:::
 
 
-
-## Test de $H_0$ :  modèle  $M_{q+1}$ contre $H_1$ : modèle $M_{p+1}$
-
+## Test de $H_0 : \mbox{ modèle } M_{q+1}$ contre $H_1$ : modèle $M_{p+1}$
 
 
 
 ::: {.callout-tip title="Interprétation"}
 \item Si $t_n > f_{1-\delta}$, on conserve le
-modèle complet $M_{p+1}$, on considère que le passage de $M_{q+1}$ à $M_{p+1}$ est significatif : au moins une variable explicative parmi $x_{q+1},\cdots,x_p$  a une influence significative sur $Y$ (en plus de $x_1,\cdots,x_q$).
+modèle complet $\o{M_{p+1}}$, on considère que le passage de $\g{M_{q+1}}$ à $\o{M_{p+1}}$ est significatif : au moins une variable explicative parmi $x_{\g{q}+1},\cdots,x_{\o{p}}$  a une influence significative sur $Y$ (en plus de $x_1,\cdots,x_q$).
 
-\item Si $t_n \leq f_{1-\delta}$, on ne rejette pas $H_0$, on considère que le passage de $M_{q+1}$ à $M_{p+1}$ n'est pas significatif : l'influence des variables explicatives  $x_{q+1},\cdots,x_p$ n'est pas significative pour expliquer $Y$.
+\item Si $t_n \leq f_{1-\delta}$, on ne rejette pas $H_0$, on considère que le passage de $\g{M_{q+1}}$ à $\o{M_{p+1}}$ n'est pas significatif : l'influence des variables explicatives $x_{\g{q}+1},\cdots,x_{\o{p}}$ n'est pas significative pour expliquer $Y$.
 
 :::
+::: {.fragment .fade-transparent}
 
 ::: {.callout-tip title="Calcul de la $p$-valeur"}
 
 
 $$p_c=\mathbb{P}_{H_0}(T_n > t_n)=\mathbb{P}(\mathcal{F}(p-q,n-p-1)>t_n)$$
+:::
 :::
 
 
@@ -1568,11 +2012,11 @@ Avec R, commande `anova`
 
 $$\begin{array}{|c|c|c|c|c|c|c|}
 \hline Source & ddl & SCR& ddl & SCE\quad expliquée& Statistique & p-value\\ 
-& résiduelle&  &&  par\quad M_{p+1}  & de\quad test & \\
-\hline \text{Modèle}  & n-q-1 & SCR(M_{q+1}) &  &&&\\
-M_{q+1} &&&&&&\\
-\hline \text{Modèle} & n-p-1 & SCR(M_{p+1}) & p-q & SCE=SCR(M_{q+1}) & t_n=&\mathbb{P}(\mathcal{F}(p-q,n-p-1)>t_n)\\
-M_{p+1} &&&& - SCR(M_{p+1}) &\frac{SCE/(p-q)}{SCR(M_{p+1})/(n-p-1)} &\\
+& résiduelle&  &&  par\quad \o{M_{p+1}}  & de\quad test & \\
+\hline \text{Modèle}  & n\g{-q-1} & SCR(\g{M_{q+1}}) &  &&&\\
+\g{M_{q+1}} &&&&&&\\
+\hline \text{Modèle} & n-p-1 & SCR(\o{M_{p+1}}) & \g{p}-\o{q} & SCE=SCR(\g{M_{q+1}}) & t_n=&\mathbb{P}(\mathcal{F}(p-q,n-p-1)>t_n)\\
+\o{M_{p+1}} &&&& - SCR(\o{M_{p+1}}) &\frac{SCE/(p-q)}{SCR(M_{p+1})/(n\o{-p-1})} &\\
 \hline
 \end{array}$$
 
@@ -1582,17 +2026,20 @@ M_{p+1} &&&& - SCR(M_{p+1}) &\frac{SCE/(p-q)}{SCR(M_{p+1})/(n-p-1)} &\\
 
 On va tester 
 
-$$\begin{align} &M_4 : Y_i=\beta+ \alpha_1x_{i,1}+\alpha_2x_{i,2}+\alpha_3x_{i,3}+ E_i \\
-&M_3 : Y_i=\beta+ \alpha_1x_{i,1}+\alpha_2x_{i,2}  +E_i \end{align}$$
+$$\begin{align} &\o{M_4} : Y_i=\beta+ \alpha_1x_{i,1}+\alpha_2x_{i,2}+\alpha_3x_{i,3}+ E_i \\
+&\g{M_3} : Y_i=\beta+ \alpha_1x_{i,1}+\alpha_2x_{i,2}  +E_i \end{align}$$
 
-On va définir le modèle $M_3$
+::: {.fragment .fade-transparent}
+
+On va définir le modèle $\g{M_3}$
 
 ```{r, echo = TRUE}
 m3 <- lm(Weight ~ Length1 + Width, data = fish)
 summary(m3)
 ```
 
-  
+:::
+
 
 
 ## Sorties R
@@ -1604,10 +2051,14 @@ summary(m3)
 anova(m3,  mod)
 ```
 
+::: {.fragment .fade-transparent}
+
 
 ```{r, echo = TRUE}
 anova(m1,  m3)
 ```
+
+:::
 
 ## Remarques sur les modèles emboités
 
@@ -1616,15 +2067,80 @@ anova(m1,  m3)
 - On peut toujours comparer des modèles emboités l'un dans l'autre. 
 - On peut donc comparer tous les modèles au modèle complet (structure la plus riche).
 - On peut de même comparer tous les modèles au modèle constant (structure la moins riche).
-- On ne peut pas comparer des modèles non emboîtés à l'aide de ce test :
+- On ne peut pas comparer des modèles non emboîtés à l'aide de ce test.
 
 :::
 
 
 
+## Ce qu'il faut retenir de ce cours 1/2
+
+:::: {style="font-size: 0.75em;"}
+
+:::{.callout-note title = "Estimateur de $\sigma^2$ et loi"}
 
 
 
 
+$${S^2}_{(M_{p+1})}=\frac{SCR(M_{p+1})}{n-(p+1)}=\frac{||Y - X\,\widehat{\theta}||^2}{n-p-1}$$
+
+$$\frac{(n-p-1){S^2}_{(M_{p+1})}}{\sigma^2}\sim\chi^2(n-p-1)$$
+
+:::
 
 
+:::{.callout-tip title="Loi de $\widehat{\theta}$ et $\widehat{\theta}_k$"}
+$$\widehat{\theta} \sim \mathcal{N}\left(\theta,\sigma^2(X^tX)^{-1}\right)$$
+$$\widehat{\theta}_k \sim \mathcal{N}\left(\theta,\sigma^2c_{kk}\right)\text{ avec } c_{kk} = (X^tX)^{-1}_{k,k}$$
+
+$$\frac{\widehat{\theta}_k- \theta_k}{\sqrt{S^2_{(M_{p+1})}c_{kk}}}\sim\mathcal{T}(n-p-1) $$
+
+
+:::
+
+:::{.callout-tip title="Intervalle de confiance de $\theta_k$"}
+$$IC_{1-\delta}(\theta_k) = 
+\left[\hat{\theta}_k-t_{1-\frac{\delta}{2}} \sqrt{{S^2}_{(M_{p+1})}c_{kk}};\quad\hat{\theta}_k+t_{1-\frac{\delta}{2}} \sqrt{{S^2}_{(M_{p+1})}c_{kk}}\;\right]$$
+:::
+
+:::
+
+## Ce qu'il faut retenir de ce cours 2/2
+
+:::: {style="font-size: 1em;"}
+
+
+:::{.callout-note title= "Test de Student de la nullité de la pente"}
+
+:::{style="text-align: center;"}
+ $$H_0:\alpha_k=0$$
+ 
+ $$H_1:\alpha_k\neq 0$$
+:::
+:::
+
+
+:::{.callout-note title= "Test de Fisher de comparaison de $M_1$ contre $M_{p+1}$"}
+$$H_0\; :\; \text{modèle}\; M_1:Y_i=\beta+E_i,\quad E_i\; \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
+
+
+$$H_1\; :\; \text{modèle}\; M_{p+1}:Y_i= \beta +  \sum_{j=1}^p\alpha_j x_{j,i}+E_i,\; E_i\; \overset{i.i.d.}{\sim}
+{\cal N}(0,\sigma^2)$$
+:::
+
+
+:::{.callout-tip title= "Test de Fisher de comparaison de $M_{q+1}$ contre $M_{p+1}$"}
+Pour $q<p$, on veut tester 
+$$H_0\; :\; \text{modèle}\; M_{q+1}:Y_i=\beta+ \sum_{j=1}^q\alpha_j x_{j,i}+E_i,\quad E_i\; \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
+
+
+$$H_1\; :\; \text{modèle}\; M_{p+1}:Y_i= \beta +  \sum_{j=1}^p\alpha_j x_{j,i}+E_i,\quad E_i\; \overset{i.i.d.}{\sim}
+{\cal N}(0,\sigma^2)$$
+
+
+$$\frac{\left(SCR(M_{q+1}) - SCR(M_{p+1})\right)\Bigl/(p-q)}{SCR(M_{p+1})\Bigl/~(n-p-1)} \sim_{H_0}^{}~\mathcal{F}(p-q\,,\,n-p-1)$$
+:::
+
+
+
+:::

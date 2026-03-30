@@ -142,7 +142,7 @@ On a pour 20 brèmes péchées dans le lac Laengelmavesi en Finland  leurs poids
 
 #### Notations
 
-::: {style="font-size: 90em;"}
+::: {style="font-size: 0.90em;"}
 
 On a $n = 20$ observations. On note, pour $1 \leq i \leq 20$
 

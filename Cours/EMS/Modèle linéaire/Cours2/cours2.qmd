@@ -172,7 +172,7 @@ $$Y_i = \alpha_1 x_{1,i} + \alpha_2 x_{2,i} + \alpha_3 x_{3,i} + \beta  + E_i,\q
 
 #### Notations
 
-::: {style="font-size: 90em;"}
+::: {style="font-size: 0.90em;"}
 
 On a $n = 20$ observations. On note, pour $1 \leq i \leq 20$
 

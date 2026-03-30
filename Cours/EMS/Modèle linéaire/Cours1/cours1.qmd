@@ -8,7 +8,7 @@ format:
     toc-depth: 3
     number-sections: true
     embed-resources: true
-    toc-location: left
+    toc-location: right
     css: style.scss  # Keeping your existing styles
 
 engine: knitr

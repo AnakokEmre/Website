@@ -8,7 +8,7 @@ format:
     toc-depth: 3
     number-sections: true
     embed-resources: true
-    toc-location: left
+    toc-location: right
     css: style.scss  # Keeping your existing styles
 
 engine: knitr
@@ -234,7 +234,7 @@ $$Y_i \overset{i.i.d.}\sim \mathcal{N}\left(\alpha_1 x_{1,i} + \alpha_2 x_{2,i} 
 
 ## Remarques sur les paramètres
 
-::: {style="font-size: 0.85em;"}
+::: {style="font-size: 1em;"}
 
 ::: {.callout-caution title="Remarques"}
 
@@ -320,7 +320,7 @@ a_{1q} & a_{2q} & \ldots & a_{pq}
 
 
 
-::: {style="font-size: 0.65em;"}
+::: {style="font-size: 1em;"}
 
 
 
@@ -509,7 +509,7 @@ $$V \sim \mathcal{N}\left(\vec{0}_n,\,\sigma^2 I_n\right)$$  où $I_n$ est la ma
 
 ## Écriture matricielle du modèle
 
-::: {style="font-size: 0.80em;"}
+::: {style="font-size: 1em;"}
 
 ::: {.callout-tip title="Théorème"}
 $$\left\{\begin{matrix}
@@ -551,7 +551,7 @@ E_2\\ \vdots \\ E_n\end{bmatrix}$$
 
 ## Écriture matricielle du modèle
 
-::: {style="font-size: 0.80em;"}
+::: {style="font-size: 1em;"}
 
 ::: {.callout-tip title="Propriété"}
 
@@ -616,7 +616,7 @@ E_2\\ \vdots \\ E_n\end{bmatrix}$$
 
 ## Écriture du modèle linéaire simple
 
-::: {style="font-size: 0.80em;"}
+::: {style="font-size: 1em;"}
 
 ::: {.callout-tip title="Propriété"}
 
@@ -645,7 +645,7 @@ rang $p = 2$.
 
 
 #### Notations
-::: {style="font-size: 0.75em;"}
+::: {style="font-size: 1em;"}
 
 On a $n = 20$ observations. On note, pour $1 \leq i \leq 20$
 
@@ -670,7 +670,7 @@ $$Y_i = \alpha_1 x_{1,i} + \alpha_2 x_{2,i} + \alpha_3 x_{3,i} + \beta  + E_i,\q
 
 ## Comment écrire le modèle : 
 
-::: {style="font-size: 0.75em;"}
+::: {style="font-size: 1em;"}
 
 $$\left\{\begin{matrix}
 Y_1  =  \beta\ +\ \alpha_1\,x_{1,1}\ +\ \alpha_2\,x_{2,1}\
@@ -739,7 +739,7 @@ $$J(\theta) = \sum_{i = 1}^n \left( y_i -(\beta +  \sum_{j=1}^p \alpha _j x_{j,i
 ## Rappels d'algèbre : norme
 
 
-::: {style="font-size: 0.60em;"}
+::: {style="font-size: 1em;"}
 
 ::: {.callout-note title="Rappel : norme"}
 
@@ -773,7 +773,7 @@ v_n\,v_1 & v_n\,v_2 & \ldots & v_n^2 \end{bmatrix}$$
 ## Estimateurs des moindres carrés
 
 
-::: {style="font-size: 0.80em;"}
+::: {style="font-size: 1em;"}
 
 :::{.callout-warning title="Objectif"}
 
@@ -808,7 +808,7 @@ $$
 
 ## À la recherche de  $\widehat{\theta}$
 
-::: {style="font-size: 0.75em;"}
+::: {style="font-size: 1em;"}
 
 :::{.callout-note title="Estimateur des moindres carrés"}
 
@@ -842,7 +842,7 @@ En dérivant par rapport à $\theta$ on obtient : $$-2Y^tX + 2\theta^tX^tX $$
 
 ## À la recherche de  $\widehat{\theta}$
 
-::: {style="font-size: 0.85em;"}
+::: {style="font-size: 1em;"}
 
 
 
@@ -882,7 +882,7 @@ $$\widehat{\theta} = (X^tX)^{-1}  X^tY$$
 
 ## Estimateurs des paramètres d'espérance
 
-::: {style="font-size: 0.80em;"}
+::: {style="font-size: 1em;"}
 
 :::{.callout-warning title="Objectif : Estimateur des moindres carrés de $\theta$" }
 
@@ -1120,7 +1120,7 @@ $$
 
 ## Ce qu'il faut retenir de ce cours 1/2
 
-:::: {style="font-size: 0.75em;"}
+:::: {style="font-size: 1em;"}
 
 :::{.callout-note title = "Estimateur de $\sigma^2$ et loi"}
 
@@ -1243,7 +1243,7 @@ $$SCT=SCM(M_{p+1})+SCR(M_{p+1})$$
 --->
 
 
-::: {style="font-size: 0.80em;"}
+::: {style="font-size: 1em;"}
 
 :::{.callout-note title="Définition : Prévision aléatoire par le modèle $M_{p+1}$"}
 
@@ -1277,7 +1277,7 @@ $$SCR(M_{p+1})=\sum_{i=1}^n E_i^2=\sum_{i=1}^n\left(Y_i-(B+A_1x_{i,1}+\cdots+A_p
 
 
 ## D'un point de vue matriciel 
-::: {style="font-size: 0.60em;"}
+::: {style="font-size: 1em;"}
 
 :::{.callout-note title="Définition : Vecteur (aléatoire) des prévisions"}
 
@@ -1314,7 +1314,7 @@ $$SCR(M_{p+1})=\sum_{i=1}^n E_i^2= ||E||^2=||Y-X\hat{\theta}||^2$$
 
 ## Estimateur de la variance résiduelle $\sigma^2$
 
-::: {style="font-size: 0.90em;"}
+::: {style="font-size: 1em;"}
 
 :::{.callout-note title="Définition : Estimateur de $\sigma^2$"}
 
@@ -1353,7 +1353,7 @@ De plus ${S^2}_{(M_{p+1})}$ est indépendant de $\hat{\theta}$.
 
 
 ## Propriétés et loi de $\hat{\theta}$
-::: {style="font-size: 0.80em;"}
+::: {style="font-size: 1em;"}
 
 :::{.callout-tip title="Théorème"}
 
@@ -1389,7 +1389,7 @@ $$\frac{(\widehat{\theta}_k-\theta_k)}{\sqrt{{S^2}_{(M_{p+1})}c_{kk}}}\sim \math
 
 ## Démonstrations
 
-::: {style="font-size: 0.80em;"}
+::: {style="font-size: 1em;"}
 
 On rappelle que 
 $$
@@ -1488,7 +1488,7 @@ confint(mod, level = 0.95)
 ## Test de Student pour $\theta_k$
 
 
-::: {style="font-size: 0.80em;"}
+::: {style="font-size: 1em;"}
 
 :::{.callout-tip title="Statistique de test  et loi sous $H_0$"}
 
@@ -1558,7 +1558,7 @@ summary(mod)
 
 
 ## Test de la contribution globale des variables explicatives
-::: {style="font-size: 0.80em;"}
+::: {style="font-size: 1em;"}
 
 :::{.callout-note title="Généralisation du test de Fisher à $p$ variables explicatives"}
 
@@ -1596,7 +1596,7 @@ Test de $H_0:\ \forall j=1,\cdots,p,\ \alpha_j=0\quad$ contre $\quad H_1:\exists
 ## Test de Fisher de la contribution globale des variables explicatives
 
 
-::: {style="font-size: 0.70em;"}
+::: {style="font-size: 1em;"}
 
 
 
@@ -1679,7 +1679,7 @@ On a donc $SCM(\o{M_{p+1}})=SCR(\g{M_1})-SCR(\o{M_{p+1}})$ : représente la réd
 \end{itemize}
 --->
 
-::: {style="font-size: 0.85em;"}
+::: {style="font-size: 1em;"}
 
 ## Test de $H_0$ :  modèle  $M_1$ contre $H_1$ : modèle $M_{p+1}$
 
@@ -1764,7 +1764,7 @@ Comme le test global $H_0$ : $M_1$ contre $H_1$ : $M_{p+1}$ est significatif, au
 
 
 ## Test du modèle $M_{q+1}$ contre le modèle $M_{p+1}$
-::: {style="font-size: 0.80em;"}
+::: {style="font-size: 1em;"}
 
 :::{.callout-warning title="Objectif"}
 
@@ -1794,7 +1794,7 @@ Test de $H_0:\ \forall j=\g{q}+1,\cdots,\o{p},\ \alpha_j=0 \quad$ contre $\quad 
 
 ## Description des deux modèles $M_{q+1}$ et $M_{p+1}$
 
-::: {style="font-size: 0.90em;"}
+::: {style="font-size: 1em;"}
 
 Modèle à $\o{p}$ variables explicatives $\o{M_{p+1}}$
 
@@ -1820,7 +1820,7 @@ X^{(\o{p})} = \begin{bmatrix}
 
 ## Description des deux modèles $M_{q+1}$ et $M_{p+1}$
 
-::: {style="font-size: 0.90em;"}
+::: {style="font-size: 1em;"}
 
 Modèle à $\g{q}$ variables explicatives $\g{M_{q+1}}$
 
@@ -1866,7 +1866,7 @@ $B^{(\o{p})}\neq B^{(\g{q})}, A_1^{(\o{p})}\neq A_1^{(\g{q})},\cdots$
 
 ## Prévision et résidu dans $M_{p+1}$ et dans $M_{q+1}$
 
-::: {style="font-size: 0.90em;"}
+::: {style="font-size: 1em;"}
 
 
 ::: {.callout-note title="Prévision dans $M_{p+1}$ et dans $M_{q+1}$"}
@@ -1896,7 +1896,7 @@ E_i(\g{M_{q+1}})&=Y_i-\widehat{Y_i}(\g{M_{q+1}})=Y_i-(B^{(\g{q})}+\sum_{j=1}^{\g
 
 ## SCR dans $M_{p+1}$ et dans $M_{q+1}$
 
-::: {style="font-size: 0.90em;"}
+::: {style="font-size: 1em;"}
 
 ::: {.callout-note title="SCR dans $M_{p+1}$ et dans $M_{q+1}$"}
 
@@ -1923,7 +1923,7 @@ $$S^2_{(\g{M_{q+1}})}=\frac{SCR(\g{M_{q+1}})}{n\g{-q-1}}$$
 
 ## Résultat important
 
-::: {style="font-size: 0.90em;"}
+::: {style="font-size: 1em;"}
 
 ::: {.callout-tip title="Théorème important du cours"}
 
@@ -2008,7 +2008,7 @@ $$p_c=\mathbb{P}_{H_0}(T_n > t_n)=\mathbb{P}(\mathcal{F}(p-q,n-p-1)>t_n)$$
 
 Avec R, commande `anova`
 
-::: {style="font-size: 0.70em;"}
+::: {style="font-size: 1em;"}
 
 $$\begin{array}{|c|c|c|c|c|c|c|}
 \hline Source & ddl & SCR& ddl & SCE\quad expliquée& Statistique & p-value\\ 
@@ -2075,7 +2075,7 @@ anova(m1,  m3)
 
 ## Ce qu'il faut retenir de ce cours 1/2
 
-:::: {style="font-size: 0.75em;"}
+:::: {style="font-size: 1em;"}
 
 :::{.callout-note title = "Estimateur de $\sigma^2$ et loi"}
 

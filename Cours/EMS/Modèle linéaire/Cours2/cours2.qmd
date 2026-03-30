@@ -33,13 +33,26 @@ library(ggplot2)
 knitr::opts_chunk$set(echo=FALSE)
 ```
 
+\newcommand\b{\textcolor{blue}}
+\newcommand\r{\textcolor{red}}
+\newcommand\p{\textcolor{purple}}
+\newcommand\br{\textcolor{brown}}
+\newcommand\g{\textcolor{green}}
+\newcommand\o{\textcolor{magenta}}
+
+
 
 ## Ce qu'il faut retenir de ce cours
 
 
 :::{.callout-note title= "Modélisation probabiliste du modèle linéaire"}
 
-$y_i$ est la réalisation d'une variable aléatoire $Y_i$ telle que pour $1 \leq i \leq n$: $$Y_i = \beta + \sum_{j=1}^p\alpha_j x_{i,j}    + E_i, \quad E_i\overset{i.i.d.}\sim{\cal N}(0,\sigma^2) $$
+$y_i$ est la réalisation d'une variable aléatoire $Y_i$ telle que pour $1 \leq i \leq n$: 
+
+::: {style="font-size: 0.90em;"}
+$$Y_i = \beta + \sum_{j=1}^p\alpha_j x_{i,j}    + E_i, \quad E_i\overset{i.i.d.}\sim{\cal N}(0,\sigma^2) $$
+:::
+
 :::
 
 
@@ -56,7 +69,9 @@ Le modèle linéaire multiple peut s'écrire matriciellement
 
 $$\widehat{\theta}  =\underset{\theta\in\mathbb{R}^{p+1}}{argmin} ||Y-X\theta||^2$$ 
 
-Si $(X^t\,X)$ est inversible, alors [$\hat{\theta}=(X^t\,X)^{-1}\,X^t\,Y$]{.red}
+Si $(X^t\,X)$ est inversible, alors
+
+$$\r{\hat{\theta}=(X^t\,X)^{-1}\,X^t\,Y}$$
 :::
 
 
@@ -100,14 +115,6 @@ On a pour 20 brèmes péchées dans le lac Laengelmavesi en Finland  leurs poids
 ![](breme.jpg){fig-align="center"}
 
 
-\newcommand\b{\textcolor{blue}}
-\newcommand\r{\textcolor{red}}
-\newcommand\p{\textcolor{purple}}
-\newcommand\br{\textcolor{brown}}
-\newcommand\g{\textcolor{green}}
-\newcommand\o{\textcolor{magenta}}
-
-
 
 :::{.callout-warning title="Objectif"}
 
@@ -135,6 +142,8 @@ On a pour 20 brèmes péchées dans le lac Laengelmavesi en Finland  leurs poids
 
 #### Notations
 
+::: {style="font-size: 90em;"}
+
 On a $n = 20$ observations. On note, pour $1 \leq i \leq 20$
 
 - $x_{1,i}$ la mesure de la longueur du poisson $i$.
@@ -157,13 +166,13 @@ $$Y_i = \alpha_1 x_{1,i} + \alpha_2 x_{2,i} + \alpha_3 x_{3,i} + \beta  + E_i,\q
 
 :::
 
-
+:::
 
 ## Écriture plus générale du modèle 
 
 #### Notations
 
-::: {style="font-size: 1em;"}
+::: {style="font-size: 90em;"}
 
 On a $n = 20$ observations. On note, pour $1 \leq i \leq 20$
 
@@ -176,8 +185,8 @@ On a $n = 20$ observations. On note, pour $1 \leq i \leq 20$
 
 :::{.callout-note title= "Définition : Modèle de régression linéaire multiple"}
 
-On suppose que $y_i$ est la réalisation d'une variable aléatoire $Y_i$ telle que:
-$$Y_i = \sum_{j=1}^p \alpha_j x_{j,i} + \beta  + E_i,\quad 1 \leq i \leq n$$
+On suppose que $y_i$ est la réalisation d'une variable aléatoire $Y_i$ telle que pour $ 1 \leq i \leq n$:
+$$Y_i = \sum_{j=1}^p \alpha_j x_{j,i} + \beta  + E_i $$
 
 
 - $\alpha_j$  est un paramètre inconnu,  l'effet de la variable $x_j$  sur le y.
@@ -197,6 +206,8 @@ $$Y_i = \sum_{j=1}^p \alpha_j x_{j,i} + \beta  + E_i,\quad 1 \leq i \leq n$$
 
 Les deux modèles suivant sont équivalent : 
 
+::: {style="font-size: 0.90em;"}
+
 -  $\forall i \in \{1, \dots, n\} \;\;$
 
 $$ Y_i = \sum_{j=1}^p \alpha_j x_{j,i} + \beta  + E_i,\quad  \ E_i \overset{i.i.d.}\sim \mathcal{N}(0, \sigma^2)$$
@@ -206,6 +217,9 @@ $$ Y_i = \sum_{j=1}^p \alpha_j x_{j,i} + \beta  + E_i,\quad  \ E_i \overset{i.i.
 -  $\forall i \in \{1, \dots, n\} \;\;$
 
 $$ Y_i \overset{i.i.d.}\sim \mathcal{N}\left(\sum_{j=1}^p \alpha_j x_{j,i} + \beta, \sigma^2\right)$$
+
+:::
+
 :::
 :::
 
@@ -217,10 +231,13 @@ $$ Y_i \overset{i.i.d.}\sim \mathcal{N}\left(\sum_{j=1}^p \alpha_j x_{j,i} + \be
 
 Les deux modèles suivant sont équivalent :
 
+::: {style="font-size: 0.90em;"}
+
+
+
 -  $\forall i \in \{1, \dots, n\} \;\;$
 $$ Y_i = \alpha_1 x_{1,i} + \alpha_2 x_{2,i} + \alpha_3 x_{3,i} + \beta  + E_i,\quad  \ E_i \overset{i.i.d.}\sim \mathcal{N}(0, \sigma^2)$$
 
-::: {.fragment .fade-transparent}
 
 -  $\forall i \in \{1, \dots, n\} \;\;$
 $$Y_i \overset{i.i.d.}\sim \mathcal{N}\left(\alpha_1 x_{1,i} + \alpha_2 x_{2,i} + \alpha_3 x_{3,i} + \beta, \sigma^2\right)$$
@@ -234,13 +251,16 @@ $$Y_i \overset{i.i.d.}\sim \mathcal{N}\left(\alpha_1 x_{1,i} + \alpha_2 x_{2,i} 
 
 ## Remarques sur les paramètres
 
-::: {style="font-size: 1em;"}
 
 ::: {.callout-caution title="Remarques"}
 
 Dans le modèle  $\forall i \in \{1, \dots, n\} \;\;$
+
+::: {style="font-size: 0.9em;"}
+
 $$ Y_i = \sum_{j=1}^p \alpha_j x_{j,i} + \beta  + E_i,\quad\ E_i \overset{i.i.d.}\sim \mathcal{N}(0, \sigma^2)$$
 
+:::
 
 
  - $\alpha_j$ représente l'accroissement de $Y_i$ correspondant à l'accroissement d'une unité sur $x_j$ si les autres variables explicatives sont fixées. [Dans l'exemple des poissons :
@@ -259,7 +279,6 @@ $$ Y_i = \sum_{j=1}^p \alpha_j x_{j,i} + \beta  + E_i,\quad\ E_i \overset{i.i.d.
 
 :::
 
-:::
 
 
 # Écriture matricielle du modèle 
@@ -374,14 +393,14 @@ $$V = \begin{bmatrix} v_{1} \\ v_{2}\\ \vdots \\ v_{p} \end{bmatrix}= \left[{v_1
 Si $V$ est un vecteur à $q$ éléments et $A$ une matrice $(p \times q)$ alors, $U=AV$ est un vecteur à $p$ éléments
 
 
-$$ \begin{bmatrix} u_{1} \\ u_{2}\\ \vdots \\ u_{p} \end{bmatrix} = AV = 
- \begin{bmatrix}
+$$\begin{align}  AV &= \begin{bmatrix} u_{1} \\ u_{2}\\ \vdots \\ u_{p} \end{bmatrix}  \\ \\
+ AV&=\begin{bmatrix}
 a_{11} & a_{12} & \ldots & a_{1q}\\
 a_{21} & a_{22} & \ldots & a_{2q}\\
 \vdots & \vdots & & \vdots \\
 a_{p1} & a_{p2} & \ldots & a_{pq}
-\end{bmatrix}\begin{bmatrix} v_{1} \\ v_{2}\\ \vdots \\ v_{p} \end{bmatrix} = \begin{bmatrix}  \sum_{j=1}^{q} a_{1j} v_j \\ \sum_{j=1}^{q} a_{2j} v_j\\ \vdots \\
-\sum_{j=1}^{q} a_{pj} \end{bmatrix}$$ 
+\end{bmatrix}\begin{bmatrix} v_{1} \\ v_{2}\\ \vdots \\ v_{p} \end{bmatrix}\\ \\AV&= \begin{bmatrix}  \sum_{j=1}^{q} a_{1j} v_j \\ \sum_{j=1}^{q} a_{2j} v_j\\ \vdots \\
+\sum_{j=1}^{q} a_{pj} \end{bmatrix} \end{align}$$ 
 
 :::
 
@@ -463,11 +482,15 @@ $V$ a pour matrice de **variance-covariance** (symétrique)
 $$\mathbb{V}[V] = \mathbb{E}\left[\left(V- \mathbb{E}[V] \right)\left(V- \mathbb{E}[V] \right)^t \right] =$$
 \
 
+::: {style="font-size: 0.9em;"}
+
 
 $$\begin{bmatrix} \mathbb{V}[V_1] & cov(V_1,V_2) & \dots& Cov(V_1,V_n) \\
  cov(V_2,V_1) & \mathbb{V}[V_2] & \dots& Cov(V_2,V_n) \\
  \vdots & \vdots & \ddots & \vdots \\
   cov(V_n,V_1) & cov(V_n,V_2) & \dots&  \mathbb{V}[V_n]\end{bmatrix}$$
+
+:::
 
 :::
 :::
@@ -509,7 +532,7 @@ $$V \sim \mathcal{N}\left(\vec{0}_n,\,\sigma^2 I_n\right)$$  où $I_n$ est la ma
 
 ## Écriture matricielle du modèle
 
-::: {style="font-size: 1em;"}
+::: {style="font-size: 0.8em;"}
 
 ::: {.callout-tip title="Théorème"}
 $$\left\{\begin{matrix}
@@ -540,7 +563,9 @@ $$Y =\begin{bmatrix} Y_1\\ Y_2\\ \vdots \\ Y_n\end{bmatrix},\quad  X = \begin{bm
 1 & x_{1, 2} & \ldots & x_{p, 2}\\
 \vdots & \vdots & & \vdots \\
 1 & x_{1, n} & \ldots & x_{p, n}
-\end{bmatrix},\quad \theta = \begin{bmatrix} \beta\\ \alpha_1\\
+\end{bmatrix}$$ 
+
+$$\theta = \begin{bmatrix} \beta\\ \alpha_1\\
 \alpha_2\\ \vdots \\ \alpha_{p}\end{bmatrix},\quad E = \begin{bmatrix}E_1\\
 E_2\\ \vdots \\ E_n\end{bmatrix}$$
 

@@ -130,7 +130,7 @@ On a pour 20 brèmes péchées dans le lac Laengelmavesi en Finland  leurs poids
 :::
 
 ::: {.fragment .fade-transparent}
-  * Y'a t'il un lien entre le poids du poisson et sa largeur après avoir pris en compte sa longueur et son epaisseur ? 
+  * Y'a t'il un lien entre le poids du poisson et sa largeur après avoir pris en compte sa longueur et son épaisseur ? 
 
 :::
 :::
@@ -147,8 +147,8 @@ On a pour 20 brèmes péchées dans le lac Laengelmavesi en Finland  leurs poids
 On a $n = 20$ observations. On note, pour $1 \leq i \leq 20$
 
 - $x_{1,i}$ la mesure de la longueur du poisson $i$.
-- $x_{2,i}$ la mesure de la largeure du poisson $i$.
-- $x_{3,i}$ la mesure de l'epaisseur du poisson $i$.
+- $x_{2,i}$ la mesure de la largeur du poisson $i$.
+- $x_{3,i}$ la mesure de l'épaisseur du poisson $i$.
 - $y_i$ la mesure du poids du poisson $i$.
 
 
@@ -679,8 +679,8 @@ rang $p = 2$.
 On a $n = 20$ observations. On note, pour $1 \leq i \leq 20$
 
 - $x_{1,i}$ la mesure de la longueur du poisson $i$.
-- $x_{2,i}$ la mesure de la largeure du poisson $i$.
-- $x_{3,i}$ la mesure de l'epaisseur du poisson $i$.
+- $x_{2,i}$ la mesure de la largeur du poisson $i$.
+- $x_{3,i}$ la mesure de l'épaisseur du poisson $i$.
 - $y_i$ la mesure du poids du poisson $i$.
 
 :::{.callout-note title= "Définition : Modèle de régression linéaire multiple"}
@@ -933,6 +933,7 @@ $$\widehat{\theta}  =\underset{\theta\in\mathbb{R}^{p+1}}{argmin} ||Y-X\theta||^
 - Si $\hat{\theta}= [B, A_1, \ldots, A_{p}]^t$ est solution du système et que $(X^t\,X)$ est inversible, alors
 
 $$\hat{\theta}=(X^t\,X)^{-1}\,X^t\,Y$$
+
 ::: {style="font-size: 0.75em;"}
 
 |Paramètres | Estimateurs | Estimations
@@ -942,6 +943,7 @@ $$\hat{\theta}=(X^t\,X)^{-1}\,X^t\,Y$$
 :::
 
 :::
+
 :::
 
 :::
@@ -1196,15 +1198,17 @@ $$\begin{align} IC_{1-\delta}(\theta_k) =
 
 ## Ce qu'il faut retenir de ce cours 2/2
 
-:::: {style="font-size: 1em;"}
 
 
 :::{.callout-note title= "Test de Student de la nullité de la pente"}
 
 :::{style="text-align: center;"}
+
  $$H_0:\alpha_k=0$$
  
+ 
  $$H_1:\alpha_k\neq 0$$
+ 
 :::
 :::
 
@@ -1222,6 +1226,11 @@ $$Y_i= \beta +  \sum_{j=1}^p\alpha_j x_{j,i}+E_i,\; E_i\; \overset{i.i.d.}{\sim}
 
 :::{.callout-tip title= "Test de Fisher de comparaison de $M_{q+1}$ contre $M_{p+1}$"}
 Pour $q<p$, on veut tester 
+
+::: {style="font-size: 0.80em;"}
+
+
+
 $$H_0\; :\; \text{modèle}\; M_{q+1}:$$
 
 $$Y_i=\beta+ \sum_{j=1}^q\alpha_j x_{j,i}+E_i,\quad E_i\; \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
@@ -1234,11 +1243,15 @@ $$Y_i= \beta +  \sum_{j=1}^p\alpha_j x_{j,i}+E_i,\quad E_i\; \overset{i.i.d.}{\s
 
 
 $$\begin{align}T_n &= \frac{\left(SCR(M_{q+1}) - SCR(M_{p+1})\right)\Bigl/(p-q)}{SCR(M_{p+1})\Bigl/~(n-p-1)}\\& \sim_{H_0}^{}~\mathcal{F}(p-q\,,\,n-p-1)\end{align}$$
+
+:::
+
+
 :::
 
 
 
-:::
+
 
 
 
@@ -1319,7 +1332,7 @@ $$E_i=Y_i-\widehat{Y_i}$$
 
 :::{.callout-note title="Définition : Somme des carrés résiduels"}
 
-$$\begin{align}SCR(M_{p+1})&=\sum_{i=1}^n E_i^2 \\ &=\sum_{i=1}^n\left(Y_i-(B+A_1x_{i,1}+\cdots+A_px_{i,p})\right)^2\end{align}$$
+$$\begin{align}SCR(M_{p+1})&=\sum_{i=1}^n E_i^2 \\ &=\sum_{i=1}^n\left(Y_i-(B+\sum_{j=1}^p A_jx_{i,j})\right)^2\end{align}$$
 
 :::
 :::
@@ -1374,8 +1387,9 @@ $$\begin{align}SCR(M_{p+1})&=\sum_{i=1}^n E_i^2 \\
 
 $$\begin{align}
 {S^2}_{(M_{p+1})}&=\frac{SCR(M_{p+1})}{n-(p+1)}\\
-&=\frac{1}{n-p-1}\sum_{i=1}^n E_i^2\\ 
-{S^2}_{(M_{p+1})}&=\frac{1}{n-p-1}\sum_{i=1}^n\left(Y_i-(B+\sum_{j=1}^p A_jx_{i,j})\right)^2\\
+&=\frac{1}{n-p-1}\sum_{i=1}^n E_i^2\end{align}$$
+
+$$\begin{align}{S^2}_{(M_{p+1})}&=\frac{\displaystyle\sum_{i=1}^n\left(Y_i-(B+\sum_{j=1}^p A_jx_{i,j})\right)^2}{n-p-1}\\
 &=\frac{||Y - X\,\hat{\theta}||^2}{n-p-1}
 \end{align}$$
 
@@ -1841,16 +1855,16 @@ Comme le test global $H_0$ : $M_1$ contre $H_1$ : $M_{p+1}$ est significatif, au
 
 :::{.callout-warning title="Objectif"}
 
-- Tester si un ensemble de $\g{q}$ variables explicatives ne suffit pas à expliquer $Y$, avec $\o{q}<\g{p}$.
+- Tester si un ensemble de $\g{q}$ variables explicatives ne suffit pas à expliquer $Y$, avec $\g{q}<\o{p}$.
 
 ::: {.fragment .fade-transparent}
 
 
 - [**Autre formulation :**]{.upc}  
 
- $$H_0\ :\ \text{modèle}\ \o{M_{q+1}}\ :$$
+ $$H_0\ :\ \text{modèle}\ \g{M_{q+1}}\ :$$
  
- $$Y_i=\beta+\sum_{j=1}^{\o{q}}\alpha_j x_{i,j}+E_i,\quad E_i\overset{i.i.d.}{\sim}{\cal N}(0,\sigma^2)$$ contre l'alternative $$H_1\ :\ \text{modèle}\ \o{M_{p+1}}:$$
+ $$Y_i=\beta+\sum_{j=1}^{\g{q}}\alpha_j x_{i,j}+E_i,\quad E_i\overset{i.i.d.}{\sim}{\cal N}(0,\sigma^2)$$ contre l'alternative $$H_1\ :\ \text{modèle}\ \o{M_{p+1}}:$$
  
  $$Y_i=\beta+\sum_{j=1}^{\o{p}}\alpha_j x_{i,j}+E_i,\quad E_i\ \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
 
@@ -2039,7 +2053,7 @@ $$\frac{SCE}{\sigma^2} \underset{H_0}{\sim}\,\chi^2_{\o{p}-\g{q}}\\$$
 et **$SCE$ et $SCR(\o{M_{p+1}})$ sont indépendants** ce qui permet de déduire que
 
 
-$$\frac{\left(SCR(\g{M_{q+1}}) - SCR(\o{M_{p+1}})\right)\Bigl/(\o{p}-\g{q})}{SCR(\o{M_{p+1}})\Bigl/~(n\o{-p-1})} \sim_{H_0}^{}~\mathcal{F}(\o{p}-\g{q}\,,\,n\o{-p-1})$$
+$$\begin{align}&\frac{\left(SCR(\g{M_{q+1}}) - SCR(\o{M_{p+1}})\right)\Bigl/(\o{p}-\g{q})}{SCR(\o{M_{p+1}})\Bigl/~(n\o{-p-1})}\\ &\sim_{H_0}^{}~\mathcal{F}(\o{p}-\g{q}\,,\,n\o{-p-1})\end{align}$$
 
 :::
 :::
@@ -2052,9 +2066,11 @@ $$\frac{\left(SCR(\g{M_{q+1}}) - SCR(\o{M_{p+1}})\right)\Bigl/(\o{p}-\g{q})}{SCR
 
 ::: {.callout-tip title="Statistique de test"}
 
-$$
-{T_n=\frac{(SCR(\g{M_{q+1}})-SCR(\o{M_{p+1}}))/(\g{p}-\o{q})}{SCR(\o{M_{p+1}})/(n\o{-p-1})}\sim_{H_0} \mathcal{F}(\o{p}-\g{q},n\o{-p-1})}
-$$
+::: {style="font-size: 0.95em;"}
+
+$$\begin{align}T_n&=\frac{(SCR(\g{M_{q+1}})-SCR(\o{M_{p+1}}))/(\g{p}-\o{q})}{SCR(\o{M_{p+1}})/(n\o{-p-1})}\\
+&\sim_{H_0} \mathcal{F}(\o{p}-\g{q},n\o{-p-1})\end{align}$$
+:::
 
 $SCR(\g{M_{q+1}})-SCR(\o{M_{p+1}})$ représente la réduction d'erreur quand on passe de $\g{M_{q+1}}$ à $\o{M_{p+1}}$.
 
@@ -2090,7 +2106,7 @@ modèle complet $\o{M_{p+1}}$, on considère que le passage de $\g{M_{q+1}}$ à 
 ::: {.callout-tip title="Calcul de la $p$-valeur"}
 
 
-$$p_c=\mathbb{P}_{H_0}(T_n > t_n)=\mathbb{P}(\mathcal{F}(p-q,n-p-1)>t_n)$$
+$$\begin{align}p_c&=\mathbb{P}_{H_0}(T_n > t_n)\\&=\mathbb{P}(\mathcal{F}(p-q,n-p-1)>t_n)\end{align}$$
 :::
 :::
 
@@ -2101,15 +2117,15 @@ $$p_c=\mathbb{P}_{H_0}(T_n > t_n)=\mathbb{P}(\mathcal{F}(p-q,n-p-1)>t_n)$$
 
 Avec R, commande `anova`
 
-::: {style="font-size: 1em;"}
+::: {style="font-size: 0.35em;"}
 
 $$\begin{array}{|c|c|c|c|c|c|c|}
 \hline Source & ddl & SCR& ddl & SCE\quad expliquée& Statistique & p-value\\ 
 & résiduelle&  &&  par\quad \o{M_{p+1}}  & de\quad test & \\
 \hline \text{Modèle}  & n\g{-q-1} & SCR(\g{M_{q+1}}) &  &&&\\
 \g{M_{q+1}} &&&&&&\\
-\hline \text{Modèle} & n-p-1 & SCR(\o{M_{p+1}}) & \g{p}-\o{q} & SCE=SCR(\g{M_{q+1}}) & t_n=&\mathbb{P}(\mathcal{F}(p-q,n-p-1)>t_n)\\
-\o{M_{p+1}} &&&& - SCR(\o{M_{p+1}}) &\frac{SCE/(p-q)}{SCR(M_{p+1})/(n\o{-p-1})} &\\
+\hline \text{Modèle} & n\o{-p-1} & SCR(\o{M_{p+1}}) & \g{p}-\o{q} & SCE=SCR(\g{M_{q+1}}) & t_n=&\mathbb{P}(\mathcal{F}(\o{p}-\g{q},n\o{-p-1})>t_n)\\
+\o{M_{p+1}} &&&& - SCR(\o{M_{p+1}}) &\frac{SCE/(\o{p}-\g{q})}{SCR(\o{M_{p+1}})/(n\o{-p-1})} &\\
 \hline
 \end{array}$$
 
@@ -2166,6 +2182,7 @@ anova(m1,  m3)
 
 
 
+
 ## Ce qu'il faut retenir de ce cours 1/2
 
 :::: {style="font-size: 1em;"}
@@ -2192,48 +2209,67 @@ $$\frac{\widehat{\theta}_k- \theta_k}{\sqrt{S^2_{(M_{p+1})}c_{kk}}}\sim\mathcal{
 :::
 
 :::{.callout-tip title="Intervalle de confiance de $\theta_k$"}
-$$IC_{1-\delta}(\theta_k) = 
-\left[\hat{\theta}_k-t_{1-\frac{\delta}{2}} \sqrt{{S^2}_{(M_{p+1})}c_{kk}};\quad\hat{\theta}_k+t_{1-\frac{\delta}{2}} \sqrt{{S^2}_{(M_{p+1})}c_{kk}}\;\right]$$
+$$\begin{align} IC_{1-\delta}(\theta_k) = 
+&\left[\hat{\theta}_k-t_{1-\frac{\delta}{2}} \sqrt{{S^2}_{(M_{p+1})}c_{kk}}\right.;\\ &\;\left.\hat{\theta}_k+t_{1-\frac{\delta}{2}} \sqrt{{S^2}_{(M_{p+1})}c_{kk}}\;\right]\end{align}$$
 :::
 
 :::
 
 ## Ce qu'il faut retenir de ce cours 2/2
 
-:::: {style="font-size: 1em;"}
 
 
 :::{.callout-note title= "Test de Student de la nullité de la pente"}
 
 :::{style="text-align: center;"}
+
  $$H_0:\alpha_k=0$$
  
+ 
  $$H_1:\alpha_k\neq 0$$
+ 
 :::
 :::
 
 
 :::{.callout-note title= "Test de Fisher de comparaison de $M_1$ contre $M_{p+1}$"}
-$$H_0\; :\; \text{modèle}\; M_1:Y_i=\beta+E_i,\quad E_i\; \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
+$$H_0\; :\; \text{modèle}\; M_1:$$
+$$Y_i=\beta+E_i,\quad E_i\; \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
 
 
-$$H_1\; :\; \text{modèle}\; M_{p+1}:Y_i= \beta +  \sum_{j=1}^p\alpha_j x_{j,i}+E_i,\; E_i\; \overset{i.i.d.}{\sim}
+$$H_1\; :\; \text{modèle}\; M_{p+1}:$$
+$$Y_i= \beta +  \sum_{j=1}^p\alpha_j x_{j,i}+E_i,\; E_i\; \overset{i.i.d.}{\sim}
 {\cal N}(0,\sigma^2)$$
 :::
 
 
 :::{.callout-tip title= "Test de Fisher de comparaison de $M_{q+1}$ contre $M_{p+1}$"}
 Pour $q<p$, on veut tester 
-$$H_0\; :\; \text{modèle}\; M_{q+1}:Y_i=\beta+ \sum_{j=1}^q\alpha_j x_{j,i}+E_i,\quad E_i\; \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
+
+::: {style="font-size: 0.80em;"}
 
 
-$$H_1\; :\; \text{modèle}\; M_{p+1}:Y_i= \beta +  \sum_{j=1}^p\alpha_j x_{j,i}+E_i,\quad E_i\; \overset{i.i.d.}{\sim}
+
+$$H_0\; :\; \text{modèle}\; M_{q+1}:$$
+
+$$Y_i=\beta+ \sum_{j=1}^q\alpha_j x_{j,i}+E_i,\quad E_i\; \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
+
+
+$$H_1\; :\; \text{modèle}\; M_{p+1}:$$
+
+$$Y_i= \beta +  \sum_{j=1}^p\alpha_j x_{j,i}+E_i,\quad E_i\; \overset{i.i.d.}{\sim}
 {\cal N}(0,\sigma^2)$$
 
 
-$$\frac{\left(SCR(M_{q+1}) - SCR(M_{p+1})\right)\Bigl/(p-q)}{SCR(M_{p+1})\Bigl/~(n-p-1)} \sim_{H_0}^{}~\mathcal{F}(p-q\,,\,n-p-1)$$
+$$\begin{align}T_n &= \frac{\left(SCR(M_{q+1}) - SCR(M_{p+1})\right)\Bigl/(p-q)}{SCR(M_{p+1})\Bigl/~(n-p-1)}\\& \sim_{H_0}^{}~\mathcal{F}(p-q\,,\,n-p-1)\end{align}$$
+
+:::
+
+
 :::
 
 
 
-:::
+
+
+

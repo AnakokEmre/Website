@@ -234,7 +234,7 @@ Les deux modèles suivant sont équivalent :
 
 
 -  $\forall i \in \{1, \dots, n\} \;\;$
-$$ Y_i = \alpha_1 x_{1,i} + \alpha_2 x_{2,i} + \alpha_3 x_{3,i} + \beta  + E_i\\ \text{avec} \ E_i \overset{i.i.d.}\sim \mathcal{N}(0, \sigma^2)$$
+$$ Y_i = \alpha_1 x_{1,i} + \alpha_2 x_{2,i} + \alpha_3 x_{3,i} + \beta  + E_i\\ \ E_i \overset{i.i.d.}\sim \mathcal{N}(0, \sigma^2)$$
 
 
 -  $\forall i \in \{1, \dots, n\} \;\;$

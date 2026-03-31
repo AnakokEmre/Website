@@ -234,7 +234,9 @@ Les deux modèles suivant sont équivalent :
 
 
 -  $\forall i \in \{1, \dots, n\} \;\;$
-$$ Y_i = \alpha_1 x_{1,i} + \alpha_2 x_{2,i} + \alpha_3 x_{3,i} + \beta  + E_i\\ \ E_i \overset{i.i.d.}\sim \mathcal{N}(0, \sigma^2)$$
+$$ Y_i = \alpha_1 x_{1,i} + \alpha_2 x_{2,i} + \alpha_3 x_{3,i} + \beta  + E_i$$ 
+
+$$E_i \overset{i.i.d.}\sim \mathcal{N}(0, \sigma^2)$$
 
 
 -  $\forall i \in \{1, \dots, n\} \;\;$
@@ -632,8 +634,9 @@ X =  \begin{bmatrix}
 1 & x_{2} \\
 \vdots & \\
 1 & x_{n} \\
-\end{bmatrix},\\ {} \\
-\theta\ =\  \begin{bmatrix}\beta\\ \alpha\end{bmatrix},\quad
+\end{bmatrix}$$
+
+$$\theta\ =\  \begin{bmatrix}\beta\\ \alpha\end{bmatrix},\quad
 E\ =\  \begin{bmatrix} E_1\\
 E_2\\ \vdots \\ E_n\end{bmatrix}$$
 
@@ -723,7 +726,9 @@ $$Y =\begin{bmatrix} Y_1\\ Y_2\\ \vdots \\ Y_n\end{bmatrix},\quad  X = \begin{bm
 1 & x_{1, 2} & x_{2,1} & x_{3, 2}\\
 \vdots & \vdots & & \vdots \\
 1 & x_{1, n} & x_{2,1} & x_{3, n}
-\end{bmatrix},\\{}\\ \theta = \begin{bmatrix} \beta\\ \alpha_1\\
+\end{bmatrix}$$
+
+$$\theta = \begin{bmatrix} \beta\\ \alpha_1\\
 \alpha_2\\\vdots\\ \alpha_{3}\end{bmatrix},\quad E = \begin{bmatrix}E_1\\
 E_2\\ \vdots \\ E_n\end{bmatrix}$$
 
@@ -806,7 +811,7 @@ v_n\,v_1 & v_n\,v_2 & \ldots & v_n^2 \end{bmatrix}$$
 
 On souhaite trouver $\theta= (\beta,\alpha_1,...\alpha_p)^t$ qui minimise 
 
-$$J(\theta)=\sum_{i = 1}^n \left( y_i -(\beta +  \sum_{j=1}^p \alpha _j x_{j,i}) \right)^2 = (Y-X\theta)^t(Y-X\theta) = ||Y-X\theta||^2$$
+$$\begin{align}J(\theta)&=\sum_{i = 1}^n \left( y_i -(\beta +  \sum_{j=1}^p \alpha _j x_{j,i}) \right)^2 \\&= (Y-X\theta)^t(Y-X\theta) \\&= ||Y-X\theta||^2\end{align}$$
 
 :::
 ::: {.fragment .fade-transparent}
@@ -839,7 +844,7 @@ $$
 
 :::{.callout-note title="Estimateur des moindres carrés"}
 
-$$\widehat{\theta} = \underset{\theta\in\mathbb{R}^{p+1}}{argmin} (Y-X\theta)^t(Y-X\theta) =\underset{\theta\in\mathbb{R}^{p+1}}{argmin} ||Y-X\theta||^2$$
+$$\begin{align}\widehat{\theta} &= \underset{\theta\in\mathbb{R}^{p+1}}{argmin} (Y-X\theta)^t(Y-X\theta) \\ \widehat{\theta}&=\underset{\theta\in\mathbb{R}^{p+1}}{argmin} ||Y-X\theta||^2\end{align}$$
 
 $\widehat{\theta} = [B,A_1, \dots, A_p]^t$ où $B$ est l'estimateur de $\beta$ et $A_j$ l'estimateur de $\alpha_j$
 
@@ -849,7 +854,8 @@ $\widehat{\theta} = [B,A_1, \dots, A_p]^t$ où $B$ est l'estimateur de $\beta$ e
 
 
 $$\begin{align}
-(Y-X\theta)^t(Y-X\theta) &= (Y^t-\theta^tX^t)(Y-X\theta)\\
+J(\theta) &= (Y-X\theta)^t(Y-X\theta)\\
+&=(Y^t-\theta^tX^t)(Y-X\theta)\\
 &= Y^tY - Y^tX\theta  -\theta^tX^t Y -\theta^tX^tX\theta \\
 &= Y^tY - 2 Y^tX\theta -\theta^tX^tX\theta
 \end{align}$$
@@ -869,7 +875,6 @@ En dérivant par rapport à $\theta$ on obtient : $$-2Y^tX + 2\theta^tX^tX $$
 
 ## À la recherche de  $\widehat{\theta}$
 
-::: {style="font-size: 1em;"}
 
 
 
@@ -883,11 +888,13 @@ $X$ est de rang $p+1$ donc $X^tX$ est inversible.
 ::: {.fragment .fade-transparent}
 
 :::{.callout-tip title="Fin du calcul"}
+::: {style="font-size: 0.8em;"}
 
 $$\begin{align}
 -2Y^tX + 2\widehat{\theta}^tX^tX = 0 &\iff \widehat{\theta}^tX^tX  =  Y^tX  \\ 
 \iff X^tX  \widehat{\theta}   =  X^tY   & \iff \widehat{\theta} = (X^tX)^{-1}  X^tY
 \end{align}$$
+:::
 :::
 
 :::
@@ -904,7 +911,6 @@ $$\widehat{\theta} = (X^tX)^{-1}  X^tY$$
 :::
 
 
-:::
 
 
 ## Estimateurs des paramètres d'espérance
@@ -927,10 +933,13 @@ $$\widehat{\theta}  =\underset{\theta\in\mathbb{R}^{p+1}}{argmin} ||Y-X\theta||^
 - Si $\hat{\theta}= [B, A_1, \ldots, A_{p}]^t$ est solution du système et que $(X^t\,X)$ est inversible, alors
 
 $$\hat{\theta}=(X^t\,X)^{-1}\,X^t\,Y$$
+::: {style="font-size: 0.75em;"}
 
 |Paramètres | Estimateurs | Estimations
 |:---:|:---:|:---:|
 |$[\beta,\alpha_1,...\alpha_p]$|$[B, A_1, \ldots, A_{p}]$|$[b,a_1,\cdots,a_p]$|
+
+:::
 
 :::
 :::
@@ -1091,7 +1100,15 @@ solve(t(X) %*% X)%*% t(X)%*% Y
 
 :::{.callout-note title= "Modélisation probabiliste du modèle linéaire"}
 
-$y_i$ est la réalisation d'une variable aléatoire $Y_i$ telle que pour $1 \leq i \leq n$: $$Y_i = \beta + \sum_{j=1}^p\alpha_j x_{i,j}    + E_i, \quad E_i\overset{i.i.d.}\sim{\cal N}(0,\sigma^2) $$
+$y_i$ est la réalisation d'une variable aléatoire $Y_i$ telle que pour $1 \leq i \leq n$: 
+
+::: {style="font-size: 0.90em;"}
+
+
+$$Y_i = \beta + \sum_{j=1}^p\alpha_j x_{i,j}    + E_i, \quad E_i\overset{i.i.d.}\sim{\cal N}(0,\sigma^2) $$
+
+:::
+
 :::
 
 
@@ -1099,7 +1116,7 @@ $y_i$ est la réalisation d'une variable aléatoire $Y_i$ telle que pour $1 \leq
 
 Le modèle linéaire multiple peut s'écrire matriciellement
 
-[$$ Y = X \theta + E $$]{.red}
+$$\r{Y = X \theta + E}$$
 
 
 :::
@@ -1171,8 +1188,8 @@ $$\frac{\widehat{\theta}_k- \theta_k}{\sqrt{S^2_{(M_{p+1})}c_{kk}}}\sim\mathcal{
 :::
 
 :::{.callout-tip title="Intervalle de confiance de $\theta_k$"}
-$$IC_{1-\delta}(\theta_k) = 
-\left[\hat{\theta}_k-t_{1-\frac{\delta}{2}} \sqrt{{S^2}_{(M_{p+1})}c_{kk}};\quad\hat{\theta}_k+t_{1-\frac{\delta}{2}} \sqrt{{S^2}_{(M_{p+1})}c_{kk}}\;\right]$$
+$$\begin{align} IC_{1-\delta}(\theta_k) = 
+&\left[\hat{\theta}_k-t_{1-\frac{\delta}{2}} \sqrt{{S^2}_{(M_{p+1})}c_{kk}}\right.;\\ &\;\left.\hat{\theta}_k+t_{1-\frac{\delta}{2}} \sqrt{{S^2}_{(M_{p+1})}c_{kk}}\;\right]\end{align}$$
 :::
 
 :::
@@ -1193,24 +1210,30 @@ $$IC_{1-\delta}(\theta_k) =
 
 
 :::{.callout-note title= "Test de Fisher de comparaison de $M_1$ contre $M_{p+1}$"}
-$$H_0\; :\; \text{modèle}\; M_1:Y_i=\beta+E_i,\quad E_i\; \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
+$$H_0\; :\; \text{modèle}\; M_1:$$
+$$Y_i=\beta+E_i,\quad E_i\; \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
 
 
-$$H_1\; :\; \text{modèle}\; M_{p+1}:Y_i= \beta +  \sum_{j=1}^p\alpha_j x_{j,i}+E_i,\; E_i\; \overset{i.i.d.}{\sim}
+$$H_1\; :\; \text{modèle}\; M_{p+1}:$$
+$$Y_i= \beta +  \sum_{j=1}^p\alpha_j x_{j,i}+E_i,\; E_i\; \overset{i.i.d.}{\sim}
 {\cal N}(0,\sigma^2)$$
 :::
 
 
 :::{.callout-tip title= "Test de Fisher de comparaison de $M_{q+1}$ contre $M_{p+1}$"}
 Pour $q<p$, on veut tester 
-$$H_0\; :\; \text{modèle}\; M_{q+1}:Y_i=\beta+ \sum_{j=1}^q\alpha_j x_{j,i}+E_i,\quad E_i\; \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
+$$H_0\; :\; \text{modèle}\; M_{q+1}:$$
+
+$$Y_i=\beta+ \sum_{j=1}^q\alpha_j x_{j,i}+E_i,\quad E_i\; \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
 
 
-$$H_1\; :\; \text{modèle}\; M_{p+1}:Y_i= \beta +  \sum_{j=1}^p\alpha_j x_{j,i}+E_i,\quad E_i\; \overset{i.i.d.}{\sim}
+$$H_1\; :\; \text{modèle}\; M_{p+1}:$$
+
+$$Y_i= \beta +  \sum_{j=1}^p\alpha_j x_{j,i}+E_i,\quad E_i\; \overset{i.i.d.}{\sim}
 {\cal N}(0,\sigma^2)$$
 
 
-$$\frac{\left(SCR(M_{q+1}) - SCR(M_{p+1})\right)\Bigl/(p-q)}{SCR(M_{p+1})\Bigl/~(n-p-1)} \sim_{H_0}^{}~\mathcal{F}(p-q\,,\,n-p-1)$$
+$$\begin{align}T_n &= \frac{\left(SCR(M_{q+1}) - SCR(M_{p+1})\right)\Bigl/(p-q)}{SCR(M_{p+1})\Bigl/~(n-p-1)}\\& \sim_{H_0}^{}~\mathcal{F}(p-q\,,\,n-p-1)\end{align}$$
 :::
 
 
@@ -1229,9 +1252,11 @@ $$ Y_i =\beta + \alpha x_i  + E_i,\quad  E_i \overset{i.i.d.}{\sim}\mathcal{N}(0
 
 L'estimateur de la variance résiduelle était : 
 
-$$
-S^2 = \frac{1}{n-2}\sum_{i=1}^n(Y_i-\widehat{Y_i})^2=\frac{1}{n-2}\sum_{i=1}^n(Y_i-Ax_i-B)^2= \frac{SCR(M_2)}{n-2},
-$$
+$$\begin{align}
+S^2 &= \frac{1}{n-2}\sum_{i=1}^n(Y_i-\widehat{Y_i})^2\\
+&=\frac{1}{n-2}\sum_{i=1}^n(Y_i-Ax_i-B)^2\\
+&= \frac{SCR(M_2)}{n-2},
+\end{align}$$
 
 où  $\widehat{Y_i}=Ax_i+B$, la prévision (aléatoire) par le modèle de régression linéaire associée à $x_i$.
 
@@ -1274,7 +1299,7 @@ $$SCT=SCM(M_{p+1})+SCR(M_{p+1})$$
 
 :::{.callout-note title="Définition : Prévision aléatoire par le modèle $M_{p+1}$"}
 
-$$\widehat{Y_i}=B+A_1x_{i,1}+\cdots+A_px_{i,p}=B+\sum_{j=1}^p A_jx_{i,j}$$ 
+$$\begin{align}\widehat{Y_i}&=B+A_1x_{i,1}+\cdots+A_px_{i,p}\\&=B+\sum_{j=1}^p A_jx_{i,j}\end{align}$$ 
 
 
 :::
@@ -1294,7 +1319,7 @@ $$E_i=Y_i-\widehat{Y_i}$$
 
 :::{.callout-note title="Définition : Somme des carrés résiduels"}
 
-$$SCR(M_{p+1})=\sum_{i=1}^n E_i^2=\sum_{i=1}^n\left(Y_i-(B+A_1x_{i,1}+\cdots+A_px_{i,p})\right)^2$$
+$$\begin{align}SCR(M_{p+1})&=\sum_{i=1}^n E_i^2 \\ &=\sum_{i=1}^n\left(Y_i-(B+A_1x_{i,1}+\cdots+A_px_{i,p})\right)^2\end{align}$$
 
 :::
 :::
@@ -1330,7 +1355,9 @@ Y_2-\widehat{Y_2}\\ \vdots \\ Y_n-\widehat{Y_n}\end{bmatrix}=Y-X\hat{\theta}$$
 
 :::{.callout-note title="Définition : Somme des carrés résiduels"}
 
-$$SCR(M_{p+1})=\sum_{i=1}^n E_i^2= ||E||^2=||Y-X\hat{\theta}||^2$$
+$$\begin{align}SCR(M_{p+1})&=\sum_{i=1}^n E_i^2 \\
+&= ||E||^2\\
+&=||Y-X\hat{\theta}||^2\end{align}$$
 
 :::
 
@@ -1346,8 +1373,10 @@ $$SCR(M_{p+1})=\sum_{i=1}^n E_i^2= ||E||^2=||Y-X\hat{\theta}||^2$$
 :::{.callout-note title="Définition : Estimateur de $\sigma^2$"}
 
 $$\begin{align}
-{S^2}_{(M_{p+1})}&=\frac{SCR(M_{p+1})}{n-(p+1)}=\frac{1}{n-p-1}\sum_{i=1}^n E_i^2\\ 
-{S^2}_{(M_{p+1})}&=\frac{1}{n-p-1}\sum_{i=1}^n\left(Y_i-(B+\sum_{j=1}^p A_jx_{i,j})\right)^2=\frac{||Y - X\,\hat{\theta}||^2}{n-p-1}
+{S^2}_{(M_{p+1})}&=\frac{SCR(M_{p+1})}{n-(p+1)}\\
+&=\frac{1}{n-p-1}\sum_{i=1}^n E_i^2\\ 
+{S^2}_{(M_{p+1})}&=\frac{1}{n-p-1}\sum_{i=1}^n\left(Y_i-(B+\sum_{j=1}^p A_jx_{i,j})\right)^2\\
+&=\frac{||Y - X\,\hat{\theta}||^2}{n-p-1}
 \end{align}$$
 
 :::
@@ -1358,7 +1387,7 @@ $$\begin{align}
 
 Réalisation $s^2$ de ${S^2}_{(M_{p+1})}$ sur les données
 
-$$s^2=\frac{1}{n-p-1}\sum_{i=1}^n e_i(M_{p+1})^2=\sum_{i=1}^n(y_i-(b+a_1x_{i,1}+\cdots+a_px_{i,p}))^2$$
+$$\begin{align}s^2&=\frac{1}{n-p-1}\sum_{i=1}^n e_i(M_{p+1})^2\\&=\sum_{i=1}^n(y_i-(b+a_1x_{i,1}+\cdots+a_px_{i,p}))^2\end{align}$$
 où $e_i(M_{p+1})$ sont les résidus observés dans le modèle $M_{p+1}$
 
 :::
@@ -1372,7 +1401,8 @@ où $e_i(M_{p+1})$ sont les résidus observés dans le modèle $M_{p+1}$
 :::{.callout-tip title="Théorème"}
 
 Sous les hypothèses du modèle linéaire gaussien, ${S^2}_{(M_{p+1})}$ est un estimateur sans biais de $\sigma^2$ et on a
-$$\frac{(n-p-1){S^2}_{(M_{p+1})}}{\sigma^2}=\frac{\sum_{i=1}^n(Y_i-B-\sum_{j=1}^pA_jx_{i,j})^2}{\sigma^2}\sim\chi^2(n-p-1)$$
+$$\begin{align}&\frac{(n-p-1){S^2}_{(M_{p+1})}}{\sigma^2}\\
+&=\frac{\sum_{i=1}^n(Y_i-B-\sum_{j=1}^pA_jx_{i,j})^2}{\sigma^2}\\&\sim\chi^2(n-p-1)\end{align}$$
 
 De plus ${S^2}_{(M_{p+1})}$ est indépendant de $\hat{\theta}$.
 
@@ -1385,8 +1415,12 @@ De plus ${S^2}_{(M_{p+1})}$ est indépendant de $\hat{\theta}$.
 :::{.callout-tip title="Théorème"}
 
 $\hat{\theta}$  est un vecteur gaussien d'espérance $\theta$ et de matrice de variance-covariance
-$$Var(\hat{\theta})=\sigma^2(X^t\,X)^{-1} \quad \mbox{estimée par} \quad
-S^2(\hat{\theta})={S^2}_{(M_{p+1})}(X^t\,X)^{-1}$$
+
+$$Var(\hat{\theta})=\sigma^2(X^t\,X)^{-1}$$
+
+estimée par
+
+$$S^2(\hat{\theta})={S^2}_{(M_{p+1})}(X^t\,X)^{-1}$$
 
 
 ::: {.fragment .fade-transparent}
@@ -1416,7 +1450,7 @@ $$\frac{(\widehat{\theta}_k-\theta_k)}{\sqrt{{S^2}_{(M_{p+1})}c_{kk}}}\sim \math
 
 ## Démonstrations
 
-::: {style="font-size: 1em;"}
+::: {style="font-size: 0.95em;"}
 
 On rappelle que 
 $$
@@ -1424,8 +1458,11 @@ $$
 $$
 
 $$
-E(\hat{\theta})=E((X^t\,X)^{-1} X^t Y)=(X^t\,X)^{-1} X^t E(Y)=(X^t\,X)^{-1} X^t X\theta=\theta
-$$
+\begin{align}E(\hat{\theta})&=E((X^t\,X)^{-1} X^t Y)\\
+&=(X^t\,X)^{-1} X^t E(Y)\\
+&=(X^t\,X)^{-1} X^t X\theta\\
+&=\theta
+\end{align}$$
 
 $$\begin{align}
 {\rm{Var}}(\hat{\theta})&={\rm{Var}}((X^t\,X)^{-1} X^t Y)\\
@@ -1466,8 +1503,8 @@ $$\frac{(\hat{\theta}_k-\theta_k)}{\sqrt{{S^2}_{(M_{p+1})}c_{kk}}}\sim \mathcal{
 À partir des lois de $\theta_k$ et $S^2_{(M_{p+1})}$, on obtient:
 
 
-$$IC_{1-\delta}(\theta_k) = \begin{align}
-\left[\hat{\theta}_k-t_{1-\frac{\delta}{2}} \sqrt{{S^2}_{(M_{p+1})}c_{kk}};\quad\hat{\theta}_k+t_{1-\frac{\delta}{2}} \sqrt{{S^2}_{(M_{p+1})}c_{kk}}\;\right]\\
+$$\begin{align}IC_{1-\delta}(\theta_k) = 
+&\left[\hat{\theta}_k-t_{1-\frac{\delta}{2}} \sqrt{{S^2}_{(M_{p+1})}c_{kk}}\right.;\\ &\left.\;\hat{\theta}_k+t_{1-\frac{\delta}{2}} \sqrt{{S^2}_{(M_{p+1})}c_{kk}}\;\right]\\
 \end{align}$$
 
 où $t_{1-\frac{\delta}{2}}$ est tel que $\mathbb{P}\left(\mid \mathcal{T}(n-p-1)\mid \leq t_{1-\frac{\delta}{2}}\right)=1-\delta$.
@@ -1557,7 +1594,8 @@ On compare avec $t_{1-\frac{\delta}{2}}$ et on conclut.
 :::{.callout-tip title="Calcul de la  $p$-valeur "}
 
 
-$$p_c=\mathbb{P}_{H_0}(\mid T_n\mid >\mid t_n\mid)=2(1-\mathbb{P}(T_n\leq |t_n|))$$ où $T_n\sim \mathcal{T}(n-p -1)$
+$$\begin{align}p_c&=\mathbb{P}_{H_0}(\mid T_n\mid >\mid t_n\mid)\\
+&=2(1-\mathbb{P}(T_n\leq |t_n|))\end{align}$$ où $T_n\sim \mathcal{T}(n-p -1)$
 
 :::
 
@@ -1599,9 +1637,13 @@ $H_1$ : au moins une des variables explicatives contribue à expliquer $Y$.
 [**Autre formulation :**]{.upc}  
 
 Test du modèle constant 
-$$H_0\ :\ \text{modèle}\ M_1:Y_i=\beta+E_i,\quad E_i\ \overset{i.i.d.}{\sim}\ {\cal N}(0,\sigma^2)$$ contre le modèle complet
+$$H_0\ :\ \text{modèle}\ M_1:$$
 
-$$H_1\ :\ \text{modèle}\ M_{p+1}:Y_i=\beta+\sum_{j=1}^p\alpha_j x_{i,j}+E_i,\quad E_i\ \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
+$$Y_i=\beta+E_i,\quad E_i\ \overset{i.i.d.}{\sim}\ {\cal N}(0,\sigma^2)$$ contre le modèle complet
+
+$$H_1\ :\ \text{modèle}\ M_{p+1}:$$
+
+$$Y_i=\beta+\sum_{j=1}^p\alpha_j x_{i,j}+E_i,\quad E_i\ \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
 
 :::
 
@@ -1690,7 +1732,11 @@ Pour mieux distinguer $M_1$ et $M_{p+1}$, nous allons les noter $\g{M_1}$ et $\o
 
 
 ::: {.callout-caution title="Remarques"}
-Dans le modèle $\g{M_1}$, $\beta$ est estimée par $\p{\bar{Y}}$ et  $\widehat{Y_i}(\g{M_{1}})=\p{\bar{Y}}$ donc  $$SCR(\g{M_1})=\sum_{i=1}^n(Y_i-\widehat{Y_i}(\g{M_{1}}))^2=\p{\sum_{i=1}^n(Y_i-\bar{Y})^2=SCT}$$
+Dans le modèle $\g{M_1}$, $\beta$ est estimée par $\p{\bar{Y}}$ et  $\widehat{Y_i}(\g{M_{1}})=\p{\bar{Y}}$ donc  
+
+$$\begin{align}SCR(\g{M_1})&=\sum_{i=1}^n(Y_i-\widehat{Y_i}(\g{M_{1}}))^2\\
+&=\p{\sum_{i=1}^n(Y_i-\bar{Y})^2}\\
+&=\p{SCT}\end{align}$$
 
 ::: {.fragment .fade-transparent}
 
@@ -1714,14 +1760,14 @@ On a donc $SCM(\o{M_{p+1}})=SCR(\g{M_1})-SCR(\o{M_{p+1}})$ : représente la réd
 
 :::{.callout-tip title="Statistique de test"}
 
-$$T_n=\frac{SCM(\o{M_{p+1}})/p}{SCR(\o{M_{p+1}})/(n-p-1)}\sim_{H_0} \mathcal{F}(p,n-p-1)$$
+$$\begin{align}T_n&=\frac{SCM(\o{M_{p+1}})/p}{SCR(\o{M_{p+1}})/(n-p-1)}\\&\sim_{H_0} \mathcal{F}(p,n-p-1)\end{align}$$
 
 ::: {.fragment .fade-transparent}
 
 
 qui s'écrit donc aussi
 
-$$T_n=\frac{(SCR(\g{M_1})-SCR(\o{M_{p+1}}))/p}{SCR(\o{M_{p+1}})/(n-p-1)}\sim_{H_0} \mathcal{F}(p,n-p-1)$$
+$$\begin{align}T_n&=\frac{(SCR(\g{M_1})-SCR(\o{M_{p+1}}))/p}{SCR(\o{M_{p+1}})/(n-p-1)}\\&\sim_{H_0} \mathcal{F}(p,n-p-1)\end{align}$$
 
 :::
 
@@ -1802,7 +1848,11 @@ Comme le test global $H_0$ : $M_1$ contre $H_1$ : $M_{p+1}$ est significatif, au
 
 - [**Autre formulation :**]{.upc}  
 
- $$H_0\ :\ \text{modèle}\ \o{M_{q+1}}\ :Y_i=\beta+\sum_{j=1}^{\o{q}}\alpha_j x_{i,j}+E_i,\quad E_i\overset{i.i.d.}{\sim}{\cal N}(0,\sigma^2)$$ contre l'alternative $$H_1\ :\ \text{modèle}\ \o{M_{p+1}}:Y_i=\beta+\sum_{j=1}^{\o{p}}\alpha_j x_{i,j}+E_i,\quad E_i\ \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
+ $$H_0\ :\ \text{modèle}\ \o{M_{q+1}}\ :$$
+ 
+ $$Y_i=\beta+\sum_{j=1}^{\o{q}}\alpha_j x_{i,j}+E_i,\quad E_i\overset{i.i.d.}{\sim}{\cal N}(0,\sigma^2)$$ contre l'alternative $$H_1\ :\ \text{modèle}\ \o{M_{p+1}}:$$
+ 
+ $$Y_i=\beta+\sum_{j=1}^{\o{p}}\alpha_j x_{i,j}+E_i,\quad E_i\ \overset{i.i.d.}{\sim} {\cal N}(0,\sigma^2)$$
 
 :::
 ::: {.fragment .fade-transparent}
@@ -1825,13 +1875,15 @@ Test de $H_0:\ \forall j=\g{q}+1,\cdots,\o{p},\ \alpha_j=0 \quad$ contre $\quad 
 
 Modèle à $\o{p}$ variables explicatives $\o{M_{p+1}}$
 
-$$ Y_i  =  \beta\ +\ \sum_{j=1}^{\o{p}}\alpha_j\,x_{i,j}+ E_i,\quad E_i\ \overset{i.i.d.}{\sim}\ {\cal N}(0,\sigma^2).$$
+$$ Y_i  =  \beta\ +\ \sum_{j=1}^{\o{p}}\alpha_j\,x_{i,j}+ E_i,$$
+$$E_i\ \overset{i.i.d.}{\sim}\ {\cal N}(0,\sigma^2).$$
   
 
 Sous la forme matricielle :
 
-$$(\o{M_{p+1}})\,:  Y  =  X^{(\o{p})}\theta^{(\o{p})}\ +\  E, \quad 
-E \sim {\cal N}(0, \sigma^2 I_n) $$
+$$(\o{M_{p+1}})\,:  Y  =  X^{(\o{p})}\theta^{(\o{p})}\ +\  E,$$
+
+$$E \sim {\cal N}(0, \sigma^2 I_n) $$
  
  avec
  
@@ -1841,7 +1893,11 @@ X^{(\o{p})} = \begin{bmatrix}
 1 & x_{2,1} & \ldots & x_{2,\o{p}}\\
 \vdots & \vdots & & \vdots \\
 1 & x_{n,1} & \ldots & x_{n,\o{p}}
-\end{bmatrix} \mbox{ et } \theta^{(\o{p})}=[\beta,\alpha_1,\cdots,\alpha_\o{p}]^t$$
+\end{bmatrix} $$
+
+et 
+
+$$\theta^{(\o{p})}=[\beta,\alpha_1,\cdots,\alpha_\o{p}]^t$$
 
 :::
 
@@ -1851,13 +1907,16 @@ X^{(\o{p})} = \begin{bmatrix}
 
 Modèle à $\g{q}$ variables explicatives $\g{M_{q+1}}$
 
-$$ Y_i  =  \beta\ +\ \sum_{j=1}^{\g{q}}\alpha_j\,x_{i,j}+ E_i,\quad E_i\ \overset{i.i.d.}{\sim}\ {\cal N}(0,\sigma^2).$$
+$$ Y_i  =  \beta\ +\ \sum_{j=1}^{\g{q}}\alpha_j\,x_{i,j}+ E_i$$
+
+$$E_i\ \overset{i.i.d.}{\sim}\ {\cal N}(0,\sigma^2).$$
   
 
 Sous la forme matricielle :
 
-$$(\g{M_{q+1}})\,:  Y  =  X^{(\g{q})}\theta^{(\g{q})}\ +\  E, \quad 
-E \sim {\cal N}(0, \sigma^2 I_n) $$
+$$(\g{M_{q+1}})\,:  Y  =  X^{(\g{q})}\theta^{(\g{q})}\ +\  E$$
+
+$$E \sim {\cal N}(0, \sigma^2 I_n) $$
  
  avec
  
@@ -1867,7 +1926,7 @@ X^{(\g{q})} = \begin{bmatrix}
 1 & x_{2,1} & \ldots & x_{2,\g{q}}\\
 \vdots & \vdots & & \vdots \\
 1 & x_{n,1} & \ldots & x_{n,\g{q}}
-\end{bmatrix} \mbox{ et } \theta^{(\g{q})}=[\beta,\alpha_1,\cdots,\alpha_\g{q}]^t$$
+\end{bmatrix} $$ et $$\theta^{(\g{q})}=[\beta,\alpha_1,\cdots,\alpha_\g{q}]^t$$
 
 ::: {.fragment}
 

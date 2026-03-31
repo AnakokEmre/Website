@@ -1939,10 +1939,12 @@ Le modèle à $\g{q}$ variables explicatives $\g{M_{q+1}}$ est [**emboîté**]{.
 
 [**Paramètres d'espérances**]{.upc}
 
-$$\begin{array}{ccc}
-\hat{\theta}^{(\o{p})} &=& (B^{(\o{p})},A_1^{(\o{p})},\dots,A_{\o{p}}^{(\o{p})})^t = \left((X^{(\o{p})})^t\,X^{(\o{p})}\right)^{-1}\,\!(X^{(\o{p})})^t\,Y\\
-\hat{\theta}^{(\g{q})}  & = & (B^{(\g{q})},A_1^{(\g{q})},\dots,A_{\g{q}}^{(\g{q})})^t=\left((X^{(\g{q})})^t\,X^{(\g{q})}\right)^{-1}\,\!(X^{(\g{q})})^t\,Y\ 
-\end{array}$$
+$$\begin{align}
+\hat{\theta}^{(\o{p})} &= (B^{(\o{p})},A_1^{(\o{p})},\dots,A_{\o{p}}^{(\o{p})})^t\\
+&= \left((X^{(\o{p})})^t\,X^{(\o{p})}\right)^{-1}\,\!(X^{(\o{p})})^t\,Y\\
+\hat{\theta}^{(\g{q})}  & =  (B^{(\g{q})},A_1^{(\g{q})},\dots,A_{\g{q}}^{(\g{q})})^t\\
+&=\left((X^{(\g{q})})^t\,X^{(\g{q})}\right)^{-1}\,\!(X^{(\g{q})})^t\,Y\ 
+\end{align}$$
 
 ::: {.callout-caution title="Remarques"}
 
@@ -1970,8 +1972,10 @@ $$\begin{align}\widehat{Y_i}(\o{M_{p+1}})&=B^{(\o{p})}+\sum_{j=1}^{\o{p}} A^{(\o
 
 ::: {.callout-note title="Résidu dans $M_{p+1}$ et dans $M_{q+1}$"}
 
-$$\begin{align}E_i(\o{M_{p+1}})&=Y_i-\widehat{Y_i}(\o{M_{p+1}})=Y_i-(B^{(\o{p})}+\sum_{j=1}^{\o{p}} A^{(\o{p})}_jx_{i,j})\\
-E_i(\g{M_{q+1}})&=Y_i-\widehat{Y_i}(\g{M_{q+1}})=Y_i-(B^{(\g{q})}+\sum_{j=1}^{\g{q}} A^{(\g{q})}_jx_{i,j})
+$$\begin{align}E_i(\o{M_{p+1}})&=Y_i-\widehat{Y_i}(\o{M_{p+1}})\\
+&=Y_i-(B^{(\o{p})}+\sum_{j=1}^{\o{p}} A^{(\o{p})}_jx_{i,j})\\
+E_i(\g{M_{q+1}})&=Y_i-\widehat{Y_i}(\g{M_{q+1}})\\
+&=Y_i-(B^{(\g{q})}+\sum_{j=1}^{\g{q}} A^{(\g{q})}_jx_{i,j})
 \end{align}$$
 
 :::
@@ -1982,13 +1986,17 @@ E_i(\g{M_{q+1}})&=Y_i-\widehat{Y_i}(\g{M_{q+1}})=Y_i-(B^{(\g{q})}+\sum_{j=1}^{\g
 
 ## SCR dans $M_{p+1}$ et dans $M_{q+1}$
 
-::: {style="font-size: 1em;"}
 
 ::: {.callout-note title="SCR dans $M_{p+1}$ et dans $M_{q+1}$"}
+
+::: {style="font-size: 1em;"}
+
 
 $$SCR(\o{M_{p+1}}) = \sum_{i=1}^{n}\left(Y_i-B^{(\o{p})}-\sum_{j=1}^{p}A^{(\o{p})}_j\,x_{i,j}\right)^2\ =\ ||Y - X^{(\o{p})}\hat{\theta}^{(\o{p})}||^2$$ 
 
 $$SCR(\g{M_{q+1}}) = \sum_{i=1}^{n}\left(Y_i-B^{(\g{q})}-\sum_{j=1}^{\g{q}}A^{(\g{q})}_j\,x_{i,j}\right)^2\ =\ ||Y - X^{(\g{q})}\hat{\theta}^{(\g{q})}||^2$$
+
+:::
 
 :::
 
@@ -2005,7 +2013,6 @@ $$S^2_{(\g{M_{q+1}})}=\frac{SCR(\g{M_{q+1}})}{n\g{-q-1}}$$
 :::
 
 
-:::
 
 ## Résultat important
 

@@ -2117,7 +2117,7 @@ $$\begin{align}p_c&=\mathbb{P}_{H_0}(T_n > t_n)\\&=\mathbb{P}(\mathcal{F}(p-q,n-
 
 Avec R, commande `anova`
 
-::: {style="font-size: 0.35em;"}
+::: {.scroll-container style="overflow-y: scroll;"}
 
 $$\begin{array}{|c|c|c|c|c|c|c|}
 \hline Source & ddl & SCR& ddl & SCE\quad expliquée& Statistique & p-value\\ 

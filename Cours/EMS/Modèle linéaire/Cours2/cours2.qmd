@@ -2003,12 +2003,12 @@ E_i(\g{M_{q+1}})&=Y_i-\widehat{Y_i}(\g{M_{q+1}})\\
 
 ::: {.callout-note title="SCR dans $M_{p+1}$ et dans $M_{q+1}$"}
 
-::: {style="font-size: 1em;"}
+::: {style="font-size: 0.9em;"}
 
 
-$$SCR(\o{M_{p+1}}) = \sum_{i=1}^{n}\left(Y_i-B^{(\o{p})}-\sum_{j=1}^{p}A^{(\o{p})}_j\,x_{i,j}\right)^2\ =\ ||Y - X^{(\o{p})}\hat{\theta}^{(\o{p})}||^2$$ 
+$$\begin{align}SCR(\o{M_{p+1}}) &= \sum_{i=1}^{n}\left(Y_i-B^{(\o{p})}-\sum_{j=1}^{p}A^{(\o{p})}_j\,x_{i,j}\right)^2\\ &=\ ||Y - X^{(\o{p})}\hat{\theta}^{(\o{p})}||^2\end{align}$$ 
 
-$$SCR(\g{M_{q+1}}) = \sum_{i=1}^{n}\left(Y_i-B^{(\g{q})}-\sum_{j=1}^{\g{q}}A^{(\g{q})}_j\,x_{i,j}\right)^2\ =\ ||Y - X^{(\g{q})}\hat{\theta}^{(\g{q})}||^2$$
+$$\begin{align}SCR(\g{M_{q+1}})& = \sum_{i=1}^{n}\left(Y_i-B^{(\g{q})}-\sum_{j=1}^{\g{q}}A^{(\g{q})}_j\,x_{i,j}\right)^2\\& =\ ||Y - X^{(\g{q})}\hat{\theta}^{(\g{q})}||^2\end{align}$$
 
 :::
 

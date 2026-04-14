@@ -3683,5 +3683,617 @@
       "Modèles linéaires",
       "Modèle linéaire multiple"
     ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html",
+    "href": "Cours/Dictionnaire Rmarkdown.html",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "",
+    "text": "On peut insérer une cellule de code R à l’aide de Ctrl + Alt + I (Cmd + Option + I pour macOS).\n\nx&lt;- c(1,2,3,4,5,6)\nprint(mean(x))\n\n[1] 3.5",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#x",
+    "href": "Cours/Dictionnaire Rmarkdown.html#x",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(x\\)",
+    "text": "\\(x\\)\n$x$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#x-1",
+    "href": "Cours/Dictionnaire Rmarkdown.html#x-1",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(X\\)",
+    "text": "\\(X\\)\n$X$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#a_b",
+    "href": "Cours/Dictionnaire Rmarkdown.html#a_b",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(A_b\\)",
+    "text": "\\(A_b\\)\n$A_b$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#ab",
+    "href": "Cours/Dictionnaire Rmarkdown.html#ab",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(A^b\\)",
+    "text": "\\(A^b\\)\n$A^b$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#ab-1",
+    "href": "Cours/Dictionnaire Rmarkdown.html#ab-1",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(A+B\\)",
+    "text": "\\(A+B\\)\n$A+B$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#a-b",
+    "href": "Cours/Dictionnaire Rmarkdown.html#a-b",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(A-B\\)",
+    "text": "\\(A-B\\)\n$A-B$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#atimes-b",
+    "href": "Cours/Dictionnaire Rmarkdown.html#atimes-b",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(A\\times B\\)",
+    "text": "\\(A\\times B\\)\n$A\\times B$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#fracab",
+    "href": "Cours/Dictionnaire Rmarkdown.html#fracab",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\frac{A}{B}\\)",
+    "text": "\\(\\frac{A}{B}\\)\n$\\frac{A}{B}$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#x_i",
+    "href": "Cours/Dictionnaire Rmarkdown.html#x_i",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(X_i\\)",
+    "text": "\\(X_i\\)\n$X_i$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#x_1dotsx_n",
+    "href": "Cours/Dictionnaire Rmarkdown.html#x_1dotsx_n",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\((x_1,\\dots,x_n)\\)",
+    "text": "\\((x_1,\\dots,x_n)\\)\n$(x_1,\\dots,x_n)$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#x_1dotsx_n-1",
+    "href": "Cours/Dictionnaire Rmarkdown.html#x_1dotsx_n-1",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\((X_1,\\dots,X_n)\\)",
+    "text": "\\((X_1,\\dots,X_n)\\)\n$(X_1,\\dots,X_n)$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#alpha",
+    "href": "Cours/Dictionnaire Rmarkdown.html#alpha",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\alpha\\)",
+    "text": "\\(\\alpha\\)\n$\\alpha$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#beta",
+    "href": "Cours/Dictionnaire Rmarkdown.html#beta",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\beta\\)",
+    "text": "\\(\\beta\\)\n$\\beta$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#mu",
+    "href": "Cours/Dictionnaire Rmarkdown.html#mu",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\mu\\)",
+    "text": "\\(\\mu\\)\n$\\mu$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#mu-mathbbex",
+    "href": "Cours/Dictionnaire Rmarkdown.html#mu-mathbbex",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\mu = \\mathbb{E}[X]\\)",
+    "text": "\\(\\mu = \\mathbb{E}[X]\\)\n$\\mu = \\mathbb{E}[X]$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#sigma",
+    "href": "Cours/Dictionnaire Rmarkdown.html#sigma",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\sigma\\)",
+    "text": "\\(\\sigma\\)\n$\\sigma$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#sigma2",
+    "href": "Cours/Dictionnaire Rmarkdown.html#sigma2",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\sigma^2\\)",
+    "text": "\\(\\sigma^2\\)\n$\\sigma^2$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#sigma2-mathbbvx",
+    "href": "Cours/Dictionnaire Rmarkdown.html#sigma2-mathbbvx",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\sigma^2 = \\mathbb{V}[X]\\)",
+    "text": "\\(\\sigma^2 = \\mathbb{V}[X]\\)\n$\\sigma^2 = \\mathbb{V}[X]$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#x-sim-mathcalnmusigma2",
+    "href": "Cours/Dictionnaire Rmarkdown.html#x-sim-mathcalnmusigma2",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(X \\sim \\mathcal{N}(\\mu,\\sigma^2)\\)",
+    "text": "\\(X \\sim \\mathcal{N}(\\mu,\\sigma^2)\\)\n$X \\sim \\mathcal{N}(\\mu,\\sigma^2)$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#barx_n",
+    "href": "Cours/Dictionnaire Rmarkdown.html#barx_n",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\bar{X}_n\\)",
+    "text": "\\(\\bar{X}_n\\)\n$\\bar{X}_n$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#sum_i1n-x_i",
+    "href": "Cours/Dictionnaire Rmarkdown.html#sum_i1n-x_i",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\sum_{i=1}^n X_i\\)",
+    "text": "\\(\\sum_{i=1}^n X_i\\)\n$\\sum_{i=1}^n X_i$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#barx_n-frac1nsum_i1n-x_i",
+    "href": "Cours/Dictionnaire Rmarkdown.html#barx_n-frac1nsum_i1n-x_i",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\bar{X}_n = \\frac{1}{n}\\sum_{i=1}^n X_i\\)",
+    "text": "\\(\\bar{X}_n = \\frac{1}{n}\\sum_{i=1}^n X_i\\)\n$\\bar{X}_n = \\frac{1}{n}\\sum_{i=1}^n X_i$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#s2-frac1n-1-sum_i1n-x_i-barx_n2",
+    "href": "Cours/Dictionnaire Rmarkdown.html#s2-frac1n-1-sum_i1n-x_i-barx_n2",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(S^2 = \\frac{1}{n-1} \\sum_{i=1}^n (X_i-\\bar{X}_n)^2\\)",
+    "text": "\\(S^2 = \\frac{1}{n-1} \\sum_{i=1}^n (X_i-\\bar{X}_n)^2\\)\n$S^2 = \\frac{1}{n-1} \\sum_{i=1}^n (X_i-\\bar{X}_n)^2$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#h_0",
+    "href": "Cours/Dictionnaire Rmarkdown.html#h_0",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(H_0\\)",
+    "text": "\\(H_0\\)\n$H_0$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#h_1",
+    "href": "Cours/Dictionnaire Rmarkdown.html#h_1",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(H_1\\)",
+    "text": "\\(H_1\\)\n$H_1$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#mumu_0",
+    "href": "Cours/Dictionnaire Rmarkdown.html#mumu_0",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\mu=\\mu_0\\)",
+    "text": "\\(\\mu=\\mu_0\\)\n$\\mu=\\mu_0$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#mumu_0-1",
+    "href": "Cours/Dictionnaire Rmarkdown.html#mumu_0-1",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\mu>\\mu_0\\)",
+    "text": "\\(\\mu&gt;\\mu_0\\)\n$\\mu&gt;\\mu_0$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#mugeqmu_0",
+    "href": "Cours/Dictionnaire Rmarkdown.html#mugeqmu_0",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\mu\\geq\\mu_0\\)",
+    "text": "\\(\\mu\\geq\\mu_0\\)\n$\\mu\\geq\\mu_0$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#mumu_0-2",
+    "href": "Cours/Dictionnaire Rmarkdown.html#mumu_0-2",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\mu<\\mu_0\\)",
+    "text": "\\(\\mu&lt;\\mu_0\\)\n$\\mu&lt;\\mu_0$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#muleqmu_0",
+    "href": "Cours/Dictionnaire Rmarkdown.html#muleqmu_0",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\mu\\leq\\mu_0\\)",
+    "text": "\\(\\mu\\leq\\mu_0\\)\n$\\mu\\leq\\mu_0$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#muneqmu_0",
+    "href": "Cours/Dictionnaire Rmarkdown.html#muneqmu_0",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\mu\\neq\\mu_0\\)",
+    "text": "\\(\\mu\\neq\\mu_0\\)\n$\\mu\\neq\\mu_0$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#alpha-0.05",
+    "href": "Cours/Dictionnaire Rmarkdown.html#alpha-0.05",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\alpha = 0.05\\%\\)",
+    "text": "\\(\\alpha = 0.05\\%\\)\n$\\alpha = 0.05\\%$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#mathbbpa",
+    "href": "Cours/Dictionnaire Rmarkdown.html#mathbbpa",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\mathbb{P}(A)\\)",
+    "text": "\\(\\mathbb{P}(A)\\)\n$\\mathbb{P}(A)$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#mathbbpmu-in-ic",
+    "href": "Cours/Dictionnaire Rmarkdown.html#mathbbpmu-in-ic",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\mathbb{P}(\\mu \\in IC)\\)",
+    "text": "\\(\\mathbb{P}(\\mu \\in IC)\\)\n$\\mathbb{P}(\\mu \\in IC)$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#sqrtn",
+    "href": "Cours/Dictionnaire Rmarkdown.html#sqrtn",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\sqrt{n}\\)",
+    "text": "\\(\\sqrt{n}\\)\n$\\sqrt{n}$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#sqrtnfracbarx_n-mus-sim-mathcaln01",
+    "href": "Cours/Dictionnaire Rmarkdown.html#sqrtnfracbarx_n-mus-sim-mathcaln01",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\sqrt{n}\\frac{(\\bar{X}_n-\\mu)}{S} \\sim \\mathcal{N}(0,1)\\)",
+    "text": "\\(\\sqrt{n}\\frac{(\\bar{X}_n-\\mu)}{S} \\sim \\mathcal{N}(0,1)\\)\n$\\sqrt{n}\\frac{(\\bar{X}_n-\\mu)}{S} \\sim \\mathcal{N}(0,1)$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#sqrtnfracbarx_n-mus-sim-tn-1",
+    "href": "Cours/Dictionnaire Rmarkdown.html#sqrtnfracbarx_n-mus-sim-tn-1",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\sqrt{n}\\frac{(\\bar{X}_n-\\mu)}{S} \\sim T(n-1)\\)",
+    "text": "\\(\\sqrt{n}\\frac{(\\bar{X}_n-\\mu)}{S} \\sim T(n-1)\\)\n$\\sqrt{n}\\frac{(\\bar{X}_n-\\mu)}{S} \\sim T(n-1)$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#mathbbpsqrtnfracbarx_n-mus-leq-q_1-alpha-1-alpha",
+    "href": "Cours/Dictionnaire Rmarkdown.html#mathbbpsqrtnfracbarx_n-mus-leq-q_1-alpha-1-alpha",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\mathbb{P}(\\sqrt{n}\\frac{(\\bar{X}_n-\\mu)}{S} \\leq q_{1-\\alpha} )= 1-\\alpha\\)",
+    "text": "\\(\\mathbb{P}(\\sqrt{n}\\frac{(\\bar{X}_n-\\mu)}{S} \\leq q_{1-\\alpha} )= 1-\\alpha\\)\n$\\mathbb{P}(\\sqrt{n}\\frac{(\\bar{X}_n-\\mu)}{S} \\leq q_{1-\\alpha} )= 1-\\alpha$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#mathbbpq_1-alpha2-leq-sqrtnfracbarx_n-mus-leq-q_1-alpha2-1-alpha",
+    "href": "Cours/Dictionnaire Rmarkdown.html#mathbbpq_1-alpha2-leq-sqrtnfracbarx_n-mus-leq-q_1-alpha2-1-alpha",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\mathbb{P}(q_{1-\\alpha/2} \\leq \\sqrt{n}\\frac{(\\bar{X}_n-\\mu)}{S} \\leq q_{1-\\alpha/2} )= 1-\\alpha\\)",
+    "text": "\\(\\mathbb{P}(q_{1-\\alpha/2} \\leq \\sqrt{n}\\frac{(\\bar{X}_n-\\mu)}{S} \\leq q_{1-\\alpha/2} )= 1-\\alpha\\)\n$\\mathbb{P}(q_{1-\\frac{\\alpha}{2}} \\leq \\sqrt{n}\\frac{(\\bar{X}_n-\\mu)}{S} \\leq q_{1-\\frac{\\alpha}{2}} )= 1-\\alpha$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#ic_alphamu-barx_n-fracssqrtn-q_1-fracalpha2-barx_nfracssqrtn-q_1-fracalpha2",
+    "href": "Cours/Dictionnaire Rmarkdown.html#ic_alphamu-barx_n-fracssqrtn-q_1-fracalpha2-barx_nfracssqrtn-q_1-fracalpha2",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(IC_{\\alpha}(\\mu) = [\\bar{X}_n-\\frac{S}{\\sqrt{n}} q_{1-\\frac{\\alpha}{2}} ,\\bar{X}_n+\\frac{S}{\\sqrt{n}} q_{1-\\frac{\\alpha}{2}}]\\)",
+    "text": "\\(IC_{\\alpha}(\\mu) = [\\bar{X}_n-\\frac{S}{\\sqrt{n}} q_{1-\\frac{\\alpha}{2}} ,\\bar{X}_n+\\frac{S}{\\sqrt{n}} q_{1-\\frac{\\alpha}{2}}]\\)\n$IC_{\\alpha}(\\mu) = [\\bar{X}_n-\\frac{S}{\\sqrt{n}} q_{1-\\frac{\\alpha}{2} ,\\bar{X}_n+\\frac{S}{\\sqrt{n}} q_{1-\\frac{\\alpha}{2}]$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#barx_n-fracssqrtn-q_1-fracalpha2-barx_nfracssqrtn-q_1-fracalpha273.3775.47",
+    "href": "Cours/Dictionnaire Rmarkdown.html#barx_n-fracssqrtn-q_1-fracalpha2-barx_nfracssqrtn-q_1-fracalpha273.3775.47",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\([\\bar{x}_n-\\frac{s}{\\sqrt{n}} q_{1-\\frac{\\alpha}{2}} ,\\bar{x}_n+\\frac{s}{\\sqrt{n}} q_{1-\\frac{\\alpha}{2}}]=[73.37;75.47]\\)",
+    "text": "\\([\\bar{x}_n-\\frac{s}{\\sqrt{n}} q_{1-\\frac{\\alpha}{2}} ,\\bar{x}_n+\\frac{s}{\\sqrt{n}} q_{1-\\frac{\\alpha}{2}}]=[73.37;75.47]\\)\n$[\\bar{x}_n-\\frac{s}{\\sqrt{n}} q_{1-\\frac{\\alpha}{2}} ,\\bar{x}_n+\\frac{s}{\\sqrt{n}} q_{1-\\frac{\\alpha}{2}}]=[73.37;75.47]$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#p_cmathbbp_h_0t_nt_n",
+    "href": "Cours/Dictionnaire Rmarkdown.html#p_cmathbbp_h_0t_nt_n",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(p_c=\\mathbb{P}_{H_0}(|T_n|>|t_n|)\\)",
+    "text": "\\(p_c=\\mathbb{P}_{H_0}(|T_n|&gt;|t_n|)\\)\n$p_c=\\mathbb{P}_{H_0}(|T_n|&gt;|t_n|)$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#e_i-overseti.i.d.sim-mathcaln0sigma2",
+    "href": "Cours/Dictionnaire Rmarkdown.html#e_i-overseti.i.d.sim-mathcaln0sigma2",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(E_i \\overset{i.i.d.}\\sim \\mathcal{N}(0,\\sigma^2)\\)",
+    "text": "\\(E_i \\overset{i.i.d.}\\sim \\mathcal{N}(0,\\sigma^2)\\)\n$E_i \\overset{i.i.d.}\\sim \\mathcal{N}(0,\\sigma^2)$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#y_i-beta-sum_j1palpha_j-x_ij-e_i-quad-e_ioverseti.i.d.simcal-n0sigma2",
+    "href": "Cours/Dictionnaire Rmarkdown.html#y_i-beta-sum_j1palpha_j-x_ij-e_i-quad-e_ioverseti.i.d.simcal-n0sigma2",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(Y_i = \\beta + \\sum_{j=1}^p\\alpha_j x_{i,j}    + E_i, \\quad E_i\\overset{i.i.d.}\\sim{\\cal N}(0,\\sigma^2)\\)",
+    "text": "\\(Y_i = \\beta + \\sum_{j=1}^p\\alpha_j x_{i,j}    + E_i, \\quad E_i\\overset{i.i.d.}\\sim{\\cal N}(0,\\sigma^2)\\)\n$Y_i = \\beta + \\sum_{j=1}^p\\alpha_j x_{i,j}    + E_i, \\quad E_i\\overset{i.i.d.}\\sim{\\cal N}(0,\\sigma^2)$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#yxthetae",
+    "href": "Cours/Dictionnaire Rmarkdown.html#yxthetae",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(Y=X\\theta+E\\)",
+    "text": "\\(Y=X\\theta+E\\)\n$Y=X\\theta+E$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#y-beginbmatrix-y_1-y_2-vdots-y_nendbmatrix",
+    "href": "Cours/Dictionnaire Rmarkdown.html#y-beginbmatrix-y_1-y_2-vdots-y_nendbmatrix",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(Y =\\begin{bmatrix} Y_1\\\\ Y_2\\\\ \\vdots \\\\ Y_n\\end{bmatrix}\\)",
+    "text": "\\(Y =\\begin{bmatrix} Y_1\\\\ Y_2\\\\ \\vdots \\\\ Y_n\\end{bmatrix}\\)\n$Y =\\begin{bmatrix} \n    Y_1   \\\\\n    Y_2   \\\\\n    \\vdots\\\\\n    Y_n\n    \\end{bmatrix}$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#x-beginbmatrix1-x_11-ldots-x_p-11-x_1-2-ldots-x_p-2vdots-vdots-vdots-1-x_1-n-ldots-x_p-nendbmatrix",
+    "href": "Cours/Dictionnaire Rmarkdown.html#x-beginbmatrix1-x_11-ldots-x_p-11-x_1-2-ldots-x_p-2vdots-vdots-vdots-1-x_1-n-ldots-x_p-nendbmatrix",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(X = \\begin{bmatrix}1 & x_{1,1} & \\ldots & x_{p, 1}\\\\1 & x_{1, 2} & \\ldots & x_{p, 2}\\\\\\vdots & \\vdots & & \\vdots \\\\1 & x_{1, n} & \\ldots & x_{p, n}\\end{bmatrix}\\)",
+    "text": "\\(X = \\begin{bmatrix}1 & x_{1,1} & \\ldots & x_{p, 1}\\\\1 & x_{1, 2} & \\ldots & x_{p, 2}\\\\\\vdots & \\vdots & & \\vdots \\\\1 & x_{1, n} & \\ldots & x_{p, n}\\end{bmatrix}\\)\n$X = \\begin{bmatrix}\n1      & x_{1,1}  & \\ldots & x_{p, 1}\\\\\n1      & x_{1, 2} & \\ldots & x_{p, 2}\\\\\n\\vdots & \\vdots   &        & \\vdots  \\\\\n1      & x_{1, n} & \\ldots & x_{p, n}\n\\end{bmatrix}$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#theta-beginbmatrix-beta-alpha_1alpha_2-vdots-alpha_pendbmatrix",
+    "href": "Cours/Dictionnaire Rmarkdown.html#theta-beginbmatrix-beta-alpha_1alpha_2-vdots-alpha_pendbmatrix",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\theta = \\begin{bmatrix} \\beta\\\\ \\alpha_1\\\\\\alpha_2\\\\ \\vdots \\\\ \\alpha_{p}\\end{bmatrix}\\)",
+    "text": "\\(\\theta = \\begin{bmatrix} \\beta\\\\ \\alpha_1\\\\\\alpha_2\\\\ \\vdots \\\\ \\alpha_{p}\\end{bmatrix}\\)\n$\\theta = \\begin{bmatrix} \n          \\beta   \\\\\n          \\alpha_1\\\\\n          \\alpha_2\\\\\n          \\vdots  \\\\\n          \\alpha_{p}\n          \\end{bmatrix}$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#e-beginbmatrixe_1e_2-vdots-e_nendbmatrix",
+    "href": "Cours/Dictionnaire Rmarkdown.html#e-beginbmatrixe_1e_2-vdots-e_nendbmatrix",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(E = \\begin{bmatrix}E_1\\\\E_2\\\\ \\vdots \\\\ E_n\\end{bmatrix}\\)",
+    "text": "\\(E = \\begin{bmatrix}E_1\\\\E_2\\\\ \\vdots \\\\ E_n\\end{bmatrix}\\)\n$E = \\begin{bmatrix}\n      E_1    \\\\\n      E_2    \\\\\n      \\vdots \\\\\n      E_n\n      \\end{bmatrix}$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#e-sim-mathcalnleftvec0_nsigma2-i_nright",
+    "href": "Cours/Dictionnaire Rmarkdown.html#e-sim-mathcalnleftvec0_nsigma2-i_nright",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(E \\sim \\mathcal{N}\\left(\\vec{0}_n,\\,\\sigma^2 I_n\\right)\\)",
+    "text": "\\(E \\sim \\mathcal{N}\\left(\\vec{0}_n,\\,\\sigma^2 I_n\\right)\\)\n $E \\sim \\mathcal{N}\\left(\\vec{0}_n,\\,\\sigma^2 I_n\\right)$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
   }
 ]

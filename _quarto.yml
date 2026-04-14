@@ -23,6 +23,11 @@ website:
         contents:
           - text: "Cours"
             href: Cours.qmd
+            
+          - section: Rmarkdown
+            contents: 
+             - Cours/Dictionnaire Rmarkdown.qmd
+            
           - section: Modèles linéaires
             contents:
             - Cours/EMS/Modèle linéaire/Cours1/cours1.qmd

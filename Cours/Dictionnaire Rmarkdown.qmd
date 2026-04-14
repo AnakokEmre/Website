@@ -1,0 +1,332 @@
+
+---
+title: "Dictionnaire Rmarkdown"
+#format:
+#  pdf:
+#    toc: true
+    
+format:
+  html:
+    toc: true
+    toc_float: 
+      collapsed: false
+    embed-resources: true
+    highlight-style: github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+# Écrire du code R 
+
+On peut insérer une cellule de code R à l'aide de `Ctrl + Alt + I` (`Cmd + Option + I` pour macOS).
+
+
+```{r}
+x<- c(1,2,3,4,5,6)
+print(mean(x))
+```
+
+
+
+# Écrire des mathématiques avec Rmarkdown
+
+On peut écrire des symboles mathématiques à l'aide du symbole `$`. **Une expression mathématique doit commencer et terminer par `$`**. Par exemple `$\alpha = 0.05\%$` devient $\alpha = 0.05\%$. Dans la suite de ce dictionnaire se trouve des commandes usuelles pour répondre aux TD et TP.
+
+
+# Mathématiques générales 
+
+## $x$
+```latex
+$x$
+```
+
+## $X$
+```latex
+$X$
+```
+
+## $A_b$
+
+```latex
+$A_b$
+```
+
+## $A^b$
+```latex
+$A^b$
+```
+
+## $A+B$
+```latex
+$A+B$
+```
+
+## $A-B$
+```latex
+$A-B$
+```
+
+## $A\times B$
+```latex
+$A\times B$
+```
+
+
+## $\frac{A}{B}$
+
+```latex
+$\frac{A}{B}$
+```
+
+## $X_i$
+
+```latex
+$X_i$
+```
+
+## $(x_1,\dots,x_n)$
+```latex
+$(x_1,\dots,x_n)$
+```
+
+## $(X_1,\dots,X_n)$
+```latex 
+$(X_1,\dots,X_n)$
+```
+# Théorie des tests
+
+## $\alpha$
+```latex
+$\alpha$
+```
+
+## $\beta$
+```latex
+$\beta$
+```
+
+## $\mu$
+
+```latex 
+$\mu$
+```
+
+## $\mu = \mathbb{E}[X]$
+```latex 
+$\mu = \mathbb{E}[X]$
+```
+
+## $\sigma$
+```latex 
+$\sigma$
+```
+
+## $\sigma^2$
+```latex
+$\sigma^2$
+```
+
+## $\sigma^2 = \mathbb{V}[X]$
+```latex
+$\sigma^2 = \mathbb{V}[X]$
+```
+
+
+## $X \sim \mathcal{N}(\mu,\sigma^2)$
+```latex
+$X \sim \mathcal{N}(\mu,\sigma^2)$
+```
+
+## $\bar{X}_n$
+
+```latex 
+$\bar{X}_n$
+```
+
+## $\sum_{i=1}^n X_i$
+
+```latex 
+$\sum_{i=1}^n X_i$
+```
+
+## $\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i$
+```latex 
+$\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i$
+```
+
+## $S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i-\bar{X}_n)^2$
+```latex 
+$S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i-\bar{X}_n)^2$
+```
+
+## $H_0$
+```latex 
+$H_0$
+```
+
+## $H_1$
+```latex 
+$H_1$
+```
+
+## $\mu=\mu_0$
+```latex 
+$\mu=\mu_0$
+```
+
+## $\mu>\mu_0$
+```latex 
+$\mu>\mu_0$
+```
+
+## $\mu\geq\mu_0$
+```latex 
+$\mu\geq\mu_0$
+```
+
+## $\mu<\mu_0$
+```latex 
+$\mu<\mu_0$
+```
+
+
+## $\mu\leq\mu_0$
+```latex 
+$\mu\leq\mu_0$
+```
+
+## $\mu\neq\mu_0$
+```latex 
+$\mu\neq\mu_0$
+```
+
+## $\alpha = 0.05\%$
+
+```latex 
+$\alpha = 0.05\%$
+```
+
+## $\mathbb{P}(A)$
+```latex 
+$\mathbb{P}(A)$
+```
+
+## $\mathbb{P}(\mu \in IC)$
+```latex 
+$\mathbb{P}(\mu \in IC)$
+```
+
+## $\sqrt{n}$
+```latex
+$\sqrt{n}$
+```
+
+## $\sqrt{n}\frac{(\bar{X}_n-\mu)}{S} \sim \mathcal{N}(0,1)$
+```latex
+$\sqrt{n}\frac{(\bar{X}_n-\mu)}{S} \sim \mathcal{N}(0,1)$
+```
+
+## $\sqrt{n}\frac{(\bar{X}_n-\mu)}{S} \sim T(n-1)$
+```latex 
+$\sqrt{n}\frac{(\bar{X}_n-\mu)}{S} \sim T(n-1)$
+```
+
+## $\mathbb{P}(\sqrt{n}\frac{(\bar{X}_n-\mu)}{S} \leq q_{1-\alpha} )= 1-\alpha$ 
+```latex 
+$\mathbb{P}(\sqrt{n}\frac{(\bar{X}_n-\mu)}{S} \leq q_{1-\alpha} )= 1-\alpha$
+```
+
+## $\mathbb{P}(q_{1-\alpha/2} \leq \sqrt{n}\frac{(\bar{X}_n-\mu)}{S} \leq q_{1-\alpha/2} )= 1-\alpha$
+```latex 
+$\mathbb{P}(q_{1-\frac{\alpha}{2}} \leq \sqrt{n}\frac{(\bar{X}_n-\mu)}{S} \leq q_{1-\frac{\alpha}{2}} )= 1-\alpha$
+```
+
+## $IC_{\alpha}(\mu) = [\bar{X}_n-\frac{S}{\sqrt{n}} q_{1-\frac{\alpha}{2}} ,\bar{X}_n+\frac{S}{\sqrt{n}} q_{1-\frac{\alpha}{2}}]$
+```latex 
+$IC_{\alpha}(\mu) = [\bar{X}_n-\frac{S}{\sqrt{n}} q_{1-\frac{\alpha}{2} ,\bar{X}_n+\frac{S}{\sqrt{n}} q_{1-\frac{\alpha}{2}]$
+```
+
+
+## $[\bar{x}_n-\frac{s}{\sqrt{n}} q_{1-\frac{\alpha}{2}} ,\bar{x}_n+\frac{s}{\sqrt{n}} q_{1-\frac{\alpha}{2}}]=[73.37;75.47]$
+```latex 
+$[\bar{x}_n-\frac{s}{\sqrt{n}} q_{1-\frac{\alpha}{2}} ,\bar{x}_n+\frac{s}{\sqrt{n}} q_{1-\frac{\alpha}{2}}]=[73.37;75.47]$
+```
+
+## $p_c=\mathbb{P}_{H_0}(|T_n|>|t_n|)$
+```latex 
+$p_c=\mathbb{P}_{H_0}(|T_n|>|t_n|)$
+```
+
+# Modèles linéaires
+
+## $E_i \overset{i.i.d.}\sim \mathcal{N}(0,\sigma^2)$
+```latex
+$E_i \overset{i.i.d.}\sim \mathcal{N}(0,\sigma^2)$
+```
+
+## $Y_i = \beta + \sum_{j=1}^p\alpha_j x_{i,j}    + E_i, \quad E_i\overset{i.i.d.}\sim{\cal N}(0,\sigma^2)$
+```latex 
+$Y_i = \beta + \sum_{j=1}^p\alpha_j x_{i,j}    + E_i, \quad E_i\overset{i.i.d.}\sim{\cal N}(0,\sigma^2)$
+```
+
+## $Y=X\theta+E$
+```latex 
+$Y=X\theta+E$
+``` 
+
+## $Y =\begin{bmatrix} Y_1\\ Y_2\\ \vdots \\ Y_n\end{bmatrix}$
+
+```latex
+$Y =\begin{bmatrix} 
+    Y_1   \\
+    Y_2   \\
+    \vdots\\
+    Y_n
+    \end{bmatrix}$
+```
+
+
+## $X = \begin{bmatrix}1 & x_{1,1} & \ldots & x_{p, 1}\\1 & x_{1, 2} & \ldots & x_{p, 2}\\\vdots & \vdots & & \vdots \\1 & x_{1, n} & \ldots & x_{p, n}\end{bmatrix}$
+
+```latex
+$X = \begin{bmatrix}
+1      & x_{1,1}  & \ldots & x_{p, 1}\\
+1      & x_{1, 2} & \ldots & x_{p, 2}\\
+\vdots & \vdots   &        & \vdots  \\
+1      & x_{1, n} & \ldots & x_{p, n}
+\end{bmatrix}$
+```
+
+## $\theta = \begin{bmatrix} \beta\\ \alpha_1\\\alpha_2\\ \vdots \\ \alpha_{p}\end{bmatrix}$
+
+```latex
+$\theta = \begin{bmatrix} 
+          \beta   \\
+          \alpha_1\\
+          \alpha_2\\
+          \vdots  \\
+          \alpha_{p}
+          \end{bmatrix}$
+```
+
+
+
+## $E = \begin{bmatrix}E_1\\E_2\\ \vdots \\ E_n\end{bmatrix}$
+
+```latex
+$E = \begin{bmatrix}
+      E_1    \\
+      E_2    \\
+      \vdots \\
+      E_n
+      \end{bmatrix}$
+```
+
+## $E \sim \mathcal{N}\left(\vec{0}_n,\,\sigma^2 I_n\right)$
+```latex
+ $E \sim \mathcal{N}\left(\vec{0}_n,\,\sigma^2 I_n\right)$
+```

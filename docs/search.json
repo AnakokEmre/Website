@@ -4295,5 +4295,1169 @@
       "Rmarkdown",
       "Dictionnaire Rmarkdown"
     ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "",
+    "text": "NotePourquoi fait-on de la sélection de variable ?\n\n\n\n\nModèle plus simple et interprétable.\nÉvite les redondances.\n\n\n\n\n\n\n\n\n\nNoteCritère de sélection de modèle\n\n\n\n\n\\(R^2\\) (à maximiser).\n\\(R^2_{aj}\\) (à maximiser).\n\\(AIC\\) (à minimiser).\n\\(BIC\\) (à minimiser).\n\n\n\n\n\n\n\n\n\nTipVraissemblance du modèle linéaire mulitple\n\n\n\nL’\\(AIC\\) et le \\(BIC\\) sont des critères basées sur la log-vraisemblance \\(ln(L)\\) pénalisée, ayant pour forme :\n\\[-2 ln\\left( L\\right) + 2(p+1) f(n)\\]\n\n\\(AIC : f(n)= 1\\)\n\\(BIC : f(n) = ln(n)/2\\).",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#ce-quil-faut-retenir-de-ce-cours",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#ce-quil-faut-retenir-de-ce-cours",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "",
+    "text": "NotePourquoi fait-on de la sélection de variable ?\n\n\n\n\nModèle plus simple et interprétable.\nÉvite les redondances.\n\n\n\n\n\n\n\n\n\nNoteCritère de sélection de modèle\n\n\n\n\n\\(R^2\\) (à maximiser).\n\\(R^2_{aj}\\) (à maximiser).\n\\(AIC\\) (à minimiser).\n\\(BIC\\) (à minimiser).\n\n\n\n\n\n\n\n\n\nTipVraissemblance du modèle linéaire mulitple\n\n\n\nL’\\(AIC\\) et le \\(BIC\\) sont des critères basées sur la log-vraisemblance \\(ln(L)\\) pénalisée, ayant pour forme :\n\\[-2 ln\\left( L\\right) + 2(p+1) f(n)\\]\n\n\\(AIC : f(n)= 1\\)\n\\(BIC : f(n) = ln(n)/2\\).",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#introduction",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#introduction",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "0.2 Introduction",
+    "text": "0.2 Introduction\nDans bon nombre d’études statistiques, nous disposons d’un ensemble de variables explicatives pour expliquer une variable. Cependant, rien ne nous assure que le modèle le plus pertinent soit celui avec toutes les variables explicatives.\n\n\nCertaines variables ne contribuent pas à l’explication de la variable à expliquer.\n\n\n\n\nCertaines sont fortement corrélées et apportent une information redondantes. Il n’est pas forcément judicieux de les mettre toutes.\n\n\n\n\nL’utilisateur a donc à sa disposition un ensemble de variables potentiellement explicatives ou variables candidates.\n\n\n\n\n\n\n\n\n\nWarningObjectif\n\n\n\nComment sélectionner les variables explicatives ? Comment choisir le “meilleur” modèle parmi les modèles disponibles ? Que veut dire meilleur modèle ?",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#explicatif-ou-prédictif",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#explicatif-ou-prédictif",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "0.3 Explicatif ou prédictif ?",
+    "text": "0.3 Explicatif ou prédictif ?\n\n\n\n\n\n\nNoteModèle prédictif\n\n\n\nUn modèle est prédictif quand les régresseurs permettent de bien prédire la variable à expliquer. n’importe quel modèle pourrait, a priori, tout aussi bien convenir.\n\n\n\n\n\n\n\n\n\nNoteModèle explicatif\n\n\n\nUn modèle est explicatif quand il y a une vraie liaison causale (par exemple d’une loi physique ou chimique) entre la variable à expliquer et les régresseurs.\n\n\n\n\n\n\n\n\n\n\nCautionRemarque\n\n\n\n\nLes modèles explicatifs peuvent être prédictifs.\nEn réalité, les modèles explicatifs sont assez rares.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#importance-de-la-sélection-de-variable",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#importance-de-la-sélection-de-variable",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "0.4 Importance de la sélection de variable",
+    "text": "0.4 Importance de la sélection de variable\n\n\n\n\n\n\nWarningObjectif\n\n\n\nIl est important de privilégier le modèle le plus simple possible.\n\n\nPlus facile à interpréter : Plus facile de comprendre d’où viennent les liens entre les variables explicatives sélectionnées et la variable réponse.\n\n\n\n\nÉvite à l’utilisateur l’acquisition de données inutiles s’il souhaite prédire la variable réponse.\n\n\n\n\nIl faut cependant faire attention de ne pas retirer trop de variables. (Pour ne pas trop mal prédire ou pour ne pas rater des liens intéréssants).",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#petit-exemple-à-3-variables-explicatives",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#petit-exemple-à-3-variables-explicatives",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "0.5 Petit exemple à 3 variables explicatives",
+    "text": "0.5 Petit exemple à 3 variables explicatives\n\nOn cherche à expliquer une variable \\(y\\) et on a trois variables explicatives \\(x_1\\), \\(x_2\\) et \\(x_3\\).\n\n\n\nOn note \\(y_i\\) la mesure de la variable réponse de l’individu \\(i\\) et \\(x_{j,i}\\) la valeur de la variable \\(x_j\\) de l’individu \\(i\\) (pour \\(1 \\leq j \\leq 3\\))\n\n\n\nOn suppose que \\(y_i\\) est la réalisation d’une variable aléatoire \\(Y_i\\).\n\n\nCombien de modèle possible peut-on considérer ?",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#le-modèle-complet",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#le-modèle-complet",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "0.6 Le modèle complet",
+    "text": "0.6 Le modèle complet\n\\[Y_i =  \\beta + \\alpha_1 x_{1,i} +  \\alpha_2 x_{2,i} + \\alpha_3 x_{3,i}  + E_i, 1 \\leq i \\leq n\\]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#modèles-à-deux-variables-explicatives",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#modèles-à-deux-variables-explicatives",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "0.7 Modèles à deux variables explicatives",
+    "text": "0.7 Modèles à deux variables explicatives\n\nUn modèle avec \\(x_1\\) et \\(x_2\\)\n\n\\[Y_i =  \\beta + \\alpha_1 x_{1,i} +  \\alpha_2 x_{2,i}  + E_i, 1 \\leq i \\leq n\\]\n\nUn modèle avec \\(x_1\\) et \\(x_3\\)\n\n\\[Y_i =  \\beta + \\alpha_1 x_{1,i}  + \\alpha_3 x_{3,i}  + E_i, 1 \\leq i \\leq n\\]\n\nUn modèle avec \\(x_2\\) et \\(x_3\\)\n\n\\[Y_i =  \\beta + \\alpha_2 x_{2,i}  + \\alpha_3 x_{3,i}  + E_i, 1 \\leq i \\leq n\\]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#modèles-à-une-variable-explicative",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#modèles-à-une-variable-explicative",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "0.8 Modèles à une variable explicative",
+    "text": "0.8 Modèles à une variable explicative\n\nUn modèle avec \\(x_1\\)\n\n\\[Y_i =  \\beta + \\alpha_1 x_{1,i} + E_i, 1 \\leq i \\leq n\\]\n\nUn modèle avec \\(x_2\\)\n\n\\[Y_i =  \\beta + \\alpha_2 x_{2,i}   + E_i, 1 \\leq i \\leq n\\]\n\nUn modèle avec \\(x_3\\)\n\n\\[Y_i =  \\beta +  \\alpha_3 x_{3,i}  + E_i, 1 \\leq i \\leq n\\]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#modèle-à-0-variable-explicative",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#modèle-à-0-variable-explicative",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "0.9 Modèle à 0 variable explicative",
+    "text": "0.9 Modèle à 0 variable explicative\n\\[Y_i =  \\beta  + E_i, 1 \\leq i \\leq n\\]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#résultat",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#résultat",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "0.10 Résultat",
+    "text": "0.10 Résultat\n\n1 modèle complet (on explique \\(y\\) en fonction \\(x_1\\), \\(x_2\\) et \\(x_3\\))\n3 modèles à deux variables explicatives ( \\(y\\) en fonction \\(x_1\\) et \\(x_2\\) ou de \\(x_1\\) et \\(x_3\\) ou de \\(x_2\\) et \\(x_3\\))\n3 modèles à une variable explicative ( \\(y\\) en fonction \\(x_1\\) ou de \\(x_2\\) ou de \\(x_3\\) )\n1 modèle avec 0 variable explicative (juste l’intercept)\n\nIl y a 8 modèle à comparer !",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#un-exemple-en-imunologie",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#un-exemple-en-imunologie",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.1 Un exemple en imunologie",
+    "text": "1.1 Un exemple en imunologie",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#un-exemple-en-imunologie-1",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#un-exemple-en-imunologie-1",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.2 Un exemple en imunologie",
+    "text": "1.2 Un exemple en imunologie\n\nQuestion: Quelles sont les signaux des DC qui influencent INFg ?",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#comment-répondre-à-la-question",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#comment-répondre-à-la-question",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.3 Comment répondre à la question",
+    "text": "1.3 Comment répondre à la question\n\nCréation des données : Expériences faites par des immunologistes.\n\n\n\nModélisation des données : modèle fait par un statisticien.\n\n\n\n\nValidations biologiques : expériences faites par des immunologistes pour valider les supositions des statisticiens.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#etape-1-création-des-données",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#etape-1-création-des-données",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.4 Etape 1 Création des données",
+    "text": "1.4 Etape 1 Création des données\nLes immunologistes font \\(n = 100\\) expériences. Pour les expériences \\(1 \\leq i \\leq n\\)\n\n\nOn perturbe (donne un virus ou un champignon ou une bactérie) une cellule dendritique puis on mesure la quantité des signaux des cellules dendritiques dans l’expérience \\(i\\):\n\n\n\n\n\\(x_{1,i}\\)\n\\(x_{2,i}\\)\n\\(x_{3,i}\\)\n\\(x_{4,i}\\)\n\\(x_{5,i}\\)\n\n\n\n\nIL12\nIL1\nIL6\nIL4\nIL5\n\n\n\n\n\n\nOn ajoute des lymphocytes Th puis on mesure la quantité \\(y_i\\) de IFNg sécrétées par les lymphocytes Th dans l’éxpérience \\(i\\).",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#etape-2-modélisation",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#etape-2-modélisation",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.5 Etape 2 : Modélisation",
+    "text": "1.5 Etape 2 : Modélisation\n\n\n\n\n\n\nWarningObjectif\n\n\n\nFaire de la sélection de variable dans le modèle\n\\[\nY_i = \\beta + \\sum_{j = 1}^5 \\alpha_j x_{j,i} + E_i\n\\]\nOn veut :\n\nNe garder que des variables pertinentes pour essayer de trouver des variables explicatives sans trop donner de variables qui n’influent pas \\(y\\) (IFNg)\nNe pas oublier de variables importantes.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#etape-3-validations-biologiques",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#etape-3-validations-biologiques",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.6 Etape 3 : Validations biologiques",
+    "text": "1.6 Etape 3 : Validations biologiques\nLe statisticien a gardé \\(q\\) sur les \\(p\\) variables du modèle. Les immunologistes vont faire des experiences pour essayer de voir si ces variables ont, en effet, un effet sur la variable réponse (la quantité d’IFNg)\n\nPar exemple si on sélectionne le signal \\(x_1\\) (IL12) des celulles dendritiques, on donne du \\(x_1\\) (IL12) à un lymphocyte Th et on regarde si ça a une influence sur la quantité d’INFg qu’il produit.\n\n\n\nCes expériences sont chères il est donc important de ne pas trop sélectionner de variables\n\n\n\n\nPour bien comprendre le système immunitaire il faut essayer de ne pas oublier de variables importantes!\n\n\\(\\Rightarrow\\) on veut trouver un juste milieu.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#critère-de-choix-de-modèle",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#critère-de-choix-de-modèle",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.7 Critère de choix de modèle",
+    "text": "1.7 Critère de choix de modèle\nIl faut donc définir un critère quantifiant la qualité du modèle\n\n\nCe critère dépend de l’objectif de la régression\n\n\n\n\nUne fois le critère choisi, il faudra déterminer des procédures permettant de trouver le meilleur modèle.\n\n\n\n\nLe nombre de modèle à tester peut être grand ( pour un modèle à \\(p\\) variables explicatives il y a \\(2^p\\) modèles possible) \\(\\Rightarrow\\) on ne teste pas forcément tous les modèles.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#etude-des-données-dimmunologie",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#etude-des-données-dimmunologie",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.8 Etude des données d’immunologie",
+    "text": "1.8 Etude des données d’immunologie\nChargement des données (disponible sur moodle)\n\n\n# A tibble: 6 × 6\n   IFNg   IL12    IL1     IL6   IL4   IL5\n  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 11.0    0      0         0   101.  207.\n2  9.93 106.    73.7  173186.  245. 1381.\n3  9.51 540.   176.   216608.  146.  686.\n4  9.84  73.2  130.    48242   134.  502.\n5 11.1    1.13   0.25    872.  304.  536.\n6 10.0    0      0.31      0   204. 1886.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#corrélation-entre-les-variables",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#corrélation-entre-les-variables",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.9 Corrélation entre les variables",
+    "text": "1.9 Corrélation entre les variables",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#écriture-du-modèle-complet",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#écriture-du-modèle-complet",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.10 Écriture du modèle complet",
+    "text": "1.10 Écriture du modèle complet\nSoit \\(M_6\\) le modèle : pour \\(1 \\leq i \\leq n\\) on suppose \\(y_i\\) la réalisation d’une variable aléatoire \\(Y_i\\) telle que :\n\\[\nY_i = \\beta + \\alpha_1 x_{1,i} + \\alpha_2 x_{2,i}+ \\alpha_3 x_{3,i}+ \\alpha_4 x_{4,i}+ \\alpha_5 x_{5,i} + E_i, \\; \\mbox{où } E_i \\overset{iid}{\\sim} \\mathcal{N}(0, \\sigma^2)\n\\]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#écriture-matricielle-du-modèle-complet",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#écriture-matricielle-du-modèle-complet",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.11 Écriture matricielle du modèle complet",
+    "text": "1.11 Écriture matricielle du modèle complet\n\n\\[Y = X\\theta + E\\]\noù\n\\[ X = \\left[  \\begin{array}{rrrrrrr}\n  Intercept & IL12 & IL1 & IL6 & IL4 & IL5 \\\\\n  \\hline\n1.00 & 0.00 & 0.00 & 0.00 & 101.40 & 206.88 \\\\\n   1.00 & 106.42 & 73.74 & 173185.80 & 244.55 & 1381.31 \\\\\n  \\vdots & \\vdots & \\vdots & \\vdots & \\vdots & \\vdots \\\\\n   1.00 & 23 & 2.1 & 25088 & 690 & 1388 \\\\\n   1.00 & 248 & 236 & 46309 & 1278 & 2492 \\\\\n\\end{array} \\right]\n\\] \\[ Y = \\left[  \\begin{array}{rr}\nINFg \\\\\n  \\hline\n10.97 \\\\\n  9.93 \\\\\n   \\vdots\\\\\n   10.7 \\\\\n   11.1 \\\\\n\\end{array}\n\\right]\\;\n\\theta = \\left[  \\begin{array}{}\n\\beta \\\\\n\\alpha_1\\\\\n\\alpha_2 \\\\\n\\alpha_3 \\\\\n\\alpha_4 \\\\\n\\alpha_5\n\\end{array} \\right]\n\\;\nE = \\left[ \\begin{array}{} E_1 \\\\\n  E_2 \\\\\n   \\vdots\\\\\n   E_{99} \\\\\n   E_{100} \\\\\n\\end{array} \\right]\n\\;E \\sim \\mathcal{N}(0,\\sigma^2 I_n)\\]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#création-du-modèle-complet",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#création-du-modèle-complet",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.12 Création du modèle complet",
+    "text": "1.12 Création du modèle complet\n\nmod_comp &lt;- lm(IFNg ~ IL12 + IL1 + IL6 + IL4 + IL5, data = immuno)\nsummary(mod_comp)\n\n\nCall:\nlm(formula = IFNg ~ IL12 + IL1 + IL6 + IL4 + IL5, data = immuno)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.0499 -0.7307  0.0764  0.7656  2.2100 \n\nCoefficients:\n              Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  8.836e+00  2.409e-01  36.677  &lt; 2e-16 ***\nIL12         9.696e-05  2.294e-05   4.227 5.48e-05 ***\nIL1          1.239e-04  2.036e-04   0.609 0.544270    \nIL6          4.563e-06  2.620e-06   1.742 0.084841 .  \nIL4          2.013e-03  5.087e-04   3.957 0.000147 ***\nIL5         -2.227e-04  1.530e-04  -1.456 0.148840    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.233 on 94 degrees of freedom\nMultiple R-squared:  0.3035,    Adjusted R-squared:  0.2664 \nF-statistic: 8.192 on 5 and 94 DF,  p-value: 1.876e-06",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#on-teste-le-modèle-complet-contre-le-modèle-m_1",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#on-teste-le-modèle-complet-contre-le-modèle-m_1",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.13 On teste le modèle complet contre le modèle \\(M_1\\)",
+    "text": "1.13 On teste le modèle complet contre le modèle \\(M_1\\)\n\n\n\n\n\n\n\nTipHypothèses\n\n\n\n\\(H_0\\) : le modèle \\(M_1\\) \\[Y_i =  \\beta  + E_i,\\quad E_i \\overset{i.i.d.}{\\sim} \\mathcal{N}(0, \\sigma^2)\\] vs \\(H_1\\) : le modèle \\(M_6\\)\n\\[\nY_i = \\beta + \\alpha_1 x_{1,i} + \\alpha_2 x_{2,i}+ \\alpha_3 x_{3,i}+ \\alpha_4 x_{4,i}+ \\alpha_5 x_{5,i} + E_i, \\quad E_i \\overset{i.i.d.}{\\sim} \\mathcal{N}(0, \\sigma^2)\n\\]\n\n\n\n\n\n\n\n\n\nTipStatistique de test\n\n\n\n\\[\nT_n=\\frac{(SCR(M_{1})-SCR(M_{p+1}))/(p)}{SCR(M_{p+1})/(n-p-1)}\\underset{H_0}{\\sim} \\mathcal{F}(p,n-p-1)\n\\]\n\n\n\n\n\n\n\n\n\n\nTipZone de rejet\n\n\n\n\\[R_\\delta = \\{T_n &gt;f_{1-\\delta} \\} \\]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#avec-r",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#avec-r",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.14 Avec R",
+    "text": "1.14 Avec R\n\nm1 &lt;- lm(IFNg ~ 1, data = immuno)\nanova(m1, mod_comp)\n\nAnalysis of Variance Table\n\nModel 1: IFNg ~ 1\nModel 2: IFNg ~ IL12 + IL1 + IL6 + IL4 + IL5\n  Res.Df    RSS Df Sum of Sq      F    Pr(&gt;F)    \n1     99 205.23                                  \n2     94 142.94  5    62.285 8.1917 1.876e-06 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#remarques-et-objectifs",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#remarques-et-objectifs",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.15 Remarques et objectifs",
+    "text": "1.15 Remarques et objectifs\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\nComme le test global \\(H_0\\) : \\(M_1\\) contre \\(H_1\\) : \\(M_{p+1}\\) est significatif, au moins une des variables explicatives contribue à expliquer \\(Y\\).\n\n\n\nDans ce cas on peut modéliser nos données pas un modèle de régression linéaire multiple (sous réserve de validation des hypothèses).\n\n\n\n\nPrendre en compte toutes les variables peut s’avérer très couteux, il est donc naturel de se poser la question suivante :\n\n\n\n\n\n\n\n\n\n\n\nWarningObjectif\n\n\n\nQuelles sont les variables qui contribuent réellement (le plus) à expliquer \\(Y\\) parmi les \\(x_1,\\cdots,x_p\\) ? Dans notre cadre : quels sont les signaux des cellules dendritiques qui contribuent réellement à expliquer la quantité d’IFNg ?",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#une-première-idée",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#une-première-idée",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.16 Une première idée",
+    "text": "1.16 Une première idée\nNe garder que les variables explicatives pour lesquels le test de student dit que le coefficient est significativement différent de 0.\n\n\nTester la nullité de chaque coefficient de régression avec le test de Student \\(\\forall k=1,\\cdots,p\\), \\(H_0 : \\alpha_k=0\\) contre \\(H_1:\\alpha_k\\neq 0\\)\n\n\n\n\nÀ partir de \\[T_n^k=\\frac{A_k}{\\sqrt{S^2_{M_{p+1}}c_{kk}}}\\underset{H_0}{\\sim} \\mathcal{T}(n-p-1)\\]\n\n\n\n\nOn élimine toutes les variables \\(x_k\\) dont le test de Student associé n’est pas significatif.\n\n\n\n\n\n\n\n\n\nWarningSpoiler\n\n\n\nCette démarche est incorrecte.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#pourquoi-cette-démarche-est-fausse",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#pourquoi-cette-démarche-est-fausse",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.17 Pourquoi cette démarche est fausse ?",
+    "text": "1.17 Pourquoi cette démarche est fausse ?\n\n\n\n\n\n\nNoteExplications\n\n\n\n\nChaque test est effectué alors que les autres variables explicatives sont fixées.\nOn ne prend donc pas en compte les possibles effets conjoints.\nLa difficulté provient de la colinéarité des variables explicatives.\nSi on retire ou ajoute une variable cela peut modifier la significativité des autres coefficients.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#exemple",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#exemple",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.18 Exemple",
+    "text": "1.18 Exemple\n\nmod_comp &lt;- lm(IFNg ~ IL12 + IL1 + IL6 + IL4 + IL5, data = immuno)\nsummary(mod_comp)$coefficients\n\n                 Estimate   Std. Error    t value     Pr(&gt;|t|)\n(Intercept)  8.835947e+00 2.409099e-01 36.6773936 1.711768e-57\nIL12         9.696186e-05 2.293748e-05  4.2272232 5.481093e-05\nIL1          1.239093e-04 2.036034e-04  0.6085817 5.442696e-01\nIL6          4.563095e-06 2.619986e-06  1.7416487 8.484122e-02\nIL4          2.013009e-03 5.086825e-04  3.9573004 1.471138e-04\nIL5         -2.226632e-04 1.529720e-04 -1.4555814 1.488401e-01\n\n\n\n\nm5 &lt;- lm(IFNg ~ IL12 + IL6 + IL4 + IL5, data = immuno)\nsummary(m5)$coefficients\n\n                 Estimate   Std. Error   t value     Pr(&gt;|t|)\n(Intercept)  8.836147e+00 2.401100e-01 36.800410 5.171544e-58\nIL12         9.687266e-05 2.286088e-05  4.237486 5.233217e-05\nIL6          5.487755e-06 2.127357e-06  2.579612 1.142420e-02\nIL4          1.983911e-03 5.047493e-04  3.930487 1.609231e-04\nIL5         -2.229092e-04 1.524637e-04 -1.462048 1.470283e-01\n\n\n\n\n\nm4 &lt;- lm(IFNg ~ IL12 + IL4 + IL5, data = immuno)\nsummary(m4)$coefficients\n\n                 Estimate   Std. Error   t value     Pr(&gt;|t|)\n(Intercept)  9.172160e+00 2.075626e-01 44.189845 1.310698e-65\nIL12         9.281736e-05 2.346881e-05  3.954924 1.465290e-04\nIL4          1.943227e-03 5.191479e-04  3.743108 3.096660e-04\nIL5         -3.234830e-04 1.516730e-04 -2.132765 3.549474e-02",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#problème-de-colinéarité",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#problème-de-colinéarité",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.19 Problème de colinéarité",
+    "text": "1.19 Problème de colinéarité\n\n\n\n\n\n\nCautionUne situation classique\n\n\n\n\n\\(r(x_1,x_2)\\) élevé : les 2 variables explicatives sont fortement corrélées.\n\n\n\n\\(r(x_1,y)\\) et \\(r(x_2,y)\\) : les 2 variables explicatives sont corrélées avec la variable à expliquer.\n\n\n\n\nDans le modèle avec \\(x_1\\) seul, \\(x_1\\) est significatif\n\n\n\n\nDans le modèle avec \\(x_2\\) seul, \\(x_2\\) est significatif\n\n\n\n\nDans le modèle avec les deux variables, ni \\(x_1\\), ni \\(x_2\\) ne sont significatifs\n\n\n\n\nQuel modèle choisir ? Celui avec \\(x_1\\) seul ou celui avec \\(x_2\\) seul ?",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#représentation-des-corrélations",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#représentation-des-corrélations",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.20 Représentation des corrélations",
+    "text": "1.20 Représentation des corrélations\n\nplot(immuno)",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#représentation-des-correlations",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#représentation-des-correlations",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.21 Représentation des correlations",
+    "text": "1.21 Représentation des correlations\n\nlibrary(corrplot)\ncorrplot.mixed(cor(immuno))",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#les-effets-de-la-colinéarité",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#les-effets-de-la-colinéarité",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.22 Les effets de la colinéarité",
+    "text": "1.22 Les effets de la colinéarité\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\nLa variance des estimateurs peut être très grande.\nAu point que le test de student peut ne pas être significatif (poussant à une suppression indue des variables).\nLes estimations des paramètres sont instables : l’ajout ou suppression de variables modifie la valeur et le signe des estimations des coefficients de régression.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#deuxième-idée",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#deuxième-idée",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "1.23 Deuxième idée",
+    "text": "1.23 Deuxième idée\n\n\n\n\n\n\n\nWarningObjectif\n\n\n\n\nSoient \\(x_1, x_2,\\cdots,x_{p}\\) \\(p\\) variables explicatives :\nLe but est de sélectionner un certain nombre \\(q\\) variables explicatives pertinentes parmi ces \\(p\\) variables disponibles.\n\n\n\n\n\n\n\n\n\n\nNoteDeux méthodes de sélection\n\n\n\n\nMéthode de recherche exhaustive\nMéthode de sélections de variables pas à pas\n\n\n\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\nOn utilisera un critère pour choisir parmi les modèles pris en compte.\nSi les seuls modèles considérés sont emboités, il possible de choisir le modèle avec le test de Fisher. Mais comment faire si ce n’est pas le cas ?",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#méthode-de-recherche-exhaustive-1",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#méthode-de-recherche-exhaustive-1",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "2.1 Méthode de recherche exhaustive",
+    "text": "2.1 Méthode de recherche exhaustive\n\n\n\n\n\n\nWarningObjectif\n\n\n\nOn va comparer pour tous les modèles possible selon un critères. On prendra ensuite le modèle qui maximise (ou minimise) ce critère.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#exemple-de-critères-de-choix-de-modèle",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#exemple-de-critères-de-choix-de-modèle",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "2.2 Exemple de critères de choix de modèle",
+    "text": "2.2 Exemple de critères de choix de modèle\n\n\n\n\n\n\nNoteCritère de choix de modèle\n\n\n\n\nCritère du \\(R^2\\).\nCritère du \\(R^2\\) ajusté.\n\\(AIC\\)\n\\(BIC\\)\n\n\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\nL’\\(AIC\\) et le \\(BIC\\) sont des critères basées sur une vraisemblance pénalisée",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#critère-du-r2",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#critère-du-r2",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "2.3 Critère du \\(R^2\\)",
+    "text": "2.3 Critère du \\(R^2\\)\n\n\n\n\n\n\n\nNoteCoefficient de détermination\n\n\n\nLa qualité d’ajustement d’un modèle à \\(p\\) variables explicatives \\(M_{p+1}\\) peut être mesurée avec son coefficient de détermination \\(R^2\\) :\n\\[R^2=\\frac{SCM(M_{p+1})}{SCT}=1-\\frac{SCR(M_{p+1})}{SCT}\\]\n\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\n\\(0 \\leq R^2 \\leq 1\\) donne le pourcentage de la variation totale de \\(Y\\) expliquée par le modèle de régression linéaire.\n\\(R^2\\) augmente avec le nombre \\(p\\) de variables explicatives qui entrent dans le modèle.\n\\(R^2\\) atteint son maximum si toutes les variables disponibles sont incluses, c’est à dire pour le modèle complet \\(M_{p+1}\\).\nDéfaut : on ne peut pas comparer deux modèles ayant des nombres de variables explicatives différents.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#critère-du-r2-avec-r",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#critère-du-r2-avec-r",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "2.4 Critère du \\(R^2\\) avec R",
+    "text": "2.4 Critère du \\(R^2\\) avec R\n\nsummary(mod_comp)$r.squared\n\n[1] 0.3034908\n\n\n\nm5_1 &lt;- lm(IFNg ~ IL12 + IL6 + IL4 + IL5, data = immuno)\nsummary(m5_1)$r.squared\n\n[1] 0.3007465\n\nm5_2 &lt;- lm(IFNg ~ IL12 + IL1 + IL4 + IL5, data = immuno)\nsummary(m5_2)$r.squared\n\n[1] 0.2810148\n\n\nOn sélectionnerait le modèle avec IL12, IL6, IL4 et IL5 plutôt que celui avec IL12, IL1, IL4 et IL5.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#critère-du-r2-avec-r-1",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#critère-du-r2-avec-r-1",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "2.5 Critère du \\(R^2\\) avec R",
+    "text": "2.5 Critère du \\(R^2\\) avec R\n\nlibrary(leaps)\na &lt;- regsubsets(IFNg~., data = immuno, method = \"exhaustive\", \n                nbest = 5)\nplot(a, scale = \"r2\")",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#critère-du-r2-ajusté",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#critère-du-r2-ajusté",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "2.6 Critère du \\(R^2\\) ajusté",
+    "text": "2.6 Critère du \\(R^2\\) ajusté\n\n\n\n\n\n\n\nNoteCoefficient de détermination ajusté\n\n\n\nLorsque l’on souhaite comparer deux modèles n’ayant pas le même nombre \\(p\\) de variables explicatives on peut calculer le \\(R^2\\) ajusté : \\[R^2_{aj}=1-\\frac{SCR(M_{p+1})/(n-p-1)}{SCT/(n-1)}\\]\n\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\n\\(R^2_{aj} &lt; R^2\\) si \\(p\\geq 2\\).\n\\(R^2_{aj}\\) n’augmente pas forcément lors de l’introduction de variables supplémentaires dans le modèle.\nOn peut comparer deux modèles n’ayant pas le même nombre de variables explicatives.\nOn choisira le modèle pour lequel le \\(R^2_{aj}\\) est le plus grand.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#critère-du-r2-ajusté-avec-r",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#critère-du-r2-ajusté-avec-r",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "2.7 Critère du \\(R^2\\) ajusté avec R",
+    "text": "2.7 Critère du \\(R^2\\) ajusté avec R\n\nsummary(mod_comp)$adj.r.squared\n\n[1] 0.2664425\n\n\n\nm5_1 &lt;- lm(IFNg ~ IL12 + IL6 + IL4 + IL5, data = immuno)\nsummary(m5_1)$adj.r.squared\n\n[1] 0.2713042\n\nm5_2 &lt;- lm(IFNg ~ IL12 + IL1 + IL4 + IL5, data = immuno)\nsummary(m5_2)$adj.r.squared\n\n[1] 0.2507417",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#critère-du-r2-ajusté-avec-r-1",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#critère-du-r2-ajusté-avec-r-1",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "2.8 Critère du \\(R^2\\) ajusté avec R",
+    "text": "2.8 Critère du \\(R^2\\) ajusté avec R\n\nlibrary(leaps)\na &lt;- regsubsets(IFNg~., data = immuno, method = \"exhaustive\",\n                nbest = 5)\nplot(a, scale = \"adjr2\")",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#fonction-de-vraisemblance",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#fonction-de-vraisemblance",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "2.9 Fonction de vraisemblance",
+    "text": "2.9 Fonction de vraisemblance\n\n\n\n\n\n\n\nNoteDensité d’une variable aléatoire gaussienne/normale\n\n\n\nSoit \\(Y \\sim \\mathcal{N}(\\mu,\\sigma^2)\\). La densité de \\(Y\\) est définie par\n\\[f_Y(y_i, \\mu, \\sigma^2)= \\frac{1}{\\sqrt{2\\pi\\sigma^2}} \\exp\\left(-\\frac{1}{2\\sigma^2}(y_i-\\mu)^2\\right)\\]\n\n\n\n\n\n\n\n\n\n\nNoteVraissemblance de variables aléatoires indépendantes\n\n\n\nLa vraissemblance de v.a. indépendantes est le produit des densités des v.a.\nSoit \\(n\\) v.a. indépendantes \\(Y_1, \\dots,Y_n\\) :\n\\[L(y_1,\\cdots,y_n, \\mu, \\sigma^2) =\\prod_{i=1}^n f_{Y_i}(y_i,  \\mu, \\sigma^2)\\]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#maximisation-de-la-vraissemblance",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#maximisation-de-la-vraissemblance",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "2.10 Maximisation de la vraissemblance",
+    "text": "2.10 Maximisation de la vraissemblance\nLa fonction \\(ln\\) est une fonction croissante\n\\(\\Rightarrow\\) les paramètres (\\(\\beta, \\alpha_1, \\dots,\\alpha_p\\)) qui maximisent \\(log(L)\\) maximisent aussi \\(L\\).\n\n\n\n\n\n\nTipLog-vraissemblance du modèle linéaire multiple\n\n\n\n\n\n\\[\\begin{align}\n&ln(L(y_1,\\cdots,y_n, \\beta, \\alpha_1, \\dots,\\alpha_p,\\sigma^2))  =ln(\\prod_{i=1}^n f_Y(y_i, \\beta, \\alpha_1, \\dots,\\alpha_p,\\sigma^2))\\\\\n&= \\sum_{i=1}^n ln(f_Y(y_i, \\beta, \\alpha_1, \\dots,\\alpha_p,\\sigma^2))\\\\\n& =\\sum_{i=1}^n ln\\left(\\frac{1}{\\sqrt{2\\pi\\sigma^2}} \\exp \\left(-\\frac{1}{2\\sigma^2}(y_i-(\\beta+\\alpha_1\\,x_{1,i}+\\cdots+\\alpha_{p}\\,x_{p,i}))^2\\right)\\right)\\\\\n&  =\\sum_{i=1}^n ln\\left(\\frac{1}{\\sqrt{2\\pi\\sigma^2}}\\right) + ln\\left(\\exp \\left(-\\frac{1}{2\\sigma^2}(y_i-(\\beta+\\alpha_1\\,x_{1,i}+\\cdots+\\alpha_{p}\\,x_{p,i}))^2\\right)\\right)\\\\\n& =\\sum_{i=1}^n -ln\\left(\\sqrt{2\\pi\\sigma^2}\\right) + -\\frac{1}{2\\sigma^2}(y_i-(\\beta+\\alpha_1\\,x_{1,i}+\\cdots+\\alpha_{p}\\,x_{p,i}))^2\\\\\n&= -n \\ln(\\sqrt{2\\pi\\sigma ^2}) -\\frac{1}{2\\sigma^2} \\sum^{n}_{i=1} (y_i-(\\beta+\\alpha_1\\,x_{1,i}+\\cdots+\\alpha_{p}\\,x_{p,i}))^2\\\\\n&= -\\frac{n}{2} \\ln(2\\pi\\sigma ^2) -\\frac{1}{2\\sigma^2} \\sum^{n}_{i=1} (y_i-(\\beta+\\alpha_1\\,x_{1,i}+\\cdots+\\alpha_{p}\\,x_{p,i}))^2\n\\end{align}\\]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#mle-du-modèle-linéaire",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#mle-du-modèle-linéaire",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "2.11 MLE du modèle linéaire",
+    "text": "2.11 MLE du modèle linéaire\n\n\n\n\n\n\nTipThéorème\n\n\n\nLes estimateurs des paramètres par la méthode du maximum de vraisemblance (connus sous les initiales \\(MLE\\): Maximum Likelihood Estimators) sont obtenus en maximisant la vraisemblance \\(L\\) ou son logarithme \\(ln(L)\\):\n\\[ln(L)= -\\frac{n}{2} \\ln(2\\pi\\sigma ^2) -\\frac{1}{2\\sigma^2} \\sum^{n}_{i=1} (y_i-(\\beta+\\alpha_1\\,x_{1,i}+\\cdots+\\alpha_{p}\\,x_{p,i}))^2\\]\n\nChercher les paramètres (\\(\\beta,\\alpha_1,\\dots, \\alpha_p\\)) qui maximisent \\(ln(L)\\) revient à minimiser \\[\\sum^{n}_{i=1} (y_i-(\\beta+\\alpha_1\\,x_{1,i}+\\alpha_2\\,x_{2,i}+\\cdots+\\alpha_{p}\\,x_{p,i}))^2=SCR(M_{p+1})\\]\nPar conséquent les estimateurs du maximum de vraisemblance (\\(\\hat{\\beta},\\hat{\\alpha}_{1},\\cdots, \\hat{\\alpha}_{p}\\)) sont les mêmes que les estimateurs par les moindres carrés “ordinaires”.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#remarques-sur-le-mle",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#remarques-sur-le-mle",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "2.12 Remarques sur le MLE",
+    "text": "2.12 Remarques sur le MLE\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\nL’estimateur \\(MLE\\) de \\(\\sigma^2\\) est égal à \\(SCR(M_{p+1})/n\\) (biaisé) et donc différent de \\(SCR(M_{p+1})/(n-p-1)\\) (non biaisé).\nEn remplaçant les paramètres par leurs estimateurs dans l’expression de la Log-vraisemblance, on obtient:\n\n\\[ln(L)= -\\frac{n}{2} ln \\left(\\frac{SCR(M_{p+1})}{n} \\right) - \\frac{n}{2}\\left( 1+ ln(2\\pi) \\right)\\]\n\nChoisir un modèle en maximisant la vraisemblance revient à choisir le modèle ayant la plus petite \\(SCR(M_{p+1})/n\\).\n\nComme \\(ln(L)\\) augmente avec l’introduction de nouvelles variables dans le modèle il faut donc introduire une pénalisation !",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-de-modèles-par-vraisemblance-pénalisée",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-de-modèles-par-vraisemblance-pénalisée",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "2.13 Sélection de modèles par vraisemblance pénalisée",
+    "text": "2.13 Sélection de modèles par vraisemblance pénalisée\n\n\n\n\n\n\n\nNoteDéfinition : critère de vraisemblance pénalisée\n\n\n\nOn appelle critère de vraisemblance pénalisée les fonctions de la forme\n\\[-2 ln\\left( L\\right) + 2(p+1) f(n)\\] où \\(ln(L)\\) est la log-vraisemblance du modèle et \\(f(n)\\) est une fonction de pénalisation dépendant de \\(n\\).\n\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\nOn prend l’opposé de la log-vraisemblance donc il faudra minimiser le critère.\nQue prendre pour fonction \\(f(n)\\) ?\nBozdogan (1987) a proposé \\(2f (n) = ln (n) + 1\\).\nHannan & Quinn (1979) ont proposé \\(f (n) = c\\, log (ln (n))\\) où \\(c\\) est une constante plus grande que 1.\nIl existe de très nombreuses pénalisations dans la littérature mais les deux les plus répandues sont le \\(BIC\\) et l’\\(AIC\\).",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#lakaike-information-criterion-aic",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#lakaike-information-criterion-aic",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "2.14 L’Akaike Information Criterion (AIC)",
+    "text": "2.14 L’Akaike Information Criterion (AIC)\n\n\n\n\n\n\n\nNoteDéfinition\n\n\n\nCe critère, introduit par Akaike en 1973 est défini pour \\(f(n)=1\\) par\n\\[\\begin{eqnarray}\nAIC(p) &=& -2ln(L) + 2(p +1)\\times 1\\\\\n&=& n \\left(ln(2\\pi)+1\\right) +n\\ ln\\left(\\frac{SCR(M_{p+1})}{n}\\right)+ 2p+2\\\\\n&=& C +n\\ ln\\left(\\frac{SCR(M_{p+1})}{n}\\right)+ 2p+2\n\\end{eqnarray}\\]\noù \\(C\\) est une constante\n\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\nL’AIC est une pénalisation de la log-vraisemblance par deux fois le nombre de paramètres \\(p+1\\)\n\nL’utilisation de ce critère est simple : il suffit de le calculer pour tous les modèles concurrents et de choisir celui qui possède l’AIC le plus faible.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#le-bayesian-information-criterion-bic",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#le-bayesian-information-criterion-bic",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "2.15 Le Bayesian Information Criterion (BIC)",
+    "text": "2.15 Le Bayesian Information Criterion (BIC)\n\n\n\n\n\n\n\nNoteDéfinition\n\n\n\nLe BIC (Schwarz, 1978) est défini pour \\(f(n)=ln(n)/2\\) par \\[\\begin{eqnarray*}\nBIC(p)&=&- 2 ln(L) +  (p+2)ln (n)\\\\\n&=&C + n\\ ln\\left(\\frac{SCR(M_{p+1})}{n}\\right)+ (p+2)ln (n)\n\\end{eqnarray*}\\]\noù \\(C\\) est une constante.\n\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\nL’utilisation de ce critère est identique à celle de l’AIC.\nNous pouvons constater qu’il revient aussi à pénaliser la log-vraisemblance par le nombre de paramètres \\(p+1\\) multiplié par une fonction des observations (et non plus 2).\nAinsi, plus le nombre d’observations \\(n\\) augmente, plus la pénalisation est faible.\nCependant, cette pénalisation est en général plus grande que 2 (dès que \\(n &gt; 7\\)) et donc le BIC a tendance à sélectionner des modèles plus petits que l’AIC.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#aic-et-bic-avec-r",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#aic-et-bic-avec-r",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "2.16 AIC et BIC avec R",
+    "text": "2.16 AIC et BIC avec R\n\nAIC(mod_comp)\n\n[1] 333.5151\n\n\n\nm5_1 &lt;- lm(IFNg ~ IL12 + IL6 + IL4 + IL5, data = immuno)\nAIC(m5_1)\n\n[1] 331.9084\n\nm5_2 &lt;- lm(IFNg ~ IL12 + IL1 + IL4 + IL5, data = immuno)\nAIC(m5_2)\n\n[1] 334.6911\n\n\n\n\nBIC(mod_comp)\n\n[1] 351.7513\n\n\n\nm5_1 &lt;- lm(IFNg ~ IL12 + IL6 + IL4 + IL5, data = immuno)\nBIC(m5_1)\n\n[1] 347.5394\n\nm5_2 &lt;- lm(IFNg ~ IL12 + IL1 + IL4 + IL5, data = immuno)\nBIC(m5_2)\n\n[1] 350.3221",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#critère-bic-avec-r",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#critère-bic-avec-r",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "2.17 Critère BIC avec R",
+    "text": "2.17 Critère BIC avec R\n\nlibrary(leaps)\na &lt;- regsubsets(IFNg~., data = immuno, method = \"exhaustive\", nbest = 5)\nplot(a, scale = \"bic\")",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#résumé",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#résumé",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "2.18 Résumé",
+    "text": "2.18 Résumé\n\n\n\n\n\n\nNoteModèle obtenus\n\n\n\n\nCritère du \\(R^2\\) \\(\\Longrightarrow\\) IL12, IL1, IL6, IL4, IL5\nCritère du \\(R^2\\) ajusté \\(\\Longrightarrow\\) IL12, IL6, IL4, IL5\nCritère \\(BIC\\) \\(\\Longrightarrow\\) IL12, IL6, IL4\n\n\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\nLa sélection par la méthode exhaustive est très coûteuse du point de vue temps car il faut analyser toutes les régressions possibles à partir des \\(p\\) variables explicatives disponibles, où \\(2^p\\) peut-être très grand.\nPar exemple pour \\(p=20\\), il y a environ 1 Million de modèles envisageables.\nPar conséquent, on considérera les procédures algorithmiques pas à pas.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#ce-quil-faut-retenir-de-ce-cours-1",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#ce-quil-faut-retenir-de-ce-cours-1",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "2.19 Ce qu’il faut retenir de ce cours",
+    "text": "2.19 Ce qu’il faut retenir de ce cours\n\n\n\n\n\n\n\nNotePourquoi fait-on de la sélection de variable ?\n\n\n\n\nModèle plus simple et interprétable.\nÉvite les redondances.\n\n\n\n\n\n\n\n\n\nNoteCritère de sélection de modèle\n\n\n\n\n\\(R^2\\) (à maximiser).\n\\(R^2_{aj}\\) (à maximiser).\n\\(AIC\\) (à minimiser).\n\\(BIC\\) (à minimiser).\n\n\n\n\n\n\n\n\n\nTipVraissemblance du modèle linéaire mulitple\n\n\n\nL’\\(AIC\\) et le \\(BIC\\) sont des critères basées sur la log-vraisemblance \\(ln(L)\\) pénalisée, ayant pour forme :\n\\[-2 ln\\left( L\\right) + 2(p+1) f(n)\\]\n\n\\(AIC : f(n)= 1\\)\n\\(BIC : f(n) = ln(n)/2\\).",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#introduction-des-méthodes-pas-à-pas",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#introduction-des-méthodes-pas-à-pas",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.1 Introduction des méthodes pas à pas",
+    "text": "3.1 Introduction des méthodes pas à pas\n\nOn va introduire ou supprimer une variable l’une après l’autre.\nOn n’est pas à l’abri d’enlever des variables réellement significatives.\nIl n’y a pas de garantie de résultat optimal. On pourra seulement trouver un optimum local dépendant du point de départ choisi. Si les variables explicatives sont orthogonales, alors l’optimum trouvé sera toujours l’optimum global.\nC’est une méthode algorithmique: elle est donc rapide et économique.\nLe but étant d’extraire un groupe de variables suffisamment explicatif et donc de conserver un modèle explicatif : relativement simple et facile à interpréter.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#méthode-de-sélection-de-variables-pas-à-pas",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#méthode-de-sélection-de-variables-pas-à-pas",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.2 Méthode de sélection de variables pas à pas",
+    "text": "3.2 Méthode de sélection de variables pas à pas\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\nOn va s’interesser à trois méthodes algorithmique de sélection de variable.\nChacunes de ces méthodes se fait en plusieurs étapes : on ajoute ou enlève une seule variable à chaque étapes.\n\n\n\n\n\n\n\n\n\nNoteSélection ascendante (Forward)\n\n\n\nOn part d’un modèle sans variables et on en ajoute.\n\n\n\n\n\nflowchart LR\nA[$$M_1$$] --&gt; B[$$M_2$$]\nB --&gt; C[$$M_3$$] \nC --&gt; D[$$...$$] \nD --&gt; E[\"$$M_{p_f}$$\"] \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteÉlimination descendante (Backward)\n\n\n\nOn part d’un modèle avec toutes les variables et on en enlève.\n\n\n\n\n\nflowchart LR\nA[\"$$M_{p}$$\"] --&gt; B[\"$$M_{p-1}$$\"]\nB --&gt; C[\"$$M_{p-2}$$\"] \nC --&gt; D[$$...$$] \nD --&gt; E[\"$$M_{p_b}$$\"]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#procédure-pas-à-pas",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#procédure-pas-à-pas",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.3 Procédure pas à pas",
+    "text": "3.3 Procédure pas à pas\n\n\n\n\n\n\nNoteProcédure pas à pas (Stepwise)\n\n\n\nOn part du modèle qu’on veut et on ajoute ou enlève des variables.\n\n\n\n\n\nflowchart LR\nA[\"$$M_{p}$$\"] --&gt; B[\"$$M_{p-1}$$\"]\nB --&gt; C[\"$$M_{p-2}$$\"] \nC --&gt; D[\"$$M_{p-1}$$\"] \nD --&gt; E[$$...$$] \nE --&gt; F[\"$$M_{p_b}$$\"]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-ascendante-forward-selection",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-ascendante-forward-selection",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.4 Sélection ascendante (forward selection)",
+    "text": "3.4 Sélection ascendante (forward selection)\n\n\n\n\n\n\nNoteExplication\n\n\n\n\nOn fait rentrer les variables les unes à la suite des autres:\n\n\n\nOn sélectionne la “meilleure” variable\n\n\n\n\nOn choisit ensuite une deuxième variable qui (avec la première variable selectionnée) va faire le meilleur modèle à deux variables\n\n\n\n\nOn choisit ensuite une troisième variable qui (avec les deux premières variables selectionnées) va faire le meilleur modèle à trois variables\n\n\n\n\n…\n\n\n\n\nOn s’arrête quand aucune des variables à ajouter (donc pas encore dans le modèle) n’améliore le modèle",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#la-meilleure-variable",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#la-meilleure-variable",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.5 La “meilleure” variable ?",
+    "text": "3.5 La “meilleure” variable ?\n\n\n\n\n\n\nNoteCritère\n\n\n\nOn choisit un critère avant de commencer. On veut un modèle qui donne\n\nle \\(R^2_{aj}\\) le plus élevé.\nou l’AIC le plus bas.\nou le BIC le plus bas.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-ascendante-forward-selection-1",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-ascendante-forward-selection-1",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.6 Sélection ascendante (forward selection)",
+    "text": "3.6 Sélection ascendante (forward selection)\n\n\n\n\n\n\n\nNoteÉtape 1: modèle à 1 variable\n\n\n\n📈 On effectue toutes les régressions simples possibles avec une seule variable explicative.\n🛑 Si aucun critère n’est ‘meilleur’ que le modèle à \\(0\\) variables on s’arrête là.\n⏩ Sinon, on retient le modèle qui maximise (ou minimise) le critère, la première variable est sélectionnée.\n\n\n\n\n\n\n\n\n\nNoteÉtape 2: modèle à 2 variables\n\n\n\n📈 On effectue les régressions possibles avec deux variables explicatives qui comportent la variable sélectionnée à l’étape précédente. (\\(p-1\\) modèles possibles)\n🛑 Si aucun modèle n’est ‘meilleur’ que celui à 1 variable, on s’arrête là.\n⏩ Sinon, on retient le modèle qui maximise (ou minimise) le critère, la deuxième variable est sélectionnée.\n\n\n\n\nOn reitère, en effectuant les régressions possibles avec 3 variables explicatives parmi lesquelles se trouvent les 2 variables sélectionnées, 4 variables avec les 3 …\n\n\n\n\n\n\n\n\nNote🛑 Fin de l’algorithme\n\n\n\nLe processus se termine lorsqu’un modèle d’une étape précédente est meilleur que tous les modèles de l’étape actuelle.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#écriture-du-modèle-à-létape-1",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#écriture-du-modèle-à-létape-1",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.7 Écriture du modèle à l’étape 1",
+    "text": "3.7 Écriture du modèle à l’étape 1\n📈 On part du modèle \\(M_1:Y_i=\\beta+E_i\\) et on calcul le critère.\n\n📈 Pour les variables \\(x_1\\) jusqu’à \\(x_{p}\\) on lance le modèle \\[M_2^{(k)}:Y_i=\\beta+\\alpha_k x_k +E_i,\\quad 1 \\leq k \\leq p\\] on fait donc \\(p\\) modèles. Sur chacun de ces modèles, on calcule notre critère.\n\n\n🛑 Si le meilleur modèle (au sens du critère donné) est le modèle \\(M_1\\) on s’arrete là. Le modèle \\(M_1\\) est le modèle sélectionné.\n\n\n⏩ Sinon on passe à l’étape suivante avec le modèle qui maximise \\(R^2_{aj}\\) ou minimise l’\\(AIC\\) ou le \\(BIC\\). Appelons le \\[M_2^{(k_1)}:Y_i=\\beta+\\alpha_{k_1} x_{k_1} +E_i\\]\n⏩ La variable \\(x_{k_1}\\) est sélectionnée dans le modèle.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#écriture-du-modèle-à-létape-2",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#écriture-du-modèle-à-létape-2",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.8 Écriture du modèle à l’étape 2",
+    "text": "3.8 Écriture du modèle à l’étape 2\n\n📈 On part du modèle \\(M_2^{(k_1)}:Y_i=\\beta+\\alpha_{k_1} x_{k_1} +E_i\\) et on calcul le critère.\n\n\n📈 Pour les variables \\(x_1\\) jusqu’à \\(x_{p}\\) (sauf la variable \\(x_{k_1}\\)) on lance le modèle \\[M_3^{(k)}:Y_i=\\beta+\\alpha_{k_1} x_{k_1} +\\alpha_k x_k +E_i,\\quad 1 \\leq k \\leq p \\mbox{ et } k \\neq k_1\\] on fait donc \\(p-1\\) modèles. Sur chacun de ces modèles, on calcule notre critère.\n\n\n🛑 Si le meilleur modèle (au sens du critère donné) est le modèle \\(M_2^{(k_1)}\\) on s’arrête là. Le modèle \\(M_2^{(k_1)}\\) est le modèle sélectionné.\n\n\n⏩ Sinon on passe à l’étape suivante avec le modèle qui maximise \\(R^2_{aj}\\) ou minimise l’\\(AIC\\) ou le \\(BIC\\). Appelons le\n\\[M_3^{(k_{2})}:Y_i=\\beta+\\alpha_{k_1} x_{k_1}+\\alpha_{k_2} x_{k_2} +E_i\\] ⏩ Les variables \\(x_{k_1}\\) et \\(x_{k_2}\\) sont sélectionnées dans le modèle.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#écriture-du-modèle-à-létape-q",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#écriture-du-modèle-à-létape-q",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.9 Écriture du modèle à l’étape \\(q\\)",
+    "text": "3.9 Écriture du modèle à l’étape \\(q\\)\n📈 On part du modèle \\(M_q^{(k_{q -1})}:Y_i=\\beta+\\sum _{i=1}^{q-1} \\alpha_{k_i} x_{k_i} +E_i\\) et on calcul le critère. (Les variables \\(x_{k_1},\\dots, x_{k_{q-1}}\\)) ont été selectionnées aux \\(q-1\\) étapes précédentes)\n\n📈 Pour les variables \\(x_1\\) jusqu’à \\(x_{p}\\) (sauf les variables \\(x_{k_1}, \\dots, x_{k_{q-1}}\\)) on lance le modèle \\[M_{q+1}^{(k)}:Y_i=\\beta+\\sum _{i=1}^{q-1} \\alpha_{k_i} x_{k_i} +\\alpha_k x_k +E_i, \\quad  k \\mbox{ pas encore sélectionné}\\] on fait donc \\(p-(q-1)\\) modèles. Sur chacuns de ces modèles on calcul notre critère.\n\n\n🛑 Si le meilleur modèle (au sens du critère donné) est le modèle \\(M_q^{(k_{q -1})}\\) on s’arrête là. Le modèle \\(M_q^{(k_{q -1})}\\) est le modèle sélectionné.\n\n\n⏩ Sinon on passe à l’étape suivante avec le modèle qui maximise \\(R^2_{aj}\\) ou minimise l’\\(AIC\\) ou le \\(BIC\\). Appelons le\n\\[M_{q+1}^{(k_q)}:Y_i=\\beta+\\alpha_{k_1} x_{k_1}+\\alpha_{k_2} x_{k_2}+...+\\alpha_{k_q} x_{k_q} +E_i\\]\n⏩ Les variables \\(x_{k_1},x_{k_2},\\dots,x_{k_q}\\) sont sélectionnées dans le modèle.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#fin-de-lalgorithme",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#fin-de-lalgorithme",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.10 🛑 Fin de l’algorithme",
+    "text": "3.10 🛑 Fin de l’algorithme\n\n\n\n\n\n\nNoteArrêt de l’algorithme\n\n\n\nOn s’arrête si :\n\nDans une des étapes si l’ \\(AIC\\) ou le \\(BIC\\) (resp. \\(R^2_{aj}\\)) du modèle \\(M_{q}^{k_{q}}\\) est plus petit (resp. plus grand) que celui du modèle \\(M_{q +1}^{(k_{q +1})}\\).\nSi on arrive au bout et qu’on a toutes les variables dans le modèles : on garde le modèle complet.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-ascendante-forward-avec-r-aic",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-ascendante-forward-avec-r-aic",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.11 Sélection ascendante (Forward) avec R : AIC",
+    "text": "3.11 Sélection ascendante (Forward) avec R : AIC\n\nm1 &lt;- lm(IFNg~1, data = immuno)\nstep(m1,\n     scope=list(upper=~IL12+IL1+IL6+IL4+IL5),\n     direction=\"forward\",\n     trace=TRUE,\n     k = 2)\n\nArguments de step :\n\nm1 le modèle duquel on part\nscope=list(upper=~IL12+IL1+IL6+IL4+IL5) : on a le droit d’aller jusqu’au modèle IFNg~IL12+IL1+IL6+IL4+IL5\ndirection = \"forward\" : on fait de la selection forward (on part du petit modèle pour aller vers le grand)\ntrace = TRUE : affiche toutes les étapes\nk = 2 : la pénalité devant le nombre de paramètres. pour BIC k=log(n) où \\(n\\) est le nombre d’observations.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#première-étape",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#première-étape",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.12 Première étape",
+    "text": "3.12 Première étape\n📈\nStart:  AIC=73.89\nIFNg ~ 1\n\n       Df Sum of Sq    RSS    AIC\n+ IL12  1   29.0138 176.21 60.653\n+ IL4   1   11.7248 193.50 70.012\n+ IL6   1    9.2897 195.94 71.263\n+ IL1   1    4.3201 200.91 73.767\n&lt;none&gt;              205.23 73.895\n+ IL5   1    2.9707 202.26 74.437\n\n\n⏩ Si on ajoute IL12 on passe d’un AIC de 73.89 à un AIC 60.65.\n⏩ Le premier modèle est \\(IFNg = \\beta + \\alpha_1 IL12 + E\\)",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#deuxième-étape",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#deuxième-étape",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.13 Deuxième étape",
+    "text": "3.13 Deuxième étape\n📈\nStep:  AIC=60.65\nIFNg ~ IL12\n\n       Df Sum of Sq    RSS    AIC\n+ IL4   1   15.3796 160.83 53.520\n+ IL6   1    9.1733 167.04 57.306\n+ IL1   1    4.2064 172.01 60.237\n&lt;none&gt;              176.21 60.653\n+ IL5   1    0.2443 175.97 62.514\n\n\n⏩ Si on ajoute IL4, on passe d’un AIC 60.65 à un AIC de 53.52\n⏩ Le deuxième modèle est \\(IFNg = \\beta + \\alpha_1 IL12 + \\alpha_2 IL4 + E\\)",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#troisième-étape",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#troisième-étape",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.14 Troisième étape",
+    "text": "3.14 Troisième étape\n📈\nStep:  AIC=53.52\nIFNg ~ IL12 + IL4\n\n       Df Sum of Sq    RSS    AIC\n+ IL6   1   14.0990 146.74 46.346\n+ IL1   1    8.0410 152.79 50.391\n+ IL5   1    7.2759 153.56 50.891\n&lt;none&gt;              160.83 53.520\n\n\n\n⏩ Si on ajoute IL6, on passe d’un AIC de 53.52 à un AIC 46.346\n⏩ Le troisième modèle est \\(IFNg =\\beta + \\alpha_1 IL12 + \\alpha_2 IL4 + \\alpha_3 IL6 + E\\)",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#quatrième-étape",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#quatrième-étape",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.15 Quatrième étape",
+    "text": "3.15 Quatrième étape\n📈\nStep:  AIC=46.35\nIFNg ~ IL12 + IL4 + IL6\n\n       Df Sum of Sq    RSS    AIC\n+ IL5   1    3.2290 143.51 46.121\n&lt;none&gt;              146.74 46.346\n+ IL1   1    0.5704 146.16 47.956\n\n⏩ Si on ajoute IL5, on passe d’un AIC de 46.35 à un AIC 46.121.\n⏩ Le quatrième modèle est \\(IFNg = \\beta + \\alpha_1 IL12 + \\alpha_2 IL4 + \\alpha_3 IL6 + \\alpha_4 IL5 + E\\)",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#cinquième-étape",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#cinquième-étape",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.16 Cinquième étape",
+    "text": "3.16 Cinquième étape\n📈\nStep:  AIC=46.12\nIFNg ~ IL12 + IL4 + IL6 + IL5\n\n       Df Sum of Sq    RSS    AIC\n&lt;none&gt;              143.51 46.121\n+ IL1   1   0.56321 142.94 47.727\n\n\nCall:\nlm(formula = IFNg ~ IL12 + IL4 + IL6 + IL5, data = immuno)\n\nCoefficients:\n(Intercept)         IL12          IL4          IL6          IL5  \n  8.836e+00    9.687e-05    1.984e-03    5.488e-06   -2.229e-04\n\n🛑 On n’ajoute pas IL1 (car cela ferait augmenter l’AIC et passer de 46.121 à 47.727)\n🛑 On s’arrete là!\n🛑 Le modèle final est \\(IFNg = \\beta + \\alpha_1 IL12 + \\alpha_2 IL4 + \\alpha_3 IL6 + \\alpha_4 IL5 + E\\)\n🛑 l’AIC final est de 46.121",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-ascendante-forward-avec-r-bic",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-ascendante-forward-avec-r-bic",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.17 Sélection ascendante (Forward) avec R : BIC",
+    "text": "3.17 Sélection ascendante (Forward) avec R : BIC\n📈\n⏩\n\nm1 &lt;- lm(IFNg~1, data = immuno)\nn &lt;- nrow(immuno)\nstep(m1,\n     scope=list(upper=~IL12+IL1+IL6+IL4+IL5),\n     direction=\"forward\",\n     trace=FALSE,\n     k = log(n))\n\n\nCall:\nlm(formula = IFNg ~ IL12 + IL4 + IL6, data = immuno)\n\nCoefficients:\n(Intercept)         IL12          IL4          IL6  \n  8.651e+00    1.044e-04    1.649e-03    6.283e-06  \n\n\nIci on a changé \\(k = 2\\) en \\(k = log(n)\\)\nLe trace = FALSE n’affiche pas toutes les étapes mais seulement l’étape finale\n🛑 Le modèle final est \\(IFNg =\\beta + \\alpha_1 IL12 + \\alpha_2 IL4 + \\alpha_3 IL6  + E\\)",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-descendante-bacward-selection",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-descendante-bacward-selection",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.18 Sélection descendante (bacward selection)",
+    "text": "3.18 Sélection descendante (bacward selection)\n\n\n\n\n\n\nNoteSélection ascendante (Forward)\n\n\n\nOn part d’un modèle sans variables et on en ajoute.\n\n\n\n\n\nflowchart LR\nA[$$M_1$$] --&gt; B[$$M_2$$]\nB --&gt; C[$$M_3$$] \nC --&gt; D[$$...$$] \nD --&gt; E[\"$$M_{p_f}$$\"] \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteÉlimination descendante (Backward)\n\n\n\nOn part d’un modèle avec toutes les variables et on en enlève.\n\n\n\n\n\nflowchart LR\nA[\"$$M_{p}$$\"] --&gt; B[\"$$M_{p-1}$$\"]\nB --&gt; C[\"$$M_{p-2}$$\"] \nC --&gt; D[$$...$$] \nD --&gt; E[\"$$M_{p_b}$$\"]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-descendante-backward-selection",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-descendante-backward-selection",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.19 Sélection descendante (backward selection)",
+    "text": "3.19 Sélection descendante (backward selection)\n\n\n\n\n\n\n\nNoteÉtape 1: modèle à \\(p-1\\) variable\n\n\n\n📈 On effectue toutes les régressions simples possibles avec \\(p-1\\) variable explicative.\n🛑 Si aucun modèle n’est ‘meilleur’ que celui à \\(p\\) variables on s’arrête là.\n⏩ Sinon, on retient le modèle qui maximise (ou minimise) le critère, la première variable est retirée.\n\n\n\n\n\n\n\n\n\nNoteÉtape 2: modèle à \\(p-2\\) variables\n\n\n\n📈 On effectue les régressions possibles avec \\(p-2\\) variables explicatives qui ne comportent pas la variable retirée à l’étape précédente.\n🛑 Si aucun modèle n’est ‘meilleur’ que celui à \\(p-1\\) variable, on s’arrête là.\n⏩ Sinon, on retient le modèle qui maximise (ou minimise) le critère, la deuxième variable est retirée.\n\n\n\n\nOn reitère, en effectuant les régressions possibles avec \\(p-3\\) variables explicatives, puis \\(p-4\\)…\n\n\n\n\n\n\n\n\nNote🛑 Fin de l’algorithme\n\n\n\nLe processus se termine lorsqu’un modèle d’une étape précédente est meilleur que tous les modèles de l’étape actuelle.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-descendante-backward-avec-r-aic",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-descendante-backward-avec-r-aic",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.20 Sélection descendante (Backward) avec R : AIC",
+    "text": "3.20 Sélection descendante (Backward) avec R : AIC\n\nstep(mod_comp,\n     direction=\"backward\",\n     trace=FALSE,\n     k = 2)\n\n\nCall:\nlm(formula = IFNg ~ IL12 + IL6 + IL4 + IL5, data = immuno)\n\nCoefficients:\n(Intercept)         IL12          IL6          IL4          IL5  \n  8.836e+00    9.687e-05    5.488e-06    1.984e-03   -2.229e-04",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-descendante-backward-avec-r-bic",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-descendante-backward-avec-r-bic",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.21 Sélection descendante (Backward) avec R : BIC",
+    "text": "3.21 Sélection descendante (Backward) avec R : BIC\n\nn &lt;- nrow(immuno)\nstep(mod_comp, \n     direction=\"backward\",\n     trace=TRUE,\n     k = log(n))",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#première-étape-1",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#première-étape-1",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.22 Première étape",
+    "text": "3.22 Première étape\n\nn &lt;- nrow(immuno)\nstep(mod_comp, \n     direction=\"backward\",\n     trace=TRUE,\n     k = log(n))\n\nStart:  AIC=63.36\nIFNg ~ IL12 + IL1 + IL6 + IL4 + IL5\n\n       Df Sum of Sq    RSS    AIC\n- IL1   1    0.5632 143.51 59.146\n- IL5   1    3.2219 146.16 60.982\n- IL6   1    4.6127 147.56 61.929\n&lt;none&gt;              142.94 63.358\n- IL4   1   23.8140 166.76 74.162\n- IL12  1   27.1734 170.12 76.157\n\n\n\n\n\n\nCautionRemarque\n\n\n\nMême si il y a écrit \\(AIC\\) il s’agit bien du \\(BIC\\) car on a changé \\(k\\).\n\n\n\n⏩ Si on enlève IL1, on passe d’un BIC de 63.36 à 59.146\n⏩ Le modèle est : \\(IFNg = \\alpha_1 IL12 + \\alpha_2 IL4 + \\alpha_3 IL6 + \\alpha_4 IL5 + E\\)",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#deuxième-étape-1",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#deuxième-étape-1",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.23 Deuxième étape",
+    "text": "3.23 Deuxième étape\nStep:  AIC=59.15\nIFNg ~ IL12 + IL6 + IL4 + IL5\n\n       Df Sum of Sq    RSS    AIC\n- IL5   1     3.229 146.74 56.766\n&lt;none&gt;              143.51 59.146\n- IL6   1    10.052 153.56 61.312\n- IL4   1    23.337 166.84 69.609\n- IL12  1    27.125 170.63 71.854\n\n⏩ Si on enlève IL5, on passe d’un BIC de 59.146 à 56.766\n⏩ Le modèle est : \\(IFNg = \\alpha_1 IL12 + \\alpha_2 IL4 + \\alpha_3 IL6  + E\\)",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#troisième-étape-1",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#troisième-étape-1",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.24 Troisième étape",
+    "text": "3.24 Troisième étape\nStep:  AIC=56.77\nIFNg ~ IL12 + IL6 + IL4\n\n       Df Sum of Sq    RSS    AIC\n&lt;none&gt;              146.74 56.766\n- IL6   1    14.099 160.83 61.336\n- IL4   1    20.305 167.04 65.122\n- IL12  1    33.178 179.91 72.546\n\nCall:\nlm(formula = IFNg ~ IL12 + IL6 + IL4, data = immuno)\n\nCoefficients:\n(Intercept)         IL12          IL6          IL4  \n  8.651e+00    1.044e-04    6.283e-06    1.649e-03  \n\n🛑 On s’arrete là!\n🛑 Le modèle finale est \\(IFNg = \\alpha_1 IL12 + \\alpha_2 IL4 + \\alpha_3 IL6  + E\\)",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#procédure-pas-à-pas-1",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#procédure-pas-à-pas-1",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.25 Procédure pas à pas",
+    "text": "3.25 Procédure pas à pas\n\n\n\n\n\n\nNoteÉlimination descendante (Backward)\n\n\n\nOn part d’un modèle avec toutes les variables et on en enlève.\n\n\n\n\n\nflowchart LR\nA[\"$$M_{p}$$\"] --&gt; B[\"$$M_{p-1}$$\"]\nB --&gt; C[\"$$M_{p-2}$$\"] \nC --&gt; D[$$...$$] \nD --&gt; E[\"$$M_{p_b}$$\"] \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteProcédure pas à pas (Stepwise)\n\n\n\nOn part du modèle qu’on veut et on ajoute ou enlève des variables.\n\n\n\n\n\nflowchart LR\nA[\"$$M_{p}$$\"] --&gt; B[\"$$M_{p-1}$$\"]\nB --&gt; C[\"$$M_{p-2}$$\"] \nC --&gt; D[\"$$M_{p-1}$$\"] \nD --&gt; E[$$...$$] \nE --&gt; F[\"$$M_{p_b}$$\"]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-de-variable-stepwise-dans-les-deux-sens",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-de-variable-stepwise-dans-les-deux-sens",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.26 Sélection de variable stepwise (dans les deux sens)",
+    "text": "3.26 Sélection de variable stepwise (dans les deux sens)\n\n\n\n\n\n\n\nNoteInitialisation\n\n\n\nOn peut partir du modèle complet \\(M_p\\), du modèle \\(M_1\\), ou du modèle qu’on veut.\n\n\n\n\n\n\n\n\n\nNoteÉtape \\(q\\)\n\n\n\n📈 On re-éxamine à chaque étape les variables introduites ou retirées du modèle.\n\nÀ chaque étape on peut soit:\n⏩ ajouter une variable qui n’est pas dans le modèle.\n⏩ retirer une variable qui est dans le modèle .\n\n\n\n\n\n\n\n\n\n\n\nCautionRemarque\n\n\n\nUne variable introduite à un moment peut être retirée à un autre si elle est corrélées avec d’autre qui sont introduites plus tard dans le modèle.\n\n\n\n\n\n\n\n\n\n\nNote🛑 Fin de l’algorithme\n\n\n\nLe processus continue jusqu’à ce qu’on ne puisse plus améliorer le critère en ajoutant ou retirant des variables",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#détail-de-létape-q-en-français",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#détail-de-létape-q-en-français",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.27 Détail de l’étape \\(q\\) “en français”",
+    "text": "3.27 Détail de l’étape \\(q\\) “en français”\n\n\n\n\n\n\nNoteÉtape \\(q\\)\n\n\n\n📈 Pour toutes les variables qui ne sont pas dans le modèle actuel on lance le modèle avec les variables inclues dans le modèle précédent et cette variable.\n\n📈 Pour toutes les variables qui sont dans le modèle précédent on lance le modèle avec les variables inclues dans le modèle précédent moins cette variable.\n\n\n📈 On calcule le critère pour tous ces modèles.\n\n\n🛑 Si aucun critère n’est ‘meilleur’ que le modèle précédent on s’arrête là.\n\n\n⏩ Sinon, on retient le modèle qui maximise (ou minimise) le critère.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#détail-de-létape-q-en-maths",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#détail-de-létape-q-en-maths",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.28 Détail de l’étape \\(q\\) “en maths”",
+    "text": "3.28 Détail de l’étape \\(q\\) “en maths”\n\n\n\n\n\n\n\n\nNoteInitialisation\n\n\n\nOn Choisit un modèle de départ :\nSoit \\(S^{(1)} \\subset \\{1, \\dots, p\\}\\) le sous-ensemble des variable sélectionnées dans le modèle de départ \\[M^{(1)}: Y_i = \\beta + \\sum_{j \\in S^{(1)}} \\alpha_j x_{j,i} + E_i\\]\n\n\n\n\n\n\n\n\n\nNoteÉtape \\(q\\)\n\n\n\nOn lance \\(p\\) modèles et on calcule notre critère sur ces \\(p\\) modèles.\n\n📈 Pour \\(k \\notin S^{(q-1)}\\) \\[M^{(q,k)}: Y_i = \\sum_{j \\in S^{(q-1)} } \\alpha_j x_{j,i} + \\alpha_k x_{k,i} + E_i\\]\n\n\n📈 Pour \\(k \\in S^{(q-1)}\\) \\[M^{(q,k)}: Y_i = \\sum_{j \\in S^{(q-1)} \\& j \\neq k } \\alpha_j x_{j,i} + E_i\\]\n\n\n⏩ On sélectionne ensuite le modèle pour lequel le critère est le plus faible (ou plus élevé si \\(R^2_{aj}\\)).\n⏩ On note \\(S^{(q)}\\) le sous ensemble des variables selectionnées à l’étape \\(q\\).\n\n\n🛑 Si aucun critère n’est ‘meilleur’ que le modèle précédent on s’arrête là.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-stepwise-avec-r-aic",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-stepwise-avec-r-aic",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.29 Sélection stepwise avec R (AIC)",
+    "text": "3.29 Sélection stepwise avec R (AIC)\nEn Partant du modèle M1\n\nn &lt;- nrow(immuno)\nstep(m1,\n     scope=list(upper=~IL12+IL1+IL6+IL4+IL5),\n     direction=\"both\",\n     trace=TRUE,\n     k = 2)",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#première-étape-2",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#première-étape-2",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.30 Première étape",
+    "text": "3.30 Première étape\n📈 On regarde les 5 modèles à une variables\nStart:  AIC=73.89\nIFNg ~ 1\n\n       Df Sum of Sq    RSS    AIC\n+ IL12  1   29.0138 176.21 60.653\n+ IL4   1   11.7248 193.50 70.012\n+ IL6   1    9.2897 195.94 71.263\n+ IL1   1    4.3201 200.91 73.767\n&lt;none&gt;              205.23 73.895\n+ IL5   1    2.9707 202.26 74.437\n⏩ Si on ajoute IL12, l’AIC passe de 73.89 à 60.653\n⏩ Le modèle est \\(IFNg = \\beta + \\alpha_1 IL12 + E\\)",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#deuxième-etape",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#deuxième-etape",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.31 Deuxième etape",
+    "text": "3.31 Deuxième etape\n📈 On regarde les 4 modèles avec IL12 et une autre variable 📈 On regarde le modèle auquel on retire IL12 (donc le modèle \\(M1\\))\n Step:  AIC=60.65\nIFNg ~ IL12\n\n       Df Sum of Sq    RSS    AIC\n+ IL4   1   15.3796 160.83 53.520\n+ IL6   1    9.1733 167.04 57.306\n+ IL1   1    4.2064 172.01 60.237\n&lt;none&gt;              176.21 60.653\n+ IL5   1    0.2443 175.97 62.514\n- IL12  1   29.0138 205.23 73.895\n\n⏩ Si on ajoute IL4, l’AIC passe de 60.65 à 53.520\n⏩ Le modèle est \\(IFNg = \\beta + \\alpha_1 IL12 +\\alpha_2 IL4+ E\\)",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#troisième-étape-2",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#troisième-étape-2",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.32 Troisième étape",
+    "text": "3.32 Troisième étape\n📈 On regarde les 3 modèles avec IL12 et IL4 et une autre variable 📈 On regarde le modèle auquel on retire IL12 ou IL4\nStep:  AIC=53.52\nIFNg ~ IL12 + IL4\n\n       Df Sum of Sq    RSS    AIC\n+ IL6   1    14.099 146.74 46.346\n+ IL1   1     8.041 152.79 50.391\n+ IL5   1     7.276 153.56 50.891\n&lt;none&gt;              160.83 53.520\n- IL4   1    15.380 176.21 60.653\n- IL12  1    32.669 193.50 70.012\n⏩ Si on ajoute IL6, l’AIC passe de 53.52 à 46.346\n⏩ Le modèle est \\(IFNg = \\beta + \\alpha_1 IL12 +\\alpha_2 IL4+ \\alpha_3IL6+ E\\)",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#quatrième-étape-1",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#quatrième-étape-1",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.33 Quatrième étape",
+    "text": "3.33 Quatrième étape\nStep:  AIC=46.35\nIFNg ~ IL12 + IL4 + IL6\n\n       Df Sum of Sq    RSS    AIC\n+ IL5   1     3.229 143.51 46.121\n&lt;none&gt;              146.74 46.346\n+ IL1   1     0.570 146.16 47.956\n- IL6   1    14.099 160.83 53.520\n- IL4   1    20.305 167.04 57.306\n- IL12  1    33.178 179.91 64.730",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#cinquième-étape-1",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#cinquième-étape-1",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.34 Cinquième étape",
+    "text": "3.34 Cinquième étape\nStep:  AIC=46.12\nIFNg ~ IL12 + IL4 + IL6 + IL5\n\n       Df Sum of Sq    RSS    AIC\n&lt;none&gt;              143.51 46.121\n- IL5   1    3.2290 146.74 46.346\n+ IL1   1    0.5632 142.94 47.727\n- IL6   1   10.0521 153.56 50.891\n- IL4   1   23.3367 166.84 59.188\n- IL12  1   27.1246 170.63 61.433\n\nCall:\nlm(formula = IFNg ~ IL12 + IL4 + IL6 + IL5, data = immuno)\n\nCoefficients:\n(Intercept)         IL12          IL4          IL6          IL5  \n  8.836e+00    9.687e-05    1.984e-03    5.488e-06   -2.229e-04  \n🛑 Le modèle final est\n\\[\nINFg =\\beta+ \\alpha_1 IL12 + \\alpha_2 IL4 + \\alpha_3 IL6 + \\alpha_4 IL5 +E\n\\]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-stepwise-avec-r-bic",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-stepwise-avec-r-bic",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.35 Sélection stepwise avec R (BIC)",
+    "text": "3.35 Sélection stepwise avec R (BIC)\nEn Partant du modèle M1\n\nn &lt;- nrow(immuno)\nstep(m1,\n     scope=list(upper=~IL12+IL1+IL6+IL4+IL5),\n     direction=\"both\", \n     trace=TRUE, \n     k = log(n))\n\n\n\nStart:  AIC=76.5\nIFNg ~ 1\n\n       Df Sum of Sq    RSS    AIC\n+ IL12  1   29.0138 176.21 65.863\n+ IL4   1   11.7248 193.50 75.222\n+ IL6   1    9.2897 195.94 76.473\n&lt;none&gt;              205.23 76.500\n+ IL1   1    4.3201 200.91 78.978\n+ IL5   1    2.9707 202.26 79.647\n\nStep:  AIC=65.86\nIFNg ~ IL12\n\n       Df Sum of Sq    RSS    AIC\n+ IL4   1   15.3796 160.83 61.336\n+ IL6   1    9.1733 167.04 65.122\n&lt;none&gt;              176.21 65.863\n+ IL1   1    4.2064 172.01 68.052\n+ IL5   1    0.2443 175.97 70.329\n- IL12  1   29.0138 205.23 76.500\n\nStep:  AIC=61.34\nIFNg ~ IL12 + IL4\n\n       Df Sum of Sq    RSS    AIC\n+ IL6   1    14.099 146.74 56.766\n+ IL1   1     8.041 152.79 60.812\n+ IL5   1     7.276 153.56 61.312\n&lt;none&gt;              160.83 61.336\n- IL4   1    15.380 176.21 65.863\n- IL12  1    32.669 193.50 75.222\n\nStep:  AIC=56.77\nIFNg ~ IL12 + IL4 + IL6\n\n       Df Sum of Sq    RSS    AIC\n&lt;none&gt;              146.74 56.766\n+ IL5   1     3.229 143.51 59.146\n+ IL1   1     0.570 146.16 60.982\n- IL6   1    14.099 160.83 61.336\n- IL4   1    20.305 167.04 65.122\n- IL12  1    33.178 179.91 72.546\n\n\n\nCall:\nlm(formula = IFNg ~ IL12 + IL4 + IL6, data = immuno)\n\nCoefficients:\n(Intercept)         IL12          IL4          IL6  \n  8.651e+00    1.044e-04    1.649e-03    6.283e-06",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-stepwise-avec-r-aic-1",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-stepwise-avec-r-aic-1",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.36 Sélection stepwise avec R (AIC)",
+    "text": "3.36 Sélection stepwise avec R (AIC)\nEn Partant du modèle Modèle complet\n\nstep(mod_comp,\n     scope=list(upper=~IL12+IL1+IL6+IL4+IL5),\n     direction=\"both\",\n     trace=FALSE,\n     k = 2)",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-stepwise-avec-r-aic-2",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-stepwise-avec-r-aic-2",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.37 Sélection stepwise avec R (AIC)",
+    "text": "3.37 Sélection stepwise avec R (AIC)\nEn Partant du modèle complet\n\n\nStart:  AIC=47.73\nIFNg ~ IL12 + IL1 + IL6 + IL4 + IL5\n\n       Df Sum of Sq    RSS    AIC\n- IL1   1    0.5632 143.51 46.121\n&lt;none&gt;              142.94 47.727\n- IL5   1    3.2219 146.16 47.956\n- IL6   1    4.6127 147.56 48.903\n- IL4   1   23.8140 166.76 61.137\n- IL12  1   27.1734 170.12 63.131\n\nStep:  AIC=46.12\nIFNg ~ IL12 + IL6 + IL4 + IL5\n\n       Df Sum of Sq    RSS    AIC\n&lt;none&gt;              143.51 46.121\n- IL5   1    3.2290 146.74 46.346\n+ IL1   1    0.5632 142.94 47.727\n- IL6   1   10.0521 153.56 50.891\n- IL4   1   23.3367 166.84 59.188\n- IL12  1   27.1246 170.63 61.433\n\n\n\nCall:\nlm(formula = IFNg ~ IL12 + IL6 + IL4 + IL5, data = immuno)\n\nCoefficients:\n(Intercept)         IL12          IL6          IL4          IL5  \n  8.836e+00    9.687e-05    5.488e-06    1.984e-03   -2.229e-04",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-stepwise-avec-r-bic-1",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-stepwise-avec-r-bic-1",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.38 Sélection stepwise avec R (BIC)",
+    "text": "3.38 Sélection stepwise avec R (BIC)\nEn Partant du modèle complet\n\nn &lt;- nrow(immuno)\nstep(mod_comp,\n     direction=\"both\",\n     trace=TRUE,\n     k = log(n))",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-stepwise-avec-r-bic-2",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#sélection-stepwise-avec-r-bic-2",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.39 Sélection stepwise avec R (BIC)",
+    "text": "3.39 Sélection stepwise avec R (BIC)\n\n\nStart:  AIC=63.36\nIFNg ~ IL12 + IL1 + IL6 + IL4 + IL5\n\n       Df Sum of Sq    RSS    AIC\n- IL1   1    0.5632 143.51 59.146\n- IL5   1    3.2219 146.16 60.982\n- IL6   1    4.6127 147.56 61.929\n&lt;none&gt;              142.94 63.358\n- IL4   1   23.8140 166.76 74.162\n- IL12  1   27.1734 170.12 76.157\n\nStep:  AIC=59.15\nIFNg ~ IL12 + IL6 + IL4 + IL5\n\n       Df Sum of Sq    RSS    AIC\n- IL5   1    3.2290 146.74 56.766\n&lt;none&gt;              143.51 59.146\n- IL6   1   10.0521 153.56 61.312\n+ IL1   1    0.5632 142.94 63.358\n- IL4   1   23.3367 166.84 69.609\n- IL12  1   27.1246 170.63 71.854\n\nStep:  AIC=56.77\nIFNg ~ IL12 + IL6 + IL4\n\n       Df Sum of Sq    RSS    AIC\n&lt;none&gt;              146.74 56.766\n+ IL5   1     3.229 143.51 59.146\n+ IL1   1     0.570 146.16 60.982\n- IL6   1    14.099 160.83 61.336\n- IL4   1    20.305 167.04 65.122\n- IL12  1    33.178 179.91 72.546\n\n\n\nCall:\nlm(formula = IFNg ~ IL12 + IL6 + IL4, data = immuno)\n\nCoefficients:\n(Intercept)         IL12          IL6          IL4  \n  8.651e+00    1.044e-04    6.283e-06    1.649e-03",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#résumé-selection-de-variable-pas-à-pas",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#résumé-selection-de-variable-pas-à-pas",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.40 Résumé selection de variable pas à pas",
+    "text": "3.40 Résumé selection de variable pas à pas\n\nSélection ascendante (forward):\n\nAIC : IL12 + IL4 + IL6 + IL5\nBIC : IL12 + IL4 + IL6\n\nSélection descendante (backward):\n\nAIC : IL12 + IL4 + IL6 + IL5\nBIC : IL12 + IL4 + IL6\n\nSélection dans les deux sens (stepwise):\n\nEn partant du modèle \\(M_1\\)\n\nAIC : IL12 + IL4 + IL6 + IL5\nBIC : IL12 + IL4 + IL6\n\nEn partant du modèle complet\n\nAIC : IL12 + IL4 + IL6 + IL5\nBIC : IL12 + IL4 + IL6",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#choix-final",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#choix-final",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.41 Choix final",
+    "text": "3.41 Choix final\nOn peut regarder les deux modèles :\n\n\n\nmod_fin_aic &lt;- lm(IFNg~ IL12 +IL4+ IL6+IL5 , data = immuno)\nsummary(mod_fin_aic)\n\n\nCall:\nlm(formula = IFNg ~ IL12 + IL4 + IL6 + IL5, data = immuno)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.0499 -0.7342  0.0051  0.7696  2.2120 \n\nCoefficients:\n              Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  8.836e+00  2.401e-01  36.800  &lt; 2e-16 ***\nIL12         9.687e-05  2.286e-05   4.237 5.23e-05 ***\nIL4          1.984e-03  5.047e-04   3.930 0.000161 ***\nIL6          5.488e-06  2.127e-06   2.580 0.011424 *  \nIL5         -2.229e-04  1.525e-04  -1.462 0.147028    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.229 on 95 degrees of freedom\nMultiple R-squared:  0.3007,    Adjusted R-squared:  0.2713 \nF-statistic: 10.21 on 4 and 95 DF,  p-value: 6.374e-07\n\n\n\n\nmod_fin_bic &lt;- lm(IFNg~ IL12 +IL4+ IL6 , data = immuno)\nsummary(mod_fin_bic)\n\n\nCall:\nlm(formula = IFNg ~ IL12 + IL4 + IL6, data = immuno)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-3.8630 -0.8139 -0.0105  0.8474  2.4126 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 8.651e+00  2.051e-01  42.185  &lt; 2e-16 ***\nIL12        1.044e-04  2.241e-05   4.659 1.02e-05 ***\nIL4         1.649e-03  4.524e-04   3.645 0.000434 ***\nIL6         6.283e-06  2.069e-06   3.037 0.003076 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.236 on 96 degrees of freedom\nMultiple R-squared:  0.285, Adjusted R-squared:  0.2627 \nF-statistic: 12.76 on 3 and 96 DF,  p-value: 4.374e-07",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#décision",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#décision",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.42 Décision",
+    "text": "3.42 Décision\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\nOn aime conserver les modèles le plus simple\nLe coefficient de IL5 n’est pas significativement différent de 0 (même au risque 10%), il n’est donc pas facile à interpréter\nLe modèle choisi par l’AIC est emboité dans le modèle choisi par le BIC on peut faire un test de fisher (qui a nouveau n’est pas significatif)\n\n\nanova(mod_fin_bic, mod_fin_aic)\n\nAnalysis of Variance Table\n\nModel 1: IFNg ~ IL12 + IL4 + IL6\nModel 2: IFNg ~ IL12 + IL4 + IL6 + IL5\n  Res.Df    RSS Df Sum of Sq      F Pr(&gt;F)\n1     96 146.74                           \n2     95 143.51  1     3.229 2.1376  0.147\n\n\n\n\n\n\n\n\n\n\nTipConclusion\n\n\n\nOn choisit le modèle\n\\[IFNg= \\alpha_1  IL12 + \\alpha_2 IL4 +\\alpha_3 IL6 + E\\]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#une-dernière-vérification",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#une-dernière-vérification",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.43 Une dernière vérification",
+    "text": "3.43 Une dernière vérification\nÀ l’aide d’un test de Fisher de comparaison de modèle, on peut vérifier si le modèle sélectionné est significativement différent du modèle complet :\n\nanova(mod_comp, mod_fin_aic)\n\nAnalysis of Variance Table\n\nModel 1: IFNg ~ IL12 + IL1 + IL6 + IL4 + IL5\nModel 2: IFNg ~ IL12 + IL4 + IL6 + IL5\n  Res.Df    RSS Df Sum of Sq      F Pr(&gt;F)\n1     94 142.94                           \n2     95 143.51 -1  -0.56321 0.3704 0.5443\n\n\nIci, on a \\(p_c&gt;5\\%\\), le test n’est pas significatif, le modèle complet n’est pas significativement différent du modèle sélectionné !",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#récapitulatif-sur-la-sélection-de-variable",
+    "href": "Cours/EMS/Modèle linéaire/Cours3/cours3.html#récapitulatif-sur-la-sélection-de-variable",
+    "title": "Sélection de variables dans le modèle linéaire multiple",
+    "section": "3.44 Récapitulatif sur la sélection de variable",
+    "text": "3.44 Récapitulatif sur la sélection de variable\n\n\n\n\n\n\n\nNotePourquoi fait-on de la sélection de variable ?\n\n\n\n\nModèle plus interprétable\nÉvite les redondances\n\n\n\n\n\n\n\n\n\nNoteChoix du critère\n\n\n\n\n\\(R^2_{aj}\\) (à maximiser)\n\\(AIC\\) (à minimiser)\n\\(BIC\\) (à minimiser)\n\n\n\n\n\n\n\n\n\nNoteSélection exhaustive\n\n\n\n\nOn calcul le critère sur tous les modèle possibles\nOn sélectionne le meilleur modèle pour notre critère\nTrès long : \\(2^p\\) modèle à comparer\n\n\n\n\n\n\n\n\n\nNoteSélection pas à pas\n\n\n\n\nSélection ascendante (Forward)\nÉlimination descendante (Backward)\nProcédure dans les deux sens (Stepwise)",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "Sélection de variables dans le modèle linéaire multiple"
+    ]
   }
 ]

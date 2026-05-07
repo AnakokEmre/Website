@@ -32,6 +32,7 @@ website:
             contents:
             - Cours/EMS/Modèle linéaire/Cours1/cours1.qmd
             - Cours/EMS/Modèle linéaire/Cours2/cours2.qmd
+            - Cours/EMS/Modèle linéaire/Cours3/cours3.qmd
 format:
   html:
     theme:

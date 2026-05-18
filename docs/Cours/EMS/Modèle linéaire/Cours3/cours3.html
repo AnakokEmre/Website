@@ -8982,7 +8982,7 @@ AIC(p) &amp;=&amp; -2ln(L) + 2(p +1)\times 1\\
 <div class="callout-body-container callout-body">
 <p>Le BIC (Schwarz, 1978) est défini pour <span class="math inline">\(f(n)=ln(n)/2\)</span> par <span class="math display">\[\begin{eqnarray*}
 BIC(p)&amp;=&amp;- 2 ln(L) +  (p+2)ln (n)\\
-&amp;=&amp;C + n\ ln\left(\frac{SCR(M_{p+1})}{n}\right)+ (p+2)ln (n)
+&amp;=&amp;C + n\ ln\left(\frac{SCR(M_{p+1})}{n}\right)+ (p+1)ln (n)
 \end{eqnarray*}\]</span></p>
 <p>où <span class="math inline">\(C\)</span> est une constante.</p>
 </div>
@@ -10462,15 +10462,15 @@ Model 2: IFNg ~ IL12 + IL4 + IL6 + IL5
 <h2 data-number="3.43" class="anchored" data-anchor-id="une-dernière-vérification"><span class="header-section-number">3.43</span> Une dernière vérification</h2>
 <p>À l’aide d’un test de Fisher de comparaison de modèle, on peut vérifier si le modèle sélectionné est significativement différent du modèle complet :</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod_comp, mod_fin_aic)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod_comp, mod_fin_bic)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Analysis of Variance Table
 
 Model 1: IFNg ~ IL12 + IL1 + IL6 + IL4 + IL5
-Model 2: IFNg ~ IL12 + IL4 + IL6 + IL5
+Model 2: IFNg ~ IL12 + IL4 + IL6
   Res.Df    RSS Df Sum of Sq      F Pr(&gt;F)
 1     94 142.94                           
-2     95 143.51 -1  -0.56321 0.3704 0.5443</code></pre>
+2     96 146.74 -2   -3.7922 1.2469 0.2921</code></pre>
 </div>
 </div>
 <p>Ici, on a <span class="math inline">\(p_c&gt;5\%\)</span>, le test n’est pas significatif, le modèle complet n’est pas significativement différent du modèle sélectionné !</p>

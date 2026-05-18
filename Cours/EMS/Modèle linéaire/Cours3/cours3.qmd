@@ -1035,7 +1035,7 @@ L'AIC est une pénalisation de la log-vraisemblance par deux fois le nombre de p
 Le BIC (Schwarz, 1978) est défini pour $f(n)=ln(n)/2$ par 
 $$\begin{eqnarray*}
 BIC(p)&=&- 2 ln(L) +  (p+2)ln (n)\\ 
-&=&C + n\ ln\left(\frac{SCR(M_{p+1})}{n}\right)+ (p+2)ln (n)
+&=&C + n\ ln\left(\frac{SCR(M_{p+1})}{n}\right)+ (p+1)ln (n)
 \end{eqnarray*}$$
 
 où $C$ est une constante.
@@ -2351,7 +2351,7 @@ $$IFNg= \alpha_1  IL12 + \alpha_2 IL4 +\alpha_3 IL6 + E$$
 À l'aide d'un test de Fisher de comparaison de modèle, on peut vérifier si le modèle sélectionné est significativement différent du modèle complet : 
 
 ```{r,echo=TRUE}
-anova(mod_comp, mod_fin_aic)
+anova(mod_comp, mod_fin_bic)
 ```
 
 Ici, on a $p_c>5\%$, le test n'est pas significatif, le modèle complet n'est pas significativement différent du modèle sélectionné ! 

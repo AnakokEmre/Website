@@ -5459,5 +5459,461 @@
       "Modèles linéaires",
       "Sélection de variables dans le modèle linéaire multiple"
     ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html",
+    "title": "ANOVA à un facteur",
+    "section": "",
+    "text": "library(tidyverse)\nlibrary(extrafont) \nrequire(ggsci)\nlibrary(ggpubr)\nlibrary(knitr)\nlibrary(ggfortify)\nlibrary(ggrepel)\nlibrary(corrplot)",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#ce-quil-faut-retenir-de-ce-cours",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#ce-quil-faut-retenir-de-ce-cours",
+    "title": "ANOVA à un facteur",
+    "section": "1.1 Ce qu’il faut retenir de ce cours",
+    "text": "1.1 Ce qu’il faut retenir de ce cours\n\n\n\n\n\n\n\nTipEncodage 1 parmi p\n\n\n\n\\[\nX = \\begin{bmatrix} \\text{Groupe 1} \\\\ \\text{Groupe 2} \\\\ \\text{Groupe 1} \\\\ \\text{Groupe 3} \\\\ \\text{Groupe 2} \\\\ \\text{Groupe 3} \\end{bmatrix} \\quad \\text{en} \\quad X^{(1)} = \\left[\\begin{array}{ccc} \\text{Groupe 1} & \\text{Groupe 2} & \\text{Groupe 3} \\\\ 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 1 & 0 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{array}\\right]\n\\]\nProblème : Le modèle ainsi défini n’est pas identifiable.\n\n\n\n\n\n\n\n\n\n\nNoteDéfinition : ANOVA à un facteur sans intercept\n\n\n\n\\[Y = X^{(1)}\\theta + E\\]\n\n\\(Y = [Y_1,\\dots,Y_n]^t\\) les v.a. à expliquer.\n\\(X^{(1)}\\) est la matrice encodée du facteur sans l’intercept.\n\\(\\theta = [\\mu_1,\\dots,\\mu_p]^t\\).\n\\(E \\sim \\mathcal{N}(0,\\sigma^2 I_n)\\).\n\n\n\n\n\n\n\n\n\n\nNoteDéfinition : ANOVA à un facteur avec groupe de référence\n\n\n\n\\[Y = X^{(1)}\\theta + E\\]\n\n\\(Y = [Y_1,\\dots,Y_n]^t\\) les v.a. à expliquer.\n\\(X^{(1)}\\) est la matrice encodée du facteur sans le groupe 1.\n\\(\\theta = [\\beta,\\alpha_2,\\dots,\\alpha_p]^t\\).\n\\(E \\sim \\mathcal{N}(0,\\sigma^2 I_n)\\).",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#introduction-1",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#introduction-1",
+    "title": "ANOVA à un facteur",
+    "section": "1.2 Introduction",
+    "text": "1.2 Introduction\n\n\n\n\n\n\nWarningObjectifs\n\n\n\n\nExpliquer une variable continue en fonction d’une variable catégorielle (appelée facteur).\nGénéralisation du test d’égalité de deux espérances (vu en cours sur les tests) à \\(p\\) espérances, si le facteur a \\(p\\) modalités\n\n\n\n\n\n\n\n\n\nNoteDonnées\n\n\n\n\nLes valeurs (continues) \\(y_i\\) pour \\(1\\leq i \\leq n\\)\nUne classe pour chaque individu \\(i\\)",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#exemple",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#exemple",
+    "title": "ANOVA à un facteur",
+    "section": "1.3 Exemple",
+    "text": "1.3 Exemple\n\n\n\n\n\n\nWarningObjectif\n\n\n\nÉtude de la prise de poids d’individus en fonction de leurs régime\n\n\n\n\n\n\n\n\nNoteDonnées\n\n\n\nPour \\(n= 76\\) individus on a :\n\nUne variable réponse à expliquer :\n\nLeur prise de poids (mesurée en kg)\n\nUn facteur explicatif à \\(p= 3\\) niveau (modalités):\n\nRégime 1\nRégime 2\nRégime 3",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#les-données",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#les-données",
+    "title": "ANOVA à un facteur",
+    "section": "1.4 Les données",
+    "text": "1.4 Les données\n\ndiet &lt;- read.table(file = \"Diet.txt\", header = TRUE, sep =\";\" )\ndiet$Diet &lt;- as.factor(diet$Diet)\nkable(head(diet))\n\n\n\n\nDiet\nDiff_poid\n\n\n\n\n1\n1.5\n\n\n3\n4.5\n\n\n3\n3.5\n\n\n2\n2.0\n\n\n1\n1.1\n\n\n1\n3.5",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#étude-univariées-des-données",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#étude-univariées-des-données",
+    "title": "ANOVA à un facteur",
+    "section": "1.5 Étude univariées des données",
+    "text": "1.5 Étude univariées des données\n\nsummary(diet$Diff_poid)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n -2.100   2.300   3.700   3.946   5.650   9.200 \n\n\nLes individus perde jusqu’à 2,1 kg et gagne jusqu’à 9,2 kg.\n\ntable(diet$Diet)\n\n\n 1  2  3 \n24 25 27 \n\n\n24 individus ont fait le régime 1, 25 ont fait le régime 2, et 27 ont fait le régime 3\n\nlibrary(ggbeeswarm)\nggplot(diet, aes(x= Diet, y = Diff_poid, color = Diet))+\n  geom_boxplot()+\n  geom_beeswarm(alpha = 0.5)",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#exemple-1",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#exemple-1",
+    "title": "ANOVA à un facteur",
+    "section": "1.6 Exemple",
+    "text": "1.6 Exemple\nÉtude de l’effet du régile sur la variable différence de poids (mesuré en kg).\n\nUne variable réponse continue : “la prise” de poids\nUn facteur explicatif à \\(p=3\\) niveaux (modalités) codé en\n\nRégime 1\nRégime 2\nRégime 3\n\n\nComment analyser ces données ?\n\nOn va calculer une estimation moyenne de prise de poids par régime.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#écriture-du-modèle",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#écriture-du-modèle",
+    "title": "ANOVA à un facteur",
+    "section": "1.7 Écriture du modèle",
+    "text": "1.7 Écriture du modèle\n\n\n\n\n\n\nNoteDéfinition\n\n\n\nPour \\(1\\leq i \\leq n\\) et \\(1\\leq j \\leq p\\)\n\n\\(y_{i,j}\\) l’observation de la variable réponse du \\(i\\)-ème individu qui a la modalité \\(j\\)\nOn suppose que \\(y_{i,j}\\) est la réalisation d’une variable aléatoire \\(Y_{i,j}\\) telle que\n\n\\[Y_{i,j} \\sim \\mathcal{N}(\\mu_j,\\sigma^2) \\] où \\(Y_{i,j}\\) est la variable aléatoire liée à l’individu \\(i\\) de la modalité \\(j\\), les \\(Y_{i,j}\\) sont indépendants.\n\n\n\n\n\n\n\n\nCautionRemarques : Nombre de paramètres\n\n\n\n\n\\(p\\) paramètres d’espérance (1 par modalité)\n1 paramètre de variance",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#trouver-les-paramètres-mu_j-et-sigma2",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#trouver-les-paramètres-mu_j-et-sigma2",
+    "title": "ANOVA à un facteur",
+    "section": "1.8 Trouver les paramètres (\\(\\mu_j\\) et \\(\\sigma^2\\))",
+    "text": "1.8 Trouver les paramètres (\\(\\mu_j\\) et \\(\\sigma^2\\))\n\n\n\n\n\n\nNoteCe que l’on sait faire\n\n\n\nTrouver les paramètres d’espérance \\(\\theta\\) tel que\n\\[Y = X\\theta + E,\\quad E \\sim \\mathcal{N}(0,\\sigma^2 I_n)\\]\n\n\n\n\n\n\n\n\nWarningProblème\n\n\n\n\nPour le modèle linéaire, \\(X\\) doit être numérique (quantitatif).\nIci, \\(X\\) est une catégorie (qualitatif).",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#encodage-one-hot-ou-encodage-1-parmi-p",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#encodage-one-hot-ou-encodage-1-parmi-p",
+    "title": "ANOVA à un facteur",
+    "section": "1.9 Encodage one-hot ou encodage 1 parmi \\(p\\)",
+    "text": "1.9 Encodage one-hot ou encodage 1 parmi \\(p\\)\n\n\n\n\n\n\nTipIdée\n\n\n\nTransformer la variable qualitative à \\(p\\) modalité \\(\\Longrightarrow\\) \\(p\\) variables 0/1\n\n\n\n\n\n\n\n\nTipExemple\n\n\n\n\\[\nR = \\begin{bmatrix} \\text{Régime 1} \\\\ \\text{Régime 2} \\\\ \\text{Régime 1} \\\\ \\text{Régime 3} \\\\ \\text{Régime 2} \\\\ \\text{Régime 3} \\end{bmatrix} \\quad \\text{en} \\quad X^{(1)} = \\left[\\begin{array}{ccc} \\text{Régime 1} & \\text{Régime 2} & \\text{Régime 3} \\\\ 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 1 & 0 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{array}\\right]\n\\]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#notations",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#notations",
+    "title": "ANOVA à un facteur",
+    "section": "1.10 Notations",
+    "text": "1.10 Notations\n\n\n\n\n\n\nTipModèle linéaire multiple\n\n\n\n\n\\(y_i\\) la valeur de la variable réponse.\n\\(X^{(1)}_{i,1}\\) est égale à 1 si l’individu \\(i\\) à fait le régime 1 et 0 sinon.\n\\(X^{(1)}_{i,2}\\) est égale à 1 si l’individu \\(i\\) à fait le régime 2 et 0 sinon.\n\\(X^{(1)}_{i,3}\\) est égale à 1 si l’individu \\(i\\) à fait le régime 3 et 0 sinon.\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nDans un premier temps, on pourra écrire :\n\\[Y_i = \\beta + \\alpha_1X^{(1)}_{i,1}+ \\alpha_2X^{(1)}_{i,2}+ \\alpha_3X^{(1)}_{i,3} + E_i,\\quad E_i\\overset{i.i.d}\\sim\\mathcal{N}(0,\\sigma^2)  \\]\nAttention ! Ce modèle présente un problème, qu’on verra plus tard…",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#interprétation-du-modèle",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#interprétation-du-modèle",
+    "title": "ANOVA à un facteur",
+    "section": "1.11 Interprétation du modèle",
+    "text": "1.11 Interprétation du modèle\n\n\n\n\n\n\n\nCautionRemarque\n\n\n\n\\[Y_i = \\beta + \\alpha_1X^{(1)}_{i,1}+ \\alpha_2X^{(1)}_{i,2}+ \\alpha_3X^{(1)}_{i,3} + E_i,\\quad E_i\\overset{i.i.d}\\sim\\mathcal{N}(0,\\sigma^2)  \\] Pour un \\(i \\in \\{1,\\dots,n\\}\\), il n’y a qu’un seul des \\(X^{(1)}_{i,1},X^{(1)}_{i,2},X^{(1)}_{i,3}\\) qui est égale à 1 et les autres valent 0.\n\nSi l’individu \\(i\\) fait le régime 1 : \\(X^{(1)}_{i,1}= 1\\) et \\(X^{(1)}_{i,2}=0,X^{(1)}_{i,3}=0\\), donc \\[Y_i = \\beta + \\alpha_1 + E_i \\]\nSi l’individu \\(i\\) fait le régime 2 : \\(X^{(1)}_{i,2}= 1\\) et \\(X^{(1)}_{i,1}=0,X^{(1)}_{i,3}=0\\), donc \\[Y_i = \\beta + \\alpha_2 + E_i \\]\nSi l’individu \\(i\\) fait le régime 3 : \\(X^{(1)}_{i,3}= 1\\) et \\(X^{(1)}_{i,1}=0,X^{(1)}_{i,2}=0\\), donc \\[Y_i = \\beta + \\alpha_3 + E_i \\]\n\nLa prise de poid de l’individu \\(i\\) est modélisée par une valeur globale plus une valeur dépendant de son régime et d’une erreur\nOn notant \\(\\mu_j = \\beta + \\alpha_j\\) on retrouve bien \\(Y_{i,j} \\sim \\mathcal{N}(\\mu_j,\\sigma^2)\\)",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#écriture-matricielle",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#écriture-matricielle",
+    "title": "ANOVA à un facteur",
+    "section": "1.12 Écriture matricielle",
+    "text": "1.12 Écriture matricielle\n\n\\[ Y = X\\theta + E\\]\n\\[\nX = \\left[\\begin{array}{cccc}\\text{intercept} & \\text{Régime 1} & \\text{Régime 2} & \\text{Régime 3} \\\\ 1 & 1 & 0 & 0 \\\\ 1 & 0 & 1 & 0 \\\\1 & 1 & 0 & 0 \\\\1 & 0 & 0 & 1 \\\\1 & 0 & 1 & 0 \\\\1 & 0 & 0 & 1 \\\\ \\vdots &\\vdots &\\vdots &\\vdots  \\end{array}\\right]\n\\]\n\n\\(E\\sim \\mathcal{N}(0,\\sigma^2I_n)\\)\nProblème ? Les collones de \\(X\\) sont colinéaires. En effet, on a \\(X^{(1)}_{i,1}+X^{(1)}_{i,2} + X^{(1)}_{i,3} = 1\\). La somme des trois dernières colonnes de \\(X\\) est égale à la première",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#identifiabilité",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#identifiabilité",
+    "title": "ANOVA à un facteur",
+    "section": "1.13 Identifiabilité",
+    "text": "1.13 Identifiabilité\n\n\n\n\n\n\nCautionRemarque\n\n\n\nLe modèle \\[Y_i = \\beta + \\alpha_1X^{(1)}_{i,1}+ \\alpha_2X^{(1)}_{i,2}+ \\alpha_3X^{(1)}_{i,3} + E_i,\\quad E_i\\overset{i.i.d}\\sim\\mathcal{N}(0,\\sigma^2)  \\] n’est pas identifiable.\nIl y a 4 paramètres d’espérance alors qu’il n’y a que 3 groupes.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#solution",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#solution",
+    "title": "ANOVA à un facteur",
+    "section": "1.14 Solution",
+    "text": "1.14 Solution\n\nPour résoudre ce problème, on va retirer une colonne de \\(X\\).\n\\(\\iff\\) mettre une contrainte obligeant un des paramètres à ếtre égale à 0.\nDeux possibilités :\n\n\n\n\n\n\nNoteModèle sans intercept\n\n\n\nOn retire la première colonne de \\(X\\)\n\\(\\iff \\beta = 0\\)\n\\[Y_i = \\mu_1X^{(1)}_{i,1}+ \\mu_2X^{(1)}_{i,2}+ \\mu_3X^{(1)}_{i,3} + E_i,\\quad E_i\\overset{i.i.d}\\sim\\mathcal{N}(0,\\sigma^2)  \\]\n\n\n\n\n\n\n\n\nNoteModèle avec groupe de référence\n\n\n\nOn retire une autre colonne de \\(X\\), par exemple la seconde\n\\(\\iff \\alpha_1 = 0\\) On dira alors que le groupe 1 est le groupe de référence.\n\\[Y_i =\\beta +  \\alpha_2X^{(1)}_{i,2}+ \\alpha_3X^{(1)}_{i,3} + E_i,\\quad E_i\\overset{i.i.d}\\sim\\mathcal{N}(0,\\sigma^2)\\]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#notation-matricielle-dans-lexemple",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#notation-matricielle-dans-lexemple",
+    "title": "ANOVA à un facteur",
+    "section": "2.1 Notation matricielle dans l’exemple",
+    "text": "2.1 Notation matricielle dans l’exemple\n\n\n\n\n\n\n\nNoteDéfinition : ANOVA à un facteur sans intercept\n\n\n\n\\[Y = X^{(1)}\\theta + E\\] où\n\n\\(Y = [Y_1,\\dots,Y_n]^t\\) les v.a. liées à la prise de poids de l’individu \\(\\{1, \\dots,n\\}\\).\n\\(X^{(1)}\\) est la matrice encodée du facteur “type de régime”.\n\\(\\theta = [\\mu_1,\\mu_2,\\mu_3]^t\\).\n\\(E \\sim \\mathcal{N}(0,\\sigma^2 I_n)\\).\n\n\n\nLa prise de poid de l’individu \\(i\\) est modélisée par une valeur dépendant de son régime et une erreur",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#notation-matricielle",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#notation-matricielle",
+    "title": "ANOVA à un facteur",
+    "section": "2.2 Notation matricielle",
+    "text": "2.2 Notation matricielle\n\n\n\n\n\n\n\nNoteDéfinition : ANOVA à un facteur sans intercept\n\n\n\n\\[Y = X^{(1)}\\theta + E\\] où\n\n\\(Y = [Y_1,\\dots,Y_n]^t\\) les v.a. à expliquer.\n\\(X^{(1)}\\) est la matrice encodée du facteur sans l’intercept.\n\\(\\theta = [\\mu_1,\\dots,\\mu_p]^t\\).\n\\(E \\sim \\mathcal{N}(0,\\sigma^2 I_n)\\).\n\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\nOn retombe bien sur le modèle\n\\[Y_{i,j} = \\mu_j + E_i, \\quad E_i\\overset{i.i.d.}{\\sim}\\mathcal{N}(0,\\sigma^2)\\]\n\\[\\iff Y_{i,j}\\sim\\mathcal{N}(\\mu_j,\\sigma^2)\\]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#estimation-des-mu_j",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#estimation-des-mu_j",
+    "title": "ANOVA à un facteur",
+    "section": "2.3 Estimation des \\(\\mu_j\\)",
+    "text": "2.3 Estimation des \\(\\mu_j\\)\n\n\n\n\n\n\nNoteRappel\n\n\n\nDans le cadre du modèle linéaire multivarié \\(Y = X\\theta +E\\)\nL’estimateur de \\(\\theta\\) est \\(\\widehat{\\theta} = (X^tX)^{-1}X^tY\\)\n\n\n\n\n\n\n\n\nTipThéorème\n\n\n\nDans le cadre de l’ANOVA à un facteur, \\(Y = X^{(1)}\\theta +E\\)\nL’estimateur de \\(\\theta\\) est \\(\\widehat{\\theta} = \\left({X^{(1)}}^tX^{(1)}\\right)^{-1}{X^{(1)}}^tY\\)",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#calcul-de-widehattheta-dans-lexemple",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#calcul-de-widehattheta-dans-lexemple",
+    "title": "ANOVA à un facteur",
+    "section": "2.4 Calcul de \\(\\widehat{\\theta}\\) dans l’exemple",
+    "text": "2.4 Calcul de \\(\\widehat{\\theta}\\) dans l’exemple\n\n\\[{X^{(1)}}^tX^{(1)} = \\begin{bmatrix}n_1 & 0 & 0 \\\\0 & n_2 & 0\\\\ 0 & 0 & n_3 \\end{bmatrix}\\]\n\\[\\left({X^{(1)}}^tX^{(1)}\\right)^{-1} = \\begin{bmatrix}\\frac{1}{n_1} & 0 & 0 \\\\0 & \\frac{1}{n_2} & 0\\\\ 0 & 0 & \\frac{1}{n_3} \\end{bmatrix}\\]\n\\[{X^{(1)}}^tY = \\begin{bmatrix}\\sum_{i=1}^{n_1} Y_{i,1} \\\\\n\\sum_{i=1}^{n_2} Y_{i,2}\\\\\n\\sum_{i=1}^{n_3} Y_{i,3}  \\end{bmatrix}\\]\n\\[\\widehat{\\theta} = \\left({X^{(1)}}^tX^{(1)}\\right)^{-1}{X^{(1)}}^tY = \\begin{bmatrix}\\frac{1}{n_1}\\sum_{i=1}^{n_1} Y_{i,1} \\\\\n\\frac{1}{n_2}\\sum_{i=1}^{n_2} Y_{i,2}\\\\\n\\frac{1}{n_3}\\sum_{i=1}^{n_3} Y_{i,3}  \\end{bmatrix}\\]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#interprétation",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#interprétation",
+    "title": "ANOVA à un facteur",
+    "section": "2.5 Interprétation",
+    "text": "2.5 Interprétation\nFinalement, pour \\(j\\in \\{1,\\dots,p\\}\\) (dans l’exemple \\(p=3\\)) on a\n\\[\\widehat{\\mu}_j = \\frac{1}{n_j}\\sum_{i=1}^{n_j}Y_{i,j} = \\overline{Y_j} \\]\nIl s’agit de la moyenne empirique de \\(Y\\) dans la modalité \\(j\\)\n\nlibrary(ggbeeswarm)\nggplot(diet, aes( x = Diet, y = Diff_poid, color = Diet)) +\ngeom_boxplot() +\ngeom_beeswarm(alpha = 0.5) +\nstat_summary(size = 2, shape = 4, fun = mean)",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#anova-sans-intercept-sur-r",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#anova-sans-intercept-sur-r",
+    "title": "ANOVA à un facteur",
+    "section": "2.6 ANOVA sans intercept sur R",
+    "text": "2.6 ANOVA sans intercept sur R\n\nmod_ssinter &lt;- lm(Diff_poid~ Diet - 1, data = diet)\nsummary(mod_ssinter)\n\n\nCall:\nlm(formula = Diff_poid ~ Diet - 1, data = diet)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-5.3680 -1.4420  0.1759  1.6519  5.7000 \n\nCoefficients:\n      Estimate Std. Error t value Pr(&gt;|t|)    \nDiet1   3.3000     0.4840   6.818 2.26e-09 ***\nDiet2   3.2680     0.4742   6.891 1.66e-09 ***\nDiet3   5.1481     0.4563  11.282  &lt; 2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.371 on 73 degrees of freedom\nMultiple R-squared:  0.7519,    Adjusted R-squared:  0.7417 \nF-statistic: 73.76 on 3 and 73 DF,  p-value: &lt; 2.2e-16",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#estimation-du-paramètre-de-variance",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#estimation-du-paramètre-de-variance",
+    "title": "ANOVA à un facteur",
+    "section": "2.7 Estimation du paramètre de variance",
+    "text": "2.7 Estimation du paramètre de variance\nComme en regression linéaire multiple. Par contre, on divise par \\(n-p\\) et non pas \\(n-p-1\\) car on a retiré l’intercept.\n\\[\\begin{align} S^2_{(M_p)} &= \\frac{SCR(M_p)}{n-p} = \\frac{||Y - X\\theta||^2}{n-p}\\\\\n& = \\frac{1}{n-p} \\sum_{j=1}^{p}\\sum_{i=1}^{n_j}(Y_{i,j} - \\overline{Y_j})^2 \\end{align}\\]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#loi-de-widehattheta",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#loi-de-widehattheta",
+    "title": "ANOVA à un facteur",
+    "section": "2.8 Loi de \\(\\widehat\\theta\\)",
+    "text": "2.8 Loi de \\(\\widehat\\theta\\)\n\n\\(\\widehat\\theta\\) est un vecteur gaussien d’espérance \\(\\theta\\) et de matrice de covariance\n\\[\\mathbb{V}(\\widehat\\theta) = \\sigma^2(X^tX)^{-1}\\text{ estimée par } S^2_{(M_p)}(X^tX)^{-1}\\]\nOn montre que \\[\\widehat{\\theta}\\sim \\mathcal{N}(\\theta,\\sigma^2(X^tX)^{-1} ) \\]\nEn particulier, pour tout \\(k = 1, \\cdots, p + 1\\), si \\(c_{kk} = (X^t X )^{−1}_{k,k}\\) désigne le \\(k\\)-ème élément diagonal de \\((X^tX)\\)^{−1}, et \\(\\widehat{\\theta}_k\\) désigne le \\(k\\)-ème élément du vecteur \\(\\widehat{\\theta}\\), on a\n\\[\\overline{Y}_k = \\widehat{\\theta}_k \\sim \\mathcal{N}(\\theta_k,\\sigma^2 c_{kk})\\]\nEn remplaçant \\(\\sigma^2\\) par son estimateur, on a :\n\\[ \\frac{(\\overline{Y}-\\mu_k)}{\\sqrt{S^2_{(M_p)}c_{kk}}} \\sim \\mathcal{T}(n-p)\\]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#forme-explicite-de-c_kk",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#forme-explicite-de-c_kk",
+    "title": "ANOVA à un facteur",
+    "section": "2.9 Forme explicite de \\(c_{kk}\\)",
+    "text": "2.9 Forme explicite de \\(c_{kk}\\)\n\\[\\left({X^{(1)}}^tX^{(1)}\\right)^{-1} = \\begin{bmatrix}\\frac{1}{n_1} & 0 & 0 \\\\0 & \\frac{1}{n_2} & 0\\\\ 0 & 0 & \\frac{1}{n_3} \\end{bmatrix}\\]\n\\[c_{kk} = \\frac{1}{n_k}\\] \\[\\overline{Y}_k = \\widehat{\\theta}_k \\sim \\mathcal{N}\\left(\\theta_k,\\frac{\\sigma^2}{n_k}\\right)\\]\nEn remplaçant \\(\\sigma^2\\) par son estimateur, on a :\n\\[ \\frac{(\\overline{Y}-\\mu_k)}{\\sqrt{\\frac{S^2_{(M_p)}}{n_k}}} \\sim \\mathcal{T}(n-p)\\]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#intervalle-de-confiance-du-modèle-sans-intercept",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#intervalle-de-confiance-du-modèle-sans-intercept",
+    "title": "ANOVA à un facteur",
+    "section": "2.10 Intervalle de confiance du modèle sans intercept",
+    "text": "2.10 Intervalle de confiance du modèle sans intercept\n\n\n\n\n\n\nTipIntervalle de confiance pour l’ANOVA à 1 facteur sans intercept\n\n\n\n\\[ IC_{1-\\delta}(\\mu_k) = \\left[\\overline{y}_i - t_{1-\\frac{\\delta}{2}}\\frac{s_{M_p}}{\\sqrt{n_i}};\\;\\overline{y}_i + t_{1-\\frac{\\delta}{2}}\\frac{s_{M_p}}{\\sqrt{n_i}} \\right] \\]\noù \\(t_{1-\\frac{\\delta}{2}}\\) est le quantile \\(1-\\frac{\\delta}{2}\\) de la loi \\(\\mathcal{T}(n-p)\\)\n\n\n\nconfint(mod_ssinter, level = 0.95)\n\n         2.5 %   97.5 %\nDiet1 2.335407 4.264593\nDiet2 2.322895 4.213105\nDiet3 4.238721 6.057575",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#test-de-student",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#test-de-student",
+    "title": "ANOVA à un facteur",
+    "section": "2.11 Test de Student",
+    "text": "2.11 Test de Student\n\n\n\n\n\n\n\nTipHypothèses\n\n\n\n\\[H_0 : \\mu_k = 0 \\text{ contre } H_1 : \\mu_k \\neq 0\\]\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\nIl s’agit d’un test de conformité de moyenne, on regarde si la moyenne de chaque groupe est significativement différente de 0.\n\n\n\n\n\n\n\n\nTipStatistique de test\n\n\n\nSous \\(H_0\\), on a \\[T_n = \\frac{(\\overline{Y}-\\mu_k)}{\\sqrt{\\frac{S^2_{(M_p)}}{n_k}}}\\sim\\mathcal{T}(n-p)\\]\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\nÀ part l’estimation de \\(\\sigma^2\\) c’est comme le test de Student vu en test paramétrique.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#anova-sans-intercept-sur-r-1",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#anova-sans-intercept-sur-r-1",
+    "title": "ANOVA à un facteur",
+    "section": "2.12 ANOVA sans intercept sur R",
+    "text": "2.12 ANOVA sans intercept sur R\n\nmod_ssinter &lt;- lm(Diff_poid~ Diet - 1, data = diet)\nsummary(mod_ssinter)\n\n\nCall:\nlm(formula = Diff_poid ~ Diet - 1, data = diet)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-5.3680 -1.4420  0.1759  1.6519  5.7000 \n\nCoefficients:\n      Estimate Std. Error t value Pr(&gt;|t|)    \nDiet1   3.3000     0.4840   6.818 2.26e-09 ***\nDiet2   3.2680     0.4742   6.891 1.66e-09 ***\nDiet3   5.1481     0.4563  11.282  &lt; 2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.371 on 73 degrees of freedom\nMultiple R-squared:  0.7519,    Adjusted R-squared:  0.7417 \nF-statistic: 73.76 on 3 and 73 DF,  p-value: &lt; 2.2e-16",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#test-de-fisher",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#test-de-fisher",
+    "title": "ANOVA à un facteur",
+    "section": "2.13 Test de Fisher",
+    "text": "2.13 Test de Fisher\n\n\n\n\n\n\n\n\nTipHypothèses\n\n\n\n\\(H_0\\): On est dans le modèle \\(M_0 : Y_i = E_i\\)\ncontre\n\\(H_1\\): On est dans le modèle \\(M_p : Y_{i,j} = \\mu_j + E_i\\)\n\n\n\n\n\n\n\n\n\nTipAutre formulation\n\n\n\n\\(H_0\\): On est dans le modèle \\(M_0 : \\mu_1 = \\mu_2 = \\dots = \\mu_p = 0\\)\ncontre\n\\(H_1\\): On est dans le modèle \\(M_p : \\exists j \\in \\{1,\\dots,j\\}, \\mu_j \\neq 0\\)\n\n\n\n\n\nm0 &lt;- lm(Diff_poid~0, data = diet)\nanova(m0, mod_ssinter)\n\nAnalysis of Variance Table\n\nModel 1: Diff_poid ~ 0\nModel 2: Diff_poid ~ Diet - 1\n  Res.Df    RSS Df Sum of Sq      F    Pr(&gt;F)    \n1     76 1654.3                                  \n2     73  410.4  3      1244 73.755 &lt; 2.2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#remarques",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#remarques",
+    "title": "ANOVA à un facteur",
+    "section": "2.14 Remarques",
+    "text": "2.14 Remarques\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\nLe test de Student : compare les moyennes des groupes à 0.\nLe test de Fisher test si au moins une des moyennes est à 0.\n\n\\(\\Longrightarrow\\) Il n’y a pas de comparaison des moyennes entre elles !",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#notation-non-matricielle-dans-lexemple",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#notation-non-matricielle-dans-lexemple",
+    "title": "ANOVA à un facteur",
+    "section": "3.1 Notation non matricielle dans l’exemple",
+    "text": "3.1 Notation non matricielle dans l’exemple\n\n\n\n\n\n\n\nNoteDéfinition : ANOVA à un facteur avec groupe de référence\n\n\n\n\\[Y_i = \\beta + \\alpha_ 2X_{i,2}^{(1)}+ \\alpha_ 3X_{i,3}^{(1)} + E_i \\]\n\n\nSi l’individu \\(i\\) a fait le régime 1, qui est le régime de référence, alors \\(X_{i,2}^{(1)} = 0\\) et \\(X_{i,3}^{(1)} = 0\\) donc\n\\[Y_i = \\beta + E_i \\]\nSi l’individu \\(i\\) a fait le régime 2, alors \\(X_{i,2}^{(1)} = 1\\) et \\(X_{i,3}^{(1)} = 0\\) donc\n\\[Y_i = \\beta +\\alpha_2+ E_i \\]\nSi l’individu \\(i\\) a fait le régime 3, alors \\(X_{i,2}^{(1)} = 0\\) et \\(X_{i,3}^{(1)} = 1\\) donc\n\\[Y_i = \\beta +\\alpha_3+ E_i \\]\nLa prise de poid de l’individu \\(i\\) est modélisée par une valeur de référence plus une valeur dépendant de son régime et une erreur",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#notation-matricielle-dans-lexemple-1",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#notation-matricielle-dans-lexemple-1",
+    "title": "ANOVA à un facteur",
+    "section": "3.2 Notation matricielle dans l’exemple",
+    "text": "3.2 Notation matricielle dans l’exemple\n\n\n\n\n\n\n\nNoteDéfinition : ANOVA à un facteur avec groupe de référence\n\n\n\n\\[Y = X^{(1)}\\theta + E\\] où\n\n\\(Y = [Y_1,\\dots,Y_n]^t\\) les v.a. liées à la prise de poids de l’individu \\(\\{1, \\dots,n\\}\\).\n\\(X^{(1)}\\) est la matrice encodée du facteur “type de régime” sans la première colonne.\n\n\\[X^{(1)} =   \\left[\\begin{array}{ccc}\\text{intercept}  & \\text{Régime 2} & \\text{Régime 3} \\\\ 1  & 0 & 0 \\\\ 1  & 1 & 0 \\\\1  & 0 & 0 \\\\1  & 0 & 1 \\\\1  & 1 & 0 \\\\1  & 0 & 1 \\\\ \\vdots &\\vdots &\\vdots  \\end{array}\\right]\\]\n\n\\(\\theta = [\\beta,\\alpha_2,\\alpha_3]^t\\).\n\\(E \\sim \\mathcal{N}(0,\\sigma^2 I_n)\\).\n\n\n\nLa prise de poid de l’individu \\(i\\) est modélisée par une valeur de référence plus une valeur dépendant de son régime et une erreur",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#interprétation-des-paramètres",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#interprétation-des-paramètres",
+    "title": "ANOVA à un facteur",
+    "section": "3.3 Interprétation des paramètres",
+    "text": "3.3 Interprétation des paramètres\nPour le régime 1 : \\[Y_{i,1}\\sim\\mathcal{N}(\\beta,\\sigma^2)\\]\ndonc \\(\\beta = \\mu_1\\), il s’agit de la moyenne du groupe de référence.\nPour le régime 2 : \\[Y_{i,1}\\sim\\mathcal{N}(\\beta + \\alpha_2,\\sigma^2)\\]\n\\(\\mu_2 = \\mu_1+ \\alpha_2\\), donc \\(\\alpha_2 = \\mu_2 - \\mu_1\\) \\(\\Longrightarrow\\alpha_2\\) représente l’écart en moyenne entre le régime 2 et le régime de référence 1.\nPour le régime 3 : \\[Y_{i,1}\\sim\\mathcal{N}(\\beta + \\alpha_3,\\sigma^2)\\]\n\\(\\mu_3 = \\mu_1+ \\alpha_3\\), donc \\(\\alpha_3 = \\mu_3 - \\mu_1\\) \\(\\Longrightarrow\\alpha_3\\) représente l’écart en moyenne entre le régime 3 et le régime de référence 1.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#notation-matricielle-1",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#notation-matricielle-1",
+    "title": "ANOVA à un facteur",
+    "section": "3.4 Notation matricielle",
+    "text": "3.4 Notation matricielle\n\n\n\n\n\n\n\nNoteDéfinition : ANOVA à un facteur avec groupe de référence\n\n\n\n\\[Y = X^{(1)}\\theta + E\\] où\n\n\\(Y = [Y_1,\\dots,Y_n]^t\\) les v.a. à expliquer.\n\\(X^{(1)}\\) est la matrice encodée du facteur sans le groupe 1.\n\\(\\theta = [\\beta,\\alpha_2,\\dots,\\alpha_p]^t\\).\n\\(E \\sim \\mathcal{N}(0,\\sigma^2 I_n)\\).\n\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\nEn posant comme contrainte \\(\\alpha_1=0\\) et \\(\\mu_j = \\beta + \\alpha_j\\), on retombe bien sur le modèle\n\\[Y_{i,j} = \\beta + \\alpha_j + E_i =\\mu_j + E_i, \\quad E_i\\overset{i.i.d.}{\\sim}\\mathcal{N}(0,\\sigma^2)\\]\n\\[\\iff Y_{i,j}\\sim\\mathcal{N}(\\mu_j,\\sigma^2)\\]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#estimateur",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#estimateur",
+    "title": "ANOVA à un facteur",
+    "section": "3.5 Estimateur",
+    "text": "3.5 Estimateur\nEn refaisant les calculs avec \\(\\widehat{\\theta} = \\left({X^{(1)}}^tX^{(1)}\\right)^{-1}{X^{(1)}}^tY\\) on trouve\n\n\n\n\n\n\nTipEstimateur\n\n\n\n\\[\\widehat{\\beta} = \\overline{Y_1} \\]\n\\[\\widehat{\\alpha}_j  = \\overline{Y_j} - \\overline{Y_1} = \\left(\\frac{1}{n_j}\\sum_{i=1}^{n_j}Y_{i,j}  \\right) - \\overline{Y_1}\\]",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#lecture-sur-r",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#lecture-sur-r",
+    "title": "ANOVA à un facteur",
+    "section": "3.6 Lecture sur R",
+    "text": "3.6 Lecture sur R\n\n\n\n\n\n\nCautionRemarques\n\n\n\nPar défaut c’est le premier facteur qui est le groupe de référence dans R\n\n\n\nmod_c1 &lt;- lm(Diff_poid~Diet, diet)\nsummary(mod_c1)\n\n\nCall:\nlm(formula = Diff_poid ~ Diet, data = diet)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-5.3680 -1.4420  0.1759  1.6519  5.7000 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)   3.3000     0.4840   6.818 2.26e-09 ***\nDiet2        -0.0320     0.6776  -0.047  0.96246    \nDiet3         1.8481     0.6652   2.778  0.00694 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.371 on 73 degrees of freedom\nMultiple R-squared:  0.1285,    Adjusted R-squared:  0.1047 \nF-statistic: 5.383 on 2 and 73 DF,  p-value: 0.006596",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#loi-de-lestimateur",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#loi-de-lestimateur",
+    "title": "ANOVA à un facteur",
+    "section": "3.7 Loi de l’estimateur",
+    "text": "3.7 Loi de l’estimateur\n\n\n\n\n\n\n\nTipLoi de l’estimateur\n\n\n\n\\(\\widehat{\\beta} \\sim \\mathcal{N}\\left(\\beta,\\frac{\\sigma^2}{n_1}\\right)\\)\nPour \\(j\\neq 1\\), on a \\(\\widehat{\\alpha}_j \\sim \\mathcal{N}\\left(\\alpha_i,\\frac{\\sigma^2}{n_i}+\\frac{\\sigma^2}{n_1}\\right)\\)\n\n\n\n\n\n\n\n\nTipLoi de l’estimateur\n\n\n\nPour \\(j\\neq 1\\): \\[T = \\frac{\\widehat{\\alpha_j}}{\\sqrt{S^2(M_p)\\left(\\frac{1}{n_1} + \\frac{1}{n_j}\\right)}}\\sim\\mathcal{T}(n-p)\\] où \\[S^2_{(M_p)} = \\frac{SCR(M_p)}{n-p}\\]\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\nOn retrouve la statistique de test de Student de comparaison de deux moyennes.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#interprétation-du-test-de-student-dans-lexemple",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#interprétation-du-test-de-student-dans-lexemple",
+    "title": "ANOVA à un facteur",
+    "section": "3.8 Interprétation du test de Student dans l’exemple",
+    "text": "3.8 Interprétation du test de Student dans l’exemple\n\n\nTest de \\(H_0 : \\beta = 0\\) contre \\(H_1 : \\beta \\neq 0\\)\n\n\\(\\iff H_0 :\\mu_1 = 0\\) contre \\(H_1 : \\mu_1 \\neq 0\\)\nEst-ce que le groupe de référence a une moyenne significativement différente de 0 ?\n\n\n\nTest de \\(H_0 : \\alpha_2 = 0\\) contre \\(H_1 : \\alpha_2 \\neq 0\\)\n\n\\(\\iff H_0 :\\mu_2 - \\mu_1 = 0\\) contre \\(H_1 : \\mu_2- \\mu_1 \\neq 0\\)\nEst-ce que le groupe 2 a une moyenne significativement différente du groupe de référence ?\n\n\n\nTest de \\(H_0 : \\alpha_3 = 0\\) contre \\(H_1 : \\alpha_3 \\neq 0\\)\n\n\\(\\iff H_0 :\\mu_3 - \\mu_1 = 0\\) contre \\(H_1 : \\mu_3 - \\mu_1 \\neq 0\\)\nEst-ce que le groupe 3 a une moyenne significativement différente du groupe de référence ?",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#test-sur-r",
+    "href": "Cours/EMS/Modèle linéaire/Cours4/cours4.html#test-sur-r",
+    "title": "ANOVA à un facteur",
+    "section": "3.9 Test sur R",
+    "text": "3.9 Test sur R\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\nPar défaut c’est le premier facteur qui est le groupe de référence dans R\n\n\n\n\n\nmod_c1 &lt;- lm(Diff_poid~Diet, diet)\nsummary(mod_c1)\n\n\nCall:\nlm(formula = Diff_poid ~ Diet, data = diet)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-5.3680 -1.4420  0.1759  1.6519  5.7000 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)   3.3000     0.4840   6.818 2.26e-09 ***\nDiet2        -0.0320     0.6776  -0.047  0.96246    \nDiet3         1.8481     0.6652   2.778  0.00694 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.371 on 73 degrees of freedom\nMultiple R-squared:  0.1285,    Adjusted R-squared:  0.1047 \nF-statistic: 5.383 on 2 and 73 DF,  p-value: 0.006596\n\n\n\n\n\n\n\n\n\n\nNoteInterprétation\n\n\n\n\nLe Régime 1 fait gagner en moyenne de 3.3kg, ce qui est significativement différent de 0.\nL’écart entre le Régime 1 et 2 vaut en moyenne -0.03kg et n’est pas significativement différent de 0 : les régimes 1 et 2 ont des espérance semblable.\nL’écart entre le Régime 1 et 3 vaut en moyenne 1.8481kg, cet écart est significativement différent de 0.\n\n\n\nConclusion : Comparé au régime 1 , le régime 2 n’est pas significativement différent, et le régime 3 fait gagner plus de poids.",
+    "crumbs": [
+      "Cours",
+      "Modèles linéaires",
+      "ANOVA à un facteur"
+    ]
   }
 ]

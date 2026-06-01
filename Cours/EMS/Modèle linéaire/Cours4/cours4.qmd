@@ -1,0 +1,845 @@
+---
+title: "ANOVA à un facteur"
+subtitle: "2eme-FA-EMS - BUT SD - E. Anakok"
+format: 
+  html:
+    
+    toc: true           # Adds a Table of Contents (great for courses)
+    toc-depth: 3
+    number-sections: true
+    embed-resources: true
+    toc-location: right
+    css: style.scss  # Keeping your existing styles
+
+engine: knitr
+editor: 
+  mode: source
+---
+
+
+
+```{r,message=FALSE}
+library(tidyverse)
+library(extrafont) 
+require(ggsci)
+library(ggpubr)
+library(knitr)
+library(ggfortify)
+library(ggrepel)
+library(corrplot)
+```
+
+# Introduction
+
+
+## Ce qu'il faut retenir de ce cours
+
+::: {style="font-size: 0.65em;"}
+
+
+:::{.callout-tip title="Encodage 1 parmi p"}
+
+
+
+$$
+X = \begin{bmatrix} \text{Groupe 1} \\ \text{Groupe 2} \\ \text{Groupe 1} \\ \text{Groupe 3} \\ \text{Groupe 2} \\ \text{Groupe 3} \end{bmatrix} \quad \text{en} \quad X^{(1)} = \left[\begin{array}{ccc} \text{Groupe 1} & \text{Groupe 2} & \text{Groupe 3} \\ 1 & 0 & 0 \\ 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{array}\right]
+$$
+
+Problème : Le modèle ainsi défini n'est pas identifiable.
+
+
+:::
+
+:::{.columns}
+:::{.column width="50%"}
+
+
+:::{.callout-note title="Définition : ANOVA à un facteur sans intercept"}
+
+$$Y = X^{(1)}\theta + E$$
+
+- $Y = [Y_1,\dots,Y_n]^t$ les v.a. à expliquer.
+
+- $X^{(1)}$ est la matrice encodée du facteur sans l'intercept.
+
+- $\theta = [\mu_1,\dots,\mu_p]^t$.
+
+- $E \sim \mathcal{N}(0,\sigma^2 I_n)$.
+
+:::
+
+
+:::
+:::{.column width="50%"}
+
+
+:::{.callout-note title="Définition : ANOVA à un facteur avec groupe de référence"}
+
+$$Y = X^{(1)}\theta + E$$
+
+- $Y = [Y_1,\dots,Y_n]^t$ les v.a. à expliquer.
+
+
+- $X^{(1)}$ est la matrice encodée du facteur sans le groupe 1.
+
+
+- $\theta = [\beta,\alpha_2,\dots,\alpha_p]^t$.
+
+- $E \sim \mathcal{N}(0,\sigma^2 I_n)$.
+
+:::
+:::
+:::
+
+
+
+:::
+
+## Introduction
+
+:::{.callout-warning title="Objectifs"}
+
+- Expliquer une variable continue en fonction d'une variable catégorielle (appelée facteur).
+
+- Généralisation du test d'égalité de deux espérances (vu en cours sur les tests) à $p$ espérances, si le facteur a $p$ modalités
+
+:::
+
+:::{.callout-note title="Données"}
+
+- Les valeurs (continues) $y_i$ pour $1\leq i \leq n$
+- Une classe pour chaque individu $i$
+
+:::
+
+
+## Exemple 
+
+:::{.callout-warning title="Objectif"}
+Étude de la prise de poids d'individus en fonction de leurs régime
+:::
+
+:::{.callout-note title="Données"}
+
+Pour $n= 76$ individus on a :
+
+- Une variable réponse à expliquer :
+  
+    - Leur prise de poids (mesurée en kg)
+
+- Un facteur explicatif à $p= 3$ niveau (modalités):
+
+    - Régime 1
+    - Régime 2
+    - Régime 3
+:::
+
+## Les données 
+
+```{r,echo=TRUE}
+diet <- read.table(file = "Diet.txt", header = TRUE, sep =";" )
+diet$Diet <- as.factor(diet$Diet)
+kable(head(diet))
+```
+## Étude univariées des données
+
+```{r,echo=TRUE}
+summary(diet$Diff_poid)
+```
+
+Les individus perde jusqu'à 2,1 kg et gagne jusqu'à 9,2 kg.
+
+```{r,echo=TRUE}
+table(diet$Diet)
+```
+
+24 individus ont fait le régime 1, 25 ont fait le régime 2, et 27 ont fait le régime 3
+
+
+```{r,fig.align='center',echo=TRUE}
+library(ggbeeswarm)
+ggplot(diet, aes(x= Diet, y = Diff_poid, color = Diet))+
+  geom_boxplot()+
+  geom_beeswarm(alpha = 0.5)
+```
+
+## Exemple
+
+Étude de l'effet du régile sur la variable *différence de poids* (mesuré en kg).
+
+- Une variable réponse continue : "la prise" de poids
+
+- Un facteur explicatif à $p=3$ niveaux (modalités) codé en 
+
+    - Régime 1
+    - Régime 2
+    - Régime 3
+    
+Comment analyser ces données ?
+
+- On va calculer une estimation moyenne de *prise de poids* par régime.
+
+## Écriture du modèle
+
+
+:::{.callout-note title="Définition"}
+
+Pour $1\leq i \leq n$ et $1\leq j \leq p$
+
+- $y_{i,j}$ l’observation de la variable réponse du $i$-ème individu qui
+a la modalité $j$
+
+- On suppose que $y_{i,j}$ est la réalisation d’une variable aléatoire
+$Y_{i,j}$ telle que
+
+$$Y_{i,j} \sim \mathcal{N}(\mu_j,\sigma^2) $$
+où $Y_{i,j}$ est la variable aléatoire liée à l’individu $i$ de la modalité $j$, les $Y_{i,j}$ sont indépendants.
+
+:::
+
+
+:::{.callout-caution title="Remarques : Nombre de paramètres"}
+- $p$ paramètres d'espérance (1 par modalité)
+- 1 paramètre de variance 
+:::
+
+## Trouver les paramètres ($\mu_j$ et $\sigma^2$)
+
+:::{.callout-note title="Ce que l'on sait faire"}
+
+Trouver les paramètres d'espérance $\theta$ tel que 
+
+$$Y = X\theta + E,\quad E \sim \mathcal{N}(0,\sigma^2 I_n)$$
+:::
+
+:::{.callout-warning title="Problème"}
+
+- Pour le modèle linéaire, $X$ doit être numérique (quantitatif).
+- Ici, $X$ est une catégorie (qualitatif).
+:::
+
+## Encodage *one-hot* ou encodage 1 parmi $p$
+
+:::{.callout-tip title="Idée"}
+Transformer la variable qualitative à $p$ modalité $\Longrightarrow$ $p$ variables 0/1
+:::
+
+:::{.callout-tip title="Exemple"}
+
+
+
+$$
+R = \begin{bmatrix} \text{Régime 1} \\ \text{Régime 2} \\ \text{Régime 1} \\ \text{Régime 3} \\ \text{Régime 2} \\ \text{Régime 3} \end{bmatrix} \quad \text{en} \quad X^{(1)} = \left[\begin{array}{ccc} \text{Régime 1} & \text{Régime 2} & \text{Régime 3} \\ 1 & 0 & 0 \\ 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{array}\right]
+$$
+
+:::
+
+## Notations 
+
+:::{.callout-tip title="Modèle linéaire multiple"}
+- $y_i$ la valeur de la variable réponse.
+- $X^{(1)}_{i,1}$ est égale à 1 si l'individu $i$ à fait le régime 1 et 0 sinon.
+- $X^{(1)}_{i,2}$ est égale à 1 si l'individu $i$ à fait le régime 2 et 0 sinon.
+- $X^{(1)}_{i,3}$ est égale à 1 si l'individu $i$ à fait le régime 3 et 0 sinon.
+
+:::
+
+
+:::{.callout-note title=""}
+Dans un premier temps, on pourra écrire :
+
+$$Y_i = \beta + \alpha_1X^{(1)}_{i,1}+ \alpha_2X^{(1)}_{i,2}+ \alpha_3X^{(1)}_{i,3} + E_i,\quad E_i\overset{i.i.d}\sim\mathcal{N}(0,\sigma^2)  $$
+
+Attention ! Ce modèle présente un problème, qu'on verra plus tard...
+:::
+
+## Interprétation du modèle
+
+::: {style="font-size: 0.75em;"}
+
+
+
+
+:::{.callout-caution title="Remarque"}
+$$Y_i = \beta + \alpha_1X^{(1)}_{i,1}+ \alpha_2X^{(1)}_{i,2}+ \alpha_3X^{(1)}_{i,3} + E_i,\quad E_i\overset{i.i.d}\sim\mathcal{N}(0,\sigma^2)  $$
+Pour un $i \in \{1,\dots,n\}$, il n'y a qu'un seul des $X^{(1)}_{i,1},X^{(1)}_{i,2},X^{(1)}_{i,3}$ qui est égale à 1 et les autres valent 0.
+
+- Si l'individu $i$ fait **le régime 1** : $X^{(1)}_{i,1}= 1$ et $X^{(1)}_{i,2}=0,X^{(1)}_{i,3}=0$, donc
+$$Y_i = \beta + \alpha_1 + E_i $$
+- Si l'individu $i$ fait **le régime 2** : $X^{(1)}_{i,2}= 1$ et $X^{(1)}_{i,1}=0,X^{(1)}_{i,3}=0$, donc
+$$Y_i = \beta + \alpha_2 + E_i $$
+
+- Si l'individu $i$ fait **le régime 3** : $X^{(1)}_{i,3}= 1$ et $X^{(1)}_{i,1}=0,X^{(1)}_{i,2}=0$, donc
+$$Y_i = \beta + \alpha_3 + E_i $$
+
+[**La prise de poid de l’individu $i$ est modélisée par une valeur globale
+plus une valeur dépendant de son régime et d'une erreur**]{.upc}
+
+On notant $\mu_j = \beta + \alpha_j$ on retrouve bien $Y_{i,j} \sim \mathcal{N}(\mu_j,\sigma^2)$
+
+:::
+
+:::
+
+## Écriture matricielle 
+::: {style="font-size: 0.85em;"}
+
+
+
+$$ Y = X\theta + E$$
+
+$$
+X = \left[\begin{array}{cccc}\text{intercept} & \text{Régime 1} & \text{Régime 2} & \text{Régime 3} \\ 1 & 1 & 0 & 0 \\ 1 & 0 & 1 & 0 \\1 & 1 & 0 & 0 \\1 & 0 & 0 & 1 \\1 & 0 & 1 & 0 \\1 & 0 & 0 & 1 \\ \vdots &\vdots &\vdots &\vdots  \end{array}\right]
+$$
+
+- $E\sim \mathcal{N}(0,\sigma^2I_n)$
+- Problème ? [Les collones de $X$ sont colinéaires. En effet, on a $X^{(1)}_{i,1}+X^{(1)}_{i,2} + X^{(1)}_{i,3} = 1$. La somme des trois dernières colonnes de $X$ est égale à la première]{.fragment}
+
+:::
+
+
+## Identifiabilité
+
+:::{.callout-caution title="Remarque"}
+Le modèle 
+$$Y_i = \beta + \alpha_1X^{(1)}_{i,1}+ \alpha_2X^{(1)}_{i,2}+ \alpha_3X^{(1)}_{i,3} + E_i,\quad E_i\overset{i.i.d}\sim\mathcal{N}(0,\sigma^2)  $$
+n'est pas identifiable. 
+
+Il y a 4 paramètres d'espérance alors qu'il n'y a que 3 groupes.
+
+:::
+
+## Solution
+
+::: {style="font-size: 0.75em;"}
+
+
+
+Pour résoudre ce problème, on va retirer une colonne de $X$.
+
+$\iff$ mettre une contrainte obligeant un des paramètres à ếtre égale à 0.
+
+Deux possibilités :
+
+:::{.callout-note title="Modèle sans intercept"}
+On retire la première colonne de $X$
+
+$\iff \beta = 0$ 
+
+$$Y_i = \mu_1X^{(1)}_{i,1}+ \mu_2X^{(1)}_{i,2}+ \mu_3X^{(1)}_{i,3} + E_i,\quad E_i\overset{i.i.d}\sim\mathcal{N}(0,\sigma^2)  $$
+:::
+
+:::{.callout-note title="Modèle avec groupe de référence"}
+On retire une autre colonne de $X$, par exemple la seconde
+
+$\iff \alpha_1 = 0$ On dira alors que le groupe 1 est le groupe de référence.
+
+$$Y_i =\beta +  \alpha_2X^{(1)}_{i,2}+ \alpha_3X^{(1)}_{i,3} + E_i,\quad E_i\overset{i.i.d}\sim\mathcal{N}(0,\sigma^2)$$
+
+:::
+:::
+
+# Modèle sans intercept 
+
+## Notation matricielle dans l'exemple
+
+::: {style="font-size: 0.80em;"}
+
+
+
+
+:::{.callout-note title="Définition : ANOVA à un facteur sans intercept"}
+
+$$Y = X^{(1)}\theta + E$$
+où 
+
+- $Y = [Y_1,\dots,Y_n]^t$ les v.a. liées à la prise de poids
+de l’individu $\{1, \dots,n\}$.
+
+
+- $X^{(1)}$ est la matrice encodée du facteur "type de régime".
+
+- $\theta = [\mu_1,\mu_2,\mu_3]^t$.
+
+- $E \sim \mathcal{N}(0,\sigma^2 I_n)$.
+
+:::
+
+**La prise de poid de l’individu $i$ est modélisée par une valeur
+dépendant de son régime et une erreur**
+
+:::
+
+
+## Notation matricielle
+
+::: {style="font-size: 0.80em;"}
+
+
+
+:::{.callout-note title="Définition : ANOVA à un facteur sans intercept"}
+
+$$Y = X^{(1)}\theta + E$$
+où 
+
+- $Y = [Y_1,\dots,Y_n]^t$ les v.a. à expliquer.
+
+
+- $X^{(1)}$ est la matrice encodée du facteur sans l'intercept.
+
+
+- $\theta = [\mu_1,\dots,\mu_p]^t$.
+
+- $E \sim \mathcal{N}(0,\sigma^2 I_n)$.
+
+:::
+
+:::{.callout-caution title="Remarques"}
+
+
+
+On retombe bien sur le modèle 
+
+$$Y_{i,j} = \mu_j + E_i, \quad E_i\overset{i.i.d.}{\sim}\mathcal{N}(0,\sigma^2)$$
+
+$$\iff Y_{i,j}\sim\mathcal{N}(\mu_j,\sigma^2)$$
+
+:::
+:::
+
+## Estimation des $\mu_j$
+
+:::{.callout-note title="Rappel"}
+
+Dans le cadre du modèle linéaire multivarié $Y = X\theta +E$
+
+L'estimateur de $\theta$ est $\widehat{\theta} = (X^tX)^{-1}X^tY$
+
+:::
+
+:::{.callout-tip title="Théorème"}
+Dans le cadre de l'ANOVA à un facteur, $Y = X^{(1)}\theta +E$
+
+L'estimateur de $\theta$ est $\widehat{\theta} = \left({X^{(1)}}^tX^{(1)}\right)^{-1}{X^{(1)}}^tY$
+:::
+
+## Calcul de $\widehat{\theta}$ dans l'exemple
+::: {style="font-size: 0.75em;"}
+
+
+$${X^{(1)}}^tX^{(1)} = \begin{bmatrix}n_1 & 0 & 0 \\0 & n_2 & 0\\ 0 & 0 & n_3 \end{bmatrix}$$
+
+$$\left({X^{(1)}}^tX^{(1)}\right)^{-1} = \begin{bmatrix}\frac{1}{n_1} & 0 & 0 \\0 & \frac{1}{n_2} & 0\\ 0 & 0 & \frac{1}{n_3} \end{bmatrix}$$
+
+
+$${X^{(1)}}^tY = \begin{bmatrix}\sum_{i=1}^{n_1} Y_{i,1} \\
+\sum_{i=1}^{n_2} Y_{i,2}\\
+\sum_{i=1}^{n_3} Y_{i,3}  \end{bmatrix}$$ 
+
+$$\widehat{\theta} = \left({X^{(1)}}^tX^{(1)}\right)^{-1}{X^{(1)}}^tY = \begin{bmatrix}\frac{1}{n_1}\sum_{i=1}^{n_1} Y_{i,1} \\
+\frac{1}{n_2}\sum_{i=1}^{n_2} Y_{i,2}\\
+\frac{1}{n_3}\sum_{i=1}^{n_3} Y_{i,3}  \end{bmatrix}$$
+
+:::
+
+
+## Interprétation
+
+Finalement, pour $j\in \{1,\dots,p\}$ (dans l'exemple $p=3$)
+on a 
+
+$$\widehat{\mu}_j = \frac{1}{n_j}\sum_{i=1}^{n_j}Y_{i,j} = \overline{Y_j} $$
+
+Il s'agit de la moyenne empirique de $Y$ dans la modalité $j$
+
+```{r,echo=TRUE,message=FALSE, warning=FALSE,fig.align='center'}
+library(ggbeeswarm)
+ggplot(diet, aes( x = Diet, y = Diff_poid, color = Diet)) +
+geom_boxplot() +
+geom_beeswarm(alpha = 0.5) +
+stat_summary(size = 2, shape = 4, fun = mean)
+```
+
+## ANOVA sans intercept sur R 
+
+```{r,echo=TRUE}
+mod_ssinter <- lm(Diff_poid~ Diet - 1, data = diet)
+summary(mod_ssinter)
+```
+
+## Estimation du paramètre de variance
+
+Comme en regression linéaire multiple. Par contre, on divise par $n-p$ et non pas $n-p-1$ car on a retiré l'intercept.
+
+ $$\begin{align} S^2_{(M_p)} &= \frac{SCR(M_p)}{n-p} = \frac{||Y - X\theta||^2}{n-p}\\
+ & = \frac{1}{n-p} \sum_{j=1}^{p}\sum_{i=1}^{n_j}(Y_{i,j} - \overline{Y_j})^2 \end{align}$$
+
+## Loi de $\widehat\theta$
+
+::: {style="font-size: 0.85em;"}
+
+
+$\widehat\theta$ est un vecteur gaussien d'espérance $\theta$ et de matrice de covariance
+
+$$\mathbb{V}(\widehat\theta) = \sigma^2(X^tX)^{-1}\text{ estimée par } S^2_{(M_p)}(X^tX)^{-1}$$
+
+On montre que $$\widehat{\theta}\sim \mathcal{N}(\theta,\sigma^2(X^tX)^{-1} ) $$
+
+En particulier, pour tout $k = 1, \cdots, p + 1$, si $c_{kk} = (X^t X )^{−1}_{k,k}$ désigne le
+$k$-ème élément diagonal de $(X^tX)$^{−1}, et $\widehat{\theta}_k$ désigne le $k$-ème élément du
+vecteur $\widehat{\theta}$, on a
+
+$$\overline{Y}_k = \widehat{\theta}_k \sim \mathcal{N}(\theta_k,\sigma^2 c_{kk})$$
+
+En remplaçant $\sigma^2$ par son estimateur, on a :
+
+$$ \frac{(\overline{Y}-\mu_k)}{\sqrt{S^2_{(M_p)}c_{kk}}} \sim \mathcal{T}(n-p)$$
+:::
+
+## Forme explicite de $c_{kk}$
+
+$$\left({X^{(1)}}^tX^{(1)}\right)^{-1} = \begin{bmatrix}\frac{1}{n_1} & 0 & 0 \\0 & \frac{1}{n_2} & 0\\ 0 & 0 & \frac{1}{n_3} \end{bmatrix}$$
+
+$$c_{kk} = \frac{1}{n_k}$$
+$$\overline{Y}_k = \widehat{\theta}_k \sim \mathcal{N}\left(\theta_k,\frac{\sigma^2}{n_k}\right)$$
+
+En remplaçant $\sigma^2$ par son estimateur, on a :
+
+$$ \frac{(\overline{Y}-\mu_k)}{\sqrt{\frac{S^2_{(M_p)}}{n_k}}} \sim \mathcal{T}(n-p)$$
+
+## Intervalle de confiance du modèle sans intercept
+
+
+:::{.callout-tip title="Intervalle de confiance pour l'ANOVA à 1 facteur sans intercept"}
+
+$$ IC_{1-\delta}(\mu_k) = \left[\overline{y}_i - t_{1-\frac{\delta}{2}}\frac{s_{M_p}}{\sqrt{n_i}};\;\overline{y}_i + t_{1-\frac{\delta}{2}}\frac{s_{M_p}}{\sqrt{n_i}} \right] $$
+
+où $t_{1-\frac{\delta}{2}}$ est le quantile $1-\frac{\delta}{2}$ de la loi $\mathcal{T}(n-p)$
+
+:::
+
+
+```{r,echo=TRUE}
+confint(mod_ssinter, level = 0.95)
+```
+
+
+## Test de Student
+
+::: {style="font-size: 0.75em;"}
+
+
+:::{.callout-tip title="Hypothèses"}
+
+$$H_0 : \mu_k = 0 \text{ contre } H_1 : \mu_k \neq 0$$ 
+
+:::
+
+:::{.callout-caution title="Remarques"}
+Il s'agit d'un test de conformité de moyenne, on regarde si la moyenne de chaque groupe est significativement différente de 0.
+:::
+
+:::{.callout-tip title="Statistique de test"}
+Sous $H_0$, on a 
+$$T_n = \frac{(\overline{Y}-\mu_k)}{\sqrt{\frac{S^2_{(M_p)}}{n_k}}}\sim\mathcal{T}(n-p)$$
+:::
+
+:::{.callout-caution title="Remarques"}
+À part l’estimation de $\sigma^2$ c’est comme le test de Student vu
+en test paramétrique.
+:::
+
+:::
+
+## ANOVA sans intercept sur R 
+
+```{r,echo=TRUE}
+mod_ssinter <- lm(Diff_poid~ Diet - 1, data = diet)
+summary(mod_ssinter)
+```
+
+## Test de Fisher
+
+:::{.columns}
+:::{.column width="50%"}
+
+:::{.callout-tip title="Hypothèses"}
+
+$H_0$: On est dans le modèle $M_0 : Y_i = E_i$
+
+contre 
+
+$H_1$: On est dans le modèle $M_p : Y_{i,j} = \mu_j + E_i$
+
+
+:::
+:::
+:::{.column width="50%"}
+
+:::{.callout-tip title="Autre formulation"}
+
+$H_0$: On est dans le modèle $M_0 : \mu_1 = \mu_2 = \dots = \mu_p = 0$
+
+contre 
+
+$H_1$: On est dans le modèle $M_p : \exists j \in \{1,\dots,j\}, \mu_j \neq 0$
+
+:::
+:::
+:::
+
+
+```{r,echo=TRUE}
+m0 <- lm(Diff_poid~0, data = diet)
+anova(m0, mod_ssinter)
+```
+
+
+
+## Remarques
+
+:::{.callout-caution title="Remarques"}
+- Le test de Student : compare les moyennes des groupes à 0.
+- Le test de Fisher test si au moins une des moyennes est à 0.
+
+$\Longrightarrow$ Il n’y a pas de comparaison des moyennes entre elles !
+:::
+
+# ANOVA avec groupe de référence
+
+
+## Notation non matricielle dans l'exemple
+
+::: {style="font-size: 0.80em;"}
+
+
+:::{.callout-note title="Définition : ANOVA à un facteur avec groupe de référence"}
+
+$$Y_i = \beta + \alpha_ 2X_{i,2}^{(1)}+ \alpha_ 3X_{i,3}^{(1)} + E_i $$
+
+:::
+
+
+Si l'individu $i$ a fait le **régime 1, qui est le régime de référence**, alors $X_{i,2}^{(1)} = 0$ et $X_{i,3}^{(1)} = 0$ donc 
+
+$$Y_i = \beta + E_i $$
+
+Si l'individu $i$ a fait le **régime 2**, alors $X_{i,2}^{(1)} = 1$ et $X_{i,3}^{(1)} = 0$ donc 
+
+$$Y_i = \beta +\alpha_2+ E_i $$
+
+
+Si l'individu $i$ a fait le **régime 3**, alors $X_{i,2}^{(1)} = 0$ et $X_{i,3}^{(1)} = 1$ donc 
+
+$$Y_i = \beta +\alpha_3+ E_i $$
+
+**La prise de poid de l’individu $i$ est modélisée par une valeur de référence
+plus une valeur dépendant de son régime et une erreur**
+
+
+:::
+
+
+
+## Notation matricielle dans l'exemple
+
+::: {style="font-size: 0.60em;"}
+
+
+
+
+:::{.callout-note title="Définition : ANOVA à un facteur avec groupe de référence"}
+
+$$Y = X^{(1)}\theta + E$$
+où 
+
+- $Y = [Y_1,\dots,Y_n]^t$ les v.a. liées à la prise de poids
+de l’individu $\{1, \dots,n\}$.
+
+
+- $X^{(1)}$ est la matrice encodée du facteur "type de régime" sans la première colonne.
+
+$$X^{(1)} =   \left[\begin{array}{ccc}\text{intercept}  & \text{Régime 2} & \text{Régime 3} \\ 1  & 0 & 0 \\ 1  & 1 & 0 \\1  & 0 & 0 \\1  & 0 & 1 \\1  & 1 & 0 \\1  & 0 & 1 \\ \vdots &\vdots &\vdots  \end{array}\right]$$
+
+- $\theta = [\beta,\alpha_2,\alpha_3]^t$.
+
+- $E \sim \mathcal{N}(0,\sigma^2 I_n)$.
+
+:::
+
+**La prise de poid de l’individu $i$ est modélisée par une valeur de référence
+plus une valeur dépendant de son régime et une erreur**
+
+
+:::
+
+## Interprétation des paramètres
+
+**Pour le régime 1 :** 
+$$Y_{i,1}\sim\mathcal{N}(\beta,\sigma^2)$$
+
+donc $\beta = \mu_1$, il s'agit de la moyenne du groupe de référence.
+
+**Pour le régime 2 :**
+$$Y_{i,1}\sim\mathcal{N}(\beta + \alpha_2,\sigma^2)$$
+
+$\mu_2 = \mu_1+ \alpha_2$, donc $\alpha_2 = \mu_2 - \mu_1$ $\Longrightarrow\alpha_2$ représente l'écart en moyenne entre le régime 2 et le régime de référence 1.
+
+
+**Pour le régime 3 :**
+$$Y_{i,1}\sim\mathcal{N}(\beta + \alpha_3,\sigma^2)$$
+
+$\mu_3 = \mu_1+ \alpha_3$, donc $\alpha_3 = \mu_3 - \mu_1$ $\Longrightarrow\alpha_3$ représente l'écart en moyenne entre le régime 3 et le régime de référence 1.
+
+## Notation matricielle
+
+::: {style="font-size: 0.80em;"}
+
+
+
+:::{.callout-note title="Définition : ANOVA à un facteur avec groupe de référence"}
+
+$$Y = X^{(1)}\theta + E$$
+où 
+
+- $Y = [Y_1,\dots,Y_n]^t$ les v.a. à expliquer.
+
+
+- $X^{(1)}$ est la matrice encodée du facteur sans le groupe 1.
+
+
+- $\theta = [\beta,\alpha_2,\dots,\alpha_p]^t$.
+
+- $E \sim \mathcal{N}(0,\sigma^2 I_n)$.
+
+:::
+
+:::{.callout-caution title="Remarques"}
+
+
+
+En posant comme contrainte $\alpha_1=0$ et $\mu_j = \beta + \alpha_j$, on retombe bien sur le modèle 
+
+$$Y_{i,j} = \beta + \alpha_j + E_i =\mu_j + E_i, \quad E_i\overset{i.i.d.}{\sim}\mathcal{N}(0,\sigma^2)$$
+
+$$\iff Y_{i,j}\sim\mathcal{N}(\mu_j,\sigma^2)$$
+
+:::
+:::
+
+## Estimateur 
+
+En refaisant les calculs avec $\widehat{\theta} = \left({X^{(1)}}^tX^{(1)}\right)^{-1}{X^{(1)}}^tY$ on trouve 
+
+:::{.callout-tip title="Estimateur"}
+$$\widehat{\beta} = \overline{Y_1} $$
+
+$$\widehat{\alpha}_j  = \overline{Y_j} - \overline{Y_1} = \left(\frac{1}{n_j}\sum_{i=1}^{n_j}Y_{i,j}  \right) - \overline{Y_1}$$
+
+:::
+
+## Lecture sur R
+
+:::{.callout-caution title="Remarques"}
+**Par défaut c’est le premier facteur qui est le groupe de référence dans R**
+:::
+
+
+```{r,echo=TRUE}
+mod_c1 <- lm(Diff_poid~Diet, diet)
+summary(mod_c1)
+```
+
+
+
+## Loi de l'estimateur
+
+::: {style="font-size: 0.75em;"}
+
+:::{.callout-tip title="Loi de l'estimateur"}
+
+$\widehat{\beta} \sim \mathcal{N}\left(\beta,\frac{\sigma^2}{n_1}\right)$
+
+Pour $j\neq 1$, on a  $\widehat{\alpha}_j \sim \mathcal{N}\left(\alpha_i,\frac{\sigma^2}{n_i}+\frac{\sigma^2}{n_1}\right)$ 
+:::
+
+
+:::{.callout-tip title="Loi de l'estimateur"}
+Pour $j\neq 1$:
+$$T = \frac{\widehat{\alpha_j}}{\sqrt{S^2(M_p)\left(\frac{1}{n_1} + \frac{1}{n_j}\right)}}\sim\mathcal{T}(n-p)$$
+où $$S^2_{(M_p)} = \frac{SCR(M_p)}{n-p}$$
+
+:::
+
+
+:::{.callout-caution title="Remarques"}
+On retrouve la statistique de test de Student de comparaison de deux moyennes.
+:::
+
+:::
+
+## Interprétation du test de Student dans l'exemple
+
+::: {style="font-size: 0.85em;"}
+
+
+1. Test de $H_0 : \beta = 0$ contre $H_1 : \beta \neq 0$
+
+$\iff H_0 :\mu_1 = 0$ contre $H_1 : \mu_1 \neq 0$
+
+Est-ce que le groupe de référence a une moyenne significativement différente de 0 ?
+
+\
+
+2.  Test de $H_0 : \alpha_2 = 0$ contre $H_1 : \alpha_2 \neq 0$
+
+$\iff H_0 :\mu_2 - \mu_1 = 0$ contre $H_1 : \mu_2- \mu_1 \neq 0$
+
+Est-ce que le groupe 2 a une moyenne significativement différente du groupe de référence ?
+
+\
+
+
+3.  Test de $H_0 : \alpha_3 = 0$ contre $H_1 : \alpha_3 \neq 0$
+
+$\iff H_0 :\mu_3 - \mu_1 = 0$ contre $H_1 : \mu_3 - \mu_1 \neq 0$
+
+Est-ce que le groupe 3 a une moyenne significativement différente du groupe de référence ?
+
+
+:::
+
+## Test sur R
+
+::: {style="font-size: 0.55em;"}
+
+
+:::{.callout-caution title="Remarques"}
+**Par défaut c’est le premier facteur qui est le groupe de référence dans R**
+:::
+
+:::
+
+::: {style="font-size: 0.85em;"}
+
+
+```{r,echo=TRUE}
+mod_c1 <- lm(Diff_poid~Diet, diet)
+summary(mod_c1)
+```
+
+:::
+
+::: {style="font-size: 0.55em;"}
+
+:::{.callout-note title="Interprétation"}
+
+- Le Régime 1 fait gagner en moyenne de 3.3kg, ce qui est significativement différent de 0.
+- L'écart entre le Régime 1 et 2 vaut en moyenne -0.03kg et n'est pas significativement différent de 0 : les régimes 1 et 2 ont des espérance semblable.
+- L'écart entre le Régime 1 et 3 vaut en moyenne 1.8481kg, cet écart est significativement différent de 0.
+:::
+
+
+**Conclusion** : Comparé au régime 1 , le régime 2 n'est pas significativement différent, et le régime 3 fait gagner plus de poids.
+
+:::

@@ -5915,5 +5915,509 @@
       "Modèles linéaires",
       "ANOVA à un facteur"
     ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html",
+    "title": "Introduction aux modèles linéaires",
+    "section": "",
+    "text": "10 séances de cours-TD-TP de 3h00.\nplusieurs DST + 2 TP notés\nDépôt des documents de cours, TD, TP sur moodle.\n\n\n\n\n\nRessource : RES R3.06 : Tests d’hypothèses pour l’analyse bi-variée, s’appuie très fortement sur la ressource du S2, R2.08 : Statistique inférentielle\nCompétence ciblée : Analyser statistiquement les données, Niveau 2 : Mettre en oeuvre une analyse exploratoire\nApprentissages critiques :\n\nAC22.04 : Appréhender l’idée de confronter une hypothèse avec la réalité pour prendre une décision\nAC22.05 : Apprécier les limites de validité et les conditions d’application d’une analyse\n\nSAÉ concernées :\n\nAu S3 - SAÉ 3.EMS.01 : Recueil et analyse de données par échantillonnage ou plan d’expérience\nAu S4 - SAÉ 4.EMS.01 : Expliquer ou prédire une variable quantitative à partir de plusieurs facteurs\n\n\n\n\n\n\nRappels\nChapitre I : Introduction sur les tests\nChapitre II : Tests paramétriques à un échantillon\nChapitre III : Test paramétriques de comparaison de deux échantillons\nChapitre IV : Test du \\(\\chi^2\\)\nChapitre V : Tests de corrélation\n\n\n\n\n\n\n\n\n\n\nWarningJaune\n\n\n\nCeci est un objectif.\n\n\n\n\n\n\n\n\nNoteBleu\n\n\n\nCeci est un rappel, une définition ou un exemple.\n\n\n\n\n\n\n\n\nTipVert\n\n\n\nCeci est un résultat, un théorème.\n\n\n\n\n\n\n\n\nCautionOrange\n\n\n\nCeci est une remarque.\n\n\n\n\n\n\n\n\n\n\n\nNoteDéfinition : Quantile\n\n\n\nLe quantile \\(u\\in [0,1]\\) de la v.a. \\(X\\) est le nombre réel \\(q_u\\) tel que\n\\[P(X\\leq q_u ) = u \\]\n\n\n\n\n\n\n\n\nTipThéorème central limite\n\n\n\nSoit \\((X_i)_{i\\in\\mathbb{N}}\\) une suite de v.a. i.i.d. d’espérance \\(\\mu\\) et de variance \\(\\sigma^2\\) finies. Alors,\n\\[\\sqrt{n} \\frac{(\\bar{X}_n - \\mu)}{\\sigma} \\xrightarrow[n\\rightarrow\\infty]{\\mathscr{L}}\\mathcal{N}(0,1) \\]\n\n\n\n\n\n\n\n\nNoteDéfinition : Test statistique\n\n\n\nC’est une démarche de statistique inférentielle, qui permet à partir d’observations de valider ou d’invalider des hypothèses, en contrôlant le risque de se tromper.\n\n\n\n\n\n\n\n\nNoteÉtapes d’un test statistique\n\n\n\n\nModélisation des données\nHypothèse nulle et hypothèse alternative\nChoix d’une statistique de test\nDéterminer la zone de rejet \\(R_\\alpha\\)\nMise en œuvre du test, application numérique\nCalculer la \\(p\\)-valeur\n(Si possible) Calculer la puissance du test",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#organisation-et-évaluation",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#organisation-et-évaluation",
+    "title": "Introduction aux modèles linéaires",
+    "section": "",
+    "text": "10 séances de cours-TD-TP de 3h00.\nplusieurs DST + 2 TP notés\nDépôt des documents de cours, TD, TP sur moodle.",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#compétences-ressources-sae",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#compétences-ressources-sae",
+    "title": "Introduction aux modèles linéaires",
+    "section": "",
+    "text": "Ressource : RES R3.06 : Tests d’hypothèses pour l’analyse bi-variée, s’appuie très fortement sur la ressource du S2, R2.08 : Statistique inférentielle\nCompétence ciblée : Analyser statistiquement les données, Niveau 2 : Mettre en oeuvre une analyse exploratoire\nApprentissages critiques :\n\nAC22.04 : Appréhender l’idée de confronter une hypothèse avec la réalité pour prendre une décision\nAC22.05 : Apprécier les limites de validité et les conditions d’application d’une analyse\n\nSAÉ concernées :\n\nAu S3 - SAÉ 3.EMS.01 : Recueil et analyse de données par échantillonnage ou plan d’expérience\nAu S4 - SAÉ 4.EMS.01 : Expliquer ou prédire une variable quantitative à partir de plusieurs facteurs",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#plan-du-cours",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#plan-du-cours",
+    "title": "Introduction aux modèles linéaires",
+    "section": "",
+    "text": "Rappels\nChapitre I : Introduction sur les tests\nChapitre II : Tests paramétriques à un échantillon\nChapitre III : Test paramétriques de comparaison de deux échantillons\nChapitre IV : Test du \\(\\chi^2\\)\nChapitre V : Tests de corrélation",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#le-code-couleur",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#le-code-couleur",
+    "title": "Introduction aux modèles linéaires",
+    "section": "",
+    "text": "WarningJaune\n\n\n\nCeci est un objectif.\n\n\n\n\n\n\n\n\nNoteBleu\n\n\n\nCeci est un rappel, une définition ou un exemple.\n\n\n\n\n\n\n\n\nTipVert\n\n\n\nCeci est un résultat, un théorème.\n\n\n\n\n\n\n\n\nCautionOrange\n\n\n\nCeci est une remarque.",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#ce-quil-faut-retenir-de-ce-cours",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#ce-quil-faut-retenir-de-ce-cours",
+    "title": "Introduction aux modèles linéaires",
+    "section": "",
+    "text": "NoteDéfinition : Quantile\n\n\n\nLe quantile \\(u\\in [0,1]\\) de la v.a. \\(X\\) est le nombre réel \\(q_u\\) tel que\n\\[P(X\\leq q_u ) = u \\]\n\n\n\n\n\n\n\n\nTipThéorème central limite\n\n\n\nSoit \\((X_i)_{i\\in\\mathbb{N}}\\) une suite de v.a. i.i.d. d’espérance \\(\\mu\\) et de variance \\(\\sigma^2\\) finies. Alors,\n\\[\\sqrt{n} \\frac{(\\bar{X}_n - \\mu)}{\\sigma} \\xrightarrow[n\\rightarrow\\infty]{\\mathscr{L}}\\mathcal{N}(0,1) \\]\n\n\n\n\n\n\n\n\nNoteDéfinition : Test statistique\n\n\n\nC’est une démarche de statistique inférentielle, qui permet à partir d’observations de valider ou d’invalider des hypothèses, en contrôlant le risque de se tromper.\n\n\n\n\n\n\n\n\nNoteÉtapes d’un test statistique\n\n\n\n\nModélisation des données\nHypothèse nulle et hypothèse alternative\nChoix d’une statistique de test\nDéterminer la zone de rejet \\(R_\\alpha\\)\nMise en œuvre du test, application numérique\nCalculer la \\(p\\)-valeur\n(Si possible) Calculer la puissance du test",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#probabilité",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#probabilité",
+    "title": "Introduction aux modèles linéaires",
+    "section": "2.1 Probabilité",
+    "text": "2.1 Probabilité\n\n\n\n\n\n\nNoteDéfinition informelle\n\n\n\nUne probabilité est une fonction qui mesure à quel point on s’attend à ce que qu’un événement se produise, dans une expérience où le résultat n’est pas connu à l’avance (une expérience aléatoire).\n\n\n\n\n\n\n\n\n\nNoteDéfinition mathématique\n\n\n\n\n\\(\\Omega\\) : L’ensemble des événements possibles.\n\\(\\mathbb{P}\\) est une mesure de probabilité sur \\(\\Omega\\) si :\n\nPour \\(A\\subset \\Omega,\\quad 0 \\leq \\mathbb{P}(A)\\leq 1\\)\n\\(\\mathbb{P}(\\Omega) = 1\\)\nSi \\(A,B\\subset \\Omega\\) et \\(A\\cap B =  \\varnothing\\) alors \\(\\mathbb{P}(A\\cup B) = \\mathbb{P}(A) + \\mathbb{P}(B)\\)\n\n\n\n\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\nSi \\(\\mathbb{P}(A) = 0\\) alors l’événement \\(A\\) est impossible.\nSi \\(\\mathbb{P}(A) = 1\\) alors l’événement \\(A\\) est certain.",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#variable-aléatoire-et-loi",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#variable-aléatoire-et-loi",
+    "title": "Introduction aux modèles linéaires",
+    "section": "2.2 Variable aléatoire et loi",
+    "text": "2.2 Variable aléatoire et loi\n\n\n\n\n\n\nNoteDéfinition : variable aléatoire\n\n\n\nUne variable aléatoire \\(X\\) est une fonction qui associe à chaque événement un nombre réel. \\[X: \\Omega \\rightarrow \\mathbb{R} \\]\n\n\n\n\n\n\n\n\nNoteDéfinition : loi de probabilité\n\n\n\nUne loi de probabilité est une fonction qui associe à chaque valeur possible de \\(X\\) une probabilité.\n\n\n\n\n\n\n\n\n\nNoteLoi discrète\n\n\n\n\\(X\\) prend un nombre fini ou dénombrable de valeur.\n\n\n\n\n\n\n\n\nNoteExemple\n\n\n\n\nLoi Benroulli \\(\\mathcal{B}(p)\\)\nLoi Binomial \\(\\mathcal{B}(n,p)\\)\nLoi de Poisson \\(\\mathcal{P}(\\lambda)\\)\n\n\n\n\n\n\n\n\n\n\n\nNoteLoi continue\n\n\n\n\\(X\\) prend un nombre indénombrable de valeur.\n\n\n\n\n\n\n\n\nNoteExemple\n\n\n\n\nLoi uniforme \\(U\\)\nLoi exponentielle \\(\\varepsilon(\\lambda)\\)\nLoi de Student \\(\\mathcal{T}(n)\\)\nLoi normale \\(\\mathcal{N}(\\mu,\\sigma^2)\\)\nLoi du \\(\\chi^2\\)",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#densité",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#densité",
+    "title": "Introduction aux modèles linéaires",
+    "section": "2.3 Densité",
+    "text": "2.3 Densité\n\n\n\n\n\n\nNoteDéfinition : densité de probabilité\n\n\n\nUne variable aléatoire continue \\(X\\) admet \\(f\\) comme densité de probabilté si\n\\[\\mathbb{P}(a\\leq X \\leq b) = \\int_a^b f(x)dx \\]\n\n\n\n\n\n\n\n\nNoteExemple : \\(\\mathcal{N}(0,1)\\)\n\n\n\nLa loi \\(\\mathcal{N}(0,1)\\) a pour densité de probabilité \\(f(x)= \\frac{1}{\\sqrt{2\\pi}}e^{-\\frac{1}{2}x^2}\\)",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#fonction-de-répartition",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#fonction-de-répartition",
+    "title": "Introduction aux modèles linéaires",
+    "section": "2.4 Fonction de répartition",
+    "text": "2.4 Fonction de répartition\n\n\n\n\n\n\nNoteDéfinition\n\n\n\nLa fonction de répartition \\(F\\) de la v.a. \\(X\\) est défini par :\n\\[\\begin{align}\n\nF :\\mathbb{R} & \\longrightarrow [0,1]\\\\\ns & \\longrightarrow \\mathbb{P}(X\\leq s)\n\n\\end{align}\\]\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\n\\(F\\) est croissante\n\\(\\underset{s\\rightarrow - \\infty}{\\lim} F(s) = 0\\)\n\\(\\underset{s\\rightarrow + \\infty}{\\lim} F(s) = 1\\)",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#visualisation-de-la-fonction-de-répartition",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#visualisation-de-la-fonction-de-répartition",
+    "title": "Introduction aux modèles linéaires",
+    "section": "2.5 Visualisation de la fonction de répartition",
+    "text": "2.5 Visualisation de la fonction de répartition\n\n\n\n\n\n\n\n\n\n\\[\\begin{align}\n\\color{red}{\\text{entrée}} & \\longrightarrow \\color{blue}{\\text{sortie}}\\\\\n\\color{red}{\\mathbb{R}} & \\longrightarrow \\color{blue}{[0,1]}\\\\\n\\color{red}{s} & \\longrightarrow \\color{blue}{\\mathbb{P}(X\\leq s)}\\\\\n\\end{align}\\]",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#fonction-quantile",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#fonction-quantile",
+    "title": "Introduction aux modèles linéaires",
+    "section": "2.6 Fonction quantile",
+    "text": "2.6 Fonction quantile\n\n\n\n\n\n\nNoteDéfinition\n\n\n\nLa fonction quantile \\(q\\) de la v.a. \\(X\\) est l’inverse de la fonction de répartition\n\\[\\begin{align}\nq :[0,1] & \\longrightarrow \\mathbb{R}  \\\\\nu & \\longrightarrow F^{-1}(u) := q_u\\\\\n\\end{align}\\]\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\nInterprétation : pour \\(u\\in [0,1]\\), \\(q_u\\) est le nombre réel tel que\n\\[\\mathbb{P}(X\\leq q_u ) = u \\]",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#visualisation-de-la-fonction-quantile",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#visualisation-de-la-fonction-quantile",
+    "title": "Introduction aux modèles linéaires",
+    "section": "2.7 Visualisation de la fonction quantile",
+    "text": "2.7 Visualisation de la fonction quantile\n\n\n\n\n\n\n\n\n\n\\[\\begin{align}\n\\color{red}{\\text{entrée}} & \\longrightarrow \\color{blue}{\\text{sortie}}\\\\\n\\color{red}{[0,1]} & \\longrightarrow \\color{blue}{\\mathbb{R}}\\\\\n\\color{red}{u} & \\longrightarrow \\color{blue}{q_u\\quad\\text{ tel que }\\mathbb{P}(X\\leq q_u) = u}\\\\\n\\end{align}\\]",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#une-propriété-du-quantile",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#une-propriété-du-quantile",
+    "title": "Introduction aux modèles linéaires",
+    "section": "2.8 Une propriété du quantile",
+    "text": "2.8 Une propriété du quantile\n\n\n\n\n\n\nTipThéorème\n\n\n\nPour les lois symmétriques et centrées, on a\n\\[q_{1-u} = -q_u\\]\n\n\n\n\n\n\n\n\nNoteExemple\n\n\n\nLa loi \\(\\mathcal{N}(0,1)\\) est symmétrique et centrée.\n\\(q_{0.975} = 1.96\\)\n\\(q_{0.025} = -1.96\\)",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#lire-un-quantile-version-old-school",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#lire-un-quantile-version-old-school",
+    "title": "Introduction aux modèles linéaires",
+    "section": "2.9 Lire un quantile : version Old school",
+    "text": "2.9 Lire un quantile : version Old school\n\n\n\n\n\n\nNoteTable de quantile",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#lire-un-quantile-code-r",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#lire-un-quantile-code-r",
+    "title": "Introduction aux modèles linéaires",
+    "section": "2.10 Lire un quantile : Code R",
+    "text": "2.10 Lire un quantile : Code R\n\nqnorm(0.975)\n\n[1] 1.959964\n\n\n\nqnorm(0.025)\n\n[1] -1.959964\n\n\n\nqt(0.975, df = 25)\n\n[1] 2.059539\n\n\n\n\n2.10.1 À retenir :\n\n\n\n\n\n\nNoteDéfinition : quantile\n\n\n\nLe quantile \\(u\\in [0,1]\\) de la v.a. \\(X\\) est le nombre réel \\(q_u\\) tel que\n\\[P(X\\leq q_u ) = u \\]",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#théorème-centrale-limite-égalité-en-loi",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#théorème-centrale-limite-égalité-en-loi",
+    "title": "Introduction aux modèles linéaires",
+    "section": "2.11 Théorème centrale limite : Égalité en loi",
+    "text": "2.11 Théorème centrale limite : Égalité en loi\n\n\n\n\n\n\nTipThéorème\n\n\n\nSi deux variables aléatoires \\(X\\) et \\(Y\\) suivent la même loi, alors :\n\n\\(X\\) et \\(Y\\) ont la même fonction de répartition.\n\\(X\\) et \\(Y\\) ont les mêmes quantiles.\n\n\n\n\n\n\n\n\n\n\nNoteDéfinition : Convergence en loi\n\n\n\nSoit \\((X_i)_{i\\in\\mathbb{N}}\\) une suite de v.a. et \\(X_\\infty\\) une v.a., on dit que \\((X_i)_{i\\in\\mathbb{N}}\\) converge en loi vers \\(X_\\infty\\) si pour tout réel \\(x\\) on a\n\\[\\lim_{i\\rightarrow\\infty}\\mathbb{P}(X_i\\leq x) = \\mathbb{P}(X_\\infty\\leq x) \\]\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\nAutrement dit, les fonctions de répartition des \\(X_i\\) converge ponctuellement vers la fonctions de répartition de \\(X_\\infty\\), on notera \\(X_i \\xrightarrow[i\\rightarrow\\infty]{\\mathscr{L}} X_\\infty\\)",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#le-théorème-central-limite",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#le-théorème-central-limite",
+    "title": "Introduction aux modèles linéaires",
+    "section": "2.12 Le Théorème central limite",
+    "text": "2.12 Le Théorème central limite\nLe théorème central limite (TCL) est un résultat général sur la loi de \\(\\bar{X}_n\\) lorsque \\(n\\) est suffisamment grand, quelle que soit la loi des \\(X_i\\).\n\n\n\n\n\n\nTipThéorème central limite\n\n\n\nSoit \\((X_i)_{i\\in\\mathbb{N}}\\) une suite de v.a. i.i.d. d’espérance \\(\\mu\\) et de variance \\(\\sigma^2\\) finies. Alors,\n\\[\\sqrt{n} \\frac{(\\bar{X}_n - \\mu)}{\\sigma} \\xrightarrow[n\\rightarrow\\infty]{\\mathscr{L}}\\mathcal{N}(0,1) \\]",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#la-convergence-en-loi-illustrée",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#la-convergence-en-loi-illustrée",
+    "title": "Introduction aux modèles linéaires",
+    "section": "2.13 La convergence en loi illustrée",
+    "text": "2.13 La convergence en loi illustrée\n\nOn choisit une loi quelconque d’espérance \\(\\mu\\) et de variance finie \\(\\sigma\\).\nPour \\(n\\) fixé, on simule \\((x_i)_{1\\leq i \\leq n}\\) selon cette loi et on calcule \\(t_n = \\sqrt{n} \\frac{(\\bar{x}_n - \\mu)}{\\sigma}\\).\nOn repète cette expérience plusieurs fois pour voir la distribution des \\(t_n\\) obtenus.",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#rappel-le-théorème-central-limite",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#rappel-le-théorème-central-limite",
+    "title": "Introduction aux modèles linéaires",
+    "section": "2.14 Rappel: le Théorème central limite",
+    "text": "2.14 Rappel: le Théorème central limite\n\nLorsque \\(n\\) est grand, on pourra rapprocher la loi de \\(\\bar{X}_n\\) par la loi \\(\\mathcal{N}\\left(\\mu,\\frac{\\sigma^2}{n}\\right)\\).\n\n\n\nOn notera pour simplifier \\(\\bar{X}_n\\approx \\mathcal{N} \\left(\\mu,\\frac{\\sigma^2}{n}\\right)\\).\n\n\n\n\n“Lorsque \\(n\\) est grand”\\(\\approx\\) “\\(n&gt;30\\)”.\n\n\n\n\nSi on ne connaît pas la variance \\(\\sigma^2\\) des \\(X_i\\), on la remplace par un estimateur consistant \\(S^2\\), et le TCL reste encore valide.\n\n\\[\\sqrt{n}\\frac{(\\bar{X}_n - \\mu)}{S}\\xrightarrow[n\\rightarrow\\infty]{\\mathscr{L}}\\mathcal{N}(0,1) \\]",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#ce-quil-faut-retenir-de-ce-cours-1",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#ce-quil-faut-retenir-de-ce-cours-1",
+    "title": "Introduction aux modèles linéaires",
+    "section": "2.15 Ce qu’il faut retenir de ce cours",
+    "text": "2.15 Ce qu’il faut retenir de ce cours\n\n\n\n\n\n\nNoteDéfinition : Quantile\n\n\n\nLe quantile \\(u\\in [0,1]\\) de la v.a. \\(X\\) est le nombre réel \\(q_u\\) tel que\n\\[P(X\\leq q_u ) = u \\]\n\n\n\n\n\n\n\n\nTipThéorème central limite\n\n\n\nSoit \\((X_i)_{i\\in\\mathbb{N}}\\) une suite de v.a. i.i.d. d’espérance \\(\\mu\\) et de variance \\(\\sigma^2\\) finies. Alors,\n\\[\\sqrt{n} \\frac{(\\bar{X}_n - \\mu)}{\\sigma} \\xrightarrow[n\\rightarrow\\infty]{\\mathscr{L}}\\mathcal{N}(0,1) \\]\n\n\n\n\n\n\n\n\nNoteDéfinition : Test statistique\n\n\n\nC’est une démarche de statistique inférentielle, qui permet à partir d’observations de valider ou d’invalider des hypothèses, en contrôlant le risque de se tromper.\n\n\n\n\n\n\n\n\nNoteÉtapes d’un test statistique\n\n\n\n\nModélisation des données\nHypothèse nulle et hypothèse alternative\nChoix d’une statistique de test\nDéterminer la zone de rejet \\(R_\\alpha\\)\nMise en œuvre du test, application numérique\nCalculer la \\(p\\)-valeur\n(Si possible) Calculer la puissance du test",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#exemple-1-la-salmonelle",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#exemple-1-la-salmonelle",
+    "title": "Introduction aux modèles linéaires",
+    "section": "3.1 Exemple 1 : la salmonelle",
+    "text": "3.1 Exemple 1 : la salmonelle\nPlusieurs personnes ont souffert d’intoxication alimentaire de salmonelle. Après enquête, on suspecte une marque de glaces d’être responsable de l’intoxication. Pour vérifier cela, des scientifiques ont mesuré le niveau de salmonelle dans 9 pots de glace, tirés de façon aléatoire chez le fabricant de glace. On obtient les mesures suivantes, exprimées en NPP (Nombre le Plus Probable) par gramme :\n\nx&lt;- c(0.175, 0.205, 0.760, 0.719, 0.199, 0.529, 0.306, 0.520, 0.010)\n\n\n\nOn sait que le niveau de référence que doit respecter un fabricant de glaces est de 0.3 NPP/g.\n\n\n\n\nLa question que l’on se pose est : le niveau moyen de salmonelle dans les pots de glace est-il supérieur à 0.3 ?\n\n\n\n\nmean(x)\n\n[1] 0.3803333",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#exemple-1-la-salmonelle-1",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#exemple-1-la-salmonelle-1",
+    "title": "Introduction aux modèles linéaires",
+    "section": "3.2 Exemple 1 : la salmonelle",
+    "text": "3.2 Exemple 1 : la salmonelle\n\nMême si sur cet échantillon de 9 pots de glace, la moyenne est supérieure à 0.3, est-ce que cela suffit pour demander au fabricant d’arrêter la production de glace ?\nImaginons que l’on recommence l’expérience sur 9 autres pots de glace et que l’on trouve cette fois une moyenne de salmonelle égale à 0.22 NPP/g. Que doit-on alors conclure ?\nQue se passe-t-il si on recommence l’expérience cette fois-ci sur 100 pots de glace (au lieu de seulement 9) ? Sera-t-il plus facile de conclure ?",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#exemple-2-insecticides",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#exemple-2-insecticides",
+    "title": "Introduction aux modèles linéaires",
+    "section": "3.3 Exemple 2 : insecticides",
+    "text": "3.3 Exemple 2 : insecticides\nPour comparer l’effet entre deux insecticides, on applique l’insecticide A et B sur 36 groupes de 30 insectes et après avoir laissé agir pendant une heure, on compte le nombre d’insectes morts.\n\nOn obtient pour l’insecticide A, les nombres d’insectes tués suivants :\n\nA&lt;- c(14, 2, 21, 5, 20, 2, 17, 3, 11, 7,\n      11, 3, 5, 23, 1, 4, 16, 10, 3, 6, 4,\n      1, 5, 1, 14, 13, 4, 3, 24, 14, 9, 5, 21, 17, 15, 6)\n\nprint(mean(A))\n\n[1] 9.444444\n\n\n\n\nPour l’insecticide B, les nombres d’insectes tués sont :\n\nB&lt;- c(1, 26, 2, 5, 17, 13, 15, 3, 26, 14, 1,\n      19, 5, 1, 11, 2, 4, 20, 3, 10, 3, 3, 0,\n      22, 7, 12, 13, 5, 13, 6, 0, 10, 16, 7, 12, 17)\nprint(mean(B))\n\n[1] 9.555556\n\n\n\n\nA partir de ces résultats, peut-on dire que l’insecticide B fonctionne mieux que le A ?",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#exemple-2-insecticides-1",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#exemple-2-insecticides-1",
+    "title": "Introduction aux modèles linéaires",
+    "section": "3.4 Exemple 2 : insecticides",
+    "text": "3.4 Exemple 2 : insecticides\n\n\n\nRésultat sur l’échantillon A et B\n\n\n#| out-width: 80%\nboxplot(A,B,names= c(\"A\",\"B\"))\npoints(x=c(1,2),\n       y = c(mean(A),mean(B)),\n       pch=20,col = \"red\",cex=2)\n\n\n\n\n\n\n\n\n\n\n\nSi on pouvait recommencer l’expérience, pourrait-on parfois avoir la moyenne du nombre d’insectes tués par l’insecticide A qui soit supérieure au nombre d’insectes tués par l’insecticide B ?\nLe problème est qu’en pratique, on ne dispose que d’un échantillon.",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#exemple-3-tabagisme",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#exemple-3-tabagisme",
+    "title": "Introduction aux modèles linéaires",
+    "section": "3.5 Exemple 3 : tabagisme",
+    "text": "3.5 Exemple 3 : tabagisme\nDans le cadre d’une enquête sur le comportement des jeunes vis-à-vis de la cigarette, on sonde un panel de lycéennes et de lycéens. Les observations suivantes ont été obtenues. Y a-t-il un lien entre genre et tabagisme ?\n\n\n\n\n\nEffectifs\n\n\n\nFumeur\nNon Fumeur\n\n\n\n\nFemme\n12\n38\n\n\nHomme\n63\n137\n\n\n\n\n\n\n\n\n\nFréquences\n\n\n\nFumeur\nNon Fumeur\n\n\n\n\nFemme\n0.240\n0.760\n\n\nHomme\n0.315\n0.685",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#lobjectif",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#lobjectif",
+    "title": "Introduction aux modèles linéaires",
+    "section": "3.6 L’objectif",
+    "text": "3.6 L’objectif\n\n\n\n\n\n\nWarningObjectif\n\n\n\nValider ou non une hypothèse faite sur une (ou plusieurs) population(s).\nÀ partir des données de l’échantillon, on souhaite choisir entre :\n\nL’hypothèse nulle \\(H_0\\)\nL’hypothèse alternative \\(H_1\\)\n\n\n\n\n\n\n\n\n\n\n\nNoteExemple\n\n\n\nPour les pots de glace et la salmonelle, on souhaite tester :\n\n\\(H_0\\) : “NON : la quantité de salmonelle des pots de glace ne dépasse pas le niveau réglementaire de 0.3 NPP/g”.\n\\(H_1\\) : “OUI : la quantité de salmonelle des pots de glace dépasse le niveau réglementaire de 0.3 NPP/g”.",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#comment-montrer-quune-proposition-est-vraie",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#comment-montrer-quune-proposition-est-vraie",
+    "title": "Introduction aux modèles linéaires",
+    "section": "3.7 Comment montrer qu’une proposition est vraie ?",
+    "text": "3.7 Comment montrer qu’une proposition est vraie ?\n\n\n\n\n\n\nWarningObjectif\n\n\n\nOn souhaite montrer qu’une proposition est vraie.\n\n\n\n\n\n\n\n\n\nTipComment faire ?\n\n\n\nEn mathématique, on vérifie que les propositions sont vraies à l’aide de démonstrations.\n\n\n\n\n\n\n\n\n\n\nNoteExemple de démonstrations\n\n\n\n\nDémonstration directe\nDémonstration par contraposée\nDémonstration par récurrence\nDémonstration par l’absurde\n…",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#démonstration-par-labsurde",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#démonstration-par-labsurde",
+    "title": "Introduction aux modèles linéaires",
+    "section": "3.8 Démonstration par l’absurde",
+    "text": "3.8 Démonstration par l’absurde\nExercice : Démontrez par l’absurde que \\(\\sqrt{2}\\) est irrationnel.\n\nDémonstration par l’absurde\n\n\n\n\n\n\nNoteModélisation\n\n\n\n\\(\\sqrt{2}\\) est un nombre positif tel que \\(\\sqrt{2}^2 = 2\\)\n\n\n\n\n\n\n\n\nNoteHypothèses\n\n\n\n\n\\(H_0\\) : \\(\\sqrt{2}\\) est rationnelle\n\\(H_1\\) : \\(\\sqrt{2}\\) est irrationnelle\n\n\n\n\n\n\n\n\n\nNoteRaisonnement\n\n\n\nSupposons que \\(H_0\\) est vraie. Dans ce cas,\n\n\nIl existe 2 nombres premiers entre eux \\(a\\) et \\(b\\) tels que \\(\\sqrt{2} = \\frac{a}{b}\\).\nOn a alors \\(2b^2 = a^2\\). Puisque \\(a^2\\) est pair, \\(a\\) est pair, on a donc \\(a=2p\\).\n\\(2 b^2 = (2p)^2 = 4p^2\\) donc \\(b^2 = 2p^2\\) donc \\(b\\) est pair.\n\\(a\\) et \\(b\\) sont des multiples de 2, ils ne sont donc pas premiers entre eux.\n\n\n\n\n\n\n\n\n\n\nNoteEst-ce possible ?\n\n\n\nOn aboutit à une contradiction\n\n\n\n\n\n\n\n\nNoteConclusion\n\n\n\nOn rejette l’hypothèse \\(H_0\\) et on conserve l’hypothèse \\(H_1\\)\n\n\n\n\nTest statistique : similaire à démonstration par l’absurde mais probabiliste\n\n\n\n\n\n\nNoteModélisation\n\n\n\nLes données \\(x_i\\) sont des réalisations i.i.d. d’une v.a. \\(X_i\\)\n\n\n\n\n\n\n\n\n\nNoteHypothèses\n\n\n\n\n\\(H_0\\) : “NON : la quantité de salmonelle ne dépasse pas le niveau réglementaire\n\\(H_1\\) : “OUI : la quantité de salmonelle dépasse le niveau réglementaire\n\n\n\n\n\n\n\n\n\n\n\nNoteRaisonnement\n\n\n\nSupposons que \\(H_0\\) est vraie. Dans ce cas,\n\nÀ partir des variables aléatoire \\(X_i\\), on va construire une statistique de test \\(T_n\\).\nOn s’attend à ce \\(T_n\\) suive une certaine loi de probabilité.\nÀ partir des données, on a observé la réalisation \\(t_n\\)\n\n\n\n\n\n\n\n\n\n\n\nNoteEst-ce possible ?\n\n\n\n\\(t_n\\) se produit avec une probabilité de \\(p_c\\) (probabilité critique).\n\n\n\n\n\n\n\n\n\n\nNoteConclusion\n\n\n\nSi \\(p_c\\) est trop petite : On rejette \\(H_0\\) et on affirme \\(H_1\\).\nSinon : On ne rejette pas \\(H_0\\), on n’a pas suffisament de preuve pour affirmer \\(H_1\\).",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#risques",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#risques",
+    "title": "Introduction aux modèles linéaires",
+    "section": "3.9 Risques",
+    "text": "3.9 Risques\n\n\\(H_0\\) : “la quantité de salmonelle des pots de glace ne dépasse pas le niveau réglementaire de 0.3 NPP/g”.\n\\(H_1\\) : “la quantité de salmonelle des pots de glace dépasse le niveau réglementaire de 0.3 NPP/g”.\n\n\n2 types d’erreurs possibles :\n\n\n\nSi \\(H_0\\) est vraie, on peut se tromper en choisissant \\(H_1\\). C’est le risque de première espèce, appelé aussi “faux positif”.\n\n\n\n\nSi \\(H_1\\) est vraie, on peut se tromper en choisissant \\(H_0\\). C’est le risque de deuxième espèce, appelé aussi “faux négatif”.",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#risques-1",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#risques-1",
+    "title": "Introduction aux modèles linéaires",
+    "section": "3.10 Risques",
+    "text": "3.10 Risques\n\n\n\n\n\n\nCautionRemarques\n\n\n\nLes deux risques ne sont pas symétriques. Selon le consommateur ou le fabricant il y a un risque plus grave que l’autre. Cela dépend du point de vue.\n\nPour le fabricant, le plus grave est de dire que sa glace peut être dangereuse pour la santé alors qu’elle ne l’est pas.\nPour le consommateur, le plus grave est de dire que la glace n’est pas dangereuse pour la santé alors qu’elle l’est.\n\nEn pratique on n’arrive généralement pas à contrôler les deux risques. Il faut choisir ce que l’on veut montrer et quel risque on veut contrôler.",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#quantifier-les-risques",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#quantifier-les-risques",
+    "title": "Introduction aux modèles linéaires",
+    "section": "3.11 Quantifier les risques",
+    "text": "3.11 Quantifier les risques\nPeut-on quantifier à quel point on se trompe ?\n\n\n\n\n\n\n\nNoteDéfinition : Risque de première espèce\n\n\n\n\n\\(\\alpha\\) est le risque de première espèce, ou le taux de faux positif.\n\n\\[\\alpha = \\mathbb{P}(\\text{rejeter à tort }H_0) = \\mathbb{P}_{H_0}(\\text{rejeter }H_0)\\]\n\n\n\n\n\n\n\n\n\n\nNoteDéfinition : risque de deuxième espèce\n\n\n\n\n\\(\\beta\\) est le risque de deuxième espèce, ou le taux de faux négatif.\n\n\\[\\beta = \\mathbb{P}(\\text{accepter à tort }H_0) = \\mathbb{P}_{H_1}(\\text{accepter }H_0)\\]\n\n\n\n\n\n\n\n\n\n\nNoteMatrice de confusion\n\n\n\n\n\n\n\nDécision : \\(H_0\\)\nDécision : \\(H_1\\)\n\n\n\n\nRéalité : \\(H_0\\)\n\\(1-\\alpha\\)\n\\(\\alpha\\)\n\n\nRéalité : \\(H_1\\)\n\\(\\beta\\)\n\\(1-\\beta\\)\n\n\n\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\nSi on veut estimer ces probabilités, alors les observations doivent suivre un modèle probabiliste.",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#quantifier-les-risques-1",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#quantifier-les-risques-1",
+    "title": "Introduction aux modèles linéaires",
+    "section": "3.12 Quantifier les risques",
+    "text": "3.12 Quantifier les risques\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\nEn pratique, le risque de 1ère espèce \\(\\alpha\\) est fixé à l’avance aussi petit que l’on veut (5%, 10%), c’est un risque qu’on va essayer de contrôler.\n\n\n\nSi on arrive à le contrôler, alors on connait le pourcentage d’erreur de se tromper quand on rejette \\(H_0\\).\n\n\n\n\nDans certaines condition, on peut essayer de contrôler \\(\\beta\\), le risque de 2ème espèce. Si on ne le fait pas, on ne connait pas la marge d’erreur que l’on commettrait en conservant \\(H_0\\).",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#quest-ce-qui-influence-le-risque",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#quest-ce-qui-influence-le-risque",
+    "title": "Introduction aux modèles linéaires",
+    "section": "3.13 Qu’est-ce qui influence le risque ?",
+    "text": "3.13 Qu’est-ce qui influence le risque ?\n\nÉchantillons choisis. En pratique, on ne dispose que d’un échantillon. Est-ce que l’échantillon est bien représentatif des données ? Est-on en présence d’un échantillon atypique ?\nTaille des échantillons. Plus l’échantillon est grand, plus il sera facile de discriminer entre deux hypothèses.\nVariance des observations. Plus la variance est faible, plus il sera facile de discriminer entre deux hypothèses.\n\n\n\n\n\n\n\n\n\n\n\n\n\nQui a la moyenne la plus élevé entre A et B ? Dans le graphique suivant, le risque de se tromper est élevé.\n\n\n\n\n\n\n\n\n\nPar contre, dans le graphique qui suit, le risque de se tromper est plus faible.",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#construire-un-test-statistique-1",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#construire-un-test-statistique-1",
+    "title": "Introduction aux modèles linéaires",
+    "section": "4.1 Construire un test statistique",
+    "text": "4.1 Construire un test statistique\n\n\n\n\n\n\nWarningObjectif\n\n\n\nOn souhaite affirmer qu’une proposition est vraie, en contrôlant la probabilité de se tromper.\n\n\n\n\n\n\n\n\nNoteÉtapes d’un test statistique\n\n\n\n\nModélisation des données\nHypothèse nulle et hypothèse alternative\nChoix d’une statistique de test\nDéterminer la zone de rejet \\(R_\\alpha\\)\nMise en œuvre du test, application numérique\nCalculer la \\(p\\)-valeur\n(Si possible) Calculer la puissance du test",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#les-étapes-de-construction-dun-test-16",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#les-étapes-de-construction-dun-test-16",
+    "title": "Introduction aux modèles linéaires",
+    "section": "4.2 Les étapes de construction d’un test 1/6",
+    "text": "4.2 Les étapes de construction d’un test 1/6\n\n\n\n\n\n\n\nTip1 Modélisation des données\n\n\n\n\nDonnées : \\((x_1,\\dots , x_n)\\)\nModélisation : réalisations de \\(n\\) variables aléatoires \\(X_1,\\dots , X_n\\).\nBut : tester des hypothèses portant sur la loi de probabilité du \\(n\\)-uplet \\((X_1, \\dots , X_n)\\).\nSouvent, les \\(X_i\\) sont indépendantes et identiquement distribuées (i.i.d.).\nAutres hypothèses possibles : normalité, à vérifier pour mettre en oeuvre le test.\n\n\n\n\n\n\n\n\n\n\n\nTip2 Choix des hypothèses à tester\n\n\n\nOn choisit l’hypothèse nulle \\(H_0\\) et l’hypothèse alternative \\(H_1\\).\n\nL’hypothèse \\(H_0\\) correspond à un statu quo.\nL’hypothèse \\(H_1\\) correspond à ce qu’on veut démontrer.",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#les-étapes-de-construction-dun-test-26",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#les-étapes-de-construction-dun-test-26",
+    "title": "Introduction aux modèles linéaires",
+    "section": "4.3 Les étapes de construction d’un test 2/6",
+    "text": "4.3 Les étapes de construction d’un test 2/6\n\n\n\n\n\n\nTip3 Choix d’une statistique de test\n\n\n\n\\(T_n\\) : une v.a. fonction de \\((X_1,\\dots  , X_n)\\)\n\nOn connaît la loi de \\(T_n\\) sous \\(H_0\\)\nPotentiellement un comportement différent sous \\(H_1\\).\n\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\nSouvent \\(T_n\\) est reliée à un estimateur de la quantité qui nous intéresse et sur laquelle on effectue le test.",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#les-étapes-de-construction-dun-test-36",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#les-étapes-de-construction-dun-test-36",
+    "title": "Introduction aux modèles linéaires",
+    "section": "4.4 Les étapes de construction d’un test 3/6",
+    "text": "4.4 Les étapes de construction d’un test 3/6\n\n\n\n\n\n\nTip4 Déterminer la zone de rejet \\(R_\\alpha\\) de \\(H_0\\)\n\n\n\nContrôler le risque de première espèce pour un test de niveau \\(\\alpha\\).\n\nLa zone de rejet, notée \\(R_\\alpha\\) est telle que \\[\\mathbb{P}(\\text{rejeter à tort }H_0) = \\mathbb{P}_{H_0}(\\text{rejeter }H_0) = \\mathbb{P}_{H_0}(T_n\\in R_\\alpha)=\\alpha\\]\nOn se servira souvent des quantiles pour définir la zone de rejet.\n\n\n\nRègle de décision :\n\n\\[\\left\\{\n    \\begin{array}{ll}\n        \\mbox{si } T_n \\in R_\\alpha  & \\mbox{alors on rejette } H_0\\\\\n                \\mbox{si } T_n \\notin R_\\alpha  & \\mbox{alors on ne rejette pas } H_0\n    \\end{array}\n\\right.\\]",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#les-étapes-de-construction-dun-test-46",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#les-étapes-de-construction-dun-test-46",
+    "title": "Introduction aux modèles linéaires",
+    "section": "4.5 Les étapes de construction d’un test 4/6",
+    "text": "4.5 Les étapes de construction d’un test 4/6\n\n\n\n\n\n\nTip5 Mise en œuvre du test\n\n\n\n\nApplication numérique de la règle de décision sur l’échantillon observé et conclusion. Soit \\(t_n\\) la réalisation de \\(T_n\\)\n\n\n\nSi \\(t_n\\in R_\\alpha\\) alors on rejette \\(H_0\\), au risque \\(\\alpha\\) de se tromper : il est très peu probable d’obtenir les résultats que l’on a trouvés si \\(H_0\\) est vraie. Les données sont en contradiction avec \\(H_0\\).\n\n\n\n\nSi \\(t   _n\\notin R_\\alpha\\) alors on ne rejette \\(H_0\\) pas, au risque \\(\\alpha\\) de se tromper : les données ne sont pas en contradiction avec \\(H_0\\), et on conserve \\(H_0\\).",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#les-étapes-de-construction-dun-test-56",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#les-étapes-de-construction-dun-test-56",
+    "title": "Introduction aux modèles linéaires",
+    "section": "4.6 Les étapes de construction d’un test 5/6",
+    "text": "4.6 Les étapes de construction d’un test 5/6\n\n\n\n\n\n\nTip6 Calculer la probabilité critique, ou \\(p\\)-valeur.\n\n\n\n\nÉtant donnée l’observation \\(t_n\\), c’est la plus petite valeur de \\(\\alpha\\) pour laquelle on rejette \\(H_0\\).\n\n\\[p = p_c = \\inf_\\alpha \\{\\text{On rejette } H_0 \\text{ au niveau } \\alpha\\} = \\inf_\\alpha\\{t_n \\in R_\\alpha\\}\\]\n\n\n\n\n\n\n\n\n\nTipComment se servir de la \\(p\\)-valeur\n\n\n\nOn se fixe un risque \\(\\alpha\\) (par ex 5%), et on compare la \\(p\\)-valeur à \\(\\alpha\\) pour conclure.\n\nSi \\(p_c&lt;\\alpha\\), on rejette \\(H_0\\) au niveau \\(\\alpha\\).\nSi \\(p_c&gt;\\alpha\\), on ne rejette pas \\(H_0\\) au niveau \\(\\alpha\\).\n\n\n\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\nMoyen mnémotechnique : “\\(p\\) critique petite, \\(H_0\\) pourrite”",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#les-étapes-de-construction-dun-test-66",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#les-étapes-de-construction-dun-test-66",
+    "title": "Introduction aux modèles linéaires",
+    "section": "4.7 Les étapes de construction d’un test 6/6",
+    "text": "4.7 Les étapes de construction d’un test 6/6\n\n\n\n\n\n\nTip7 Calculer la puissance du test.\n\n\n\nLa puissance d’un test représente la probabilité de prendre la bonne décision en rejettant l’hypothèse nulle : c’est la probabilité de rejeter \\(H_1\\) à raison :\n\\[\\begin{align}\n\\pi &= \\mathbb{P}_{H_1}(\\text{rejeter } H_{0})\\\\\n&= 1 - \\beta\n\\end{align}\\]\nPour calculer \\(\\pi\\), il faut supposer connaitre la loi des données sous \\(H_1\\). La puissance d’un test est d’autant plus grande que l’hypothèse alternative est éloignée de l’hypothèse nulle.",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#ce-quil-faut-retenir-de-ce-cours-2",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours1/cours1.html#ce-quil-faut-retenir-de-ce-cours-2",
+    "title": "Introduction aux modèles linéaires",
+    "section": "4.8 Ce qu’il faut retenir de ce cours",
+    "text": "4.8 Ce qu’il faut retenir de ce cours\n\n\n\n\n\n\nNoteDéfinition : Quantile\n\n\n\nLe quantile \\(u\\in [0,1]\\) de la v.a. \\(X\\) est le nombre réel \\(q_u\\) tel que\n\\[P(X\\leq q_u ) = u \\]\n\n\n\n\n\n\n\n\nTipThéorème central limite\n\n\n\nSoit \\((X_i)_{i\\in\\mathbb{N}}\\) une suite de v.a. i.i.d. d’espérance \\(\\mu\\) et de variance \\(\\sigma^2\\) finies. Alors,\n\\[\\sqrt{n} \\frac{(\\bar{X}_n - \\mu)}{\\sigma} \\xrightarrow[n\\rightarrow\\infty]{\\mathscr{L}}\\mathcal{N}(0,1) \\]\n\n\n\n\n\n\n\n\nNoteDéfinition : Test statistique\n\n\n\nC’est une démarche de statistique inférentielle, qui permet à partir d’observations de valider ou d’invalider des hypothèses, en contrôlant le risque de se tromper.\n\n\n\n\n\n\n\n\nNoteÉtapes d’un test statistique\n\n\n\n\nModélisation des données\nHypothèse nulle et hypothèse alternative\nChoix d’une statistique de test\nDéterminer la zone de rejet \\(R_\\alpha\\)\nMise en œuvre du test, application numérique\nCalculer la \\(p\\)-valeur\n(Si possible) Calculer la puissance du test",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Tests d’hypothèses pour l’analyse bivariée"
+    ]
   }
 ]

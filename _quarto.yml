@@ -27,6 +27,10 @@ website:
           - section: Rmarkdown
             contents: 
              - Cours/Dictionnaire Rmarkdown.qmd
+          
+          - section: Tests d'hypothèses
+            contents:
+            - Cours/EMS/Tests d'hypothèses/Cours1/cours1.qmd
             
           - section: Modèles linéaires
             contents:

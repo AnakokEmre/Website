@@ -31,6 +31,8 @@ website:
           - section: Tests d'hypothèses
             contents:
             - Cours/EMS/Tests d'hypothèses/Cours1/cours1.qmd
+            - Cours/EMS/Tests d'hypothèses/Cours2/cours2.qmd
+
             
           - section: Modèles linéaires
             contents:

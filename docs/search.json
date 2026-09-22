@@ -4809,5 +4809,725 @@
     "title": "Qui suis-je ?",
     "section": "",
     "text": "Depuis septembre 2025, je suis enseignant-chercheur en statistiques appliquées.\n\nTravaux de recherche actuels\nMots Clés: Graphes d’admixture, Invasion biologique, Génétique des populations.\nCollaborateurs: Arnaud Estoup, Mathieu Gautier (INRAE, CBGP, Montpellier), Paul Bastide (CNRS, Univ. Paris Cité, Paris), Cécile Ané (Univ. of Wisconsin-Madison, USA), Jean-Michel Marin (IMAG, Univ. Montpellier, Montpellier)\nJ’étais en recherche post-doctoral de mars 2025 à septembre 2025 au Centre Biologique de Gestion des Populations de Montpellier en tant que chargé de recherche. Cette collaboration continue actuellement. Je travaille sur des développements méthodologiques pour inférer des graphes de mélange (ou d’admixture, abrégé en GM) en génétique des populations d’espèces envahissantes. Les GM représentent schématiquement l’histoire évolutive de populations via des fusions et des séparations de populations. Ils sont inférés à l’aide de méthodes statistiques appliquées aux corrélations des fréquences alléliques. Les objectifs de ce travail sont multiples. Il s’agit d’abord de comparer les méthodes d’inférence existantes sur des données simulées et réelles, en analysant notamment des approches bayésiennes et des méthodes basées sur la vraisemblance. De plus, la grande taille de l’espace des GM complique ces méthodologies et pose des défis d’identifiabilité, que nous souhaitons étudier en s’inspirant de la littérature déjà existante pour les arbres phylogénétiques. Un autre défi sera d’intégrer l’incertitude dans l’estimation de la covariance des fréquences alléliques des populations et d’adapter ces estimations à des données plus complexes, telles que les données Pool-Seq. Il est aussi envisagé de développer des méthodologies innovantes pour l’estimation des GM, en m’inspirant des modèles génératifs de graphes, notamment avec des Graphs Neural Networks. Les méthodologies développées seront appliquées à des jeux de données génomiques disponibles pour de nombreuses populations natives et envahissantes de deux espèces d’insectes envahissants, la coccinelle Harmonia axyridis et la drosophile Drosophila suzukii.\n\n\nÉtudes\n\n\n\n2021 - 2024\n🏢 MIA Paris-Saclay, Palaiseau\nEncadrant: Pierre Barbillon (MIA Paris-Saclay), Colin Fontaine (MNHM), Elisa Thebault (iEES).\n\n\n\n\n\nThèse : Prise en compte des effets d’échantillonnage pour la détection de structure des réseaux écologiques\nThèse soutenue au campus Agro Paris-Saclay le 16 décembre 2024.\nLien vers la thèse\nMots-clés: Statistiques appliquées à l’écologie, Théorie des graphes, réseaux plantes-pollinisateurs, modèle à blocs stochastiques, algorithme EM, échantillonnage, réseaux de neurones convolutifs.\n\n\n\n\n\n\n\n2020 - 2021\n🏢 Sorbonne Université, Paris\n\n\n\n\n\nMaster 2 de Mathématiques et Application, parcours Statistiques.\nMots-clés: Modèles linéaires en grande dimension, apprentissage statistique, apprentissage automatique, optimisation stochastique, analyse statistique de graphe, acquisition compressée.\n\n\n\n\n\n\n\n2019 - 2020\n🏢 Sorbonne Université, Paris\n\n\n\n\n\nMaster 1 de Mathématiques et Application.\nMots-clés: Statistiques avancées, statistiques computationnelles, géométrie différentielle\n\n\n\n\n\n\n\n2018 - 2019\n🏢 Sorbonne Université, Paris\n\n\n\n\n\nLicence 3 de Mathématiques\nMots-clés: Statistiques numériques, approximation numérique de fonction, théorie de la mesure.\n\n\n\n\n\n\n\n2016 - 2018\n🏢 Lycée Fénelon, Paris\n\n\n\n\n\nClasse Préparatoire aux Grandes Écoles Math-Physique\n\n\n\n\n\n\nExpériences\n\n\n\nDepuis 2025\n🏢 Centre Biologique de Gestion des Populations, Montpellier\n\n\n\n\n\nPost-Doctorat : Développement de méthodes statistiques pour la reconstruction de routes d’invasion biologique, inférence de scénarios évolutionnaires complexes à partir de données génomiques en utilisant des graphes admixtures.\nMots-clés: Génétique des populations, Graphes admixtures\n\nExploration de l’espace des graphes admixtures et problèmes d’identifiabilités.\nUtilisation de modèles génératifs de graphes.\nApplications à des données génétiques d’espèces invasives.\n\n\n\n\n\n\n\n\nMai-Sep 2021\n🏢 CEA, Saclay\nEncadrants : Valerio Calvelli (CEA)\n\n\n\n\n\nStage de M2 : Participation à la conception du design magnétique d’une machine IRM à 14 T en utilisant différentes techniques d’intelligence artificielle.\nMots-clés: Opera-2d 2020, algorithme génétique, optimisation sous contrainte, magnétisme\n\nMettre en place un code Python capable d’interagir avec le logiciel Opera-2d 2020.\nTrouver une configuration optimale respectant des contraintes à l’aide d’un algorithme génétique.\n\n\n\n\n\n\n\n\nMai-Sep 2021\n🏢 Laboratoire de Probabilité, Statistiques et Modélisation, Paris\nEncadrants : Anna Bonnet (LPSM), Sylvain Le Corff (LPSM), Harry Sokol (AP-HP)\n\n\n\n\n\nStage de M1 : Apprentissage statistique pour tester l’influence du microbiote intestinal sur la réponse au traitement de la maladie de Crohn.\nMots-clés: Machine learning, forêts aléatoires, sélection de variables en grande dimension, MCMC\n\nSélectionner des variables pertinentes à l’aide de forêts aléatoires et comparer les résultats avec d’autres études.\nImplémenter un algorithme MCMC de sélection de variables dans un modèle de régression logistique.\nLe stage a abouti à l’écriture d’un article publié : Impact of the Ileal Microbiota on Surgical Site Infections in Crohn’s Disease : A Nationwide Prospective Cohort, Journal of Crohn’s and Colitis, Volume 16, Issue 8, August 2022, Pages 1211–1221, https://doi.org/10.1093/ecco-jcc/jjac026"
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "",
+    "text": "WarningObjectif\n\n\n\nÀ partir d’un échantillon, comparer la caractéristique d’une population à une valeur de référence connue à priori :\n\nTest de comformité d’une moyenne \nTest de comformité d’une proportion \nTest de comformité d’une variance",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#tests-paramétriques-à-un-échantillon.",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#tests-paramétriques-à-un-échantillon.",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "",
+    "text": "WarningObjectif\n\n\n\nÀ partir d’un échantillon, comparer la caractéristique d’une population à une valeur de référence connue à priori :\n\nTest de comformité d’une moyenne \nTest de comformité d’une proportion \nTest de comformité d’une variance",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#ce-quil-faut-retenir-de-ce-cours-13",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#ce-quil-faut-retenir-de-ce-cours-13",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.1 Ce qu’il faut retenir de ce cours 1/3",
+    "text": "2.1 Ce qu’il faut retenir de ce cours 1/3\n\n\n\n\n\n\n\nNote1 - Modélisation\n\n\n\nOn considère \\((x_1,\\dots,x_n)\\) comme la réalisation d’un \\(n\\)-échantillon \\((X_1,\\dots,X_n)\\) de v.a. i.i.d. de même loi que \\(X\\) avec \\(\\mathbb{E}[X] = \\mu\\), et \\(\\mathbb{V}[X] = \\sigma^2\\)\n\n\n\n\n\n\n\n\nNote2 - Test unilatéral à gauche\n\n\n\n\\[H_0 : \\mu = \\mu_0 \\] \\[H_1 : \\mu &lt; \\mu_0 \\]\n\n\n\n\n\n\n\n\nNote2 - Test bilatéral\n\n\n\n\\[H_0 : \\mu = \\mu_0 \\] \\[H_1 : \\mu \\neq \\mu_0 \\]\n\n\n\n\n\n\n\n\nNote2 - Test Unilatéral à droite\n\n\n\n\\[H_0 : \\mu = \\mu_0 \\] \\[H_1 : \\mu &gt; \\mu_0 \\]\n\n\n\n\n\n\n\n\nNote3 - Statistiques de test et loi sous \\(H_0\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistique de test\nLoi de \\(T_n\\) sous \\(H_0\\)\n\n\n\n\n\n\n\nÉchantillon gaussien, \\(n\\) petit\nGrand échantillon, TCL\n\n\n\\(\\sigma^2\\) connue\n\\(T_n = \\sqrt{n}\\frac{(\\bar{X}_n - \\mu)}{\\sigma}\\)\n\\(T_n \\sim \\mathcal{N}(0,1)\\)\n\\(T_n\\xrightarrow[n\\rightarrow\\infty]{\\mathscr{L}}\\mathcal{N}(0,1)\\)\n\n\n\\(\\sigma^2\\) inconnue\n\\(T_n = \\sqrt{n}\\frac{(\\bar{X}_n - \\mu)}{\\textcolor{red}{S}}\\)\n\\(T_n \\sim \\mathcal{T}_{n-1}\\)\n\\(T_n\\xrightarrow[n\\rightarrow\\infty]{\\mathscr{L}}\\mathcal{N}(0,1)\\)",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#ce-quil-faut-retenir-de-ce-cours-23",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#ce-quil-faut-retenir-de-ce-cours-23",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.2 Ce qu’il faut retenir de ce cours 2/3",
+    "text": "2.2 Ce qu’il faut retenir de ce cours 2/3\n\n\n\n\n\n\n\nNote4 - Zone de rejet à gauche\n\n\n\n\\[\\{T_n&lt; q_\\alpha\\}\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote4 - Zone de rejet bilatéral\n\n\n\n\\[\\{|T_n|&gt; q_{1-\\frac{\\alpha}{2}} \\}\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote4 - Zone de rejet à droite\n\n\n\n\\[\\{T_n&gt; q_{1-\\alpha}\\}\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote5 - Application numérique\n\n\n\n\n\n\n\n\n\n\n\n\nNote6 - \\(p\\)-valeur (unilatéral gauche)\n\n\n\n\\[p_c=\\mathbb{P}_{H_0}(T_n&lt;t_n)\\]\n\n\n\n\n\n\n\n\nNote6 - \\(p\\)-valeur (bilatéral)\n\n\n\n\\[p_c=\\mathbb{P}_{H_0}(|T_n|&gt;|t_n|)\\]\n\n\n\n\n\n\n\n\nNote6 - \\(p\\)-valeur (unilatéral droite)\n\n\n\n\\[p_c=\\mathbb{P}_{H_0}(T_n&gt;t_n)\\]",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#ce-quil-faut-retenir-de-ce-cours-33",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#ce-quil-faut-retenir-de-ce-cours-33",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.3 Ce qu’il faut retenir de ce cours 3/3",
+    "text": "2.3 Ce qu’il faut retenir de ce cours 3/3\n\n\n\n\n\n\n\nNoteTest unilatéral gauche\n\n\n\n\nt.test(x, mu = mu0, \n       alternative = \"less\")\n\n\n\n\n\n\n\n\n\nNoteTest bilateral\n\n\n\n\nt.test(x, mu = mu0,\n       alternative = \"two.sided\")\n\n\n\n\n\n\n\n\n\nNoteTest unilateral droite\n\n\n\n\nt.test(x, mu = mu0, \n       alternative = \"greater\")\n\n\n\n\n\n\n\n\n\nNote7 - Calcul de la puissance\n\n\n\n\\[\\beta = \\mathbb{P}_{H_1}(\\text{accepter }H_0),\\quad \\pi = 1 - \\beta\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteEstimer la puissance statistique pour \\(n\\) et \\(\\alpha\\) fixé :\n\n\n\n\npower.t.test(n=9,\n             delta=0.1,\n             sd=sd(x),\n             sig.level=0.05,\n             type=\"one.sample\",\n             alternative=\"one.sided\")\n\n\n\n\n\n\n\n\n\nNoteEstimer la taille d’échantillon \\(n\\) pour avoir une puissance donnée\n\n\n\n\npower.t.test(power=0.8,\n             delta=0.1,\n             sd=sd(x),\n             sig.level=0.05,\n             type=\"one.sample\",\n             alternative=\"one.sided\")",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#exemple-1-la-salmonelle",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#exemple-1-la-salmonelle",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.4 Exemple 1 : la salmonelle",
+    "text": "2.4 Exemple 1 : la salmonelle\nPlusieurs personnes ont souffert d’intoxication alimentaire de salmonelle. Après enquête, on suspecte une marque de glaces d’être responsable de l’intoxication. Pour vérifier cela, des scientifiques ont mesuré le niveau de salmonelle dans 9 pots de glace, tirés de façon aléatoire chez le fabricant de glace. On obtient les mesures suivantes, exprimées en NPP (Nombre le Plus Probable) par gramme :\n\nx&lt;- c(0.175, 0.205, 0.760, 0.719, 0.199, 0.529, 0.306, 0.520, 0.010)\n\n\nOn sait que le niveau de référence que doit respecter un fabricant de glaces est de 0.3 NPP/g.\nLa question que l’on se pose est : le niveau moyen de salmonelle dans les pots de glace est-il supérieur à 0.3 ?\n\n\n\nmean(x)\n\n[1] 0.3803333",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#objectif",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#objectif",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.5 Objectif",
+    "text": "2.5 Objectif\n\n\n\n\n\n\nWarningObjectif\n\n\n\n\nFaire un test de niveau \\(\\alpha\\) sur la valeur de \\(\\mu\\) : la variable quantitative \\(X\\) a-t-elle une moyenne \\(\\mu\\) égale à une valeur \\(\\mu_0\\) connue, donnée à l’avance ?\n\n\n\nÀ partir de l’échantillon, juger de la pertinence de l’hypothèse\n\n\\[H_0 : \\mu = \\mu_0 \\] où \\(\\mu_0\\) est la moyenne théorique, en contrôlant le risque \\(\\alpha\\) de se tromper en rejetant \\(H_0\\).\n\n\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\nOn appelle ce type de test un test de conformité de moyenne, ou un test sur la valeur d’une espérance.\n\n\n\nOn va comparer la moyenne empirique observée \\(\\bar{x}_n\\) et \\(\\mu_0\\).\n\n\n\n\nDistinguer :\n\nun faible écart dû aux fluctuations d’échantillonnage\nun écart significatif, peu probable par des fluctuations de l’estimateur.",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#modélisation",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#modélisation",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.6 1. Modélisation",
+    "text": "2.6 1. Modélisation\n\n\n\n\n\n\nNoteModélisation\n\n\n\nOn s’intéresse à un caractère quantitatif sur une population représenté par une v.a. \\(X\\).\n\n\nEspérance : \\(\\mathbb{E}[X] = \\mu\\), variance : \\(\\mathbb{V}[X] = \\sigma^2\\)\n\n\n\n\nOn considère \\((x_1,\\dots,x_n)\\) comme la réalisation d’un \\(n\\)-échantillon \\((X_1,\\dots,X_n)\\) de v.a. i.i.d. de même loi que \\(X\\).\n\n\n\n\nOn note \\(\\bar{X}_n=\\frac{1}{n}\\sum\\limits_{i=1}^{n}X_i\\) la moyenne empirique. Il s’agit d’une v.a., et sa réalisation est \\(\\bar{x}_n=\\frac{1}{n}\\sum\\limits_{i=1}^{n}x_i\\)\n\n\n\n\n\\(\\bar{X}_n\\) est un estimateur de \\(\\mu\\) et \\(\\bar{x}_n\\) est une estimation de \\(\\mu\\).",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#hypothèse",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#hypothèse",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.7 2. Hypothèse",
+    "text": "2.7 2. Hypothèse\nDe manière générale, on a trois alternatives possibles à l’hypothèse \\(H_0 : \\mu = \\mu_0\\)\n\n\n\n\n\n\n\nNoteDéfinition : Test unilatéral à gauche\n\n\n\nDans un test test unilatéral à gauche, l’hypothèse alternative est :\n\\[H_1 : \\mu &lt; \\mu_0 \\]\n\n\n\n\n\n\n\n\n\n\nNoteDéfinition : Test bilatéral\n\n\n\nDans un test test bilatéral, l’hypothèse alternative est :\n\\[H_1 : \\mu \\neq \\mu_0 \\]\n\n\n\n\n\n\n\n\n\n\nNoteDéfinition : Test unilatéral à droite\n\n\n\nDans un test Test unilatéral à droite, l’hypothèse alternative est :\n\\[H_1 : \\mu &gt; \\mu_0 \\]",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#hypothèse-composites",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#hypothèse-composites",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.8 2. Hypothèse composites",
+    "text": "2.8 2. Hypothèse composites\n\n\n\n\n\n\nNoteDéfinition\n\n\n\nLes hypothèses composites (par opposition à l’hypothèse simple) sont définies par:\n\\[H_0: \\mu\\leq \\mu_0 \\quad \\text{contre}\\quad H_1: \\mu&gt;\\mu_0 \\] ou par\n\\[H_0: \\mu\\geq \\mu_0 \\quad \\text{contre}\\quad H_1: \\mu&lt;\\mu_0 \\]\n\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\n\\(\\mu\\) peut prendre une multitude de valeurs sous l’hypothèse nulle, ceci risque de compliquer les calculs.\n\n\n\n\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\\(\\alpha\\) correspond au risque maximum que l’on accepte de prendre en rejetant \\(H_0\\) à tort.\nDémarche : valeur de \\(\\mu\\) qui correspond au risque le plus élevé sous \\(H_0 \\Rightarrow \\mu = \\mu_0\\) .\n\n\\[\\alpha = \\sup_{\\mu\\in H_0} \\alpha_\\mu.\\]",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#statistique-de-test",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#statistique-de-test",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.9 3. Statistique de test",
+    "text": "2.9 3. Statistique de test\n\nDeux cas possibles :\n\n\n\n\n\n\n\nNoteStatistique de test avec variance connue\n\n\n\nSi \\(\\sigma^2\\) est connue :\n\\[T_n = \\sqrt{n}\\frac{(\\bar{X}_n-\\mu_0)}{\\sigma}\\]\n\n\n\n\n\n\n\n\n\n\nNoteStatistique de test avec variance inconnue\n\n\n\nSi \\(\\sigma^2\\) est inconnue,\n\\[T_n = \\sqrt{n}\\frac{(\\bar{X}_n-\\mu_0)}{S}\\]\navec \\(S^2 = \\frac{1}{n-1}\\sum_{i=1}^{n}(X_i - \\bar{X}_n)^2\\) qui est un estimateur sans biais et consistant de \\(\\sigma^2\\).\n\n\n\n\n\n\n\n\n\n\nCautionRemarque\n\n\n\nPour un test de conformité de moyenne, la statistique de test, \\(T_n\\), est \\(\\bar{X}_n\\) centrée réduite sous \\(H_0\\).",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#loi-de-la-statistique-de-test-t_n-sous-h_0",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#loi-de-la-statistique-de-test-t_n-sous-h_0",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.10 3. Loi de la statistique de test \\(T_n\\) sous \\(H_0\\)",
+    "text": "2.10 3. Loi de la statistique de test \\(T_n\\) sous \\(H_0\\)\nDeux cas :\n\nA-t-on un grand échantillon pour utiliser le théorème central limite (TCL)?\nOu un petit échantillon de loi normale (gaussien) ?",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#rappel-le-théorème-central-limite",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#rappel-le-théorème-central-limite",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.11 Rappel: le Théorème central limite",
+    "text": "2.11 Rappel: le Théorème central limite\n\n\n\n\n\n\n\nTipThéorème central limite\n\n\n\nSoit \\((X_i)_{i\\in\\mathbb{N}}\\) une suite de v.a. i.i.d. d’espérance \\(\\mu_0\\) et de variance \\(\\sigma^2\\) finies. Alors,\n\\[\\sqrt{n} \\frac{(\\bar{X}_n - \\mu_0)}{\\sigma} \\xrightarrow[n\\rightarrow\\infty]{\\mathscr{L}}\\mathcal{N}(0,1) \\]\n\\[\\sqrt{n} \\frac{(\\bar{X}_n - \\mu_0)}{S} \\xrightarrow[n\\rightarrow\\infty]{\\mathscr{L}}\\mathcal{N}(0,1) \\] avec \\(S^2 = \\frac{1}{n-1}\\sum_{i=1}^{n}(X_i - \\bar{X}_n)^2\\)\n\n\n\n\n\n\n\n\n\nTipPour le test\n\n\n\nLorsque l’échantillon sera grand, on pourra se servir du TCL sous l’hypothèse \\(H_0\\) : \\[\\mathbb{E}[X] =\\mu = \\mu_0\\]\n\\[T_n = \\sqrt{n}\\frac{(\\bar{X}_n-\\mu_0)}{S} \\xrightarrow[n\\rightarrow\\infty]{\\mathscr{L}}\\mathcal{N}(0,1)\\]",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#petit-échantillon",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#petit-échantillon",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.12 3. Petit échantillon",
+    "text": "2.12 3. Petit échantillon\n\nLorsque l’échantillon est petit \\(n\\leq 30\\) il faudra faire une hypothèse supplémentaire pour conclure.\n\n\n\n\n\n\nNoteHypothèse gaussienne\n\n\n\nEn plus de la modélisation initiale, on suppose que \\[X_i \\overset{i.i.d.}{\\sim} \\mathcal{N}(\\mu,\\sigma^2)\\]\n\n\n\n\n\n\n\n\n\nTipLoi de la statistique de test \\(T_n\\) sous \\(H_0\\) et l’hypothèse gaussienne\n\n\n\nSous \\(H_0\\), si \\(X_i \\overset{i.i.d.}{\\sim} \\mathcal{N}(\\mu,\\sigma^2)\\), on a pour un échantillon de taille \\(n\\)\n\\[\\text{Pour } \\sigma \\text{ connue : } T_n =\\sqrt{n} \\frac{(\\bar{X}_n - \\mu_0)}{\\sigma} \\sim\\mathcal{N}(0,1) \\]\n\\[\\text{Pour } \\sigma \\text{ inconnue : } T_n = \\sqrt{n} \\frac{(\\bar{X}_n - \\mu_0)}{S}  \\sim \\mathcal{T}(n-1) \\]",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#loi-de-la-statistique-de-test-t_n-sous-h_0-1",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#loi-de-la-statistique-de-test-t_n-sous-h_0-1",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.13 3. Loi de la statistique de test \\(T_n\\) sous \\(H_0\\)",
+    "text": "2.13 3. Loi de la statistique de test \\(T_n\\) sous \\(H_0\\)\n\n\n\n\n\n\n\n\n\n\nStatistique de test\nLoi de \\(T_n\\) sous \\(H_0\\)\n\n\n\n\n\n\n\nÉchantillon gaussien, \\(n\\) petit\nGrand échantillon, TCL\n\n\n\\(\\sigma^2\\) connue\n\\(T_n = \\sqrt{n}\\frac{(\\bar{X}_n - \\mu)}{\\sigma}\\)\n\\(T_n \\sim \\mathcal{N}(0,1)\\)\n\\(T_n\\xrightarrow[n\\rightarrow\\infty]{\\mathscr{L}}\\mathcal{N}(0,1)\\)\n\n\n\\(\\sigma^2\\) inconnue\n\\(T_n = \\sqrt{n}\\frac{(\\bar{X}_n - \\mu)}{\\textcolor{red}{S}}\\)\n\\(T_n \\sim \\mathcal{T}_{n-1}\\)\n\\(T_n\\xrightarrow[n\\rightarrow\\infty]{\\mathscr{L}}\\mathcal{N}(0,1)\\)",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#constuire-la-zone-de-rejet",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#constuire-la-zone-de-rejet",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.14 4. Constuire la zone de rejet",
+    "text": "2.14 4. Constuire la zone de rejet\n\n\n\n\n\n\n\nWarningObjectif\n\n\n\nContrôler le risque de première espèce pour un test de niveau \\(\\alpha\\).\n\n\n\n\n\n\n\n\nNoteDéfinition : Zone de rejet\n\n\n\nLa zone de rejet, notée \\(R_\\alpha\\) est telle que \\[\\mathbb{P}(\\text{rejeter à tort }H_0) = \\mathbb{P}_{H_0}(\\text{rejeter }H_0) = \\mathbb{P}_{H_0}(T_n\\in R_\\alpha)=\\alpha\\]\n\n\n\n\n\n\n\n\n\nNoteRappels\n\n\n\n\nLe quantile \\(\\alpha \\in [0,1]\\) de la v.a. \\(T_n\\) est le nombre réel \\(q_\\alpha\\) tel que\n\n\\[\\mathbb{P}(T_n\\leq q_\\alpha ) = \\alpha \\]\n\nSi deux variables aléatoires suivent la même loi, alors elles ont les mêmes quantiles.\n\n\n\n\n\n\n\n\n\n\n\nCautionRemarque\n\n\n\n\nSi \\(T_n\\sim\\mathcal{N}(0,1)\\) , alors \\(T_n\\) a les mêmes quantiles que \\(\\mathcal{N}(0,1)\\)\nSi \\(T_n\\sim \\mathcal{T}(n-1)\\) , alors \\(T_n\\) a les mêmes quantiles que \\(\\mathcal{T}(n-1)\\)",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#zone-de-rejet-et-règle-de-décision.",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#zone-de-rejet-et-règle-de-décision.",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.15 4. Zone de rejet et règle de décision.",
+    "text": "2.15 4. Zone de rejet et règle de décision.\n\n\n\n\n\n\nCautionRemarques\n\n\n\nLa zone de rejet va dépendre de \\(H_1\\).\n\n\n\n\n\n\n\n\n\n\n\n\nUnilatéral à gauche\nBilatéral\nUnilatéral à droite\n\n\n\n\n\\(H_1:\\)\n\\(\\mu&lt;\\mu_0\\)\n\\(\\mu\\neq\\mu_0\\)\n\\(\\mu&gt;\\mu_0\\)\n\n\nRègle de décision, on rejette \\(H_0\\) si…\n\\(T_n\\) est trop petit\n\\(T_n\\) est loin de 0\n\\(T_n\\) est trop grand\n\n\n\\(R_\\alpha\\)\n\\(\\{T_n&lt; q_\\alpha\\}\\)\n\\(\\{|T_n|&gt; q_{1-\\frac{\\alpha}{2}}\\}\\)\n\\(\\{T_n&gt; q_{1-\\alpha}\\}\\)",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#mise-en-œuvre-du-test-a.n.",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#mise-en-œuvre-du-test-a.n.",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.16 5. Mise en œuvre du test, A.N.",
+    "text": "2.16 5. Mise en œuvre du test, A.N.\n\n\n\n\n\n\n\nTipApplication numérique\n\n\n\nCalcul de la réalisation \\(t_n\\) de \\(T_n\\) sur l’échantillon\n\n\\(\\bar{x}_n= \\frac{1}{n}\\sum\\limits_{i=1}^n x_i\\) est la moyenne observée sur l’échantillon.\nsi \\(\\sigma^2\\) est inconnue, \\(s^2 = \\frac{1}{n-1}\\sum_{i=1}^{n}(x_i - \\bar{x}_n)^2\\) est la variance observée sur l’échantillon; c’est l’estimation de \\(\\sigma^2\\) sur l’échantillon.\nsi \\(\\sigma^2\\) est connue, \\(t_n = \\sqrt{n}\\frac{(\\bar{x}_n-\\mu_0)}{\\sigma}\\)\nsi \\(\\sigma^2\\) est inconnue, \\(t_n = \\sqrt{n}\\frac{(\\bar{x}_n-\\mu_0)}{s}\\)\n\n\n\n\n\n\n\n\n\n\nTipConclusion\n\n\n\n\nSi \\(t_n\\in R_\\alpha\\) : On rejette \\(H_0\\), on accepte \\(H_1\\).\nSi \\(t_n\\notin R_\\alpha\\) : On conserve \\(H_0\\).",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#mise-en-œuvre-du-test-exemple",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#mise-en-œuvre-du-test-exemple",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.17 Mise en œuvre du test : exemple",
+    "text": "2.17 Mise en œuvre du test : exemple\n\nxbar &lt;- mean(x)\nprint(xbar)\n\n[1] 0.3803333\n\n\n\n\nn &lt;- length(x)\nsigma = sqrt(var(x))\ntn &lt;- sqrt(n)*(xbar-0.3)/sigma\nprint(tn)\n\n[1] 0.9200518\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConclusion : On ne rejette pas \\(H_0\\). Le test n’est pas significatif au niveau \\(\\alpha = 5\\%\\). Les données ne sont pas en contradiction avec \\(H_0\\).",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#probabilité-critique-p-valeur",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#probabilité-critique-p-valeur",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.18 6. Probabilité critique, \\(p\\)-valeur",
+    "text": "2.18 6. Probabilité critique, \\(p\\)-valeur\nOn a le résultat pour \\(\\alpha=5\\%\\), mais que dire si \\(\\alpha=10\\%\\) ? \\(\\alpha=15\\%\\) ? \\(\\alpha=20\\%\\) ?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(\\textcolor{red}{p_c = \\inf_\\alpha\\{t_n \\in R_\\alpha\\}}\\)\nIci, on a \\(p_c = \\mathbb{P}_{H_0}(T_n &gt; t_n)\\)\n\n\n1-pnorm(tn,0,1)\n\n[1] 0.1787492\n\n\n\nSi \\(p_c &lt; \\alpha\\), on rejette \\(H_0\\) au niveau \\(\\alpha\\).\nSi \\(p_c&gt;\\alpha\\), on ne rejette pas \\(H_0\\) au niveau \\(\\alpha\\).",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#calculer-la-p-valeur",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#calculer-la-p-valeur",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.19 6. Calculer la \\(p\\)-valeur",
+    "text": "2.19 6. Calculer la \\(p\\)-valeur\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\\(p_c\\) va dépendre de \\(H_1\\).\n\n\n\n\n\n\n\n\n\n\n\n\nUnilatéral à gauche\nBilatéral\nUnilatéral à droite\n\n\n\n\n\\(H_1:\\)\n\\(\\mu&lt;\\mu_0\\)\n\\(\\mu\\neq\\mu_0\\)\n\\(\\mu&gt;\\mu_0\\)\n\n\n\\(p_c\\)\n\\(p_c=\\mathbb{P}_{H_0}(T_n&lt;t_n)\\)\n\\(p_c=\\mathbb{P}_{H_0}(|T_n|&gt;|t_n|)\\) \\(= 2(1-\\mathbb{P}_{H_0}(T_n \\leq |t_n|))\\)\n\\(p_c=\\mathbb{P}_{H_0}(T_n&gt;t_n)\\) \\(= 1-\\mathbb{P}_{H_0}(T_n\\leq t_n)\\)",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#applications-sous-r-t-test-à-1-échantillon",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#applications-sous-r-t-test-à-1-échantillon",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.20 Applications sous R : t-test à 1 échantillon",
+    "text": "2.20 Applications sous R : t-test à 1 échantillon\n\nÀ partir d’un échantillon de mesures de \\(X\\), noté \\(x= (x_1,\\dots,x_n)\\).\n\n\nTest \\(H_0: \\mu = \\mu_0\\) contre \\(H_1 : \\mu &lt; \\mu_0\\)\n\nt.test(x, mu = mu0, alternative = \"less\")\n\n\n\n\n\nTest \\(H_0: \\mu = \\mu_0\\) contre \\(H_1 : \\mu \\neq \\mu_0\\)\n\nt.test(x, mu = mu0)\n\n\n\n\n\nTest \\(H_0: \\mu = \\mu_0\\) contre \\(H_1 : \\mu &gt; \\mu_0\\)\n\nt.test(x, mu = mu0, alternative = \"greater\")",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#dans-notre-exemple",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#dans-notre-exemple",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.21 Dans notre exemple",
+    "text": "2.21 Dans notre exemple\n\nt.test(x,mu = 0.3, alternative = \"greater\")\n\n\n    One Sample t-test\n\ndata:  x\nt = 0.92005, df = 8, p-value = 0.1922\nalternative hypothesis: true mean is greater than 0.3\n95 percent confidence interval:\n 0.2179689       Inf\nsample estimates:\nmean of x \n0.3803333 \n\n\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\nLes logiciels renvoient \\(p_c\\), c’est à nous de fixer \\(\\alpha\\).\nDans un rapport, il faut toujours donner la valeur exacte de la \\(p_c\\) et ne jamais donner des informations du type : “\\(p_c\\)&gt; 5%” sans donner explicitement la \\(p_c\\).",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#exemple-2",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#exemple-2",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.23 Exemple 2",
+    "text": "2.23 Exemple 2\nUne entreprise produit des balles de ping-pong dont le diamètre moyen doit être égal à une norme de référence de 4cm. Pour savoir si la norme de qualité est respectée, un lot de 100 balles est prélevé sur lequel on observe\n\n\nlength(diam)\n\n[1] 100\n\n\n\n\n\nmean(diam)\n\n[1] 4.010611\n\n\n\n\n\nsd(diam)\n\n[1] 0.0238033\n\n\n\n\nLa norme est-elle respectée ?",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#exemple-2-1",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#exemple-2-1",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.24 Exemple 2",
+    "text": "2.24 Exemple 2\nTest \\(H_0: \\mu = \\mu_0\\) contre \\(H_1 : \\mu \\neq \\mu_0\\)\n\nt.test(diam, mu = 4)\n\n\n    One Sample t-test\n\ndata:  diam\nt = 4.4579, df = 99, p-value = 2.185e-05\nalternative hypothesis: true mean is not equal to 4\n95 percent confidence interval:\n 4.005888 4.015334\nsample estimates:\nmean of x \n 4.010611 \n\n\n\nCalcul manuel avec l’approximation normale :\n\ntn = sqrt(length(diam))*(mean(diam)-4)/sd(diam)\ntn\n\n[1] 4.45792\n\n\n\npvaleur = 2*(1-pnorm(abs(tn),0,1))\npvaleur\n\n[1] 8.27586e-06",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#risque-de-deuxième-espèce-et-puissance",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#risque-de-deuxième-espèce-et-puissance",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.25 7. Risque de deuxième espèce et puissance",
+    "text": "2.25 7. Risque de deuxième espèce et puissance\nLes services sanitaires ont des raisons de croire que lorsque qu’un pot de glace est contaminé, la quantité de salmonelle dans le pot vaut en moyenne 0.4 NNP/g. On va alors tester\n\\[H_0 : \\mu= 0.3 \\quad\\text{contre}\\quad H_1: \\mu= 0.4\\]\n\n\n\n\n\n\n\nWarningObjectif\n\n\n\nAvec la procédure mise en place précédemment, peut-on déterminer \\(\\beta\\) le risque de deuxième espèce, et \\(\\pi\\) la puissance du test ?",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#risque-de-deuxième-espèce",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#risque-de-deuxième-espèce",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.26 7. Risque de deuxième espèce",
+    "text": "2.26 7. Risque de deuxième espèce\n\n\n\n\n\n\nNoteRappel\n\n\n\n\\[\\beta = \\mathbb{P}(\\text{accepter à tort }H_0) = \\mathbb{P}_{H_1}(\\text{accepter }H_0)\\]",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#risque-de-deuxième-espèce-1",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#risque-de-deuxième-espèce-1",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.27 Risque de deuxième espèce",
+    "text": "2.27 Risque de deuxième espèce\n\nSous \\(H_1\\), \\(X_i\\overset{i.i.d}{\\sim} \\mathcal{N}(\\mu,\\sigma^2)\\) d’où \\(X_i \\overset{i.i.d}{\\sim} \\mathcal{N}(\\textcolor{red}{0.4},\\sigma^2), \\quad \\text{avec } \\sigma^2 = 0.0686\\)\n\n\nSous \\(H_1\\), on a \\(\\bar{X}_n \\sim  \\mathcal{N}\\left(\\mu,\\frac{\\sigma^2}{n}\\right)=\\mathcal{N}\\left(\\textcolor{red}{0.4},\\frac{\\sigma^2}{n}\\right)\\)\n\n\n\\[T_n = \\sqrt{n} \\frac{(\\bar{X}_n-0.3)}{\\sigma}.\\]\n\n\n\\(\\bar{X}_n \\sim \\mathcal{N}\\left(\\textcolor{red}{0.4},\\frac{\\sigma^2}{n}\\right)\\) \\(\\Rightarrow (\\bar{X}_n-0.3) \\sim \\mathcal{N}\\left(\\textcolor{red}{0.1},\\frac{\\sigma^2}{n}\\right)\\)\\(\\Rightarrow (\\bar{X}_n-0.3)-\\textcolor{red}{0.1} \\sim \\mathcal{N}\\left(0 ,\\frac{\\sigma^2}{n}\\right)\\)\n\\(\\Rightarrow \\sqrt{n} \\frac{(\\bar{X}_n-0.3)}{\\sigma} -  \\textcolor{red}{\\sqrt{n} \\frac{0.1}{\\sigma}}\\sim \\mathcal{N}\\left(0 ,1\\right)\\) \\(\\Rightarrow T_n - \\textcolor{red}{\\sqrt{n} \\frac{0.1}{\\sigma}}\\sim \\mathcal{N}\\left(0 ,1\\right)\\)",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#risque-de-deuxième-espèce-2",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#risque-de-deuxième-espèce-2",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.28 7. Risque de deuxième espèce",
+    "text": "2.28 7. Risque de deuxième espèce\n\nOn ne rejette pas \\(H_0\\) si \\(T_n\\leq q_{1-\\alpha}\\)\n\n\n\n\\(\\beta = \\mathbb{P}_{H_1}(T_n\\leq q_{1-\\alpha})\\) \\(= \\mathbb{P}_{H_1}(\\underbrace{T_n-\\textcolor{red}{\\sqrt{n} \\frac{0.1}{\\sigma}}}_{\\mathcal{N}(0,1)}\\leq \\underbrace{q_{1-\\alpha}-\\textcolor{red}{\\sqrt{n} \\frac{0.1}{\\sigma}}}_{=1.15})\\)\n\n\n\n\nAlpha &lt;- 0.05\nq_1_alpha &lt;- qnorm(1-Alpha)\nrouge &lt;- sqrt(n) * (0.4-0.3)/sigma\nbeta&lt;-(pnorm(q_1_alpha  - rouge))\nprint(beta)\n\n[1] 0.6912682\n\n\n\n\n\\[\\beta = 0.691\\] \\[\\pi = 1-\\beta = 0.309\\]",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#risques-et-puissance",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#risques-et-puissance",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.29 7. Risques et puissance",
+    "text": "2.29 7. Risques et puissance",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#risques-et-puissance-1",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#risques-et-puissance-1",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.30 7. Risques et puissance",
+    "text": "2.30 7. Risques et puissance\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipPropriétés\n\n\n\n\nQuand le niveau \\(\\alpha\\) augmente, le risque \\(\\beta\\) diminue, et la puissance \\(1-\\beta\\) augmente.\nPlus \\(H_1\\) est loin de \\(H_0\\), plus la puissance augmente.\nQuand le nombre d’observation augmente, la puissance augmente.\nPour \\(\\alpha = 5\\%\\), combien d’observations pour avoir une puissance de 80% ? 90% ?",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#tests-statistiques-sur-r",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#tests-statistiques-sur-r",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.31 Tests statistiques sur R",
+    "text": "2.31 Tests statistiques sur R\nEstimer la puissance statistique pour \\(n\\) et \\(\\alpha\\) fixé :\n\npower.t.test(n=9,\n             delta=0.1,\n             sd=sd(x),\n             sig.level=0.05,\n             type=\"one.sample\",\n             alternative=\"one.sided\")\n\n\n     One-sample t test power calculation \n\n              n = 9\n          delta = 0.1\n             sd = 0.2619418\n      sig.level = 0.05\n          power = 0.2757187\n    alternative = one.sided\n\n\n\npower.t.test(n=9,\n             delta=0.2,\n             sd=sd(x),\n             sig.level=0.05,\n             type=\"one.sample\",\n             alternative=\"one.sided\")\n\n\n     One-sample t test power calculation \n\n              n = 9\n          delta = 0.2\n             sd = 0.2619418\n      sig.level = 0.05\n          power = 0.6723857\n    alternative = one.sided",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#tests-statistiques-sur-r-1",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#tests-statistiques-sur-r-1",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.32 Tests statistiques sur R",
+    "text": "2.32 Tests statistiques sur R\nEstimer le nombre d’observations nécessaires pour avoir une puissance donnée :\n\npower.t.test(power=0.8,\n             delta=0.1,\n             sd=sd(x),\n             sig.level=0.05,\n             type=\"one.sample\",\n             alternative=\"one.sided\")\n\n\n     One-sample t test power calculation \n\n              n = 43.8057\n          delta = 0.1\n             sd = 0.2619418\n      sig.level = 0.05\n          power = 0.8\n    alternative = one.sided\n\n\n\npower.t.test(power=0.9,\n             delta=0.1,\n             sd=sd(x),\n             sig.level=0.05,\n             type=\"one.sample\",\n             alternative=\"one.sided\")\n\n\n     One-sample t test power calculation \n\n              n = 60.13851\n          delta = 0.1\n             sd = 0.2619418\n      sig.level = 0.05\n          power = 0.9\n    alternative = one.sided",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#ce-quil-faut-retenir-de-ce-cours-13-1",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#ce-quil-faut-retenir-de-ce-cours-13-1",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.33 Ce qu’il faut retenir de ce cours 1/3",
+    "text": "2.33 Ce qu’il faut retenir de ce cours 1/3\n\n\n\n\n\n\n\nNote1 - Modélisation\n\n\n\nOn considère \\((x_1,\\dots,x_n)\\) comme la réalisation d’un \\(n\\)-échantillon \\((X_1,\\dots,X_n)\\) de v.a. i.i.d. de même loi que \\(X\\) avec \\(\\mathbb{E}[X] = \\mu\\), et \\(\\mathbb{V}[X] = \\sigma^2\\)\n\n\n\n\n\n\n\n\nNote2 - Test unilatéral à gauche\n\n\n\n\\[H_0 : \\mu = \\mu_0 \\] \\[H_1 : \\mu &lt; \\mu_0 \\]\n\n\n\n\n\n\n\n\nNote2 - Test bilatéral\n\n\n\n\\[H_0 : \\mu = \\mu_0 \\] \\[H_1 : \\mu \\neq \\mu_0 \\]\n\n\n\n\n\n\n\n\nNote2 - Test Unilatéral à droite\n\n\n\n\\[H_0 : \\mu = \\mu_0 \\] \\[H_1 : \\mu &gt; \\mu_0 \\]\n\n\n\n\n\n\n\n\nNote3 - Statistiques de test et loi sous \\(H_0\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistique de test\nLoi de \\(T_n\\) sous \\(H_0\\)\n\n\n\n\n\n\n\nÉchantillon gaussien, \\(n\\) petit\nGrand échantillon, TCL\n\n\n\\(\\sigma^2\\) connue\n\\(T_n = \\sqrt{n}\\frac{(\\bar{X}_n - \\mu)}{\\sigma}\\)\n\\(T_n \\sim \\mathcal{N}(0,1)\\)\n\\(T_n\\xrightarrow[n\\rightarrow\\infty]{\\mathscr{L}}\\mathcal{N}(0,1)\\)\n\n\n\\(\\sigma^2\\) inconnue\n\\(T_n = \\sqrt{n}\\frac{(\\bar{X}_n - \\mu)}{\\textcolor{red}{S}}\\)\n\\(T_n \\sim \\mathcal{T}_{n-1}\\)\n\\(T_n\\xrightarrow[n\\rightarrow\\infty]{\\mathscr{L}}\\mathcal{N}(0,1)\\)",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#ce-quil-faut-retenir-de-ce-cours-23-1",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#ce-quil-faut-retenir-de-ce-cours-23-1",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.34 Ce qu’il faut retenir de ce cours 2/3",
+    "text": "2.34 Ce qu’il faut retenir de ce cours 2/3\n\n\n\n\n\n\n\nNote4 - Zone de rejet à gauche\n\n\n\n\\[\\{T_n&lt; q_\\alpha\\}\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote4 - Zone de rejet bilatéral\n\n\n\n\\[\\{|T_n|&gt; q_{1-\\frac{\\alpha}{2}} \\}\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote4 - Zone de rejet à droite\n\n\n\n\\[\\{T_n&gt; q_{1-\\alpha}\\}\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote5 - Application numérique\n\n\n\n\n\n\n\n\n\n\n\n\nNote6 - \\(p\\)-valeur (unilatéral gauche)\n\n\n\n\\[p_c=\\mathbb{P}_{H_0}(T_n&lt;t_n)\\]\n\n\n\n\n\n\n\n\nNote6 - \\(p\\)-valeur (bilatéral)\n\n\n\n\\[p_c=\\mathbb{P}_{H_0}(|T_n|&gt;|t_n|)\\]\n\n\n\n\n\n\n\n\nNote6 - \\(p\\)-valeur (unilatéral droite)\n\n\n\n\\[p_c=\\mathbb{P}_{H_0}(T_n&gt;t_n)\\]",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#ce-quil-faut-retenir-de-ce-cours-33-1",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#ce-quil-faut-retenir-de-ce-cours-33-1",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.35 Ce qu’il faut retenir de ce cours 3/3",
+    "text": "2.35 Ce qu’il faut retenir de ce cours 3/3\n\n\n\n\n\n\n\nNoteTest unilatéral gauche\n\n\n\n\nt.test(x, mu = mu0, \n       alternative = \"less\")\n\n\n\n\n\n\n\n\n\nNoteTest bilateral\n\n\n\n\nt.test(x, mu = mu0,\n       alternative = \"two.sided\")\n\n\n\n\n\n\n\n\n\nNoteTest unilateral droite\n\n\n\n\nt.test(x, mu = mu0, \n       alternative = \"greater\")\n\n\n\n\n\n\n\n\n\nNote7 - Calcul de la puissance\n\n\n\n\\[\\beta = \\mathbb{P}_{H_1}(\\text{accepter }H_0),\\quad \\pi = 1 - \\beta\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteEstimer la puissance statistique pour \\(n\\) et \\(\\alpha\\) fixé :\n\n\n\n\npower.t.test(n=9,\n             delta=0.1,\n             sd=sd(x),\n             sig.level=0.05,\n             type=\"one.sample\",\n             alternative=\"one.sided\")\n\n\n\n\n\n\n\n\n\nNoteEstimer la taille d’échantillon \\(n\\) pour avoir une puissance donnée\n\n\n\n\npower.t.test(power=0.8,\n             delta=0.1,\n             sd=sd(x),\n             sig.level=0.05,\n             type=\"one.sample\",\n             alternative=\"one.sided\")",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#ce-quil-faut-retenir-de-ce-cours",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#ce-quil-faut-retenir-de-ce-cours",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "3.1 Ce qu’il faut retenir de ce cours",
+    "text": "3.1 Ce qu’il faut retenir de ce cours\n\nTest de conformité d’une proportion\n\n\n\n\n\n\nTipThéorème : lien avec le test de conformité de moyenne\n\n\n\nLe test de conformité de proportion est un cas particulier du test de conformité de moyenne\n\n\n\n\n\n\n\n\nNote1 - Modélisation\n\n\n\n\\(n\\)-échantillon i.i.d. \\((X_1,\\dots,X_n)\\) de loi \\(\\mathcal{B}(p)\\)\n\n\n\n\n\n\n\n\nNote2 - Hypothèses\n\n\n\n\\[H_0 : p=p_0\\]\n\n\n\n\n\n\n\n\nTip3 - Statistique de test dans le cas grand échantillon\n\n\n\n\\[T_n  = \\sqrt{n} \\frac{(\\bar{X}_n-p_0)}{\\sqrt{p_0(1-p_0)}}\\sim \\mathcal{N}(0,1)\\]\n\n\n\nTest de conformité d’une variance\n\n\n\n\n\n\nNote1 - Modélisation\n\n\n\n\\(n\\)-échantillon i.i.d. \\((X_1,\\dots,X_n)\\) de loi \\(\\mathcal{N}(\\mu,\\sigma^2)\\)\n\n\n\n\n\n\n\n\nNote2 - Hypothèses\n\n\n\n\\[H_0 : \\sigma^2=\\sigma^2_0\\]\n\n\n\n\n\n\n\n\nTip3 - Statistiques de test\n\n\n\n\n\\(\\mu\\) est connue \\(S_e^2 = \\frac{1}{n}\\sum_{i=1}^n (X_i-\\mu)^2, \\quad T_n = \\frac{nS_e^2}{\\sigma_0^2} \\sim\\chi^2(n)\\)\n\\(\\mu\\) est inconnue \\(S^2 = \\frac{1}{n}\\sum_{i=1}^n (X_i-\\bar{X}_n)^2,\\quad T_n = \\frac{(n-1)S^2}{\\sigma_0^2} \\sim\\chi^2(n-1)\\)\n\n\n\n\n\n\n\n\n\nTip4 - Zone de rejet dans le cas bilatéral\n\n\n\n\\[R_\\alpha = \\left]0, \\chi^2_{n-1, \\frac{\\alpha}{2} }\\right[ \\cup \\left]\\chi^2_{n-1,1- \\frac{\\alpha}{2}},+\\infty \\right[\\] La zone de rejet n’est pas symétrique.",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#exemple",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#exemple",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "3.2 Exemple",
+    "text": "3.2 Exemple\nUn an avant les élections municipales, un maire d’un village de 300 habitants se demande quelles seront les intentions de vote aux prochaines élections. Il charge un élu du conseil municipal d’aller sonder un échantillon représentatif de la population de 50 habitants en leur demandant pour qui ils comptent voter. Aux dernières élections, ce maire avait obtenu 65% des votes.\n\n\nLes résultats font apparaître 70% d’intentions positives de vote en faveur du maire.\n\n\n\n\nPeut-on conclure que la côté de popularité du maire a évoluée ?",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#objectif-1",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#objectif-1",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "3.3 Objectif",
+    "text": "3.3 Objectif\n\n\n\n\n\n\nWarningObjectif\n\n\n\nLa proportion \\(p\\) d’individus possédant le caractère \\(X\\) dans la population est-elle égale à une valeur \\(p_0\\) connue, donnée à l’avance ?\n\n\nÀ partir d’un échantillon, juger de la pertinence de l’hypothèse\n\n\\[H_0 : p=p_0\\]\noù \\(p_0\\) est la proportion théorique, en contrôlant le risque \\(\\alpha\\) de se tromper en rejetant \\(H_0\\).",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#modélisation-1",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#modélisation-1",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "3.4 1. Modélisation",
+    "text": "3.4 1. Modélisation\n\n\n\n\n\n\nNote1 - Modélisation\n\n\n\n\n\nLa variable \\(X\\) est définie par :\n\n\\(\\{X = 1\\}\\) si l’individu possède la propriété en question\n\\(\\{X = 0\\}\\) sinon\n\n\n\n\n\nOn suppose que \\(\\mathbb{P}(X=1) = p\\) et que \\(\\mathbb{P}(X=0)=1-p\\). On notera \\(X\\sim \\mathcal{B}(p)\\)\n\n\n\n\n\\(n\\)-échantillon \\((X_1,\\dots,X_n)\\) de loi \\(\\mathcal{B}(p)\\)\n\n\n\n\nOn a \\(n\\) observations \\((x_1,\\dots,x_n)\\).\n\n\n\n\n\n\n\n\n\n\n\nNoteExemple\n\n\n\n\nProportion d’intentions de votes favorables à un candidat.\n\n\\(\\{X = 1\\}\\) si l’individu est favorable au candidat\n\\(\\{X = 0\\}\\) s’il ne l’est pas.\n\nProportion des personnes contaminées par une épidémie.\n\n\\(\\{X = 1\\}\\) si l’individu est contaminée\n\\(\\{X = 0\\}\\) s’il ne l’est pas.",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#lien-avec-le-test-de-conformité-de-moyenne.",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#lien-avec-le-test-de-conformité-de-moyenne.",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "3.5 Lien avec le test de conformité de moyenne.",
+    "text": "3.5 Lien avec le test de conformité de moyenne.\n\n\n\n\n\n\nNoteRappel sur la loi \\(\\mathcal{B}(p)\\)\n\n\n\nSoit \\(X \\sim \\mathcal{B}(p)\\)\n\n\\(\\mathbb{E}[X] = p\\)\n\\(\\mathbb{V}[X] = p(1-p)\\)\nSi \\((X_1,\\dots,X_n) \\overset{i.i.d.}{\\sim} \\mathcal{B}(p)\\), alors \\(\\displaystyle\\bar{X}_n = \\frac{1}{n}\\sum_{i=1}^{n}X_i\\) est un estimateur du paramètre inconnu \\(p\\).\n\n\n\n\n\n\n\n\n\n\nTipThéorème : lien avec le test de conformité de moyenne\n\n\n\nLe test de conformité de proportion est un cas particulier du test de conformité de moyenne\n\n\nConformité de proportion\n\n\\(\\mathbb{E}[X] = p\\)\nOn va comparer la proportion empirique \\(\\bar{X}_n\\) à la proportion théorique \\(p_0\\).\n\n\nConformité de moyenne\n\n\\(\\mathbb{E}[X] = \\mu\\)\nOn va comparer la moyenne empirique \\(\\bar{X}_n\\) à la moyenne théorique \\(\\mu_0\\).",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#exemple-test-bilatéral-et-grand-échantillon",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#exemple-test-bilatéral-et-grand-échantillon",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "3.6 Exemple : test bilatéral et grand échantillon",
+    "text": "3.6 Exemple : test bilatéral et grand échantillon\n\n\n\n\n\n\n\nNote2 - Hypothèses\n\n\n\nOn veut tester\n\\[H_0: p = p_0 \\quad\\text{contre}\\quad H_1: p\\neq p_0 \\]\n\n\n\n\n\n\n\n\n\nTip3 - Statistique de test\n\n\n\n\n\\(\\sigma = \\sqrt{\\mathbb{V}[X]} = \\sqrt{p(1-p)}\\)\nla statistique de test \\(T_n\\) du test de conformité d’une moyenne\nle TCL (grand échantillon)\n\non obtient sous \\(H_0\\)\n\\[T_n =\\sqrt{n} \\frac{(\\bar{X}_n-p_0)}{\\sigma} = \\sqrt{n} \\frac{(\\bar{X}_n-p_0)}{\\sqrt{p(1-p)}}\\sim \\mathcal{N}(0,1)\\]\n\n\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\n⚠️ \\(T_n\\) dépend de \\(p\\) qui est inconnue !",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#loi-de-t_n-sous-h_0-et-4.-zone-de-rejet",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#loi-de-t_n-sous-h_0-et-4.-zone-de-rejet",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "3.7 3. Loi de \\(T_n\\) sous \\(H_0\\) et 4. Zone de rejet",
+    "text": "3.7 3. Loi de \\(T_n\\) sous \\(H_0\\) et 4. Zone de rejet\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\nSous \\(H_0\\) on a\n\\[p=p_0\\]\n\n\n\n\n\n\n\n\n\nTipStatistique de test pour un test de proportion\n\n\n\nPour un grand échantillon, on a sous \\(H_0\\)\n\\[T_n  = \\sqrt{n} \\frac{(\\bar{X}_n-p_0)}{\\sqrt{p_0(1-p_0)}}\\sim \\mathcal{N}(0,1)\\]\n\n\n\n\n\n\n\n\n\n\nTip4 - Zone de rejet pour le test bilatéral à grand échantillon\n\n\n\n\\[R_\\alpha  = \\{|T_n|&gt; q_{1-\\frac{\\alpha}{2}}\\}\\] où \\(q\\) est le quantile de la loi \\(\\mathcal{N}(0,1)\\)",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#application-numérique-et-6.-p-valeur",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#application-numérique-et-6.-p-valeur",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "3.8 5. Application numérique et 6. p-valeur",
+    "text": "3.8 5. Application numérique et 6. p-valeur\n\n\n\n\n\n\nTip5 - Application numérique\n\n\n\n\nOn calcul \\(\\bar{x}_n\\) puis la réalisation \\(t_n\\) de \\(T_n\\) :\n\n\\[t_n = \\sqrt{n} \\frac{(\\bar{x}_n-p_0)}{\\sqrt{p_0(1-p_0)}}\\]\n\nOn rejette \\(H_0\\) si \\(|t_n| &gt; q_{1-\\frac{\\alpha}{2}}\\)\n\n\n\n\n\n\n\n\n\nTip6 - p-valeur\n\n\n\n\\[p_c=\\mathbb{P}_{H_0}(|T_n|&gt;|t_n|)= 2(1-\\mathbb{P}_{H_0}(T_n \\leq |t_n|))\\]",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#autres-alternatives",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#autres-alternatives",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "3.9 Autres alternatives",
+    "text": "3.9 Autres alternatives\n\n\n\n\n\n\n\nTipTest unilatéral à gauche\n\n\n\n\nHypothèses\n\n\\[H_0: p = p_0 \\quad\\text{contre}\\quad H_1: p&lt; p_0 \\]\n\nZone de rejet : \\(R_\\alpha = \\{T_n &lt; q_\\alpha\\}\\).\n\\(p\\)-valeur : \\(p_c=\\mathbb{P}_{H_0}(T_n&lt;t_n)\\)\n\n\n\n\n\n\n\n\n\n\nTipTest unilatéral à droite\n\n\n\n\nHypothèses\n\n\\[H_0: p = p_0 \\quad\\text{contre}\\quad H_1: p&gt; p_0 \\]\n\nZone de rejet : \\(R_\\alpha = \\{T_n &gt; q_{1-\\alpha}\\}\\).\n\\(p\\)-valeur : \\(p_c=\\mathbb{P}_{H_0}(T_n&gt;t_n)  = 1-\\mathbb{P}_{H_0}(T_n\\leq t_n)\\)",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#applications-sous-r.",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#applications-sous-r.",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "3.10 Applications sous R.",
+    "text": "3.10 Applications sous R.\n\nprop.test(x=35,n=50,p=0.65,correct = FALSE)\n\n\n    1-sample proportions test without continuity correction\n\ndata:  35 out of 50, null probability 0.65\nX-squared = 0.54945, df = 1, p-value = 0.4585\nalternative hypothesis: true p is not equal to 0.65\n95 percent confidence interval:\n 0.5624965 0.8089645\nsample estimates:\n  p \n0.7",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#applications-sous-r.-petit-échantillon",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#applications-sous-r.-petit-échantillon",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "3.11 Applications sous R., petit échantillon",
+    "text": "3.11 Applications sous R., petit échantillon\n\n\n\n\n\n\nCautionRemarques\n\n\n\nPour les petits échantillons, on utilise les quantiles de la loi binomial, puisque \\(\\sum\\limits_{i=1}^n X_i \\sim \\mathcal{B}(n,p_0)\\). Ce test est aussi valide pour des tailles d’échantillons importantes.\n\n\n\n\nbinom.test(x=35,n=50,p=0.65)\n\n\n    Exact binomial test\n\ndata:  35 and 50\nnumber of successes = 35, number of trials = 50, p-value = 0.5537\nalternative hypothesis: true probability of success is not equal to 0.65\n95 percent confidence interval:\n 0.5539177 0.8213822\nsample estimates:\nprobability of success \n                   0.7",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#exemple-1",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#exemple-1",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "4.1 Exemple",
+    "text": "4.1 Exemple\n\nUn manufactureur vient d’installer un machine toute neuve qui remplit des bouteilles de jus de fruit. Lors des premiers réglages de la machine, les techniciens du contrôle de qualité souhaitent vérifier que l’écart-type des contenances est conforme à la norme \\(\\sigma_0\\) = 5mL. Ils mesurent donc la contenance (en mL) de 30 bouteilles de jus de fruit au hasard.\n\n\nLes résultats suivants ont été obtenus :\n\n\nx&lt;- c(205,195,203,204,199,200,204,203,188,203,202,201,199,199,204,\n      203,204,196,198,199,202,201,197,203,201,200,198,199,203,201)\n\nprint(sd(x))\n\n[1] 3.501067\n\n\n\n\n\nQue peuvent-ils en conclure ?",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#objectif-2",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#objectif-2",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "4.2 Objectif",
+    "text": "4.2 Objectif\n\n\n\n\n\n\n\nWarningObjectif\n\n\n\nLa variance \\(\\sigma^2\\) d’un caractère \\(X\\) dans la population est-elle égale à une valeur \\(\\sigma^2_0\\) connue, donnée à l’avance ?\nIl s’agit donc de juger de la pertinence de l’hypothèse\n\\[H_0 : \\sigma^2 = \\sigma^2_0 \\]\noù \\(\\sigma_0^2\\) est la variance théorique, en contrôlant le risque \\(\\alpha\\) de se tromper en rejetant \\(H_0\\).\n\n\n\n\n\n\n\n\n\nTipIdée du test\n\n\n\nOn va comparer la variance observée sur l’échantillon à la variance théorique.\n\n\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\nTests souvent utilisés dans les procédures de contrôle de qualité : Le contrôle cherche à mettre en évidence, par exemple, si la variabilité de la dimension (épaisseur, longueur, poids, etc.) des pièces produites dépasse, ou non, une valeur maximale \\(\\sigma_0^2\\) tolérée.",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#modélisation-2",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#modélisation-2",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "4.3 1. Modélisation",
+    "text": "4.3 1. Modélisation\n\n\n\n\n\n\n\nNote1 - Modélisation\n\n\n\n(\\(x_1,\\dots,x_n\\)) est la réalisation d’un \\(n\\)-échantillon (\\(X_1,\\dots,X_n\\)) i.i.d. de \\(X\\) avec\n\n\\(\\mathbb{E}[X] = \\mu\\)\n\\(\\mathbb{V}[X]= \\sigma^2\\)\n\n\n\n\n\n\n\n\n\n\nTipExemple\n\n\n\nDans notre exemple, on a :\n\n\\(X\\) est la v.a. “contenance de bouteilles de jus de fruits”, \\(X_i\\) et la contenance de la \\(i\\)-ième bouteille de l’échantillon.\n\\(n = 30\\) observations de \\(X\\) sont disponibles.",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#hypothèses-et-estimateur",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#hypothèses-et-estimateur",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "4.4 2. Hypothèses et estimateur",
+    "text": "4.4 2. Hypothèses et estimateur\n\n\n\n\n\n\nNote2 - Hypothèses\n\n\n\nOn souhaite tester\n\\[H_0: \\sigma^2 = \\sigma^2_0 \\quad\\text{contre}\\quad H_1: \\sigma^2 \\neq \\sigma^2_0 \\]\n\n\n\n\n\n\n\n\n\nTipEstimateurs\n\n\n\nSi \\(\\mu\\) est connue, Ce test est basé sur l’estimation de la variance \\(\\sigma^2\\) par l’estimateur :\n\\[S_e^2 = \\frac{1}{n}\\sum_{i=1}^n (X_i-\\mu)^2\\]\n\nSi \\(\\mu\\) est inconnue, on le remplace par son estimateur et on considère l’estimateur sans biais de \\(\\sigma^2\\)\n\\[S^2 = \\frac{1}{n-1}\\sum_{i=1}^n (X_i-\\bar{X}_n)^2\\]",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#cas-mu-connue-échantillons-de-loi-gaussienne",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#cas-mu-connue-échantillons-de-loi-gaussienne",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "4.5 Cas \\(\\mu\\) connue, échantillons de loi gaussienne",
+    "text": "4.5 Cas \\(\\mu\\) connue, échantillons de loi gaussienne\n\n\n\n\n\n\nNote1 - Modélisation supplémentaires\n\n\n\n\nHypothèses gaussienne : \\(X_i \\overset{i.i.d.}{\\sim} \\mathcal{N}(\\mu,\\sigma^2)\\)\n\\(\\mu\\) est connue.\n\n\n\n\n\n\n\n\n\nTip3 - Statistique de test et loi sous \\(H_0\\)\n\n\n\nSous \\(H_0\\) :\n\\[T_n = \\frac{\\textcolor{blue}{n} S_e^2}{\\sigma_0^2} \\sim \\chi^2(\\textcolor{blue}{n})\\]",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#cas-mu-inconnue-échantillons-de-loi-gaussienne",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#cas-mu-inconnue-échantillons-de-loi-gaussienne",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "4.6 Cas \\(\\mu\\) inconnue, échantillons de loi gaussienne",
+    "text": "4.6 Cas \\(\\mu\\) inconnue, échantillons de loi gaussienne\n\n\n\n\n\n\nNote1 - Modélisation supplémentaires\n\n\n\n\nHypothèses gaussienne : \\(X_i \\overset{i.i.d.}{\\sim} \\mathcal{N}(\\mu,\\sigma^2)\\)\n\\(\\mu\\) est inconnue.\n\n\n\n\n\n\n\n\n\nTip3 - Statistique de test et loi sous \\(H_0\\)\n\n\n\nSous \\(H_0\\) :\n\\[T_n = \\frac{(\\textcolor{red}{n-1}) S^2}{\\sigma_0^2} \\sim \\chi^2(\\textcolor{red}{n-1})\\]",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#zone-de-rejet-dans-le-cas-gaussien-avec-mu-inconnu",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#zone-de-rejet-dans-le-cas-gaussien-avec-mu-inconnu",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "4.7 4. Zone de rejet dans le cas gaussien avec \\(\\mu\\) inconnu",
+    "text": "4.7 4. Zone de rejet dans le cas gaussien avec \\(\\mu\\) inconnu\n\n\n\n\n\n\nTip4 - Zone de rejet dans le cas bilatéral\n\n\n\n\\[R_\\alpha = \\left]0, \\chi^2_{n-1, \\frac{\\alpha}{2} }\\right[ \\cup \\left]\\chi^2_{n-1,1- \\frac{\\alpha}{2}},+\\infty \\right[\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\nLa zone de rejet n’est pas symétrique !",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#exemple-sur-les-jus-de-fruits",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#exemple-sur-les-jus-de-fruits",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "4.8 Exemple sur les jus de fruits",
+    "text": "4.8 Exemple sur les jus de fruits\n\nAlpha = 0.05\nn=length(x)\nvar0 = 5**2\nvar_obs = var(x)\ntn = (n-1)*var(x)/var0\nprint(tn)\n\n[1] 14.21867\n\nprint(qchisq(Alpha/2,df=n-1))\n\n[1] 16.04707\n\nprint(qchisq(1-Alpha/2,df=n-1))\n\n[1] 45.72229\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOn rejette \\(H_0\\) au niveau \\(\\alpha=5\\%\\)",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#cas-grand-échantillon",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#cas-grand-échantillon",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "4.9 Cas grand échantillon",
+    "text": "4.9 Cas grand échantillon\n\nCas \\(\\mu\\) connue\n\n\n\n\n\n\nNote1 - Modélisation supplémentaire\n\n\n\n\nOn note \\(Z_i:=(X_i- \\textcolor{blue}{\\mu})^2\\), de sorte que \\(\\displaystyle S^2 = \\frac{1}{n}\\sum_{i=1}^nZ_i = \\bar{Z}_n\\). \n\\(n&gt;30\\)\n\\(\\mathbb{E}[X_i^4]\\) est finie.\n\n\n\n\n\n\n\n\n\nTipLien avec le test de conformité de moyenne\n\n\n\nCe test de conformité de variance est un cas particulier du test de conformité de moyenne \\[T_n = \\sqrt{n}\\frac{(S_e^2 - \\sigma^2_0)}{\\sqrt{\\frac{1}{n-1}\\sum_{i=1}^n (Z_i - \\bar{Z_n})^2}} \\sim \\mathcal{N}(0,1)\\]\n\n\nCas \\(\\mu\\) inconnue\n\n\n\n\n\n\nNote1 - Modélisation supplémentaire\n\n\n\n\nOn note \\(W_i:=(X_i- \\textcolor{red}{\\bar{X_n}})^2\\), de sorte que \\(\\displaystyle S^2 = \\frac{1}{n-1}\\sum_{i=1}^nW_i = \\frac{n}{n-1}\\bar{W}_n\\). \n\\(n&gt;50\\)\n\\(\\mathbb{E}[X_i^4]\\) est finie.\n\n\n\n\n\n\n\n\n\nTipLien avec le test de conformité de moyenne\n\n\n\nCe test de conformité de variance est un cas particulier du test de conformité de moyenne \\[T_n = \\sqrt{n}\\frac{(S^2 - \\sigma^2_0)}{\\sqrt{\\frac{1}{n-1}\\sum_{i=1}^n (W_i - \\bar{W_n})^2}} \\sim \\mathcal{N}(0,1)\\]",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#résumé",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#résumé",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "4.10 Résumé",
+    "text": "4.10 Résumé\n\n\n\n\nTable 1: Résumé des lois pour le test de conformité d’une variance\n\n\n\n\n\nCas gaussien, \\(n\\) quelconque\n\n\n\n\n\n\n\n\nStat. de test\nLoi sous \\(H_0\\)\n\n\n\n\n\\(\\mu\\) connue\n\\(T_n = \\frac{nS_e^2}{\\sigma_0^2}\\)\n\\(T_n\\sim\\chi^2(n)\\)\n\n\n\\(\\mu\\) inconnue\n\\(T_n = \\frac{(n-1)S^2}{\\sigma_0^2}\\)\n\\(T_n\\sim\\chi^2(n-1)\\)\n\n\n\n\n\n\nCas non gaussien, \\(n\\) grand\n\n\n\n\n\n\nStat. de test\nLoi sous \\(H_0\\)\n\n\n\n\n\\(T_n =  \\sqrt{n}\\frac{(S_e^2 - \\sigma^2_0)}{\\sqrt{\\frac{1}{n-1}\\sum_{i=1}^n (Z_i - \\bar{Z_n})^2}}\\)\n\\(T_n \\xrightarrow[n\\rightarrow\\infty]{\\mathscr{L}}\\mathcal{N}(0,1)\\)\n\n\n\\(T_n =  \\sqrt{n}\\frac{(S^2 - \\sigma^2_0)}{\\sqrt{\\frac{1}{n-1}\\sum_{i=1}^n (W_i - \\bar{W_n})^2}}\\)\n\\(T_n \\xrightarrow[n\\rightarrow\\infty]{\\mathscr{L}}\\mathcal{N}(0,1)\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCautionRemarques\n\n\n\n\nLes régions de rejet sont définies de la même manière que précédemment en utilisant les quantiles correspondant à la loi de \\(T_n\\) au niveau \\(\\alpha\\) fixé.\nAttention les régions de rejet ne sont pas symétriques.",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#ce-quil-faut-retenir-de-ce-cours-1",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#ce-quil-faut-retenir-de-ce-cours-1",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "5.1 Ce qu’il faut retenir de ce cours",
+    "text": "5.1 Ce qu’il faut retenir de ce cours\n\nTest de conformité d’une proportion\n\n\n\n\n\n\nTipThéorème : lien avec le test de conformité de moyenne\n\n\n\nLe test de conformité de proportion est un cas particulier du test de conformité de moyenne\n\n\n\n\n\n\n\n\nNote1 - Modélisation\n\n\n\n\\(n\\)-échantillon i.i.d. \\((X_1,\\dots,X_n)\\) de loi \\(\\mathcal{B}(p)\\)\n\n\n\n\n\n\n\n\nNote2 - Hypothèses\n\n\n\n\\[H_0 : p=p_0\\]\n\n\n\n\n\n\n\n\nTip3 - Statistique de test dans le cas grand échantillon\n\n\n\n\\[T_n  = \\sqrt{n} \\frac{(\\bar{X}_n-p_0)}{\\sqrt{p_0(1-p_0)}}\\sim \\mathcal{N}(0,1)\\]\n\n\nTest de conformité d’une variance\n\n\n\n\n\n\nNote1 - Modélisation\n\n\n\n\\(n\\)-échantillon i.i.d. \\((X_1,\\dots,X_n)\\) de loi \\(\\mathcal{N}(\\mu,\\sigma^2)\\)\n\n\n\n\n\n\n\n\nNote2 - Hypothèses\n\n\n\n\\[H_0 : \\sigma^2=\\sigma^2_0\\]\n\n\n\n\n\n\n\n\nTip3 - Statistiques de test\n\n\n\n\n\\(\\mu\\) est connue \\(S_e^2 = \\frac{1}{n}\\sum_{i=1}^n (X_i-\\mu)^2, \\quad T_n = \\frac{nS_e^2}{\\sigma_0^2} \\sim\\chi^2(n)\\)\n\\(\\mu\\) est inconnue \\(S^2 = \\frac{1}{n}\\sum_{i=1}^n (X_i-\\bar{X}_n)^2,\\quad T_n = \\frac{(n-1)S^2}{\\sigma_0^2} \\sim\\chi^2(n-1)\\)\n\n\n\n\n\n\n\n\n\nTip4 - Zone de rejet dans le cas bilatéral\n\n\n\n\\[R_\\alpha = \\left]0, \\chi^2_{n-1, \\frac{\\alpha}{2} }\\right[ \\cup \\left]\\chi^2_{n-1,1- \\frac{\\alpha}{2}},+\\infty \\right[\\] La zone de rejet n’est pas symétrique.",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#conclusion-générale",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#conclusion-générale",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "5.2 Conclusion générale",
+    "text": "5.2 Conclusion générale\n\n\n\n\n\n\n\nNote3 tests de conformité\n\n\n\n\nTest de conformité d’une moyenne.\nTest de conformité d’une proportion.\nTest de conformité d’une variance.\n\n\n\n\n\n\n\n\n\nNoteDémarche d’un test\n\n\n\n\nModélisation des données\nHypothèse nulle et hypothèse alternative\nChoix d’une statistique de test.\nDéterminer la zone de rejet \\(R_\\alpha\\)\nMise en œuvre du test, application numérique avec R.\nCalcul de la p-valeur\nCalcul de la puissance",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
+  },
+  {
+    "objectID": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#applications-sous-r",
+    "href": "Cours/EMS/Tests d'hypothèses/Cours2/cours2.html#applications-sous-r",
+    "title": "Chapitre II. Tests paramétriques à un échantillon",
+    "section": "2.22 Applications sous R",
+    "text": "2.22 Applications sous R\nLorsque \\(n\\) est grand, on utilise aussi t.test.\n\n\n\nAttachement du package : 'EnvStats'\n\n\nLes objets suivants sont masqués depuis 'package:stats':\n\n    predict, predict.lm\n\n\nL'objet suivant est masqué depuis 'package:base':\n\n    print.default",
+    "crumbs": [
+      "Cours",
+      "Tests d'hypothèses",
+      "Chapitre II. Tests paramétriques à un échantillon"
+    ]
   }
 ]

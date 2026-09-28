@@ -235,6 +235,11 @@ $\sqrt{n}\frac{(\bar{X}_n-\mu)}{S} \sim \mathcal{N}(0,1)$
 $\sqrt{n}\frac{(\bar{X}_n-\mu)}{S} \sim T(n-1)$
 ```
 
+## $\sqrt{n}\frac{(\bar{X}_n-p_0)}{\sqrt{p_0(1-p_0)}} \sim \mathcal{N}(0,1)$
+```latex 
+$\sqrt{n}\frac{(\bar{X}_n-\mu)}{S} \sim T(n-1)$
+```
+
 ## $\mathbb{P}(\sqrt{n}\frac{(\bar{X}_n-\mu)}{S} \leq q_{1-\alpha} )= 1-\alpha$ 
 ```latex 
 $\mathbb{P}(\sqrt{n}\frac{(\bar{X}_n-\mu)}{S} \leq q_{1-\alpha} )= 1-\alpha$
@@ -255,6 +260,13 @@ $IC_{\alpha}(\mu) = [\bar{X}_n-\frac{S}{\sqrt{n}} q_{1-\frac{\alpha}{2} ,\bar{X}
 ```latex 
 $[\bar{x}_n-\frac{s}{\sqrt{n}} q_{1-\frac{\alpha}{2}} ,\bar{x}_n+\frac{s}{\sqrt{n}} q_{1-\frac{\alpha}{2}}]=[73.37;75.47]$
 ```
+
+
+## $R_{\alpha} = \{|T_n| \geq q_{1-\frac{\alpha}{2}} \}$
+```latex 
+$R_{\alpha} = \{|T_n| \geq q_{1-\frac{\alpha}{2}} \}$
+```
+
 
 ## $p_c=\mathbb{P}_{H_0}(|T_n|>|t_n|)$
 ```latex 

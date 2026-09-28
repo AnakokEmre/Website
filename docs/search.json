@@ -5529,5 +5529,29 @@
       "Tests d'hypothèses",
       "Chapitre II. Tests paramétriques à un échantillon"
     ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#sqrtnfracbarx_n-p_0sqrtp_01-p_0-sim-mathcaln01",
+    "href": "Cours/Dictionnaire Rmarkdown.html#sqrtnfracbarx_n-p_0sqrtp_01-p_0-sim-mathcaln01",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(\\sqrt{n}\\frac{(\\bar{X}_n-p_0)}{\\sqrt{p_0(1-p_0)}} \\sim \\mathcal{N}(0,1)\\)",
+    "text": "\\(\\sqrt{n}\\frac{(\\bar{X}_n-p_0)}{\\sqrt{p_0(1-p_0)}} \\sim \\mathcal{N}(0,1)\\)\n$\\sqrt{n}\\frac{(\\bar{X}_n-\\mu)}{S} \\sim T(n-1)$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
+  },
+  {
+    "objectID": "Cours/Dictionnaire Rmarkdown.html#r_alpha-t_n-geq-q_1-fracalpha2",
+    "href": "Cours/Dictionnaire Rmarkdown.html#r_alpha-t_n-geq-q_1-fracalpha2",
+    "title": "Dictionnaire Rmarkdown",
+    "section": "\\(R_{\\alpha} = \\{|T_n| \\geq q_{1-\\frac{\\alpha}{2}} \\}\\)",
+    "text": "\\(R_{\\alpha} = \\{|T_n| \\geq q_{1-\\frac{\\alpha}{2}} \\}\\)\n$R_{\\alpha} = \\{|T_n| \\geq q_{1-\\frac{\\alpha}{2}} \\}$",
+    "crumbs": [
+      "Cours",
+      "Rmarkdown",
+      "Dictionnaire Rmarkdown"
+    ]
   }
 ]

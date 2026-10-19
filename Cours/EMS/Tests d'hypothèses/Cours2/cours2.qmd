@@ -1643,7 +1643,7 @@ $$H_0 : \sigma^2=\sigma^2_0$$
 
 - $\mu$ est [**connue**]{style="color:blue;"}  $S_e^2 = \frac{1}{n}\sum_{i=1}^n (X_i-\mu)^2, \quad T_n = \frac{nS_e^2}{\sigma_0^2} \sim\chi^2(n)$ 
 
-- $\mu$ est [**inconnue**]{style="color:red;"} $S^2 = \frac{1}{n}\sum_{i=1}^n (X_i-\bar{X}_n)^2,\quad T_n = \frac{(n-1)S^2}{\sigma_0^2} \sim\chi^2(n-1)$ 
+- $\mu$ est [**inconnue**]{style="color:red;"} $S^2 = \frac{1}{n-1}\sum_{i=1}^n (X_i-\bar{X}_n)^2,\quad T_n = \frac{(n-1)S^2}{\sigma_0^2} \sim\chi^2(n-1)$ 
 
 :::
 
@@ -2461,7 +2461,7 @@ $$H_0 : \sigma^2=\sigma^2_0$$
 
 - $\mu$ est [**connue**]{style="color:blue;"}  $S_e^2 = \frac{1}{n}\sum_{i=1}^n (X_i-\mu)^2, \quad T_n = \frac{nS_e^2}{\sigma_0^2} \sim\chi^2(n)$ 
 
-- $\mu$ est [**inconnue**]{style="color:red;"} $S^2 = \frac{1}{n}\sum_{i=1}^n (X_i-\bar{X}_n)^2,\quad T_n = \frac{(n-1)S^2}{\sigma_0^2} \sim\chi^2(n-1)$ 
+- $\mu$ est [**inconnue**]{style="color:red;"} $S^2 = \frac{1}{n-1}\sum_{i=1}^n (X_i-\bar{X}_n)^2,\quad T_n = \frac{(n-1)S^2}{\sigma_0^2} \sim\chi^2(n-1)$ 
 
 :::
 
